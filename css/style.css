@@ -1192,6 +1192,16 @@ p {
   transition: 1s all ease;
 }
 
+.how-to-play .roles-mobile {
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .how-to-play .roles-mobile {
+    display: none;
+  }
+}
+
 .how-to-play .roles-mobile ul.roles-tabs {
   display: -webkit-box;
   display: -ms-flexbox;

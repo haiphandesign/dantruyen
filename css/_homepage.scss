@@ -146,6 +146,13 @@
     }
 
     .roles-mobile {
+        display: block;
+
+        @include breakpoint(md) {
+            display: none;
+        }
+
+
         ul.roles-tabs {
             display: flex;
             width: 80%;
