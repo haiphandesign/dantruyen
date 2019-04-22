@@ -33,6 +33,7 @@ sans-serif;
 }
 
 html {
+    overflow-x: hidden;
     font-size: 14px;
 
     @include breakpoint(md) {
@@ -49,6 +50,8 @@ body {
     color: color(text);
     line-height: 1.5;
     overflow-x: hidden;
+    position: relative;
+    width: 100%;
 
     background: {
         color: white;

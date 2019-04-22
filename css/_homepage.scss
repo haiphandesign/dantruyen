@@ -61,19 +61,19 @@
 
             &.stories {
                 background: {
-                    image: url('../img/counter-story.svg');
+                    image: url('../img/home/counter-story.svg');
                 }
             }
 
             &.missions {
                 background: {
-                    image: url('../img/counter-mission.svg');
+                    image: url('../img/home/counter-mission.svg');
                 }
             }
 
             &.characters {
                 background: {
-                    image: url('../img/counter-character.svg');
+                    image: url('../img/home/counter-character.svg');
                 }
             }
 
@@ -170,6 +170,7 @@
             height: 3rem;
             border-radius: 1.5rem;
             border: .2rem solid color(primary);
+            background-color: color(primary);
             margin: 0 auto;
             padding: 0;
             overflow: hidden;
@@ -185,6 +186,17 @@
                 font-weight: bold;
                 box-shadow: 0 0 0 .1rem color(primary);
                 color: color(primary);
+                background-color: white;
+
+                &:first-child {
+                    border-top-left-radius: 1.5rem;
+                    border-bottom-left-radius: 1.5rem;
+                }
+
+                &:last-child {
+                    border-top-right-radius: 1.5rem;
+                    border-bottom-right-radius: 1.5rem;
+                }
 
                 &.current {
                     color: white;
@@ -269,7 +281,24 @@
             }
 
             &.is-selected {
+                border: 1px solid color(accent);
                 box-shadow: 0 3px 15px rgba(color(accent), 1);
+            }
+
+            .game-card-toggle {
+                display: block;
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                width: 2rem;
+                height: 2rem;
+
+                background: {
+                    image: url('../img/menu.svg');
+                    size: 1rem auto;
+                    position: center right;
+                    repeat: no-repeat;
+                }
             }
 
             img {
@@ -284,6 +313,7 @@
             }
 
             .game-info {
+                position: relative;
                 padding: 1.5rem;
             }
 

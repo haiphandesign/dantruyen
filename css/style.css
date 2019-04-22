@@ -457,6 +457,7 @@ th {
 }
 
 html {
+  overflow-x: hidden;
   font-size: 14px;
 }
 
@@ -472,6 +473,8 @@ body {
   color: #82B2D6;
   line-height: 1.5;
   overflow-x: hidden;
+  position: relative;
+  width: 100%;
   background-color: white;
 }
 
@@ -1104,15 +1107,15 @@ p {
 }
 
 .join-now .counters .counter.stories {
-  background-image: url("../img/counter-story.svg");
+  background-image: url("../img/home/counter-story.svg");
 }
 
 .join-now .counters .counter.missions {
-  background-image: url("../img/counter-mission.svg");
+  background-image: url("../img/home/counter-mission.svg");
 }
 
 .join-now .counters .counter.characters {
-  background-image: url("../img/counter-character.svg");
+  background-image: url("../img/home/counter-character.svg");
 }
 
 .join-now .counters .counter span {
@@ -1232,6 +1235,7 @@ p {
   height: 3rem;
   border-radius: 1.5rem;
   border: 0.2rem solid #31628A;
+  background-color: #31628A;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
@@ -1255,6 +1259,17 @@ p {
   -webkit-box-shadow: 0 0 0 0.1rem #31628A;
           box-shadow: 0 0 0 0.1rem #31628A;
   color: #31628A;
+  background-color: white;
+}
+
+.how-to-play .roles-mobile ul.roles-tabs li:first-child {
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
+.how-to-play .roles-mobile ul.roles-tabs li:last-child {
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
 }
 
 .how-to-play .roles-mobile ul.roles-tabs li.current {
@@ -1353,8 +1368,22 @@ p {
 }
 
 .editors-pick .game-carousel .game-card.is-selected {
+  border: 1px solid #B4DAF2;
   -webkit-box-shadow: 0 3px 15px #b4daf2;
           box-shadow: 0 3px 15px #b4daf2;
+}
+
+.editors-pick .game-carousel .game-card .game-card-toggle {
+  display: block;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("../img/menu.svg");
+  background-size: 1rem auto;
+  background-position: center right;
+  background-repeat: no-repeat;
 }
 
 .editors-pick .game-carousel .game-card img {
@@ -1367,6 +1396,7 @@ p {
 }
 
 .editors-pick .game-carousel .game-card .game-info {
+  position: relative;
   padding: 1.5rem;
 }
 
