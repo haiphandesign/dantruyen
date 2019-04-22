@@ -28,11 +28,17 @@
 
     .counters {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-        padding: 2rem 0;
+        flex-direction: column;
+        padding: 0 0 1rem;
         color: color(primary);
-        transform: scale(0.9);
+
+        @include breakpoint(md) {
+            align-items: flex-start;
+            flex-direction: row;
+            padding: 2rem 0;
+        }
 
         .counter {
             display: flex;
@@ -41,11 +47,16 @@
             flex-direction: column;
             text-align: center;
             padding: 0 1.5rem;
+            margin: 1rem auto;
 
             background: {
                 repeat: no-repeat;
                 size: auto 2.5rem;
                 position: top 0.25rem left 1rem;
+            }
+
+            @include breakpoint(md) {
+                margin: 0;
             }
 
             &.stories {
@@ -292,8 +303,8 @@
                 &:after {
                     content: "...";
                     position: absolute;
-                    right: 0;
-                    bottom: 1.5rem;
+                    right: .5rem;
+                    bottom: .35rem;
                 }
 
                 p {

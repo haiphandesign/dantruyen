@@ -467,7 +467,7 @@ html {
 }
 
 body {
-  font-family: "Noto Sans SC", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 1rem;
   color: #82B2D6;
   line-height: 1.5;
@@ -1048,16 +1048,31 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2rem 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 0 1rem;
   color: #31628A;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+}
+
+@media (min-width: 992px) {
+  .join-now .counters {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 2rem 0;
+  }
 }
 
 .join-now .counters .counter {
@@ -1076,9 +1091,16 @@ p {
           flex-direction: column;
   text-align: center;
   padding: 0 1.5rem;
+  margin: 1rem auto;
   background-repeat: no-repeat;
   background-size: auto 2.5rem;
   background-position: top 0.25rem left 1rem;
+}
+
+@media (min-width: 992px) {
+  .join-now .counters .counter {
+    margin: 0;
+  }
 }
 
 .join-now .counters .counter.stories {
@@ -1365,8 +1387,8 @@ p {
 .editors-pick .game-carousel .game-card .game-description:after {
   content: "...";
   position: absolute;
-  right: 0;
-  bottom: 1.5rem;
+  right: .5rem;
+  bottom: .35rem;
 }
 
 .editors-pick .game-carousel .game-card .game-description p {
