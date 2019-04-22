@@ -1,0 +1,49 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    font-weight: bold;
+    transition: .25s all ease;
+
+    &.centered {
+        display: flex;
+        margin: 1rem auto;
+        width: 70%;
+        max-width: 15rem;
+    }
+
+    &.full {
+
+        background: {
+            color: color(primary);
+        }
+
+        color: white;
+
+        &:hover {
+            background: {
+                color: color(darker);
+            }
+        }
+    }
+
+    &.hollow {
+        border: .1em solid color(primary);
+        color: color(primary);
+
+        &:hover {
+            background: {
+                color: color(primary);
+            }
+
+            color: white;
+        }
+    }
+
+    &:hover {
+        transition: .5s all ease;
+    }
+}

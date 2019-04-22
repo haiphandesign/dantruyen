@@ -18,7 +18,7 @@
   */
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,700&subset=vietnamese");
 @import url("./bootstrap-grid.css");
-@import url("visibility.css");
+@import url("./flickity.css");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -415,6 +415,40 @@ th {
   padding: 0;
 }
 
+.hidden-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hidden-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.hidden-desktop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+.flex-vertical-align {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.color-primary {
+  color: #31628A;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -437,6 +471,7 @@ body {
   font-size: 1rem;
   color: #82B2D6;
   line-height: 1.5;
+  overflow-x: hidden;
   background-color: white;
 }
 
@@ -460,6 +495,7 @@ h4,
 h5 {
   text-transform: uppercase;
   color: #31628A;
+  margin: 0 0 1em;
 }
 
 h1 {
@@ -483,6 +519,20 @@ h5 {
   font-size: .75rem;
   color: #82B2D6;
   letter-spacing: .2em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.container-fluid {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.container {
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .button {
@@ -536,9 +586,49 @@ h5 {
   transition: .5s all ease;
 }
 
-.container-fluid {
-  padding-left: 5vw;
-  padding-right: 5vw;
+.link {
+  -webkit-transition: .5s all ease;
+  transition: .5s all ease;
+}
+
+.link.small {
+  font-size: .75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.link.arrow-right:after, .link.arrow-left:before {
+  content: '';
+  display: inline-block;
+  width: 2em;
+  height: .2em;
+  margin: .25em 1em;
+  -webkit-transition: .5s all ease;
+  transition: .5s all ease;
+  background-color: currentColor;
+}
+
+.link.arrow-right::after {
+  margin-right: 0;
+}
+
+.link.arrow-left::before {
+  margin-left: 0;
+}
+
+.link.arrow:hover.arrow-right::after, .link.arrow:hover.arrow-left::before {
+  width: 4em;
+  -webkit-transition: .5s all ease;
+  transition: .5s all ease;
+}
+
+.link:hover {
+  -webkit-transition: .5s all ease;
+  transition: .5s all ease;
+}
+
+.link:hover.color-primary {
+  color: #16253f;
 }
 
 #nav {
@@ -862,22 +952,48 @@ h5 {
   }
 }
 
-.section h2 {
+.section .section-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
+}
+
+.section .section-title br {
+  display: inline;
+}
+
+@media (min-width: 992px) {
+  .section .section-title br {
+    display: none;
+  }
+}
+
+.section .section-title h2 {
   margin: 0;
 }
 
-.section h2 br {
+.section .section-title h2 br {
   display: none;
 }
 
 @media (min-width: 992px) {
-  .section h2 br {
+  .section .section-title h2 br {
     display: inline;
   }
 }
 
-.section h2:after {
+.section .section-title h2:after {
   content: '';
   display: block;
   margin: 1rem auto 1.5rem;
@@ -889,9 +1005,20 @@ h5 {
   background-position: center;
 }
 
-.section h5 {
-  text-align: center;
+.section .section-title h5 {
   margin: 0 0 1.5em 0;
+}
+
+@media (min-width: 992px) {
+  .section .section-title.align-left {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    text-align: left;
+  }
+  .section .section-title.align-left h2::after {
+    margin: 1rem 0 1.5rem;
+  }
 }
 
 .join-now .col-left p {
@@ -929,6 +1056,8 @@ h5 {
           justify-content: center;
   padding: 2rem 0;
   color: #31628A;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .join-now .counters .counter {
@@ -976,6 +1105,314 @@ h5 {
 
 .join-now .counters .counter span:last-child {
   font-size: .75rem;
+}
+
+.how-to-play .roles {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .how-to-play .roles {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.how-to-play .roles .role {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  max-width: 30rem;
+  border-radius: 1rem;
+  padding: 3rem;
+  margin: 0 2rem;
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
+}
+
+.how-to-play .roles .role img {
+  height: 20rem;
+  margin: 0 auto;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 2s all ease;
+  transition: 2s all ease;
+}
+
+.how-to-play .roles .role h4 {
+  margin: 2rem 0;
+}
+
+.how-to-play .roles .role p {
+  margin: 0;
+}
+
+.how-to-play .roles .role .button {
+  margin: 2rem 0 -4.5rem;
+  opacity: 0;
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
+}
+
+.how-to-play .roles .role:hover {
+  -webkit-box-shadow: 0 15px 75px rgba(180, 218, 242, 0.5);
+          box-shadow: 0 15px 75px rgba(180, 218, 242, 0.5);
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
+}
+
+.how-to-play .roles .role:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
+}
+
+.how-to-play .roles .role:hover .button {
+  opacity: 1;
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
+}
+
+.how-to-play .roles-mobile ul.roles-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  height: 3rem;
+  border-radius: 1.5rem;
+  border: 0.2rem solid #31628A;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.how-to-play .roles-mobile ul.roles-tabs li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 50%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: bold;
+  -webkit-box-shadow: 0 0 0 0.1rem #31628A;
+          box-shadow: 0 0 0 0.1rem #31628A;
+  color: #31628A;
+}
+
+.how-to-play .roles-mobile ul.roles-tabs li.current {
+  color: white;
+  background-color: #31628A;
+}
+
+.how-to-play .roles-mobile .roles-tab-content {
+  display: none;
+  padding: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.how-to-play .roles-mobile .roles-tab-content img {
+  width: 80%;
+  margin: 2rem auto;
+  display: block;
+}
+
+.how-to-play .roles-mobile .roles-tab-content h4 {
+  margin: 0 auto 2rem;
+}
+
+.how-to-play .roles-mobile .roles-tab-content.current {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.editors-pick .align-right {
+  color: #31628A;
+  text-align: justify;
+}
+
+@media (min-width: 992px) {
+  .editors-pick .align-right {
+    color: #82B2D6;
+    text-align: right;
+  }
+}
+
+.editors-pick .game-carousel {
+  width: 100%;
+  margin: -2rem 0 -2rem;
+}
+
+.editors-pick .game-carousel .flickity-button {
+  display: none;
+  color: white;
+  margin: 0 1.5rem;
+  background-color: #31628A;
+}
+
+@media (min-width: 992px) {
+  .editors-pick .game-carousel .flickity-button {
+    display: block;
+  }
+}
+
+.editors-pick .game-carousel .game-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 1rem;
+  width: 20rem;
+  height: 33rem;
+  margin: 2rem 1rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0 3px 15px rgba(180, 218, 242, 0.5);
+          box-shadow: 0 3px 15px rgba(180, 218, 242, 0.5);
+}
+
+@media (min-width: 992px) {
+  .editors-pick .game-carousel .game-card {
+    margin: 2rem 2rem;
+  }
+}
+
+.editors-pick .game-carousel .game-card.is-selected {
+  -webkit-box-shadow: 0 3px 15px #b4daf2;
+          box-shadow: 0 3px 15px #b4daf2;
+}
+
+.editors-pick .game-carousel .game-card img {
+  width: 20rem;
+  height: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: none;
+  background-color: #B4DAF2;
+}
+
+.editors-pick .game-carousel .game-card .game-info {
+  padding: 1.5rem;
+}
+
+.editors-pick .game-carousel .game-card h3 {
+  width: 100%;
+  text-transform: initial;
+  text-align: left;
+  margin: 0 0 1rem;
+  white-space: nowrap;
+}
+
+.editors-pick .game-carousel .game-card .game-description {
+  position: relative;
+  font-family: sans-serif;
+  width: 90%;
+}
+
+.editors-pick .game-carousel .game-card .game-description:after {
+  content: "...";
+  position: absolute;
+  right: 0;
+  bottom: 1.5rem;
+}
+
+.editors-pick .game-carousel .game-card .game-description p {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  overflow: hidden;
+  max-height: 4.5rem;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.editors-pick .game-carousel .game-card .game-tag {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.editors-pick .game-carousel .game-card .game-tag li {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: bold;
+  color: #B4DAF2;
+  margin-right: 1em;
+}
+
+.editors-pick .game-carousel .game-card .game-tag li::before {
+  content: '#';
+  letter-spacing: .2em;
+}
+
+.faq .faq-accordion h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: inherit;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 3px 15px rgba(180, 218, 242, 0.5);
+          box-shadow: 0 3px 15px rgba(180, 218, 242, 0.5);
+}
+
+.faq .faq-accordion h3:focus {
+  outline: none;
+}
+
+.faq .faq-accordion div {
+  padding: 1.5rem;
+}
+
+.faq img {
+  display: block;
+  width: 80%;
+  margin: 0 auto 2rem;
 }
 
 #footer {

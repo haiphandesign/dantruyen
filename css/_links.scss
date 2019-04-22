@@ -1,0 +1,54 @@
+.link {
+    transition: .5s all ease;
+
+    &.small {
+        font-size: .75rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    &.arrow {
+
+        &-right:after,
+        &-left:before {
+            content: '';
+            display: inline-block;
+            width: 2em;
+            height: .2em;
+            margin: .25em 1em;
+            transition: .5s all ease;
+
+            background: {
+                color: currentColor;
+            }
+        }
+
+        &-right::after {
+            margin-right: 0;
+        }
+
+        &-left::before {
+            margin-left: 0;
+        }
+
+        &:hover {
+
+            &.arrow-right::after,
+            &.arrow-left::before {
+                width: 4em;
+                transition: .5s all ease;
+            }
+        }
+    }
+
+    &:hover {
+        &.color {
+            &-primary {
+                color: color(darker);
+            }
+        }
+
+        transition: .5s all ease;
+
+    }
+}

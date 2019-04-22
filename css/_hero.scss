@@ -1,0 +1,56 @@
+#header {
+    width: 100%;
+
+    background: {
+        image: url('../img/hero.png');
+        repeat: no-repeat;
+        size: auto 50%;
+        position: top -7.5% right 10%;
+    }
+
+    @include breakpoint(md) {
+        height: 100vh;
+
+        background: {
+            size: contain;
+            position: top right;
+        }
+    }
+
+    .intro {
+        padding-top: 50vh;
+        padding-bottom: 2.5rem;
+
+        @include breakpoint(md) {
+            padding-top: 55vh;
+        }
+
+        h1 {
+            margin: 0;
+            margin-bottom: 2rem;
+            color: color(primary);
+            text-align: center;
+            font-size: 2rem;
+
+            @include breakpoint(lg) {
+                text-align: left;
+                font-size: 2.5vw;
+            }
+        }
+
+        p {
+            max-width: 30rem;
+            margin: 0 auto 2rem;
+            text-align: center;
+
+            @include breakpoint(lg) {
+                margin: 0 0 2rem;
+                text-align: left;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

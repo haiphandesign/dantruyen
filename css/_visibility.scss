@@ -1,0 +1,15 @@
+.hidden-mobile {
+    display: none;
+
+    @media (min-width: 768px) {
+        display: flex;
+    }
+}
+
+.hidden-desktop {
+    display: flex;
+
+    @include breakpoint(sm) {
+        display: none;
+    }
+}
