@@ -1355,15 +1355,21 @@ p {
   border-radius: 1rem;
   width: 20rem;
   height: 33rem;
-  margin: 2rem 1rem;
+  margin: 4rem 1rem;
   overflow: hidden;
   -webkit-box-shadow: 0 3px 15px rgba(180, 218, 242, 0.5);
           box-shadow: 0 3px 15px rgba(180, 218, 242, 0.5);
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: .5s transform ease;
+  transition: .5s transform ease;
 }
 
 @media (min-width: 992px) {
   .editors-pick .game-carousel .game-card {
     margin: 2rem 2rem;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -1371,6 +1377,10 @@ p {
   border: 1px solid #B4DAF2;
   -webkit-box-shadow: 0 3px 15px #b4daf2;
           box-shadow: 0 3px 15px #b4daf2;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: .5s transform ease;
+  transition: .5s transform ease;
 }
 
 .editors-pick .game-carousel .game-card .game-card-toggle {

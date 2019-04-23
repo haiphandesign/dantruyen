@@ -272,17 +272,22 @@
             border-radius: 1rem;
             width: 20rem;
             height: 33rem;
-            margin: 2rem 1rem;
+            margin: 4rem 1rem;
             overflow: hidden;
             box-shadow: 0 3px 15px rgba(color(accent), .5);
+            transform: scale(.9);
+            transition: .5s transform ease;
 
             @include breakpoint(md) {
                 margin: 2rem 2rem;
+                transform: scale(1);
             }
 
             &.is-selected {
                 border: 1px solid color(accent);
                 box-shadow: 0 3px 15px rgba(color(accent), 1);
+                transform: scale(1);
+                transition: .5s transform ease;
             }
 
             .game-card-toggle {
