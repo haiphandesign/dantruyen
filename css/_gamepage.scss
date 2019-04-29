@@ -1,0 +1,437 @@
+.game-nav {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9998;
+    background-color: $color-text-regular;
+    color: white;
+    transition: 1s all ease;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 2rem;
+            margin: 0 1rem;
+        }
+    }
+}
+
+#game-header {
+    .game-cover {
+        width: 100%;
+        height: 50vh;
+
+        background: {
+            color: #ddd;
+            size: cover;
+            position: 50% 75%;
+        }
+
+        &-overlay {
+            width: 100%;
+            height: 100%;
+
+            background: {
+                image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%);
+            }
+        }
+    }
+
+    .game-info {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        margin-bottom: 4rem;
+        padding: 0;
+        border-radius: $var-border-radius $var-border-radius 0 0;
+
+        @include breakpoint(md) {
+            border-radius: $var-border-radius;
+        }
+
+        &-top {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            flex-direction: column;
+
+            @include breakpoint(md) {
+                flex-direction: row;
+            }
+
+        }
+
+        &-basic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin-top: -5.5rem;
+
+            @include breakpoint(md) {
+                flex-direction: row;
+                text-align: left;
+                margin-top: 0;
+            }
+        }
+
+        &-picture {
+            img {
+                display: block;
+                width: 7rem;
+                height: 7rem;
+                object-fit: cover;
+                border-radius: 50%;
+                box-shadow: 0 0 0 .5rem white;
+            }
+        }
+
+        &-info {
+            margin: 1rem;
+
+            h3 {
+                text-transform: capitalize;
+                margin: 0;
+            }
+
+            p {
+                color: $color-text-light;
+                margin: 0;
+
+                a {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        &-stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            @include breakpoint(md) {
+                align-items: flex-end;
+                justify-content: flex-end;
+            }
+
+            &-counters {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                >div {
+                    margin: 0 0 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    @include breakpoint(md) {
+                        align-items: flex-end;
+                        justify-content: flex-end;
+                    }
+
+                    &:first-child {
+                        margin-right: 1rem;
+                    }
+                }
+
+                span {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+
+                    &:first-child {
+                        font-size: 2rem;
+                        font-weight: 600;
+                    }
+
+                    &:last-child {
+                        text-transform: uppercase;
+                        font-size: .75rem;
+                        font-weight: 800;
+                        color: $color-text-light;
+                    }
+                }
+            }
+
+            &-rating {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &-ranking {
+                    display: inline-block;
+                    height: 1rem;
+                    padding: 0 .5rem;
+                    border-radius: .25rem;
+                    font-size: .75rem;
+                    color: white;
+
+                    background: {
+                        color: $color-element-regular;
+                    }
+                }
+
+                &-star {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 .5rem;
+
+                    span {
+                        display: block;
+                        width: 1rem;
+                        height: 1rem;
+                        margin: 0 .1rem;
+
+                        background: {
+                            image: url('../img/icons/star.svg');
+                            size: contain;
+                            position: center;
+                        }
+
+                        &.is-half {
+                            background: {
+                                image: url('../img/icons/star-is-half.svg');
+                            }
+                        }
+
+                        &.is-full {
+                            background: {
+                                image: url('../img/icons/star-is-full.svg');
+                            }
+                        }
+                    }
+                }
+
+                &-vote {
+                    display: block;
+                    font-size: .75rem;
+
+                    &:before {
+                        content: '(';
+                    }
+
+                    &:after {
+                        content: ')';
+                    }
+                }
+            }
+        }
+
+        &-bottom {
+            position: relative;
+            width: 100%;
+            height: 4rem;
+            display: block;
+
+            overflow: hidden;
+
+            border-top: 1px solid rgba($color-text-light, .25);
+
+
+            &-scroller {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 5rem;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                padding: 0 15px;
+                overflow: auto;
+            }
+
+            ul {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 4rem;
+                    border-top: 4px solid transparent;
+                    border-bottom: 4px solid transparent;
+                    margin: 0 1rem;
+                    white-space: nowrap;
+
+                    &.is-active {
+                        color: $color-text-regular;
+                        border-bottom-color: $color-primary;
+                    }
+                }
+
+                &::last-child {
+                    li {
+                        &:last-child {
+                            margin-right: 30px;
+
+                            @include breakpoint(md) {
+                                margin-right: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#game-main {
+    .game-content {
+        img {
+            @include ui-border-radius;
+            @include ui-shadow;
+        }
+    }
+
+    .game-section {
+        background-color: white;
+
+        @include ui-border;
+        @include ui-border-radius;
+        @include ui-shadow;
+        @include ui-bottom-spacing;
+
+        @include breakpoint(md) {
+            background-color: transparent;
+
+            @include ui-no-border;
+            @include ui-no-border-radius;
+            @include ui-no-shadow;
+        }
+
+        .content {
+            padding: 0 1rem;
+
+            img {
+                @include ui-border-radius;
+                @include ui-shadow;
+            }
+        }
+    }
+
+    .game-main-left {
+        @include breakpoint(md) {
+            padding-left: 0;
+        }
+    }
+
+    .game-main-right {
+        @include breakpoint(md) {
+            padding-right: 0;
+        }
+    }
+
+    .game-widget {
+
+        p {
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-general-info {
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    p {
+                        width: 50%;
+                        margin: .5rem 0;
+
+                        &:first-child {
+                            text-transform: uppercase;
+                            font-size: .75rem;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-player-list {
+
+            h5 {
+                margin: .5rem 0;
+                letter-spacing: 0;
+            }
+
+            ul {
+                list-style: none;
+                margin: 1rem 0 2rem;
+                padding: 0;
+
+                &:last-child {
+                    margin-bottom: .5rem;
+                }
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 100%;
+                    margin: 0 0 1rem 0;
+
+                    img {
+                        border-radius: 50%;
+                        width: 3rem;
+                        height: 3rem;
+                        margin: 0 1rem 0 0;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                }
+            }
+
+            .info {
+                p {
+                    margin: 0;
+
+                    &:last-child {
+                        font-size: .75rem;
+                        color: $color-text-light;
+                    }
+                }
+            }
+        }
+    }
+}

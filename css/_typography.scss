@@ -1,0 +1,129 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $color-text-dark;
+    margin: 0 0 1em;
+}
+
+h1 {
+    font-size: $h1-size;
+    font-weight: $h1-weight;
+}
+
+h2 {
+    font-size: $h2-size;
+    font-weight: $h2-weight;
+}
+
+h3 {
+    font-size: $h3-size;
+    font-weight: $h3-weight;
+}
+
+h4 {
+    font-size: $h4-size;
+    font-weight: $h4-weight;
+    letter-spacing: .2em;
+}
+
+h5 {
+    text-transform: uppercase;
+    font-size: $h5-size;
+    font-weight: $h5-weight;
+    letter-spacing: .2em;
+}
+
+h6 {
+    text-transform: uppercase;
+    font-size: $h6-size;
+    font-weight: $h6-weight;
+    letter-spacing: .2em;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+.container-fluid {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    @include breakpoint(md) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+
+        br {
+            display: inline;
+
+            @include breakpoint(md) {
+                display: none;
+            }
+        }
+
+        h2 {
+            margin: 0;
+
+            br {
+                display: none;
+
+                @include breakpoint(md) {
+                    display: inline;
+                }
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                margin: 1rem auto 1.5rem;
+                width: 2rem;
+                height: 3rem;
+
+                background: {
+                    image: url('../img/icons/divider.svg');
+                    size: contain;
+                    repeat: no-repeat;
+                    position: center;
+                }
+            }
+        }
+
+        h5 {
+            margin: 0 0 1.5em 0;
+        }
+
+        &.align-left {
+
+            @include breakpoint(md) {
+                align-items: flex-start;
+                text-align: left;
+
+                h2 {
+                    &::after {
+                        margin: 1rem 0 3.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

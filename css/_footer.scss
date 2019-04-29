@@ -1,7 +1,7 @@
 #footer {
     background: {
-        image: url(../img/footer-2.png),
-            linear-gradient(color(accent), color(text));
+        image: url(../img/footer/footer-2.png),
+            linear-gradient(red, red);
         size: 200% auto;
         position: top right;
         repeat: no-repeat;
@@ -80,12 +80,12 @@
                     height: 3.5rem;
                     border: none;
                     border-radius: 1.75rem;
-                    color: color(accent);
+                    color: red;
                     margin: 0;
                     padding: 0 1.5rem;
 
                     &[type=text] {
-                        box-shadow: 0 5px 25px rgba(color(primary), .25);
+                        box-shadow: 0 5px 25px rgba(red, .25);
                         transition: .5s all ease;
                         width: 100%;
 
@@ -94,7 +94,7 @@
                         }
 
                         &:focus {
-                            box-shadow: 0 5px 25px rgba(color(primary), .75);
+                            box-shadow: 0 5px 25px rgba(red, .75);
                             transition: .5s all ease;
                         }
                     }
@@ -105,8 +105,8 @@
                         padding: 0;
 
                         background: {
-                            image: url(../img/arrow.svg);
-                            color: color(primary);
+                            image: url(../img/icons/arrow.svg);
+                            color: red;
                             size: 20% auto;
                             position: center;
                             repeat: no-repeat;
@@ -121,7 +121,7 @@
     }
 
     .sub-footer {
-        color: color(primary);
+        color: red;
 
         p {
             margin: 0;

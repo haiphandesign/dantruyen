@@ -1,0 +1,104 @@
+@mixin ui-shadow {
+    box-shadow: 0 1px 4px rgba($color-text-light, .125);
+}
+
+@mixin ui-no-shadow {
+    box-shadow: none;
+}
+
+@mixin ui-border-radius {
+    border-radius: $var-border-radius;
+}
+
+@mixin ui-no-border-radius {
+    border-radius: none;
+}
+
+@mixin ui-border {
+    border: 1px solid rgba($color-text-light, .25);
+}
+
+@mixin ui-no-border {
+    border: none;
+}
+
+@mixin ui-bottom-spacing {
+    margin-bottom: 1rem;
+
+    @include breakpoint(md) {
+        margin-bottom: 2rem;
+    }
+}
+
+.ui-widget-shadow {
+    @include ui-shadow;
+}
+
+.ui-widget-border {
+    border: 1px solid rgba($color-text-light, .25);
+}
+
+.ui-widget-border-radius {
+    border-radius: .25rem;
+}
+
+.ui-widget {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+
+    @include ui-border;
+    @include ui-border-radius;
+    @include ui-shadow;
+    @include ui-bottom-spacing;
+
+
+    .title {
+        padding: .75rem 1rem;
+        border-bottom: 1px solid rgba($color-text-light, .25);
+
+        h3 {
+            margin: 0;
+        }
+
+        p {
+            color: $color-text-light;
+            margin: 0;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: .75rem;
+            right: .25px;
+            display: block;
+            width: 2.25rem;
+            height: 2.25rem;
+            transition: .25s all ease-in-out;
+
+            background: {
+                image: url('../img/icons/menu.svg');
+                size: 1rem;
+                position: center;
+                repeat: no-repeat;
+            }
+
+            @include breakpoint(md) {
+                opacity: 0;
+            }
+        }
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    &:hover {
+        .title {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}

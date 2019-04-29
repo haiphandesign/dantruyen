@@ -1,9 +1,72 @@
+// - - - - - - - - - - - - - - - - - -
+
+// Homepage
+
+// - - - - - - - - - - - - - - - - - -
+
+// Section: Hero
+
+#hero {
+    width: 100%;
+
+    background: {
+        image: url('../img/home/hero.png');
+        repeat: no-repeat;
+        size: auto 50%;
+        position: top -7.5% right 10%;
+    }
+
+    @include breakpoint(md) {
+        height: 100vh;
+
+        background: {
+            size: contain;
+            position: top right;
+        }
+    }
+
+    .intro {
+        padding-top: 50vh;
+        padding-bottom: 2.5rem;
+
+        @include breakpoint(md) {
+            padding-top: 55vh;
+        }
+
+        h1 {
+            margin: 0;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+
+            @include breakpoint(lg) {
+                text-align: left;
+                font-size: 2.5vw;
+            }
+        }
+
+        p {
+            max-width: 30rem;
+            margin: 0 auto 2rem;
+            text-align: center;
+
+            @include breakpoint(lg) {
+                margin: 0 0 2rem;
+                text-align: left;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
 // Section: Join Now
 
 .join-now {
     .col-left {
         p {
-            color: color(primary);
             text-align: justify;
         }
     }
@@ -19,7 +82,6 @@
         li {
             &::before {
                 content: '✓';
-                color: color(yellow);
                 line-height: 2;
                 margin-right: 1em;
             }
@@ -32,7 +94,6 @@
         justify-content: center;
         flex-direction: column;
         padding: 0 0 1rem;
-        color: color(primary);
 
         @include breakpoint(md) {
             align-items: flex-start;
@@ -140,7 +201,7 @@
             }
 
             &:hover {
-                box-shadow: 0 15px 75px rgba(color(accent), .5);
+                box-shadow: 0 15px 75px rgba(red, .5);
                 transition: 1s all ease;
 
                 img {
@@ -169,8 +230,8 @@
             width: 80%;
             height: 3rem;
             border-radius: 1.5rem;
-            border: .2rem solid color(primary);
-            background-color: color(primary);
+            border: .2rem solid red;
+            background-color: red;
             margin: 0 auto;
             padding: 0;
             overflow: hidden;
@@ -184,8 +245,8 @@
                 text-transform: uppercase;
                 font-size: .75rem;
                 font-weight: bold;
-                box-shadow: 0 0 0 .1rem color(primary);
-                color: color(primary);
+                box-shadow: 0 0 0 .1rem red;
+                color: red;
                 background-color: white;
 
                 &:first-child {
@@ -202,7 +263,7 @@
                     color: white;
 
                     background: {
-                        color: color(primary);
+                        color: red;
                     }
                 }
             }
@@ -236,11 +297,11 @@
 
 .editors-pick {
     .align-right {
-        color: color(primary);
+        color: red;
         text-align: justify;
 
         @include breakpoint(md) {
-            color: color(text);
+            color: red;
             text-align: right;
         }
     }
@@ -256,7 +317,7 @@
             margin: 0 1.5rem;
 
             background: {
-                color: color(primary);
+                color: red;
             }
 
             @include breakpoint(md) {
@@ -274,7 +335,7 @@
             height: 33rem;
             margin: 4rem 1rem;
             overflow: hidden;
-            box-shadow: 0 3px 15px rgba(color(accent), .5);
+            box-shadow: 0 3px 15px rgba(red, .5);
             transform: scale(.9);
             transition: .5s transform ease;
 
@@ -284,8 +345,8 @@
             }
 
             &.is-selected {
-                border: 1px solid color(accent);
-                box-shadow: 0 3px 15px rgba(color(accent), 1);
+                border: 1px solid red;
+                box-shadow: 0 3px 15px rgba(red, 1);
                 transform: scale(1);
                 transition: .5s transform ease;
             }
@@ -313,7 +374,7 @@
                 border: none;
 
                 background: {
-                    color: color(accent);
+                    color: red;
                 }
             }
 
@@ -362,7 +423,7 @@
                     text-transform: uppercase;
                     font-size: .75rem;
                     font-weight: bold;
-                    color: color(accent);
+                    color: red;
                     margin-right: 1em;
 
                     &::before {
@@ -384,7 +445,7 @@
             width: 100%;
             padding: 1.5rem;
             border-radius: 1rem;
-            box-shadow: 0 3px 15px rgba(color(accent), .5);
+            box-shadow: 0 3px 15px rgba(red, .5);
 
             &:focus {
                 outline: none;
