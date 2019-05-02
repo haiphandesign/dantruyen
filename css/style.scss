@@ -1,28 +1,28 @@
 // Extra
 
-@import "_normalize";
+@import "sass/_normalize";
 @import url('https://fonts.googleapis.com/css?family=Muli:400,600,800&subset=vietnamese');
 @import url('./bootstrap-grid.css');
-@import "_flickity";
+@import "sass/_flickity";
 
 
 // Mixin
 
-@import "_breakpoint";
+@import "sass/_breakpoint";
 
 // Stylesheet
 
-@import "_settings";
+@import "sass/_settings";
 
-@import "_basic";
+@import "sass/_basic";
 
-@import "_typography";
-@import "_buttons";
-@import "_links";
-@import "_ui";
+@import "sass/_typography";
+@import "sass/_buttons";
+@import "sass/_links";
+@import "sass/_ui";
 
-@import "_header";
-@import "_footer";
+@import "sass/_header";
+@import "sass/_footer";
 
-@import "_homepage";
-@import "_gamepage";
+@import "sass/_homepage";
+@import "sass/_gamepage";

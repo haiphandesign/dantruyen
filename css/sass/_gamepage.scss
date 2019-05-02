@@ -1,16 +1,15 @@
 .game-nav {
     position: fixed;
+    top: -2rem;
     z-index: 9998;
     width: 100%;
     height: 4rem;
     display: block;
     background-color: $color-text-regular;
     color: white;
-
     overflow: hidden;
-
     border-top: 1px solid rgba($color-text-light, .25);
-
+    transition: .5s all ease-in-out;
 
     &-scroller {
         position: absolute;
@@ -20,8 +19,13 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        padding: 0 15px;
+        padding: 0;
         overflow: auto;
+        overflow-y: hidden;
+
+        @include breakpoint(md) {
+            padding: 0 5vw;
+        }
     }
 
     ul {
@@ -43,8 +47,8 @@
             white-space: nowrap;
 
             &.is-active {
-                color: $color-text-regular;
-                border-bottom-color: $color-primary;
+                color: white;
+                border-bottom-color: $color-text-light;
             }
         }
 
@@ -87,11 +91,12 @@
         display: flex;
         flex-direction: column;
         background-color: white;
-        margin-bottom: 4rem;
+        margin-bottom: 1rem;
         padding: 0;
         border-radius: $var-border-radius $var-border-radius 0 0;
 
         @include breakpoint(md) {
+            margin-bottom: 2rem;
             border-radius: $var-border-radius;
         }
 
@@ -115,7 +120,7 @@
             justify-content: center;
             flex-direction: column;
             text-align: center;
-            margin-top: -5.5rem;
+            margin-top: -7rem;
 
             @include breakpoint(md) {
                 flex-direction: row;
@@ -127,11 +132,16 @@
         &-picture {
             img {
                 display: block;
-                width: 7rem;
-                height: 7rem;
+                width: 10rem;
+                height: 10rem;
                 object-fit: cover;
                 border-radius: 50%;
-                box-shadow: 0 0 0 .5rem white;
+                box-shadow: 0 0 0 .25rem white;
+
+                @include breakpoint(md) {
+                    width: 7rem;
+                    height: 7rem;
+                }
             }
         }
 
@@ -289,9 +299,13 @@
                 display: flex;
                 align-items: flex-start;
                 justify-content: space-between;
-                padding: 0 15px;
+                padding: 0;
                 overflow: auto;
                 overflow-y: hidden;
+
+                @include breakpoint(md) {
+                    padding: 0 1rem;
+                }
             }
 
             ul {
@@ -368,6 +382,30 @@
         }
     }
 
+    .game-editor-links {
+        @include ui-bottom-spacing;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline-block;
+                margin-right: .5rem;
+                padding: .5rem 1rem;
+                background-color: white;
+                @include ui-border;
+                @include ui-border-radius;
+                @include ui-shadow;
+
+                svg {
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+
     .game-main-left {
         @include breakpoint(md) {
             padding-left: 0;
@@ -395,7 +433,7 @@
         &-general-info {
             ul {
                 list-style: none;
-                margin: 0;
+                margin: .5rem 0;
                 padding: 0;
 
                 li {

@@ -15,11 +15,18 @@
     justify-content: space-between;
     position: fixed;
     z-index: 9999;
-    color: white;
+    color: $color-text-regular;
     transition: .5s all ease;
 
+    @include ui-border;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    @include ui-shadow;
+
     background: {
-        color: $color-text-regular;
+        color: white;
     }
 
     @include breakpoint(md) {
@@ -27,18 +34,6 @@
         height: auto;
         padding: 1rem 5vw;
         margin: 0 auto;
-        color: $color-text-regular;
-
-        @include ui-border;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-
-        @include ui-shadow;
-
-        background: {
-            color: white;
-        }
 
         &.fixed {
             background: {
@@ -58,7 +53,7 @@
 
     .logo {
         background: {
-            image: url('../img/logo/logo-only-white.svg');
+            image: url('../img/logo/logo-only.svg');
             size: contain;
             repeat: no-repeat;
             position: center;
@@ -71,10 +66,6 @@
 
 
         @include breakpoint(md) {
-            background: {
-                image: url('../img/logo/logo-only.svg');
-            }
-
             margin-right: 3rem;
             width: 20rem;
         }
@@ -143,11 +134,11 @@
             }
 
             .mobile-menu-toggle-inner {
-                background-color: white;
+                background-color: $color-text-regular;
 
                 &::before,
                 &::after {
-                    background-color: white;
+                    background-color: $color-text-regular;
                 }
 
                 transform: rotate(225deg);
@@ -181,7 +172,7 @@
             margin-top: -2px;
             width: 2rem;
             height: .25rem;
-            background-color: white;
+            background-color: $color-text-regular;
             border-radius: 4px;
             position: absolute;
             transition-property: transform;
@@ -192,7 +183,7 @@
             &::after {
                 width: 2rem;
                 height: .25rem;
-                background-color: white;
+                background-color: $color-text-regular;
                 border-radius: 4px;
                 position: absolute;
                 transition-property: transform;

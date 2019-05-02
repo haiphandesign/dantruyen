@@ -14,12 +14,12 @@ $(window).scroll(function () {
 
 $(window).scroll(function () {
     if ($("body").hasClass("page-gamepage")) {
-        if ($(this).scrollTop() > 700) {
+        if ($(this).scrollTop() > 600) {
             var navheight = $('#nav').height();
             $('.game-nav').css('top', navheight);
             // $("#nav .logo img").attr("src", "./img/logo-only.svg");
         } else {
-            $('.game-nav').css('top', 0);
+            $('.game-nav').css('top', '-2rem');
             // $("#nav .logo img").attr("src", "./img/logo.svg");
         }
     }
