@@ -14,7 +14,7 @@ $(window).scroll(function () {
 
 $(window).scroll(function () {
     if ($("body").hasClass("page-gamepage")) {
-        if ($(this).scrollTop() > 600) {
+        if ($(this).scrollTop() > 650) {
             var navheight = $('#nav').height();
             $('.game-nav').css('top', navheight);
             // $("#nav .logo img").attr("src", "./img/logo-only.svg");
@@ -109,10 +109,30 @@ jQuery(window).scroll(function () {
 
 // game info margin-top
 
-var gameinfoheight = $('.game-info').height();
-$('.game-info').css('margin-top', - gameinfoheight / 2);
+var gameinfoheight = $('#game-header .game-info').height();
+$('#game-header .game-info').css('margin-top', - gameinfoheight / 2);
 
 // header-spacer
 
 var headerspacer = $('#nav').outerHeight(true);
-$('.header-spacer').css('height', headerspacer); 
+$('.header-spacer').css('height', headerspacer);
+
+// gamepage: accordion
+
+$(function () {
+    $(".game-widget-challenges .accordion-list").accordion({
+        collapsible: true,
+        active: false,
+        heightStyle: "content"
+    });
+});
+
+$(function () {
+    $(".game-widget-cards .accordion-list").accordion({
+        collapsible: true,
+        active: false,
+        heightStyle: "content"
+    });
+});
+
+// gamepage: move challenges + cards on window resize

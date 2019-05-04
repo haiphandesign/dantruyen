@@ -10,6 +10,7 @@
     overflow: hidden;
     border-top: 1px solid rgba($color-text-light, .25);
     transition: .5s all ease-in-out;
+    @include ui-shadow;
 
     &-scroller {
         position: absolute;
@@ -357,20 +358,20 @@
     }
 
     .game-section {
-        background-color: white;
+        // background-color: white;
 
-        @include ui-border;
-        @include ui-border-radius;
-        @include ui-shadow;
-        @include ui-bottom-spacing;
+        // @include ui-border;
+        // @include ui-border-radius;
+        // @include ui-shadow;
+        // @include ui-bottom-spacing;
 
-        @include breakpoint(md) {
-            background-color: transparent;
+        // @include breakpoint(md) {
+        //     background-color: transparent;
 
-            @include ui-no-border;
-            @include ui-no-border-radius;
-            @include ui-no-shadow;
-        }
+        //     @include ui-no-border;
+        //     @include ui-no-border-radius;
+        //     @include ui-no-shadow;
+        // }
 
         .content {
             padding: 0 1rem;
@@ -382,8 +383,265 @@
         }
     }
 
+    .game-reply {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        background-color: white;
+
+        @include ui-border;
+        @include ui-border-radius;
+        @include ui-shadow;
+        @include ui-bottom-spacing;
+
+        @include breakpoint(md) {
+            flex-direction: row;
+            background-color: transparent;
+
+            @include ui-no-border;
+            @include ui-no-border-radius;
+            @include ui-no-shadow;
+        }
+
+        &-user {
+            width: 100%;
+            display: flex;
+            flex-shrink: 0;
+            padding: .75rem 1rem;
+            border-bottom: 1px solid rgba($color-text-light, .25);
+
+            @include breakpoint(md) {
+                width: auto;
+                padding: 0;
+                margin-right: 1rem;
+                border-bottom: none;
+            }
+
+            img {
+                display: block;
+                width: 5rem;
+                height: 5rem;
+                object-fit: cover;
+                border-radius: 50%;
+                flex-shrink: 0;
+                @include ui-shadow;
+            }
+
+            &-info {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-left: 1rem;
+
+                @include breakpoint(md) {
+                    display: none;
+                }
+
+                p {
+                    margin: 0;
+
+                    &:first-child {
+                        font-weight: bold;
+                    }
+
+                    &:last-child {
+                        font-size: .75rem;
+                        font-style: italic;
+                        color: $color-text-light;
+                    }
+                }
+            }
+        }
+
+        &-content {
+            background-color: transparent;
+
+            @include ui-no-border;
+            @include ui-no-border-radius;
+            @include ui-no-shadow;
+
+            padding: 0 1rem;
+
+            @include breakpoint(md) {
+                background-color: white;
+
+                @include ui-border;
+                @include ui-border-radius;
+                @include ui-shadow;
+                @include ui-bottom-spacing;
+
+            }
+
+            &-user {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                padding: 1rem;
+                border-bottom: 1px solid rgba($color-text-light, .25);
+                display: none;
+
+                @include breakpoint(md) {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                div {
+                    &:first-child {
+                        p {
+                            &:first-child {
+                                font-weight: bold;
+                            }
+
+                            &:last-child {
+                                font-size: .85rem;
+                                color: $color-text-light;
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        p {
+                            font-size: .85rem;
+                            color: $color-text-light;
+                        }
+                    }
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+
+        &-reply {
+            margin-left: -1rem;
+            margin-right: -1rem;
+
+            font: {
+                size: .85rem;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                border-top: 1px solid rgba($color-text-light, .25);
+
+                li {
+                    padding: 1rem;
+                    border-bottom: 1px solid rgba($color-text-light, .25);
+                }
+
+                p {
+                    margin: 0;
+                }
+
+                .reply-author {
+                    display: inline-block;
+                    color: $color-text-light;
+
+                    a {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    .game-stack {
+        float: right;
+        top: -2rem;
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        background-color: white;
+        margin-left: 1rem;
+        margin-bottom: 0;
+        padding: 1rem;
+
+        h5 {
+            margin-top: 1.5rem;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        li {
+            margin-bottom: .5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .game-stack-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            &-icon {
+                width: 3rem;
+                height: 3rem;
+                margin-right: .5rem;
+                flex-shrink: 0;
+
+                @include ui-border;
+                @include ui-border-radius;
+                @include ui-shadow;
+
+                background: {
+                    image: url('../../img/icons/obstacle.svg');
+                    repeat: no-repeat;
+                    size: 1rem auto;
+                    position: center;
+                }
+            }
+
+            .game-stack-item-info {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                p {
+                    margin: 0;
+                }
+
+                span {
+                    font-size: .75rem;
+                    color: $color-text-light;
+                }
+            }
+        }
+
+        .game-stack-challenges {
+            >.game-stack-cards {
+                margin-left: 1rem;
+
+                .game-stack-item-icon {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+    }
+
     .game-editor-links {
         @include ui-bottom-spacing;
+        order: -1;
+
+        @include breakpoint(md) {
+            order: 99;
+        }
 
         ul {
             list-style: none;
@@ -407,6 +665,9 @@
     }
 
     .game-main-left {
+        display: flex;
+        flex-direction: column;
+
         @include breakpoint(md) {
             padding-left: 0;
         }
@@ -458,7 +719,6 @@
         &-player-list {
 
             h5 {
-                margin: .5rem 0;
                 letter-spacing: 0;
             }
 
@@ -468,7 +728,7 @@
                 padding: 0;
 
                 &:last-child {
-                    margin-bottom: .5rem;
+                    margin-bottom: 1rem;
                 }
 
                 li {
@@ -502,6 +762,119 @@
                     }
                 }
             }
+        }
+
+        .accordion-list {
+            >p {
+                margin: 0;
+                padding: 1rem 1rem 1rem 3rem;
+                border-left: 4px solid transparent;
+                border-bottom: 1px solid rgba($color-text-light, .25);
+
+                background: {
+                    image: url('../../img/icons/obstacle.svg');
+                    repeat: no-repeat;
+                    size: 1rem;
+                    position: left 1rem center;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                    border-left-color: $color-primary;
+                }
+
+                &.jquery-ui-state-active {
+                    border-left-color: $color-primary;
+                }
+
+                &.card-icon {
+                    background-image: url('../../img/icons/card.svg');
+                }
+            }
+
+            .accordion-content {
+                padding: 1rem;
+                background-color: rgba($color-text-light, .125);
+                border-bottom: 1px solid rgba($color-text-light, .25);
+            }
+
+            .disabled {
+                opacity: .25;
+                user-select: none;
+            }
+
+            .process {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: .75rem;
+                font-weight: 600;
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                background-color: $color-primary;
+                color: white;
+                text-align: center;
+                @include ui-border-radius;
+            }
+        }
+
+        &-challenges {
+
+            .content {
+                padding: 0;
+            }
+
+            .challenge-card {
+                background-color: white;
+                @include ui-border;
+                @include ui-border-radius;
+                @include ui-shadow;
+                padding: 0;
+
+                img {
+                    width: 100%;
+                    height: 10rem;
+                    object-fit: cover;
+                    margin: 0;
+                }
+
+                .challenge-info {
+                    margin: 1rem;
+
+                    h4 {
+                        line-height: 1;
+                    }
+                }
+            }
+
+            .challenge-result-good {
+                font-weight: 600;
+            }
+
+            .challenge-process {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: .75rem;
+                font-weight: 600;
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                background-color: $color-primary;
+                color: white;
+                text-align: center;
+                @include ui-border-radius;
+            }
+        }
+
+        &-cards {
+
+            .content {
+                padding: 0;
+            }
+
         }
     }
 }

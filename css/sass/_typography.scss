@@ -5,7 +5,7 @@ h4,
 h5,
 h6 {
     color: $color-text-dark;
-    margin: 0 0 1em;
+    margin: 1rem 0;
 }
 
 h1 {
@@ -26,7 +26,6 @@ h3 {
 h4 {
     font-size: $h4-size;
     font-weight: $h4-weight;
-    letter-spacing: .2em;
 }
 
 h5 {

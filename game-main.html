@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dẫn Truyện</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body class="page-gamepage logged-out">
+
+    <div id="nav">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li><a href="#">Danh sách game</a></li>
+            <li><a href="#">Bảng xếp hạng</a></li>
+            <li><a href="#">Diễn đàn</a></li>
+            <li><a href="#">Cửa hàng</a></li>
+        </ul>
+        <div class="logged-in"></div>
+        <div class="logged-out">
+            <a class="button transparent" href="#">Đăng nhập</a>
+            <a class="button full" href="#">Đăng ký</a>
+        </div>
+        <button class="mobile-menu-toggle" type="button">
+            <span class="mobile-menu-toggle-box">
+                <span class="mobile-menu-toggle-inner"></span>
+            </span>
+        </button>
+    </div>
+
+    <div class="game-nav">
+        <div class="game-nav-scroller">
+            <ul>
+                <li class="is-active"><a href="#">Phòng Chờ</a></li>
+                <li><a href="#">Game chính</a></li>
+                <li><a href="#">Nhân vật</a></li>
+                <li><a href="#">Thẻ bài</a></li>
+                <li><a href="#">Bình luận</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Thống kê</a></li>
+                <li><a href="#">Cài đặt</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="header-spacer"></div>
+
+    <section id="game-header">
+        <div class="game-cover" style="background-image: url('./img/games/cover.jpg')">
+            <div class="game-cover-overlay"></div>
+        </div>
+        <div class="container game-status">
+            <a class="button full" href="#">Đăng ký</a>
+        </div>
+        <div class="container ui-widget-shadow ui-widget-border ui-widget-border-radius game-info">
+            <div class="game-info-top">
+                <div class="game-info-basic">
+                    <div class="game-info-picture">
+                        <img class="ui-widget-shadow" src="./img/games/mini-01.jpg" alt="Cuộc chiến ở đảo Lộc Tiên">
+                    </div>
+                    <div class="game-info-info">
+                        <h3>Cuộc chiến ở đảo Lộc Tiên</h3>
+                        <p>Dẫn truyện bởi <a href="user-profile.html">Hùng Vũ</a></p>
+                    </div>
+                </div>
+                <div class="game-info-stats">
+                    <div class="game-info-stats-counters">
+                        <div class="game-info-stats-counters-stages">
+                            <span>18</span>
+                            <span>Màn chơi</span>
+                        </div>
+                        <div class="game-info-stats-counters-players">
+                            <span>34</span>
+                            <span>Người chơi</span>
+                        </div>
+                    </div>
+                    <div class="game-info-stats-rating">
+                        <span class="game-info-stats-rating-ranking">#5</span>
+                        <div class="game-info-stats-rating-star">
+                            <span class="is-full"></span>
+                            <span class="is-full"></span>
+                            <span class="is-full"></span>
+                            <span class="is-half"></span>
+                            <span></span>
+                        </div>
+                        <span class="game-info-stats-rating-vote">28</span>
+                    </div>
+                </div>
+            </div>
+            <div class="game-info-bottom">
+                <div class="game-info-bottom-scroller">
+                    <ul>
+                        <li><a href="#">Phòng Chờ</a></li>
+                        <li class="is-active"><a href="#">Game chính</a></li>
+                        <li><a href="#">Nhân vật</a></li>
+                        <li><a href="#">Thẻ bài</a></li>
+                        <li><a href="#">Bình luận</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Thống kê</a></li>
+                        <li><a href="#">Cài đặt</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="game-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 game-main-left">
+                    <div class="ui-widget game-section">
+                        <div class="title featured">
+                            <h6>Chương 1, Hồi 1</h6>
+                            <h3>Lorem Ipsum</h3>
+                            <img src="./img/games/cover.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="ui-widget game-stack">
+                                <h5>Thử thách</h5>
+                                <ul class="game-stack-challenges">
+                                    <li class="game-stack-item">
+                                        <div class="game-stack-item-icon"></div>
+                                        <div class="game-stack-item-info">
+                                            <p>Thử thách #1</p>
+                                        </div>
+                                    </li>
+                                    <li class="game-stack-item">
+                                        <div class="game-stack-item-icon"></div>
+                                        <div class="game-stack-item-info">
+                                            <p>Thử thách #2</p>
+                                        </div>
+                                    </li>
+                                    <li class="game-stack-item">
+                                        <div class="game-stack-item-icon"></div>
+                                        <div class="game-stack-item-info">
+                                            <p>Thử thách #3</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <h5>Thẻ bài</h5>
+                                <ul class="game-stack-cards">
+                                    <li class="game-stack-item">
+                                        <div class="game-stack-item-icon"></div>
+                                        <div class="game-stack-item-info">
+                                            <p>Thẻ bài #1</p>
+                                            <span>x5</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p> Sed fringilla at diam vitae congue. Proin at blandit augue, ac convallis ligula.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea
+                                dictumst. Sed eget nisi arcu. Maecenas faucibus lacus nunc, vel facilisis odio fermentum
+                                ut. Maecenas cursus arcu eget est lobortis, in vestibulum quam dapibus. Pellentesque
+                                ullamcorper, tortor non pharetra fermentum, urna libero sagittis libero, at faucibus
+                                diam sapien nec arcu. Integer placerat scelerisque mi nec ultrices. Etiam vulputate,
+                                tellus tempor commodo ultricies, erat eros venenatis orci, sollicitudin fringilla nulla
+                                est vel urna. Sed eleifend aliquam diam at fringilla. Vivamus dignissim mauris sed dolor
+                                accumsan, vitae accumsan erat lobortis. Aenean tristique tempus ex eu sodales. Mauris
+                                vel tincidunt velit. Duis ac massa quis arcu aliquet placerat. Vivamus eu vestibulum
+                                diam.</p>
+
+                            <p> Sed id orci iaculis, pharetra nibh a, malesuada mauris. Phasellus lobortis, odio dictum
+                                sollicitudin facilisis, purus risus porta purus, eu posuere ligula velit id odio. Nulla
+                                egestas dapibus ex et efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et
+                                ultrices posuere cubilia Curae; Mauris ac tempus arcu. Ut at bibendum erat, quis
+                                imperdiet arcu. Nullam lobortis congue turpis eget fringilla. Nunc eu risus varius,
+                                sodales risus nec, hendrerit nisl. In hac habitasse platea dictumst. Donec elementum vel
+                                purus ac consectetur. Phasellus consectetur facilisis nisl, ac pretium nisi sodales
+                                vitae. Donec et auctor felis. Cras sodales malesuada magna, non viverra tortor commodo
+                                condimentum. Vivamus euismod congue arcu vehicula venenatis. Curabitur et tincidunt
+                                metus, et imperdiet ante.</p>
+
+                            <p> Cras facilisis euismod tristique. Vivamus tincidunt urna at mattis finibus. Ut sodales
+                                lacus eu sem condimentum, vel aliquet nulla finibus. Nunc egestas sagittis sapien, sit
+                                amet euismod tellus mollis vitae. Pellentesque vitae magna porta, congue erat id,
+                                tristique eros. Morbi quis venenatis nunc. Nunc ante felis, mollis vel fringilla quis,
+                                lacinia ut lectus. Aenean sagittis fringilla mollis. Pellentesque interdum sagittis nibh
+                                quis venenatis. Sed at augue semper, tempus elit at, hendrerit quam. Nunc sed tristique
+                                purus, at ultrices erat. In lobortis ultricies dignissim. Donec feugiat pretium mauris
+                                suscipit tristique. Donec libero dolor, vestibulum nec eros in, vulputate pharetra enim.
+                                Ut augue ligula, imperdiet lacinia lobortis viverra, pellentesque id velit.</p>
+
+                            <p> Cras in ante ornare, semper ligula eget, vestibulum purus. Vestibulum laoreet sem enim,
+                                quis tristique dui ullamcorper vitae. Pellentesque cursus et dolor at sagittis. Maecenas
+                                varius quam et nisi suscipit laoreet. Aenean fringilla, nisl et malesuada dignissim,
+                                neque turpis porta massa, ut efficitur lectus massa scelerisque tellus. Class aptent
+                                taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin
+                                ligula lorem, iaculis id vulputate eu, vestibulum sed ligula. Quisque rhoncus
+                                consectetur risus, sed ornare massa laoreet sit amet. Maecenas id finibus felis. Lorem
+                                ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="ui-widget game-reply">
+                        <div class="game-reply-user">
+                            <img src="./img/players/user-01.jpg" alt="">
+                            <div class="game-reply-user-info">
+                                <p><strong>Công chúa Tóc Mây (Cường Nguyễn)</strong></p>
+                                <p>22/04/2019</p>
+                            </div>
+                        </div>
+                        <div class="game-reply-content">
+                            <div class="game-reply-content-user">
+                                <div>
+                                    <p>Công chúa Tóc mây</p>
+                                    <p>Cường Nguyễn</p>
+                                </div>
+                                <div>
+                                    <p>22/04/2019</p>
+                                </div>
+                            </div>
+                            <div class="ui-widget game-stack">
+                                <ul class="game-stack-challenges">
+                                    <li class="game-stack-item">
+                                        <div class="game-stack-item-icon"></div>
+                                        <div class="game-stack-item-info">
+                                            <p>Thử thách #1</p>
+                                        </div>
+                                    </li>
+                                    <ul class="game-stack-cards">
+                                        <li class="game-stack-item">
+                                            <div class="game-stack-item-icon"></div>
+                                            <div class="game-stack-item-info">
+                                                <p>Thẻ bài #1</p>
+                                            </div>
+                                        </li>
+                                        <li class="game-stack-item">
+                                            <div class="game-stack-item-icon"></div>
+                                            <div class="game-stack-item-info">
+                                                <p>Thẻ bài #1</p>
+                                            </div>
+                                        </li>
+                                        <li class="game-stack-item">
+                                            <div class="game-stack-item-icon"></div>
+                                            <div class="game-stack-item-info">
+                                                <p>Thẻ bài #1</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <p>Aliquam lectus eros, accumsan vitae volutpat et, imperdiet molestie lorem. Aliquam
+                                velit
+                                augue, suscipit eget volutpat eget, hendrerit nec ante. Nam id mauris libero. Donec
+                                efficitur tempus magna vitae vulputate. Sed maximus consequat purus, consectetur
+                                posuere
+                                dui suscipit et. Nulla et nibh euismod, tempor ipsum et, mattis nibh. Cras commodo
+                                ex
+                                sit amet nisl mattis hendrerit. Quisque nisl mi, scelerisque consectetur eleifend
+                                at,
+                                pulvinar vel mauris. Pellentesque vitae fermentum ante, eu vestibulum tortor. Morbi
+                                tempus magna et rutrum volutpat. Praesent eu nunc sit amet turpis aliquet vulputate.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas. Mauris nec tellus eros. Maecenas consequat, tortor at placerat suscipit,
+                                sapien
+                                enim tincidunt eros, vitae venenatis leo libero non nibh. Vestibulum eu lectus nunc.
+                            </p>
+
+                            <p>Nunc posuere dui at ullamcorper tristique. Cras at velit fermentum, sagittis massa
+                                ut,
+                                faucibus lorem. Aliquam vel magna ullamcorper, congue ipsum et, congue lacus. Nulla
+                                vel
+                                iaculis sem. Aliquam hendrerit tortor ac cursus tristique. Etiam nec vehicula diam,
+                                ut
+                                molestie nulla. Ut at enim non ante mollis finibus. Pellentesque habitant morbi
+                                tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum dapibus
+                                congue venenatis. In maximus id tellus eget fermentum. Proin porttitor urna nibh.
+                                Class
+                                aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                                himenaeos.
+                                Maecenas mattis vehicula vulputate. Suspendisse eros augue, eleifend quis velit ac,
+                                vehicula lacinia lacus. Sed ac mi at sem sagittis efficitur quis imperdiet dolor.
+                            </p>
+
+                            <p>Nulla eget gravida sem, sit amet scelerisque ligula. Etiam et dictum arcu. Sed
+                                vestibulum
+                                vehicula fringilla. Sed vitae enim elit. Pellentesque in massa sem. Suspendisse
+                                molestie
+                                ligula sit amet ipsum ultricies, sit amet hendrerit dolor malesuada. Donec auctor
+                                erat
+                                quis placerat aliquam. Fusce ultrices purus felis, a sagittis tellus ultricies sed.
+                            </p>
+
+                            <p>Aliquam pellentesque nisl ut nulla vehicula, ut tincidunt urna feugiat. Vestibulum
+                                accumsan ante vel dignissim lobortis. Praesent feugiat nibh in arcu viverra aliquet.
+                                Morbi mauris tortor, hendrerit a fringilla at, posuere vitae sapien. Nunc leo felis,
+                                pellentesque sed viverra sed, tempor non urna. Etiam quis consequat dolor. Praesent
+                                tortor lorem, lacinia ac quam non, maximus porttitor arcu. Sed sodales maximus leo,
+                                vel
+                                malesuada felis. Aenean ullamcorper, lorem ullamcorper aliquet bibendum, elit ex
+                                mattis
+                                leo, nec hendrerit augue tellus in eros. In hac habitasse platea dictumst. Nulla
+                                finibus
+                                a lectus nec viverra. Aenean placerat suscipit varius. Proin elementum est non diam
+                                interdum viverra. Duis vel mattis mi. Fusce in vehicula massa, blandit dignissim
+                                leo.
+                                Duis fringilla ex eget velit tempus, quis suscipit lacus sollicitudin.</p>
+                            <div class="game-reply-reply">
+                                <ul>
+                                    <li>
+                                        <p>Donec nec egestas odio, id dapibus orci. Nulla consectetur tellus eu nisl
+                                            venenatis, eget feugiat erat egestas. Sed consequat mauris metus, eget
+                                            hendrerit lectus luctus eget.
+                                            <span class="reply-author">&mdash; bởi <a href="#">Hùng Vũ</a></span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Sed consequat mauris metus, eget hendrerit lectus luctus eget. Suspendisse
+                                            iaculis sit amet nulla ac.
+                                            <span class="reply-author">&mdash; bởi <a href="#">Hùng Vũ</a></span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Ut porttitor gravida viverra. Cras egestas quis lectus eu posuere.
+                                            <span class="reply-author">&mdash; bởi <a href="#">Hùng Vũ</a></span>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 game-main-right">
+                    <div class="ui-widget game-widget game-widget-challenges">
+                        <div class="title">
+                            <h3>Thử thách</h3>
+                        </div>
+                        <div class="content">
+                            <div class="accordion-list">
+                                <p class="challenges-character">Bố của bạn gái</p>
+                                <div class="accordion-content">
+                                    <div class="challenge-card">
+                                        <img src="./img/games/art-01.jpg" alt="">
+                                        <div class="challenge-info">
+                                            <h4>Lorem Ipsum</h4>
+                                            <p>Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                                                velit, faucibus interdum tellus libero ac justo.</p>
+                                        </div>
+                                    </div>
+                                    <p>Thử thách này đã được thực hiện. Kết quả cuối cùng là <span
+                                            class="challenge-result-good">Tốt</span>.</p>
+                                    <h5>Kết quả</h5>
+                                    <p><strong>Tốt:</strong> Sed non urna. Donec et ante. Phasellus eu ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <p class="disabled"><strong>Xấu:</strong> Sed non urna. Donec et ante. Phasellus eu
+                                        ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet,
+                                        mauris
+                                        turpis porttitor velit.</p>
+                                    <a class="challenge-process" href="#">Thực hiện</a>
+                                </div>
+                                <p class="challenges-obstacle">Rách quần</p>
+                                <div class="accordion-content">
+                                    <div class="challenge-card">
+                                        <img src="./img/games/art-01.jpg" alt="">
+                                        <div class="challenge-info">
+                                            <h4>Lorem Ipsum</h4>
+                                            <p>Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                                                velit, faucibus interdum tellus libero ac justo.</p>
+                                        </div>
+                                    </div>
+                                    <p>Thử thách này đã được thực hiện. Kết quả cuối cùng là <span
+                                            class="challenge-result-good">Tốt</span>.</p>
+                                    <h5>Kết quả</h5>
+                                    <p><strong>Tốt:</strong> Sed non urna. Donec et ante. Phasellus eu ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <p class="disabled"><strong>Xấu:</strong> Sed non urna. Donec et ante. Phasellus eu
+                                        ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet,
+                                        mauris turpis porttitor velit.</p>
+                                    <a class="challenge-process" href="#">Thực hiện</a>
+                                </div>
+                                <p class="challenges-obstacle">Bị chó đuổi</p>
+                                <div class="accordion-content">
+                                    <div class="challenge-card">
+                                        <img src="./img/games/art-01.jpg" alt="">
+                                        <div class="challenge-info">
+                                            <h4>Lorem Ipsum</h4>
+                                            <p>Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                                                velit, faucibus interdum tellus libero ac justo.</p>
+                                        </div>
+                                    </div>
+                                    <p>Thử thách này đã được thực hiện. Kết quả cuối cùng là <span
+                                            class="challenge-result-good">Xấu</span>.</p>
+                                    <h5>Kết quả</h5>
+                                    <p class="disabled"><strong>Tốt:</strong> Sed non urna. Donec et ante. Phasellus eu
+                                        ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <p><strong>Xấu:</strong> Sed non urna. Donec et ante. Phasellus eu ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <a class="challenge-process" href="#">Thực hiện</a>
+                                </div>
+                                <p class="challenges-obstacle">Xịt lốp xe</p>
+                                <div class="accordion-content">
+                                    <div class="challenge-card">
+                                        <img src="./img/games/art-01.jpg" alt="">
+                                        <div class="challenge-info">
+                                            <h4>Lorem Ipsum</h4>
+                                            <p>Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                                                velit, faucibus interdum tellus libero ac justo.</p>
+                                        </div>
+                                    </div>
+                                    <p>Thử thách này chưa được thực hiện. Thực hiện thử thách này ngay.</p>
+                                    <h5>Kết quả</h5>
+                                    <p><strong>Tốt:</strong> Sed non urna. Donec et ante. Phasellus eu ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <p><strong>Xấu:</strong> Sed non urna. Donec et ante. Phasellus eu ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <a class="challenge-process" href="#">Thực hiện</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-widget game-widget game-widget-cards">
+                        <div class="title">
+                            <h3>Thẻ bài</h3>
+                        </div>
+                        <div class="content">
+                            <div class="accordion-list">
+                                <p class="card-icon">Lorem Ipsum</p>
+                                <div class="accordion-content">
+                                    <p>Sed non urna. Donec et ante. Phasellus eu ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <a class="process" href="#">Lấy thẻ bài</a>
+                                </div>
+                                <p class="card-icon">Lorem Ipsum</p>
+                                <div class="accordion-content">
+                                    <p>Sed non urna. Donec et ante. Phasellus eu ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <a class="process" href="#">Lấy thẻ bài</a>
+                                </div>
+                                <p class="card-icon">Lorem Ipsum</p>
+                                <div class="accordion-content">
+                                    <p>Sed non urna. Donec et ante. Phasellus eu ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <a class="process" href="#">Lấy thẻ bài</a>
+                                </div>
+                                <p class="card-icon">Lorem Ipsum</p>
+                                <div class="accordion-content">
+                                    <p>Sed non urna. Donec et ante. Phasellus eu ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <a class="process" href="#">Lấy thẻ bài</a>
+                                </div>
+                                <p class="card-icon">Lorem Ipsum</p>
+                                <div class="accordion-content">
+                                    <p>Sed non urna. Donec et ante. Phasellus eu ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <a class="process" href="#">Lấy thẻ bài</a>
+                                </div>
+                                <p class="card-icon">Lorem Ipsum</p>
+                                <div class="accordion-content">
+                                    <p>Sed non urna. Donec et ante. Phasellus eu ligula.
+                                        Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+                                        turpis porttitor velit.</p>
+                                    <a class="process" href="#">Lấy thẻ bài</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-widget game-widget-player-list">
+                        <div class="title">
+                            <h3>Thành viên</h3>
+                        </div>
+                        <div class="content">
+                            <h5>Dẫn truyện</h5>
+                            <ul>
+                                <li class="host">
+                                    <img src="./img/players/user-02.jpg" alt="Hùng Vũ">
+                                    <div class="info">
+                                        <p>EvilEagles</p>
+                                        <p>Người dẫn truyện</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <h5>Người chơi</h5>
+                            <ul class="">
+                                <li class="player">
+                                    <img src="./img/players/user-03.jpg" alt="Hùng Vũ">
+                                    <div class="info">
+                                        <p>DrYami</p>
+                                        <p>Người dẫn truyện</p>
+                                    </div>
+                                </li>
+                                <li class="player">
+                                    <img src="./img/players/user-04.jpg" alt="Hùng Vũ">
+                                    <div class="info">
+                                        <p>Lukul</p>
+                                        <p>Người dẫn truyện</p>
+                                    </div>
+                                </li>
+                                <li class="player">
+                                    <img src="./img/players/user-05.jpg" alt="Hùng Vũ">
+                                    <div class="info">
+                                        <p>01Lifeleft</p>
+                                        <p>Người dẫn truyện</p>
+                                    </div>
+                                </li>
+                                <li class="player">
+                                    <img src="./img/players/user-06.jpg" alt="Hùng Vũ">
+                                    <div class="info">
+                                        <p>Drafanasa</p>
+                                        <p>Người dẫn truyện</p>
+                                    </div>
+                                </li>
+                                <li class="player">
+                                    <img src="./img/players/user-07.jpg" alt="Hùng Vũ">
+                                    <div class="info">
+                                        <p>Sanggameboy</p>
+                                        <p>Người dẫn truyện</p>
+                                    </div>
+                                </li>
+                                <li class="player">
+                                    <img src="./img/players/user-08.jpg" alt="Hùng Vũ">
+                                    <div class="info">
+                                        <p>Dang_Khoa</p>
+                                        <p>Người dẫn truyện</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Javascript -->
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/flickity.js"></script>
+    <script src="./js/fontawesome.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
