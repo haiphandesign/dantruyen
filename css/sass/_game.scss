@@ -198,20 +198,20 @@
 			margin: 0 .1rem;
 
 			background: {
-				image: url('../../img/layout/icons/star.svg');
+				image: url('../img/layout/icons/star.svg');
 				size: contain;
 				position: center;
 			}
 
 			&.is-half {
 				background: {
-					image: url('../../img/layout/icons/star-is-half.svg');
+					image: url('../img/layout/icons/star-is-half.svg');
 				}
 			}
 
 			&.is-full {
 				background: {
-					image: url('../../img/layout/icons/star-is-full.svg');
+					image: url('../img/layout/icons/star-is-full.svg');
 				}
 			}
 		}
@@ -413,7 +413,7 @@
 				margin-right: .75rem;
 
 				background: {
-					image: url('../../img/layout/icons/globe.svg');
+					image: url('../img/layout/icons/globe.svg');
 					size: contain;
 					position: center;
 				}
@@ -531,7 +531,7 @@
 					margin-right: .5rem;
 
 					background: {
-						image: url('../../img/layout/icons/obstacle.svg');
+						image: url('../img/layout/icons/obstacle.svg');
 						size: 1.25rem auto;
 						repeat: no-repeat;
 						position: center;
@@ -539,7 +539,7 @@
 
 					&.challenge-character {
 						background: {
-							image: url('../../img/layout/icons/character.svg');
+							image: url('../img/layout/icons/character.svg');
 							size: 1rem auto;
 						}
 					}
@@ -753,7 +753,7 @@
 					margin: 0 auto;
 
 					background: {
-						image: url('../../img/layout/icons/vote.svg');
+						image: url('../img/layout/icons/vote.svg');
 						repeat: no-repeat;
 						position: center;
 						size: 1.5rem auto;
