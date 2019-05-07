@@ -2,299 +2,597 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dẫn Truyện</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dẫn Truyện</title>
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./css/style.min.css">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- Preload Javascript -->
+	<script src="./js/preload.js"></script>
 </head>
 
-<body class="page-gamepage logged-out">
+<body class="page-game page-game-waiting-room logged-in">
 
-    <div id="nav">
-        <div class="logo"></div>
-        <ul class="menu">
-            <li><a href="#">Danh sách game</a></li>
-            <li><a href="#">Bảng xếp hạng</a></li>
-            <li><a href="#">Diễn đàn</a></li>
-            <li><a href="#">Cửa hàng</a></li>
-        </ul>
-        <div class="logged-in"></div>
-        <div class="logged-out">
-            <a class="button transparent" href="#">Đăng nhập</a>
-            <a class="button full" href="#">Đăng ký</a>
-        </div>
-        <button class="mobile-menu-toggle" type="button">
-            <span class="mobile-menu-toggle-box">
-                <span class="mobile-menu-toggle-inner"></span>
-            </span>
-        </button>
-    </div>
+	<div id="header"></div>
 
-    <div class="game-nav">
-        <div class="game-nav-scroller">
-            <ul>
-                <li class="is-active"><a href="#">Phòng Chờ</a></li>
-                <li><a href="#">Game chính</a></li>
-                <li><a href="#">Nhân vật</a></li>
-                <li><a href="#">Thẻ bài</a></li>
-                <li><a href="#">Bình luận</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Thống kê</a></li>
-                <li><a href="#">Cài đặt</a></li>
-            </ul>
-        </div>
-    </div>
+	<div id="main">
+		<section class="game--header">
+			<div class="game--cover" style="background-image: url('./img/content/games/cover.jpg')"></div>
+			<div class="game--info">
+				<div class="game--info-top">
+					<div class="game--info-basic">
+						<div class="game--info-picture">
+							<img src="./img/content/games/mini-04.jpg" alt="Cuộc chiến ở đảo Lộc Tiên">
+						</div>
+						<div class="game--info-meta">
+							<h3>Cuộc chiến ở đảo Lộc Tiên</h3>
+							<p>Dẫn truyện bởi <a href="user-profile.html">Hùng Vũ</a></p>
+						</div>
+					</div>
+					<div class="game--info-stats">
+						<div class="game--info-counters">
+							<div class="game-info-counter stages">
+								<span>18</span>
+								<span>Màn chơi</span>
+							</div>
+							<div class="game--info-counter players">
+								<span>34</span>
+								<span>Người chơi</span>
+							</div>
+						</div>
+						<div class="game--info-rating">
+							<span class="game--info-rating-ranking">#5</span>
+							<div class="game--info-rating-stars">
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-half"></span>
+								<span></span>
+							</div>
+							<span class="game--info-rating-voted">28</span>
+						</div>
+					</div>
+				</div>
+				<div class="game--info-middle">
+					<a class="button small ghost join"><img src="./img/layout/icons/plus.svg"><span>Tham gia</span></a>
+					<a class="button small ghost"><img src="./img/layout/icons/plus.svg"><span>Theo dõi</span></a>
+				</div>
+				<div class="game--info-bottom">
+					<div class="game--menu-wrapper">
+						<ul class="game--menu">
+							<li class="game--menu-link is-active"><a href="#">Phòng Chờ</a></li>
+							<li class="game--menu-link"><a href="#">Game chính</a></li>
+							<li class="game--menu-link"><a href="#">Nhân vật</a></li>
+							<li class="game--menu-link"><a href="#">Thẻ bài</a></li>
+							<li class="game--menu-link"><a href="#">Bình luận</a></li>
+						</ul>
+						<ul class="game--menu">
+							<li class="game--menu-link"><a href="#">Thống kê</a></li>
+							<li class="game--menu-link"><a href="#">Cài đặt</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <div class="header-spacer"></div>
+		<div class="game--main">
+			<div class="game--thread">
+				<div class="ui-widget post scene">
+					<div class="title featured">
+						<h6>Chương 1, Hồi 1</h6>
+						<h3>Lorem Ipsum</h3>
+						<img src="./img/content/games/background/daniele-verzini-07.jpg" alt="">
+						<span class="location">Đảo Lộc Tiên</span>
+					</div>
+					<div class="content">
+						<div class="stack">
+							<h5>Thử thách</h5>
+							<ul>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-info">Thử thách #1</div>
+									</a>
+								</li>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-info">Thử thách #2</div>
+									</a>
+								</li>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-info">Thử thách #3</div>
+									</a>
+								</li>
+							</ul>
+							<hr>
+							<h5>Thẻ bài</h5>
+							<ul>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-info">Thẻ bài #1 <span class="amount">x5</span></div>
+									</a>
+								</li>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-info">Thả bài #2 <span class="amount">x8</span></div>
+									</a>
+								</li>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-info">Thẻ bài #3</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<p>Justo voluptua sit invidunt ipsum tempor vero sadipscing, labore ipsum at eos ut ipsum lorem
+							labore amet magna, dolor invidunt voluptua ut justo, magna lorem diam amet amet diam, ea
+							rebum magna duo sea sit sea ut gubergren sadipscing. Justo nonumy et amet ipsum. Dolor dolor
+							lorem elitr lorem. Labore erat takimata diam ipsum duo et dolores lorem. Et dolor est
+							voluptua erat elitr vero sadipscing gubergren. Diam et aliquyam magna sed sadipscing nonumy
+							lorem, sea ipsum tempor sed eos clita et invidunt kasd justo, dolores eirmod sit dolore erat
+							tempor amet, et dolore invidunt sanctus ut, dolor est dolor eirmod nonumy dolor magna, rebum
+							dolor ipsum eos ea dolor ipsum no et, diam sed invidunt ipsum at dolores, sit et at sed diam
+							voluptua sit dolore. Dolores ut accusam sit sed kasd. Sed consetetur diam labore et magna,
+							kasd et est justo clita aliquyam. Stet aliquyam ea diam et lorem sadipscing magna. Justo
+							kasd duo aliquyam justo vero takimata gubergren amet, lorem dolor sed justo est est ipsum
+							nonumy. Et dolore sanctus kasd stet justo et. Diam sit sed stet labore, dolore ut sit erat
+							ipsum consetetur dolores. Ea labore rebum at dolor voluptua justo dolores ut. Dolore sit
+							accusam sit sit est nonumy. Nonumy labore stet sea et elitr accusam. Diam kasd at est
+							sanctus tempor, duo no sanctus justo erat. Ipsum dolor nonumy no stet dolor, no dolor vero
+							voluptua magna et clita eirmod, erat dolores elitr ipsum dolor ipsum clita amet et
+							consetetur, et eos et.</p>
+						<p>Eos duo eos sit dolor lorem, aliquyam dolor diam diam vero gubergren. Aliquyam erat accusam
+							et no elitr diam est ipsum, no et sadipscing sed clita sea ipsum. Et stet tempor at sed.
+							Sadipscing tempor ut nonumy clita eos est voluptua accusam, amet et dolor amet takimata,
+							kasd tempor ipsum et stet, stet no kasd et et est clita, est magna et aliquyam amet amet
+							voluptua at tempor. Vero et ut ipsum eos ipsum lorem tempor ipsum, dolor ipsum labore lorem
+							dolor est gubergren erat magna kasd, ea amet sanctus invidunt et, et amet sit rebum lorem,
+							ut sadipscing sadipscing.</p>
+						<p>Et consetetur sanctus gubergren clita sit diam duo et. Magna aliquyam clita sed nonumy
+							nonumy. Dolores kasd ipsum et sanctus dolore at no eirmod dolore. Sanctus rebum sit lorem
+							vero et ea. Sadipscing justo et gubergren et sed consetetur lorem ipsum. Lorem kasd lorem
+							sed vero et dolore dolores. Amet diam consetetur ipsum et clita. No et sit aliquyam nonumy
+							at sed no, sed sea magna erat sit, et at sadipscing sadipscing elitr diam eirmod diam
+							accusam dolor, consetetur sea dolores diam lorem sed. Erat takimata dolor magna lorem stet
+							no sea gubergren magna. Lorem sea stet ut kasd sit eirmod gubergren lorem. Sit dolor et
+							aliquyam sit labore. Sed dolores consetetur diam amet tempor elitr et. Dolor sanctus et et
+							kasd rebum voluptua est tempor erat. Eirmod no duo sadipscing takimata sed, vero voluptua
+							accusam gubergren sed aliquyam et duo, sea ea gubergren lorem diam ea accusam sadipscing
+							eirmod est, magna dolore at labore lorem diam et, lorem takimata vero ipsum sea sadipscing
+							nonumy, duo sit eirmod eos invidunt voluptua takimata, sit lorem ut lorem diam amet at
+							diam..</p>
+					</div>
+					<div class="interraction">
+						<ul>
+							<li class="comment">
+								<a><img class="icon" src="./img/layout/icons/comment.svg">Bình luận</a>
+							</li>
+							<li class="tem">
+								<a href="#"><img class="icon" src="./img/layout/icons/tem.svg">Tặng Tem</a>
+							</li>
+							<li class="share">
+								<a href="#"><img class="icon" src="./img/layout/icons/share.svg">Chia sẻ</a>
+							</li>
+							<li class="more">
+								<a href="#"><img class="icon" src="./img/layout/icons/menu.svg"></a>
+							</li>
+						</ul>
+						<ul>
+							<li class="reply">
+								<a href="#"><img class="icon" src="./img/layout/icons/report.svg">Báo cáo</a>
+							</li>
+						</ul>
+					</div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ui-widget post reply">
+					<div class="title">
+						<div class="vote">
+							<a class="vote-up is-selected" onclick="voteup()"></a>
+							<span class="vote-count">18</span>
+							<a class="vote-down" onclick="votedown()"></a>
+						</div>
+						<div class="user-info">
+							<div class="user-info--profile-picture">
+								<img src="./img/content/players/user-02.jpg" alt="">
+							</div>
+							<div class="user-info--meta">
+								<p class="character">Nàng hầu gái</p>
+								<p class="username">@CuongduongNguyen69</p>
+							</div>
+						</div>
+						<div class="post-date">18:07 24/04/2019</div>
+					</div>
+					<div class="content">
+						<div class="stack">
+							<h5>Thực hiện</h5>
+							<div class="stack-item">
+								<a href="./modal/login.html" rel="modal:open">
+									<div class="stack-item-icon challenge-character"></div>
+									<div class="stack-item-info">Thử thách #1</div>
+								</a>
+								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
+							</div>
+							<div class="stack-used">
+								<h5>Sử dụng</h5>
+								<ul>
+									<li class="stack-item">
+										<a href="./modal/login.html" rel="modal:open">
+											<div class="stack-item-icon challenge-character"></div>
+											<div class="stack-item-info">Thẻ bài #1</div>
+										</a>
+									</li>
+									<li class="stack-item">
+										<a href="./modal/login.html" rel="modal:open">
+											<div class="stack-item-icon challenge-character"></div>
+											<div class="stack-item-info">Thẻ bài #2</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="challenge-result good">
+							<p>Thử thách được hoàn thành với kết quả <span class="result">Tốt</span>.</p>
+						</div>
+						<p>Sea eos et clita rebum takimata sed eos takimata. Nonumy sea aliquyam amet sed diam. Ut dolor
+							eos tempor voluptua clita kasd dolores invidunt eos. Ea at diam tempor et eirmod tempor diam
+							et sanctus. Est justo eos rebum ipsum amet takimata, diam ea accusam gubergren amet
+							sadipscing sanctus amet, nonumy et et sit dolor magna amet. Consetetur dolores et magna erat
+							et et. Vero dolor ipsum eos tempor. Ipsum at sed takimata sanctus consetetur et et. Ea duo
+							invidunt stet at sit no ipsum no diam. Lorem no diam ea duo dolor. Amet labore diam est
+							dolore duo et et, dolore justo sea magna erat diam labore, eirmod gubergren ipsum labore
+							dolor, sadipscing diam nonumy diam et diam dolor gubergren kasd, sit dolor invidunt takimata
+							amet ipsum sed, est vero dolor magna at eos aliquyam sed dolore eirmod. Et accusam eos sit
+							consetetur erat vero, lorem duo est takimata.</p>
+						<p>Sed tempor voluptua eirmod et labore at. Ea et sit et amet amet at est eirmod eos, et et sit
+							et invidunt. Amet takimata nonumy amet erat, kasd dolore elitr dolor et takimata dolor, diam
+							elitr eos amet justo. Erat magna vero vero clita dolore et voluptua. Erat ea dolor.</p>
+					</div>
+					<div class="interraction">
+						<ul>
+							<li class="comment">
+								<a><img class="icon" src="./img/layout/icons/comment.svg">Bình luận</a>
+							</li>
+							<li class="tem">
+								<a href="#"><img class="icon" src="./img/layout/icons/tem.svg">Tặng Tem</a>
+							</li>
+							<li class="share">
+								<a href="#"><img class="icon" src="./img/layout/icons/share.svg">Chia sẻ</a>
+							</li>
+							<li class="more">
+								<a href="#"><img class="icon" src="./img/layout/icons/menu.svg"></a>
+							</li>
+						</ul>
+						<ul>
+							<li class="reply">
+								<a href="#"><img class="icon" src="./img/layout/icons/report.svg">Báo cáo</a>
+							</li>
+						</ul>
+					</div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ui-widget post reply">
+					<div class="title">
+						<div class="vote">
+							<a class="vote-up is-selected" onclick="voteup()"></a>
+							<span class="vote-count">18</span>
+							<a class="vote-down" onclick="votedown()"></a>
+						</div>
+						<div class="user-info">
+							<div class="user-info--profile-picture">
+								<img src="./img/content/players/user-05.jpg" alt="">
+							</div>
+							<div class="user-info--meta">
+								<p class="character">Chàng trai bao</p>
+								<p class="username">@01lifeleft</p>
+							</div>
+						</div>
+						<div class="post-date">18:07 24/04/2019</div>
+					</div>
+					<div class="content">
+						<div class="stack">
+							<h5>Thực hiện</h5>
+							<div class="stack-item">
+								<a href="./modal/login.html" rel="modal:open">
+									<div class="stack-item-icon challenge-character"></div>
+									<div class="stack-item-info">Thử thách #2</div>
+								</a>
+								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
+							</div>
+							<div class="stack-used">
+								<h5>Sử dụng</h5>
+								<ul>
+									<li class="stack-item">
+										<a href="./modal/login.html" rel="modal:open">
+											<div class="stack-item-icon challenge-character"></div>
+											<div class="stack-item-info">Thẻ bài #1</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="challenge-result bad">
+							<p>Thử thách được hoàn thành với kết quả <span class="result">Xấu</span>.</p>
+						</div>
+						<p>Ipsum at sed takimata sanctus consetetur et et. Ea duo
+							invidunt stet at sit no ipsum no diam. Lorem no diam ea duo dolor. Amet labore diam est
+							dolore duo et et, dolore justo sea magna erat diam labore, eirmod gubergren ipsum labore
+							dolor, sadipscing diam nonumy diam et diam dolor gubergren kasd, sit dolor invidunt takimata
+							amet ipsum sed, est vero dolor magna at eos aliquyam sed dolore eirmod. Et accusam eos sit
+							consetetur erat vero, lorem duo est takimata.</p>
+						<p>Elitr at dolore dolore labore est sit sed sit amet et, magna aliquyam rebum kasd accusam sit
+							sea ut sanctus et. Ipsum sanctus sit ipsum dolore ipsum rebum rebum dolor no, lorem sit amet
+							sit et clita dolor invidunt diam et. Ipsum dolore takimata et justo justo. Rebum dolor stet
+							sit duo no sed, et kasd dolor at sit justo amet no consetetur. Kasd dolor justo lorem dolor.
+							Dolor sed et et consetetur lorem clita dolore dolor. Dolor ea kasd ipsum vero tempor rebum
+							eirmod kasd et. Ipsum et elitr duo stet amet sadipscing dolore, no sit et kasd justo
+							gubergren est aliquyam aliquyam. Kasd diam lorem invidunt labore dolor et magna no magna.
+							Sit sed sit sea erat invidunt invidunt ipsum, lorem lorem no kasd elitr eos amet ea, justo
+							voluptua dolores invidunt diam. Nonumy accusam magna stet sanctus takimata invidunt at clita
+							magna. Stet rebum aliquyam dolores et.</p>
+						<p>Sed sit invidunt takimata sea takimata ipsum sanctus diam rebum diam, tempor lorem aliquyam
+							accusam dolor ut clita diam, lorem sed et ut sanctus invidunt ipsum et. Consetetur amet sit
+							duo lorem eirmod lorem ea duo magna. Ut et lorem no no amet sea invidunt magna. Clita kasd
+							vero kasd lorem duo tempor diam. Et et eos lorem amet accusam diam, clita ut accusam amet
+							tempor et, sed amet stet eos sea no lorem diam.</p>
+					</div>
+					<div class="interraction">
+						<ul>
+							<li class="comment">
+								<a><img class="icon" src="./img/layout/icons/comment.svg">Bình luận</a>
+							</li>
+							<li class="tem">
+								<a href="#"><img class="icon" src="./img/layout/icons/tem.svg">Tặng Tem</a>
+							</li>
+							<li class="share">
+								<a href="#"><img class="icon" src="./img/layout/icons/share.svg">Chia sẻ</a>
+							</li>
+							<li class="more">
+								<a href="#"><img class="icon" src="./img/layout/icons/menu.svg"></a>
+							</li>
+						</ul>
+						<ul>
+							<li class="reply">
+								<a href="#"><img class="icon" src="./img/layout/icons/report.svg">Báo cáo</a>
+							</li>
+						</ul>
+					</div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ui-widget post reply">
+					<div class="title">
+						<div class="vote">
+							<a class="vote-up is-selected" onclick="voteup()"></a>
+							<span class="vote-count">18</span>
+							<a class="vote-down" onclick="votedown()"></a>
+						</div>
+						<div class="user-info">
+							<div class="user-info--profile-picture">
+								<img src="./img/content/players/user-05.jpg" alt="">
+							</div>
+							<div class="user-info--meta">
+								<p class="character">Chàng trai bao</p>
+								<p class="username">@01lifeleft</p>
+							</div>
+						</div>
+						<div class="post-date">18:07 24/04/2019</div>
+					</div>
+					<div class="content">
+						<div class="stack">
+							<h5>Thực hiện</h5>
+							<div class="stack-item">
+								<a href="./modal/login.html" rel="modal:open">
+									<div class="stack-item-icon challenge-character"></div>
+									<div class="stack-item-info">Thử thách #2</div>
+								</a>
+								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
+							</div>
+							<div class="stack-used">
+								<h5>Sử dụng</h5>
+								<ul>
+									<li class="stack-item">
+										<a href="./modal/login.html" rel="modal:open">
+											<div class="stack-item-icon challenge-character"></div>
+											<div class="stack-item-info">Thẻ bài #1</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="challenge-result">
+							<ul>
+								<li><a href="#"><img src="./img/layout/icons/result-good.svg" alt="">Tốt</a></li>
+								<li><a href="#"><img src="./img/layout/icons/result-bad.svg" alt="">Xấu</a></li>
+								<li><a href="#"><img src="./img/layout/icons/result-warn.svg" alt="">Yêu cầu chỉnh
+										sửa</a></li>
+							</ul>
+						</div>
+						<p>Ipsum at sed takimata sanctus consetetur et et. Ea duo
+							invidunt stet at sit no ipsum no diam. Lorem no diam ea duo dolor. Amet labore diam est
+							dolore duo et et, dolore justo sea magna erat diam labore, eirmod gubergren ipsum labore
+							dolor, sadipscing diam nonumy diam et diam dolor gubergren kasd, sit dolor invidunt takimata
+							amet ipsum sed, est vero dolor magna at eos aliquyam sed dolore eirmod. Et accusam eos sit
+							consetetur erat vero, lorem duo est takimata.</p>
+						<p>Elitr at dolore dolore labore est sit sed sit amet et, magna aliquyam rebum kasd accusam sit
+							sea ut sanctus et. Ipsum sanctus sit ipsum dolore ipsum rebum rebum dolor no, lorem sit amet
+							sit et clita dolor invidunt diam et. Ipsum dolore takimata et justo justo. Rebum dolor stet
+							sit duo no sed, et kasd dolor at sit justo amet no consetetur. Kasd dolor justo lorem dolor.
+							Dolor sed et et consetetur lorem clita dolore dolor. Dolor ea kasd ipsum vero tempor rebum
+							eirmod kasd et. Ipsum et elitr duo stet amet sadipscing dolore, no sit et kasd justo
+							gubergren est aliquyam aliquyam. Kasd diam lorem invidunt labore dolor et magna no magna.
+							Sit sed sit sea erat invidunt invidunt ipsum, lorem lorem no kasd elitr eos amet ea, justo
+							voluptua dolores invidunt diam. Nonumy accusam magna stet sanctus takimata invidunt at clita
+							magna. Stet rebum aliquyam dolores et.</p>
+						<p>Sed sit invidunt takimata sea takimata ipsum sanctus diam rebum diam, tempor lorem aliquyam
+							accusam dolor ut clita diam, lorem sed et ut sanctus invidunt ipsum et. Consetetur amet sit
+							duo lorem eirmod lorem ea duo magna. Ut et lorem no no amet sea invidunt magna. Clita kasd
+							vero kasd lorem duo tempor diam. Et et eos lorem amet accusam diam, clita ut accusam amet
+							tempor et, sed amet stet eos sea no lorem diam.</p>
+					</div>
+					<div class="interraction">
+						<ul>
+							<li class="comment">
+								<a><img class="icon" src="./img/layout/icons/comment.svg">Bình luận</a>
+							</li>
+							<li class="tem">
+								<a href="#"><img class="icon" src="./img/layout/icons/tem.svg">Tặng Tem</a>
+							</li>
+							<li class="share">
+								<a href="#"><img class="icon" src="./img/layout/icons/share.svg">Chia sẻ</a>
+							</li>
+							<li class="more">
+								<a href="#"><img class="icon" src="./img/layout/icons/menu.svg"></a>
+							</li>
+						</ul>
+						<ul>
+							<li class="reply">
+								<a href="#"><img class="icon" src="./img/layout/icons/report.svg">Báo cáo</a>
+							</li>
+						</ul>
+					</div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="game--sidebar">
+				<div class="ui-widget context">
+					<div class="title">
+						<h3>Thông tin</h3>
+					</div>
+					<div class="content">
+						<p>Ipsum invidunt diam sed amet amet no gubergren sed et. Est nonumy amet ea amet dolor dolor
+							accusam. Stet sit ipsum ipsum rebum elitr eirmod kasd et erat, est diam sit duo labore
+							dolores accusam sit eirmod aliquyam. Consetetur erat clita dolor stet et dolor. Stet at
+							sanctus ipsum dolor.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <section id="game-header">
-        <div class="game-cover" style="background-image: url('./img/games/cover.jpg')">
-            <div class="game-cover-overlay"></div>
-        </div>
-        <div class="container game-status">
-            <a class="button full" href="#">Đăng ký</a>
-        </div>
-        <div class="container ui-widget-shadow ui-widget-border ui-widget-border-radius game-info">
-            <div class="game-info-top">
-                <div class="game-info-basic">
-                    <div class="game-info-picture">
-                        <img class="ui-widget-shadow" src="./img/games/mini-01.jpg" alt="Cuộc chiến ở đảo Lộc Tiên">
-                    </div>
-                    <div class="game-info-info">
-                        <h3>Cuộc chiến ở đảo Lộc Tiên</h3>
-                        <p>Dẫn truyện bởi <a href="user-profile.html">Hùng Vũ</a></p>
-                    </div>
-                </div>
-                <div class="game-info-stats">
-                    <div class="game-info-stats-counters">
-                        <div class="game-info-stats-counters-stages">
-                            <span>18</span>
-                            <span>Màn chơi</span>
-                        </div>
-                        <div class="game-info-stats-counters-players">
-                            <span>34</span>
-                            <span>Người chơi</span>
-                        </div>
-                    </div>
-                    <div class="game-info-stats-rating">
-                        <span class="game-info-stats-rating-ranking">#5</span>
-                        <div class="game-info-stats-rating-star">
-                            <span class="is-full"></span>
-                            <span class="is-full"></span>
-                            <span class="is-full"></span>
-                            <span class="is-half"></span>
-                            <span></span>
-                        </div>
-                        <span class="game-info-stats-rating-vote">28</span>
-                    </div>
-                </div>
-            </div>
-            <div class="game-info-bottom">
-                <div class="game-info-bottom-scroller">
-                    <ul>
-                        <li class="is-active"><a href="#">Phòng Chờ</a></li>
-                        <li><a href="#">Game chính</a></li>
-                        <li><a href="#">Nhân vật</a></li>
-                        <li><a href="#">Thẻ bài</a></li>
-                        <li><a href="#">Bình luận</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="#">Thống kê</a></li>
-                        <li><a href="#">Cài đặt</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+	<div id="footer"></div>
 
-    <section id="game-main">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 game-main-left">
-                    <div class="ui-widget game-section">
-                        <div class="title">
-                            <h3>Bối cảnh</h3>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac elementum enim. Morbi
-                                auctor efficitur augue, sit amet feugiat turpis rutrum vitae. Nunc vitae lacus at arcu
-                                fermentum pellentesque eget eget lectus. Aliquam pellentesque augue a nunc sagittis
-                                aliquam. Ut ligula risus, accumsan ac leo eget, mattis sagittis diam. Proin aliquam nibh
-                                at arcu consequat accumsan. Proin id massa non ante viverra scelerisque. Vestibulum
-                                vitae viverra arcu, non aliquet eros. Cras nec lectus efficitur, porttitor nibh non,
-                                auctor erat. Suspendisse dapibus ante nec mattis aliquam.</p>
-
-                            <p>Etiam consequat volutpat enim at interdum. Duis sed ornare mauris. Morbi laoreet gravida
-                                tellus, semper vulputate orci hendrerit in. Fusce lectus tellus, tempor ac est at,
-                                viverra ullamcorper tellus. Nulla eu malesuada neque. Phasellus eu mi id ex iaculis
-                                cursus at vel felis. Phasellus at tempus leo, dignissim interdum tortor. Mauris iaculis
-                                elementum ullamcorper. Fusce urna neque, feugiat vitae vulputate a, ultrices a lorem.
-                                Nulla ac augue facilisis, venenatis erat vitae, tempus libero. Nulla ut metus massa.
-                                Suspendisse ante felis, auctor in volutpat quis, vehicula pretium odio. Class aptent
-                                taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus
-                                egestas leo ac blandit vehicula. Duis fringilla ligula eget iaculis eleifend.</p>
-
-                            <p>Sed non ultrices lacus. Fusce massa orci, malesuada sodales molestie ac, vulputate et
-                                odio.Nulla egestas, tortor ac vulputate pharetra, nunc libero iaculis urna, quis
-                                sagittis purus justo nec mi. Nunc rhoncus risus sit amet ex faucibus tempus. Praesent
-                                vitae pharetra lorem. Duis volutpat magna vitae eros viverra, quis luctus libero
-                                accumsan. Sed a urna fermentum, mattis est sit amet, sodales velit. Nunc eu lorem
-                                semper, malesuada massa in, tempus dolor. Nullam nibh justo, accumsan ac feugiat ut,
-                                maximus eu libero. Quisque sit amet leo diam. Maecenas fermentum lectus justo, feugiat
-                                varius magna faucibus vel. Nullam suscipit augue augue, eleifend lobortis lacus dictum
-                                vel. Sed semper luctus mauris id mollis. Suspendisse bibendum aliquet condimentum.</p>
-                        </div>
-                    </div>
-                    <div class="ui-widget game-section">
-                        <div class="title">
-                            <h3>Thế giới</h3>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-                        <div class="content">
-                            <p><img src="./img/games/map.jpg" alt=""></p>
-                            <p>Etiam consequat volutpat enim at interdum. Duis sed ornare mauris. Morbi laoreet gravida
-                                tellus, semper vulputate orci hendrerit in. Fusce lectus tellus, tempor ac est at,
-                                viverra ullamcorper tellus. Nulla eu malesuada neque. Phasellus eu mi id ex iaculis
-                                cursus at vel felis. Phasellus at tempus leo, dignissim interdum tortor. Mauris iaculis
-                                elementum ullamcorper. Fusce urna neque, feugiat vitae vulputate a, ultrices a lorem.
-                                Nulla ac augue facilisis, venenatis erat vitae, tempus libero. Nulla ut metus massa.
-                                Suspendisse ante felis, auctor in volutpat quis, vehicula pretium odio. Class aptent
-                                taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus
-                                egestas leo ac blandit vehicula. Duis fringilla ligula eget iaculis eleifend.</p>
-
-                            <p>Sed non ultrices lacus. Fusce massa orci, malesuada sodales molestie ac, vulputate et
-                                odio.Nulla egestas, tortor ac vulputate pharetra, nunc libero iaculis urna, quis
-                                sagittis purus justo nec mi. Nunc rhoncus risus sit amet ex faucibus tempus. Praesent
-                                vitae pharetra lorem. Duis volutpat magna vitae eros viverra, quis luctus libero
-                                accumsan. Sed a urna fermentum, mattis est sit amet, sodales velit. Nunc eu lorem
-                                semper, malesuada massa in, tempus dolor. Nullam nibh justo, accumsan ac feugiat ut,
-                                maximus eu libero. Quisque sit amet leo diam. Maecenas fermentum lectus justo, feugiat
-                                varius magna faucibus vel. Nullam suscipit augue augue, eleifend lobortis lacus dictum
-                                vel. Sed semper luctus mauris id mollis. Suspendisse bibendum aliquet condimentum.</p>
-                        </div>
-                    </div>
-                    <div class="game-editor-links">
-                        <ul>
-                            <li><a href="#"><i class="fas fa-plus"></i>Thêm nội dung</a></li>
-                            <li><a href="#"><i class="fas fa-align-justify"></i>Sắp xếp</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 game-main-right">
-                    <div class="ui-widget game-widget-general-info">
-                        <div class="title">
-                            <h3>Thông tin chung</h3>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-                        <div class="content">
-                            <ul>
-                                <li>
-                                    <p class="label">Hiển thị</p>
-                                    <p class="value"><i class="fas fa-turtle"></i> Công cộng</p>
-                                </li>
-                                <li>
-                                    <p class="label">Mô hình dẫn truyện</p>
-                                    <p class="value"><i class="fas fa-turtle"></i> Một người</p>
-                                </li>
-                                <li>
-                                    <p class="label">Phong cách chơi</p>
-                                    <p class="value"><i class="fas fa-balance-scale"></i> Cân bằng</p>
-                                </li>
-                                <li>
-                                    <p class="label">Độ dài</p>
-                                    <p class="value"><i class="fas fa-book"></i> Tiểu thuyết</p>
-                                </li>
-                                <li>
-                                    <p class="label">Tộc độ chơi</p>
-                                    <p class="value"><i class="fas fa-turtle"></i> Chậm</p>
-                                </li>
-                                <li>
-                                    <p class="label">Sở hữu</p>
-                                    <p class="value"><i class="fas fa-turtle"></i> Chung</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="ui-widget game-widget-player-list">
-                        <div class="title">
-                            <h3>Thành viên</h3>
-                        </div>
-                        <div class="content">
-                            <h5>Dẫn truyện</h5>
-                            <ul>
-                                <li class="host">
-                                    <img src="./img/players/user-02.jpg" alt="Hùng Vũ">
-                                    <div class="info">
-                                        <p>EvilEagles</p>
-                                        <p>Người dẫn truyện</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h5>Người chơi</h5>
-                            <ul class="">
-                                <li class="player">
-                                    <img src="./img/players/user-03.jpg" alt="Hùng Vũ">
-                                    <div class="info">
-                                        <p>DrYami</p>
-                                        <p>Người dẫn truyện</p>
-                                    </div>
-                                </li>
-                                <li class="player">
-                                    <img src="./img/players/user-04.jpg" alt="Hùng Vũ">
-                                    <div class="info">
-                                        <p>Lukul</p>
-                                        <p>Người dẫn truyện</p>
-                                    </div>
-                                </li>
-                                <li class="player">
-                                    <img src="./img/players/user-05.jpg" alt="Hùng Vũ">
-                                    <div class="info">
-                                        <p>01Lifeleft</p>
-                                        <p>Người dẫn truyện</p>
-                                    </div>
-                                </li>
-                                <li class="player">
-                                    <img src="./img/players/user-06.jpg" alt="Hùng Vũ">
-                                    <div class="info">
-                                        <p>Drafanasa</p>
-                                        <p>Người dẫn truyện</p>
-                                    </div>
-                                </li>
-                                <li class="player">
-                                    <img src="./img/players/user-07.jpg" alt="Hùng Vũ">
-                                    <div class="info">
-                                        <p>Sanggameboy</p>
-                                        <p>Người dẫn truyện</p>
-                                    </div>
-                                </li>
-                                <li class="player">
-                                    <img src="./img/players/user-08.jpg" alt="Hùng Vũ">
-                                    <div class="info">
-                                        <p>Dang_Khoa</p>
-                                        <p>Người dẫn truyện</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Javascript -->
-
-    <script src="./js/jquery.js"></script>
-    <script src="./js/jquery-ui.js"></script>
-    <script src="./js/flickity.js"></script>
-    <script src="./js/fontawesome.js"></script>
-    <script src="./js/main.js"></script>
+	<!-- Javascript -->
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.ui.js"></script>
+	<script src="./js/jquery.modal.js"></script>
+	<script src="./js/app.js"></script>
 
 </body>
 

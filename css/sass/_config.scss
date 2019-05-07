@@ -1,0 +1,45 @@
+//  ________  ________  ________   ________ ___  ________     
+// |\   ____\|\   __  \|\   ___  \|\  _____\\  \|\   ____\    
+// \ \  \___|\ \  \|\  \ \  \\ \  \ \  \__/\ \  \ \  \___|    
+//  \ \  \    \ \  \\\  \ \  \\ \  \ \   __\\ \  \ \  \  ___  
+//   \ \  \____\ \  \\\  \ \  \\ \  \ \  \_| \ \  \ \  \|\  \ 
+//    \ \_______\ \_______\ \__\\ \__\ \__\   \ \__\ \_______\
+//     \|_______|\|_______|\|__| \|__|\|__|    \|__|\|_______|
+
+
+// Color
+
+$color-text-dark: #050709;
+$color-text-regular: #333333;
+$color-text-light: #b3b3b3;
+
+$color-background: #fafafa;
+$color-background-dark: darken($color-background, 5%);
+
+$color-result-good: #cde7c9;
+$color-result-bad: #e7c9c9;
+
+
+// UI
+
+$ui-border-radius: .25rem;
+
+// Typography
+
+$h1-size: 3rem;
+$h1-weight: 600;
+
+$h2-size: 2rem;
+$h2-weight: 600;
+
+$h3-size: 1.5rem;
+$h3-weight: 600;
+
+$h4-size: 1.25rem;
+$h4-weight: 600;
+
+$h5-size: .75rem;
+$h5-weight: 800;
+
+$h6-size: .75rem;
+$h6-weight: 800;

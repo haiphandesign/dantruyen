@@ -1,59 +1,59 @@
-* {
-    box-sizing: border-box;
-    z-index: 1;
-    position: relative;
-}
+//  ________  ________  ________  ___  ________     
+// |\   __  \|\   __  \|\   ____\|\  \|\   ____\    
+// \ \  \|\ /\ \  \|\  \ \  \___|\ \  \ \  \___|    
+//  \ \   __  \ \   __  \ \_____  \ \  \ \  \       
+//   \ \  \|\  \ \  \ \  \|____|\  \ \  \ \  \____  
+//    \ \_______\ \__\ \__\____\_\  \ \__\ \_______\
+//     \|_______|\|__|\|__|\_________\|__|\|_______|
+//                        \|_________|              
+
 
 html {
-    overflow-x: hidden;
-    font-size: 14px;
+	font-size: 14px;
 
-    @include breakpoint(md) {
-        font-size: 15px;
-    }
+	@include breakpoint(md) {
+		font-size: 15px;
+	}
 }
 
 body {
-    font: {
-        family: 'Muli',
-            sans-serif;
-        size: 1rem;
-    }
+	background-color: $color-background;
 
-    color: $color-text-regular;
-    line-height: 1.5;
-    overflow-x: hidden;
-    position: relative;
-    width: 100%;
+	font-family: 'Muli', sans-serif;
+	line-height: 1.5;
+	color: $color-text-regular;
 
-    background: {
-        color: $color-background;
-    }
+	&.page-home {
+		background-color: white;
+	}
 
-    &.page-homepage {
-        background: {
-            color: white;
-        }
-    }
+	&.logged-in {
+		.logged-in {
+			display: initial;
+		}
 
-    &.logged-out {
-        .logged-in {
-            display: none;
-        }
-    }
+		.logged-out {
+			display: none !important;
+		}
+	}
 
-    &.logged-in {
-        .logged-out {
-            display: none;
-        }
-    }
+	&.logged-out {
+		.logged-out {
+			display: initial;
+		}
+
+		.logged-in {
+			display: none !important;
+		}
+	}
+}
+
+* {
+	box-sizing: border-box;
+	z-index: 1;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
+	color: inherit;
+	text-decoration: none;
 }

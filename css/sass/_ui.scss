@@ -1,139 +1,289 @@
 @mixin ui-shadow {
-    box-shadow: 0 1px 4px rgba($color-text-light, .125);
+	box-shadow: 0 1px 4px rgba($color-text-light, .125);
 }
 
 @mixin ui-no-shadow {
-    box-shadow: none;
+	box-shadow: none;
 }
 
 @mixin ui-border-radius {
-    border-radius: $var-border-radius;
-    overflow: hidden;
+	border-radius: $ui-border-radius;
 }
 
 @mixin ui-no-border-radius {
-    border-radius: none;
+	border-radius: none;
 }
 
 @mixin ui-border {
-    border: 1px solid rgba($color-text-light, .25);
+	border: 1px solid rgba($color-text-light, .25);
+	background-color: white;
 }
 
 @mixin ui-no-border {
-    border: none;
+	border: none;
 }
 
 @mixin ui-bottom-spacing {
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
 
-    @include breakpoint(md) {
-        margin-bottom: 2rem;
-    }
+	@include breakpoint(md) {
+		margin-bottom: 2rem;
+	}
+}
+
+@mixin ui-container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+
+	@include breakpoint(xs) {
+		max-width: 540px;
+	}
+
+	@include breakpoint(sm) {
+		max-width: 740px;
+	}
+
+	@include breakpoint(md) {
+		max-width: 960px;
+	}
+
+	@include breakpoint(lg) {
+		max-width: 1140px;
+	}
 }
 
 .ui-widget-shadow {
-    @include ui-shadow;
+	@include ui-shadow;
 }
 
 .ui-widget-border {
-    border: 1px solid rgba($color-text-light, .25);
+	border: 1px solid rgba($color-text-light, .25);
 }
 
 .ui-widget-border-radius {
-    border-radius: .25rem;
+	border-radius: .25rem;
 }
 
 .ui-widget {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
 
-    @include ui-border;
-    @include ui-border-radius;
-    @include ui-shadow;
-    @include ui-bottom-spacing;
+	@include ui-border;
+	@include ui-border-radius;
+	@include ui-shadow;
+	@include ui-bottom-spacing;
 
 
-    .title {
-        position: relative;
-        padding: .75rem 1rem;
-        border-bottom: 1px solid rgba($color-text-light, .25);
+	.title {
+		position: relative;
 
-        h3 {
-            margin: 0;
-        }
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-end;
 
-        p {
-            color: $color-text-light;
-            margin: 0;
-        }
+		@include ui-border-radius;
 
-        &:after {
-            content: '';
-            position: absolute;
-            top: .75rem;
-            right: .25px;
-            display: block;
-            width: 2.25rem;
-            height: 2.25rem;
-            transition: .25s all ease-in-out;
-            z-index: 1;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
 
-            background: {
-                image: url('../img/icons/menu.svg');
-                size: 1rem;
-                position: center;
-                repeat: no-repeat;
-            }
+		border-bottom: 1px solid rgba($color-text-light, .25);
 
-            @include breakpoint(md) {
-                opacity: 0;
-            }
-        }
+		padding: .75rem 1rem;
 
-        &.featured {
-            padding-top: 7.5rem;
+		h3 {
+			margin: 0;
+		}
 
-            h3 {
-                color: white;
-                text-shadow: 0 0 .5rem black;
-            }
+		p {
+			margin: 0;
 
-            h6 {
-                color: white;
-                margin: 0;
-                text-shadow: 0 0 .5rem black;
-            }
+			&.subtext {
+				color: $color-text-light;
+			}
+		}
 
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                display: block;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                z-index: -1;
-            }
-        }
-    }
+		&:after {
+			content: '';
+			position: absolute;
+			top: .75rem;
+			right: .25px;
+			display: block;
+			width: 2.25rem;
+			height: 2.25rem;
+			transition: .25s all ease-in-out;
+			z-index: 1;
 
-    .content {
-        padding: 0 1rem;
-    }
+			background: {
+				image: url('../img/icons/menu.svg');
+				size: 1rem;
+				position: center;
+				repeat: no-repeat;
+			}
 
-    &:hover {
-        .title {
-            &:after {
-                opacity: 1;
-            }
-        }
-    }
-}
+			@include breakpoint(md) {
+				opacity: 0;
+			}
+		}
 
-.modal {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+		&.featured {
+			align-items: flex-start;
+
+			height: 15rem;
+
+			overflow: hidden;
+
+			h3,
+			h6 {
+				color: white;
+				text-shadow: 0 0 .5rem black;
+				margin: 0;
+			}
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				z-index: -1;
+			}
+		}
+	}
+
+	.content {
+		padding: 1rem;
+	}
+
+	.interraction {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		font-size: .85rem;
+
+		padding: 1rem;
+
+		ul {
+			list-style: none;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: block;
+
+				&+li {
+					margin-left: 1rem;
+				}
+			}
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			font-weight: 600;
+			white-space: nowrap;
+
+			user-select: none;
+			cursor: pointer;
+		}
+
+		.icon {
+			display: block;
+			height: 1em;
+
+			margin-right: .25rem;
+		}
+	}
+
+	.discussion {
+		font-size: .85rem;
+
+		border-top: 1px solid rgba($color-text-light, .25);
+
+		background-color: $color-background;
+
+		.comment-form {
+			display: none;
+			align-items: center;
+			justify-content: center;
+
+			@include ui-border;
+			border-left: 0;
+			border-right: 0;
+			border-top: 0;
+
+			padding: .5rem 1rem;
+
+			background-color: transparent;
+
+			input[type='text'] {
+				width: 100%;
+				height: 2.5rem;
+
+				@include ui-border;
+				@include ui-border-radius;
+
+				background-color: white;
+
+				padding: 0 1rem;
+			}
+
+			&.is-active {
+				display: block;
+			}
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				padding: 1rem;
+				border-bottom: 1px solid rgba($color-text-light, .25);
+
+				&.show-more {
+					text-transform: lowercase;
+					padding: .5rem 1rem;
+					color: $color-text-light;
+				}
+			}
+
+			p {
+				margin: 0;
+			}
+
+			.reply-author {
+				color: $color-text-light;
+
+				a {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	&:hover {
+		.title {
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
 }

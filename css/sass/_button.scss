@@ -1,0 +1,74 @@
+//  ________  ___  ___  _________  _________  ________  ________      
+// |\   __  \|\  \|\  \|\___   ___\\___   ___\\   __  \|\   ___  \    
+// \ \  \|\ /\ \  \\\  \|___ \  \_\|___ \  \_\ \  \|\  \ \  \\ \  \   
+//  \ \   __  \ \  \\\  \   \ \  \     \ \  \ \ \  \\\  \ \  \\ \  \  
+//   \ \  \|\  \ \  \\\  \   \ \  \     \ \  \ \ \  \\\  \ \  \\ \  \ 
+//    \ \_______\ \_______\   \ \__\     \ \__\ \ \_______\ \__\\ \__\
+//     \|_______|\|_______|    \|__|      \|__|  \|_______|\|__| \|__|
+
+
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 2rem;
+	height: 3rem;
+	transition: .25s all ease;
+
+	@include ui-border-radius;
+
+	&.small {
+		height: 2rem;
+
+		font-size: .85rem;
+	}
+
+	&.ghost {
+		@include ui-border;
+		border-color: $color-text-light;
+
+		background: transparent;
+
+		padding: 0 1rem;
+	}
+
+	&.centered {
+		display: flex;
+		margin: 1rem auto;
+		width: 70%;
+		max-width: 15rem;
+	}
+
+	&.full {
+
+		background: {
+			color: $color-text-regular;
+		}
+
+		color: white;
+
+		&:hover {
+			background: {
+				color: color(darker);
+			}
+		}
+	}
+
+	&.hollow {
+		border: .1em solid color(primary);
+		color: color(primary);
+
+		&:hover {
+			background: {
+				color: color(primary);
+			}
+
+			color: white;
+		}
+	}
+
+	&:hover {
+		transition: .5s all ease;
+	}
+}
