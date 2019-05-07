@@ -10,8 +10,8 @@
 
 // Global: Load Page Header & Footer
 
-$('#header').load('/inc/header.html');
-$('#footer').load('/inc/footer.html');
+$('#header').load('./inc/header.html');
+$('#footer').load('./inc/footer.html');
 
 
 // Global: Fixed Header

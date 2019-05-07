@@ -1426,17 +1426,17 @@ hr {
   width: 1rem;
   height: 1rem;
   margin: 0 .1rem;
-  background-image: url("../../img/layout/icons/star.svg");
+  background-image: url("../img/layout/icons/star.svg");
   background-size: contain;
   background-position: center;
 }
 
 .game--header .game--info-rating-stars span.is-half {
-  background-image: url("../../img/layout/icons/star-is-half.svg");
+  background-image: url("../img/layout/icons/star-is-half.svg");
 }
 
 .game--header .game--info-rating-stars span.is-full {
-  background-image: url("../../img/layout/icons/star-is-full.svg");
+  background-image: url("../img/layout/icons/star-is-full.svg");
 }
 
 .game--header .game--info-rating-voted {
@@ -1675,7 +1675,7 @@ hr {
   width: 1rem;
   height: 1rem;
   margin-right: .75rem;
-  background-image: url("../../img/layout/icons/globe.svg");
+  background-image: url("../img/layout/icons/globe.svg");
   background-size: contain;
   background-position: center;
 }
@@ -1799,14 +1799,14 @@ hr {
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
   margin-right: .5rem;
-  background-image: url("../../img/layout/icons/obstacle.svg");
+  background-image: url("../img/layout/icons/obstacle.svg");
   background-size: 1.25rem auto;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .game--main .game--thread .stack .stack-item-icon.challenge-character {
-  background-image: url("../../img/layout/icons/character.svg");
+  background-image: url("../img/layout/icons/character.svg");
   background-size: 1rem auto;
 }
 
@@ -1958,6 +1958,7 @@ hr {
       -ms-flex-pack: center;
           justify-content: center;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .game--main .game--thread .post.reply .challenge-result ul li a img {
@@ -2029,7 +2030,7 @@ hr {
   width: 3rem;
   height: 2rem;
   margin: 0 auto;
-  background-image: url("../../img/layout/icons/vote.svg");
+  background-image: url("../img/layout/icons/vote.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1.5rem auto;
