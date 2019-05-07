@@ -1477,6 +1477,7 @@ hr {
 .game--header .game--info-middle a {
   white-space: nowrap;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .game--header .game--info-middle a + a {
