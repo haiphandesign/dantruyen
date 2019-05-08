@@ -1,4 +1,4 @@
-.blocker {
+.modal {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -15,7 +15,7 @@
 	text-align: center;
 }
 
-.blocker:before {
+.modal:before {
 	content: "";
 	display: inline-block;
 	height: 100%;
@@ -23,11 +23,11 @@
 	margin-right: -0.05em;
 }
 
-.blocker.behind {
+.modal.behind {
 	background-color: transparent;
 }
 
-.modal {
+.modal-content {
 	display: none;
 	vertical-align: middle;
 	position: relative;
@@ -50,7 +50,7 @@
 	text-align: left;
 }
 
-.modal a.close-modal {
+.modal-content a.close-modal {
 	position: absolute;
 	top: -12.5px;
 	right: -12.5px;

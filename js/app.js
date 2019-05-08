@@ -81,13 +81,32 @@ $(window).scroll(function () {
 
 // Game: Info Top Margin
 
-var gameinfoheight = $('.game--header .game--info').height();
-$('.game--header .game--info').css('margin-top', - gameinfoheight / 2);
+$('.stack-reveal').click(function () {
+	$(this).parent().toggleClass('is-active');
+})
 
-function stackReveal() {
-	$('.stack-used').toggleClass('is-active');
+$(window).resize(function () {
+	gameInfoMargin();
+});
+
+$(document).ready(function () {
+	gameInfoMargin();
+});
+
+function gameInfoMargin() {
+	if ($(window).width() < 992) {
+	} else {
+		var gameinfoheight = $('.game--header .game--info').height();
+		$('.game--header .game--info').css('margin-top', - gameinfoheight / 2);
+	}
 }
 
+
+// Game: Generate Challenge Result
+
+$('.challenge-result').html('<p>Kết quả: <span class="result"><i class="far fa-meh"></i> Không xác định</span>.</p>');
+$('.challenge-result.good').html('<p>Kết quả: <span class="result"><i class="far fa-smile"></i> Mạnh</span>.</p>');
+$('.challenge-result.bad').html('<p>Kết quả: <span class="result"><i class="far fa-frown"></i> Yếu</span>.</p>');
 
 // Game: Show Comment Form
 

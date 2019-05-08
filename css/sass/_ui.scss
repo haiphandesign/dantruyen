@@ -120,7 +120,7 @@
 			z-index: 1;
 
 			background: {
-				image: url('../img/icons/menu.svg');
+				image: url('../../img/layout/icons/menu.svg');
 				size: 1rem;
 				position: center;
 				repeat: no-repeat;
@@ -135,8 +135,6 @@
 			align-items: flex-start;
 
 			height: 15rem;
-
-			overflow: hidden;
 
 			h3,
 			h6 {
@@ -155,12 +153,26 @@
 				height: 100%;
 				object-fit: cover;
 				z-index: -1;
+
+				@include ui-border-radius;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
 			}
 		}
 	}
 
 	.content {
 		padding: 1rem;
+	}
+
+	&.post {
+		.content {
+			img {
+				max-width: 100%;
+
+				@include ui-border-radius;
+			}
+		}
 	}
 
 	.interraction {

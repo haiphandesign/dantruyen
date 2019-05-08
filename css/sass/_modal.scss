@@ -1,4 +1,4 @@
-.modal {
+.modal-content {
 	@include ui-border-radius;
 	@include ui-shadow;
 
@@ -10,18 +10,27 @@
 	overflow: initial;
 	padding: 0;
 
-	a.close-modal {
+	.modal-close {
+		position: absolute;
 		top: -2rem;
 		right: 0;
 
+		width: 1.5rem;
+		height: 1.5rem;
+
+		border: 0;
+
 		background: {
 			image: url('../../img/layout/icons/close.svg');
+			repeat: no-repeat;
 			size: 1rem;
+			position: center;
+			color: rgba(0, 0, 0, 0);
 		}
 	}
 }
 
-.blocker {
+.modal {
 	background-color: rgba(0, 0, 0, 0.75);
 	z-index: 10000;
 }
