@@ -20,17 +20,15 @@
 
 	&.small {
 		height: 2rem;
-
 		font-size: .85rem;
+		padding: 0 1rem;
 	}
 
 	&.ghost {
 		@include ui-border;
 		border-color: $color-text-light;
 
-		background: transparent;
-
-		padding: 0 1rem;
+		background-color: transparent;
 	}
 
 	&.centered {

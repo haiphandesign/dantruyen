@@ -163,6 +163,13 @@
 
 	.content {
 		padding: 1rem;
+
+		&.limit-lenght {
+			@include breakpoint(md) {
+				max-height: 50vh;
+				overflow: auto;
+			}
+		}
 	}
 
 	&.post {
@@ -175,7 +182,11 @@
 		}
 	}
 
-	.interraction {
+	hr {
+		margin: 1rem -1rem;
+	}
+
+	.interaction {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -214,13 +225,6 @@
 			user-select: none;
 			cursor: pointer;
 		}
-
-		.icon {
-			display: block;
-			height: 1em;
-
-			margin-right: .25rem;
-		}
 	}
 
 	.discussion {
@@ -256,8 +260,11 @@
 				padding: 0 1rem;
 			}
 
-			&.is-active {
-				display: block;
+		}
+
+		&.is-active {
+			.comment-form {
+				display: initial;
 			}
 		}
 

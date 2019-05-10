@@ -261,17 +261,40 @@
 				border-color: black;
 
 				color: black;
-
-				background-color: rgba(0, 0, 0, 0.125);
 			}
 		}
 
-		img {
-			display: block;
-			height: 1em;
-
-			margin-right: .5rem;
+		.full {
+			color: white;
+			background-color: black;
 		}
+
+		.join {
+			&:after {
+				content: 'Tham gia';
+				margin-left: .5rem;
+			}
+
+			&.is-active {
+				&:after {
+					content: 'Đã tham gia';
+				}
+			}
+		}
+
+		.follow {
+			&:after {
+				content: 'Theo dõi';
+				margin-left: .5rem;
+			}
+
+			&.is-active {
+				&:after {
+					content: 'Đang theo dõi';
+				}
+			}
+		}
+
 	}
 
 	.game--info-bottom {
@@ -435,8 +458,10 @@
 			}
 		}
 
-		.interraction {
-			.share {
+		.interaction {
+
+			.share,
+			.report {
 				display: none;
 
 				@include breakpoint(md) {
@@ -629,6 +654,10 @@
 					@include ui-border-radius;
 					border-top-right-radius: 0;
 					border-bottom-left-radius: 0;
+
+					@include breakpoint(md) {
+						top: 0;
+					}
 				}
 			}
 
@@ -637,45 +666,6 @@
 				@include breakpoint(md) {
 					width: calc(100% - 4rem);
 					left: 4rem;
-				}
-
-				&.host {
-					@include breakpoint(md) {
-						width: 100%;
-						left: 0;
-					}
-
-					.title {
-						padding-top: 1rem;
-						padding-bottom: 1rem;
-
-						.post-date {
-							position: relative;
-							display: block;
-							right: 0;
-							top: 0;
-						}
-					}
-
-					.stack {
-						@include breakpoint(md) {
-							margin-top: -3rem;
-						}
-					}
-
-					.discussion {
-						display: initial;
-
-						.comment-form {
-							display: none;
-						}
-
-						&.is-active {
-							.comment-form {
-								display: block;
-							}
-						}
-					}
 				}
 
 				.title {
@@ -763,6 +753,66 @@
 						display: initial;
 					}
 				}
+			}
+
+			&.host {
+				@include breakpoint(md) {
+					width: 100%;
+					left: 0;
+				}
+
+				&.reply {
+					.title {
+						padding-top: 1rem;
+						padding-bottom: 1rem;
+
+						.post-date {
+							position: relative;
+							display: block;
+							right: 0;
+							top: 0;
+						}
+					}
+
+					.discussion {
+						display: initial;
+
+						.comment-form {
+							display: none;
+						}
+
+						&.is-active {
+							.comment-form {
+								display: block;
+							}
+						}
+					}
+				}
+
+				.stack {
+					@include breakpoint(md) {
+						margin-top: -3rem;
+					}
+				}
+
+				&.scene {
+					.stack {
+						@include breakpoint(md) {
+							margin-top: -5rem;
+						}
+					}
+				}
+
+				.interaction {
+					.correct {
+						display: none;
+					}
+
+					.report {
+						display: initial;
+					}
+				}
+
 			}
 
 			&.has-featured {
@@ -899,5 +949,175 @@
 		grid-area: b;
 
 		width: 100%;
+
+		.ui-widget {
+			&.game {
+				&--progress-tree {
+
+					ol {
+						margin: 0;
+						padding-left: 2rem;
+						list-style: none;
+						line-height: 2rem;
+
+						ol {
+							padding-left: 2rem;
+						}
+
+						li {
+							position: relative;
+							cursor: pointer;
+							// >ol {
+							// 	li {
+							// 		font-size: .85rem;
+							// 	}
+							// }
+
+							&:before {
+								position: absolute;
+								left: -2rem;
+								top: 0px;
+								content: '';
+								display: block;
+								border-left: 1px solid #ddd;
+								height: 1rem;
+								border-bottom: 1px solid #ddd;
+								width: 1rem;
+							}
+
+							&:after {
+								position: absolute;
+								left: -2rem;
+								bottom: -0.5rem;
+								content: '';
+								display: block;
+								border-left: 1px solid #ddd;
+								height: 100%;
+							}
+
+							&.game--name {
+								margin: 0 0 .5rem -2rem;
+								font-weight: 600;
+
+								&:before {
+									display: none;
+								}
+
+								&:after {
+									display: none;
+								}
+							}
+
+							&:last-child {
+								&:after {
+									display: none
+								}
+							}
+
+							.game--chapter-number {
+								font-size: .5rem;
+								font-weight: bold;
+								text-transform: uppercase;
+
+								margin-right: .5rem;
+								vertical-align: middle;
+							}
+
+							.game--chapter-name {
+								color: $color-text-light;
+							}
+
+							&.is-active {
+								>.game--chapter-name {
+									color: $color-text-regular;
+									font-weight: 600;
+								}
+							}
+						}
+					}
+				}
+
+				&--rules {
+					ol {
+						margin: 0;
+						padding: 0;
+						list-style-position: inside;
+
+						li {
+							&+li {
+								margin-top: 1rem;
+							}
+
+							p {
+								display: inline;
+							}
+						}
+					}
+				}
+
+				&--members {
+					ul {
+						margin: 0;
+						padding: 0;
+						list-style: none;
+
+						&+h5 {
+							margin-top: 1.5rem;
+						}
+
+						li {
+							display: flex;
+							align-items: center;
+							justify-content: flex-start;
+
+							&+li {
+								margin-top: 1rem;
+							}
+
+							p {
+								margin: 0;
+
+								&:first-child {
+									font-weight: bold;
+								}
+
+								&:last-child {
+									font-size: .85rem;
+									color: $color-text-light;
+								}
+							}
+						}
+					}
+
+					.profile-picture {
+						width: 4rem;
+						height: 4rem;
+						object-fit: cover;
+
+						@include ui-border;
+						@include ui-border-radius;
+
+						margin-right: 1rem;
+
+						@include breakpoint(md) {
+							width: 3rem;
+							height: 3rem;
+						}
+					}
+
+					.members {
+						color: $color-text-light;
+
+						&:before {
+							content: '(';
+						}
+
+						&:after {
+							content: ')';
+						}
+					}
+				}
+			}
+		}
 	}
 }

@@ -95,6 +95,7 @@ $(document).ready(function () {
 
 function gameInfoMargin() {
 	if ($(window).width() < 992) {
+		$('.game--header .game--info').css('margin-top', '-10vh');
 	} else {
 		var gameinfoheight = $('.game--header .game--info').height();
 		$('.game--header .game--info').css('margin-top', - gameinfoheight / 2);
@@ -108,42 +109,52 @@ $('.challenge-result').html('<p>Kết quả: <span class="result"><i class="far 
 $('.challenge-result.good').html('<p>Kết quả: <span class="result"><i class="far fa-smile"></i> Mạnh</span>.</p>');
 $('.challenge-result.bad').html('<p>Kết quả: <span class="result"><i class="far fa-frown"></i> Yếu</span>.</p>');
 
+
+// Game: Interraction
+
+$('.interaction').load('./inc/game--interaction.html');
+
 // Game: Show Comment Form
 
-$('.scene .interraction .comment').click(function () {
-	$(this).parent().parent().siblings('.discussion').children('.comment-form').toggleClass('is-active');
-	return false;
-});
-
-$('.reply .interraction .comment').click(function () {
-	$(this).parent().parent().siblings('.discussion').toggleClass('is-active');
-	return false;
-});
-
-
+setTimeout(function () {
+	$('.interaction .comment').click(function () {
+		$(this).parent().parent().siblings('.discussion').toggleClass('is-active');
+		return false;
+	});
+}, 100);
 
 // Game: Join/ Follow Button
 
 $('.game--info-middle a').click(function () {
-	var joinfollowbuttonsrc = $(this).children('img').attr('src');
+	$(this).toggleClass('is-active');
+	$(this).toggleClass('full');
+	$(this).toggleClass('ghost');
+	$(this).children('i').toggleClass('fa-plus');
+	$(this).children('i').toggleClass('fa-check');
+})
 
-	if (joinfollowbuttonsrc == './img/layout/icons/plus.svg') {
-		$(this).children('img').attr('src', './img/layout/icons/check.svg');
-	} else {
-		$(this).children('img').attr('src', './img/layout/icons/plus.svg');
-	}
 
-	if ($(this).hasClass('join')) {
-		if ($(this).children('span').text() == 'Tham gia') {
-			$(this).children('span').text('Đã tham gia');
-		} else {
-			$(this).children('span').text('Tham gia');
-		}
-	} else {
-		if ($(this).children('span').text() == 'Theo dõi') {
-			$(this).children('span').text('Đang theo dõi');
-		} else {
-			$(this).children('span').text('Theo dõi');
-		}
-	}
-});
+// Gme: Toggle Vote
+
+$('.title .vote a').click(function () {
+	$(this).parent().children('a').removeClass('is-selected');
+	$(this).toggleClass('is-selected');
+})
+
+
+// Game: Sidebar
+
+$('.game--progress-tree').load('./inc/game--progress-tree.html');
+$('.game--rules').load('./inc/game--rules.html');
+$('.game--members').load('./inc/game--members.html');
+
+
+//// Game: Sidebar Widget Collapse
+
+setTimeout(function () {
+	$('.game--sidebar .ui-widget .title').click(function () {
+		$(this).siblings('.content').slideToggle('slow');
+	})
+}, 100);
+
+//// Game: Game Progress Tree

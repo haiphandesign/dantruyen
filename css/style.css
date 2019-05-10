@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ==========================================================================
    Normalize.scss settings
    ========================================================================== */
@@ -591,12 +592,23 @@ a {
   padding: 1rem;
 }
 
+@media (min-width: 992px) {
+  .ui-widget .content.limit-lenght {
+    max-height: 50vh;
+    overflow: auto;
+  }
+}
+
 .ui-widget.post .content img {
   max-width: 100%;
   border-radius: 0.25rem;
 }
 
-.ui-widget .interraction {
+.ui-widget hr {
+  margin: 1rem -1rem;
+}
+
+.ui-widget .interaction {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -610,7 +622,7 @@ a {
   padding: 1rem;
 }
 
-.ui-widget .interraction ul {
+.ui-widget .interaction ul {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -625,15 +637,15 @@ a {
   padding: 0;
 }
 
-.ui-widget .interraction ul li {
+.ui-widget .interaction ul li {
   display: block;
 }
 
-.ui-widget .interraction ul li + li {
+.ui-widget .interaction ul li + li {
   margin-left: 1rem;
 }
 
-.ui-widget .interraction a {
+.ui-widget .interaction a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -650,12 +662,6 @@ a {
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
-}
-
-.ui-widget .interraction .icon {
-  display: block;
-  height: 1em;
-  margin-right: .25rem;
 }
 
 .ui-widget .discussion {
@@ -691,8 +697,8 @@ a {
   padding: 0 1rem;
 }
 
-.ui-widget .discussion .comment-form.is-active {
-  display: block;
+.ui-widget .discussion.is-active .comment-form {
+  display: initial;
 }
 
 .ui-widget .discussion ul {
@@ -895,14 +901,14 @@ hr {
 .button.small {
   height: 2rem;
   font-size: .85rem;
+  padding: 0 1rem;
 }
 
 .button.ghost {
   border: 1px solid rgba(179, 179, 179, 0.25);
   background-color: white;
   border-color: #b3b3b3;
-  background: transparent;
-  padding: 0 1rem;
+  background-color: transparent;
 }
 
 .button.centered {
@@ -1507,14 +1513,30 @@ hr {
   .game--header .game--info-middle a {
     border-color: black;
     color: black;
-    background-color: rgba(0, 0, 0, 0.125);
   }
 }
 
-.game--header .game--info-middle img {
-  display: block;
-  height: 1em;
-  margin-right: .5rem;
+.game--header .game--info-middle .full {
+  color: white;
+  background-color: black;
+}
+
+.game--header .game--info-middle .join:after {
+  content: 'Tham gia';
+  margin-left: .5rem;
+}
+
+.game--header .game--info-middle .join.is-active:after {
+  content: 'Đã tham gia';
+}
+
+.game--header .game--info-middle .follow:after {
+  content: 'Theo dõi';
+  margin-left: .5rem;
+}
+
+.game--header .game--info-middle .follow.is-active:after {
+  content: 'Đang theo dõi';
 }
 
 .game--header .game--info-bottom {
@@ -1720,12 +1742,14 @@ hr {
   }
 }
 
-.game--main .game--thread .interraction .share {
+.game--main .game--thread .interaction .share,
+.game--main .game--thread .interaction .report {
   display: none;
 }
 
 @media (min-width: 992px) {
-  .game--main .game--thread .interraction .share {
+  .game--main .game--thread .interaction .share,
+  .game--main .game--thread .interaction .report {
     display: initial;
   }
 }
@@ -1905,47 +1929,16 @@ hr {
 }
 
 @media (min-width: 992px) {
+  .game--main .game--thread .post.scene .vote {
+    top: 0;
+  }
+}
+
+@media (min-width: 992px) {
   .game--main .game--thread .post.reply {
     width: calc(100% - 4rem);
     left: 4rem;
   }
-}
-
-@media (min-width: 992px) {
-  .game--main .game--thread .post.reply.host {
-    width: 100%;
-    left: 0;
-  }
-}
-
-.game--main .game--thread .post.reply.host .title {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.game--main .game--thread .post.reply.host .title .post-date {
-  position: relative;
-  display: block;
-  right: 0;
-  top: 0;
-}
-
-@media (min-width: 992px) {
-  .game--main .game--thread .post.reply.host .stack {
-    margin-top: -3rem;
-  }
-}
-
-.game--main .game--thread .post.reply.host .discussion {
-  display: initial;
-}
-
-.game--main .game--thread .post.reply.host .discussion .comment-form {
-  display: none;
-}
-
-.game--main .game--thread .post.reply.host .discussion.is-active .comment-form {
-  display: block;
 }
 
 .game--main .game--thread .post.reply .title {
@@ -2041,6 +2034,57 @@ hr {
 }
 
 .game--main .game--thread .post.reply .discussion.is-active {
+  display: initial;
+}
+
+@media (min-width: 992px) {
+  .game--main .game--thread .post.host {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.game--main .game--thread .post.host.reply .title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.game--main .game--thread .post.host.reply .title .post-date {
+  position: relative;
+  display: block;
+  right: 0;
+  top: 0;
+}
+
+.game--main .game--thread .post.host.reply .discussion {
+  display: initial;
+}
+
+.game--main .game--thread .post.host.reply .discussion .comment-form {
+  display: none;
+}
+
+.game--main .game--thread .post.host.reply .discussion.is-active .comment-form {
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .game--main .game--thread .post.host .stack {
+    margin-top: -3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .game--main .game--thread .post.host.scene .stack {
+    margin-top: -5rem;
+  }
+}
+
+.game--main .game--thread .post.host .interaction .correct {
+  display: none;
+}
+
+.game--main .game--thread .post.host .interaction .report {
   display: initial;
 }
 
@@ -2177,5 +2221,160 @@ hr {
   -ms-grid-column: 1;
   grid-area: b;
   width: 100%;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol {
+  margin: 0;
+  padding-left: 2rem;
+  list-style: none;
+  line-height: 2rem;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol ol {
+  padding-left: 2rem;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol li {
+  position: relative;
+  cursor: pointer;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol li:before {
+  position: absolute;
+  left: -2rem;
+  top: 0px;
+  content: '';
+  display: block;
+  border-left: 1px solid #ddd;
+  height: 1rem;
+  border-bottom: 1px solid #ddd;
+  width: 1rem;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol li:after {
+  position: absolute;
+  left: -2rem;
+  bottom: -0.5rem;
+  content: '';
+  display: block;
+  border-left: 1px solid #ddd;
+  height: 100%;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol li.game--name {
+  margin: 0 0 .5rem -2rem;
+  font-weight: 600;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol li.game--name:before {
+  display: none;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol li.game--name:after {
+  display: none;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol li:last-child:after {
+  display: none;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol li .game--chapter-number {
+  font-size: .5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: .5rem;
+  vertical-align: middle;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol li .game--chapter-name {
+  color: #b3b3b3;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree ol li.is-active > .game--chapter-name {
+  color: #333333;
+  font-weight: 600;
+}
+
+.game--main .game--sidebar .ui-widget.game--rules ol {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.game--main .game--sidebar .ui-widget.game--rules ol li + li {
+  margin-top: 1rem;
+}
+
+.game--main .game--sidebar .ui-widget.game--rules ol li p {
+  display: inline;
+}
+
+.game--main .game--sidebar .ui-widget.game--members ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.game--main .game--sidebar .ui-widget.game--members ul + h5 {
+  margin-top: 1.5rem;
+}
+
+.game--main .game--sidebar .ui-widget.game--members ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.game--main .game--sidebar .ui-widget.game--members ul li + li {
+  margin-top: 1rem;
+}
+
+.game--main .game--sidebar .ui-widget.game--members ul li p {
+  margin: 0;
+}
+
+.game--main .game--sidebar .ui-widget.game--members ul li p:first-child {
+  font-weight: bold;
+}
+
+.game--main .game--sidebar .ui-widget.game--members ul li p:last-child {
+  font-size: .85rem;
+  color: #b3b3b3;
+}
+
+.game--main .game--sidebar .ui-widget.game--members .profile-picture {
+  width: 4rem;
+  height: 4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid rgba(179, 179, 179, 0.25);
+  background-color: white;
+  border-radius: 0.25rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 992px) {
+  .game--main .game--sidebar .ui-widget.game--members .profile-picture {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.game--main .game--sidebar .ui-widget.game--members .members {
+  color: #b3b3b3;
+}
+
+.game--main .game--sidebar .ui-widget.game--members .members:before {
+  content: '(';
+}
+
+.game--main .game--sidebar .ui-widget.game--members .members:after {
+  content: ')';
 }
 /*# sourceMappingURL=style.css.map */
