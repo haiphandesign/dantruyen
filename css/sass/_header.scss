@@ -30,6 +30,20 @@
 		justify-content: center;
 	}
 
+	.nav--menu-toggle {
+		width: 3rem;
+		height: 3rem;
+
+		margin-left: -5vw;
+
+		background: {
+			image: url('../../img/layout/icons/bars.svg');
+			size: 1rem auto;
+			position: center;
+			repeat: no-repeat;
+		}
+	}
+
 	.nav--title {
 		margin-right: 1.5rem;
 	}
@@ -83,11 +97,123 @@
 		}
 	}
 
+	.nav--logged-in {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		>* {
+			&+* {
+				margin-left: 1.5rem;
+			}
+		}
+	}
+
+	.nav--button-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.nav--button {
+			position: relative;
+
+			&+.nav--button {
+				margin-left: 1.5rem;
+			}
+
+			i {
+				font-size: 1.25rem;
+			}
+
+			&.has-notification {
+				&:before {
+					content: '';
+					position: absolute;
+					top: -0.25rem;
+					left: -0.5rem;
+
+					display: block;
+
+					width: .5rem;
+					height: .5rem;
+
+					border-radius: 50%;
+
+					background-color: $color-primary;
+				}
+			}
+		}
+	}
+
+	.nav--user {
+		display: flex;
+		align-items: center;
+
+		>* {
+			&+* {
+				margin-left: 1rem;
+			}
+		}
+
+		.profile-picture {
+			img {
+				width: 3rem;
+				height: 3rem;
+				object-fit: cover;
+
+				display: block;
+
+				@include ui-border-radius;
+
+				transition: .5s all;
+
+				@include breakpoint(md) {
+					width: 4rem;
+					height: 4rem;
+				}
+			}
+		}
+
+		.user-info {
+			display: none;
+
+			@include breakpoint(md) {
+				display: initial;
+			}
+
+			p {
+				margin: 0;
+
+				&.user-fullname {
+					font-weight: 600;
+
+					i {
+						margin-left: .25rem;
+					}
+				}
+
+				&.user-username {
+					font-size: .75rem;
+					color: $color-text-light;
+				}
+			}
+		}
+	}
+
 	&.is-fixed {
 		height: 4.5rem;
 
 		.nav--title-logo {
 			width: 12rem;
+		}
+
+		.nav--user {
+			.profile-picture {
+				img {
+					width: 3rem;
+					height: 3rem;
+				}
+			}
 		}
 	}
 }

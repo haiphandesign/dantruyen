@@ -1017,6 +1017,16 @@ hr {
           justify-content: center;
 }
 
+#nav .nav--menu-toggle {
+  width: 3rem;
+  height: 3rem;
+  margin-left: -5vw;
+  background-image: url("../../img/layout/icons/bars.svg");
+  background-size: 1rem auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 #nav .nav--title {
   margin-right: 1.5rem;
 }
@@ -1072,12 +1082,127 @@ hr {
   margin: 0 1rem;
 }
 
+#nav .nav--logged-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#nav .nav--logged-in > * + * {
+  margin-left: 1.5rem;
+}
+
+#nav .nav--button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#nav .nav--button-wrapper .nav--button {
+  position: relative;
+}
+
+#nav .nav--button-wrapper .nav--button + .nav--button {
+  margin-left: 1.5rem;
+}
+
+#nav .nav--button-wrapper .nav--button i {
+  font-size: 1.25rem;
+}
+
+#nav .nav--button-wrapper .nav--button.has-notification:before {
+  content: '';
+  position: absolute;
+  top: -0.25rem;
+  left: -0.5rem;
+  display: block;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background-color: #0582CA;
+}
+
+#nav .nav--user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#nav .nav--user > * + * {
+  margin-left: 1rem;
+}
+
+#nav .nav--user .profile-picture img {
+  width: 3rem;
+  height: 3rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 0.25rem;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+}
+
+@media (min-width: 992px) {
+  #nav .nav--user .profile-picture img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+#nav .nav--user .user-info {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  #nav .nav--user .user-info {
+    display: initial;
+  }
+}
+
+#nav .nav--user .user-info p {
+  margin: 0;
+}
+
+#nav .nav--user .user-info p.user-fullname {
+  font-weight: 600;
+}
+
+#nav .nav--user .user-info p.user-fullname i {
+  margin-left: .25rem;
+}
+
+#nav .nav--user .user-info p.user-username {
+  font-size: .75rem;
+  color: #b3b3b3;
+}
+
 #nav.is-fixed {
   height: 4.5rem;
 }
 
 #nav.is-fixed .nav--title-logo {
   width: 12rem;
+}
+
+#nav.is-fixed .nav--user .profile-picture img {
+  width: 3rem;
+  height: 3rem;
 }
 
 .header-spacer {
@@ -1878,6 +2003,7 @@ hr {
   border-right: 0;
   border-bottom: 0;
   background-color: #fafafa;
+  background-image: none;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
@@ -1899,6 +2025,8 @@ hr {
   padding: 1rem 0 2rem;
   background-image: url("../../img/layout/icons/arrow.svg");
   background-position: center bottom .25rem;
+  background-repeat: no-repeat;
+  background-size: .5rem auto;
 }
 
 .game--main .game--thread .stack .stack-used .stack-reveal {

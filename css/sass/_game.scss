@@ -603,6 +603,7 @@
 				border-bottom: 0;
 
 				background-color: $color-background;
+				background-image: none;
 
 				transition: all .5s;
 
@@ -624,6 +625,9 @@
 
 					background-image: url('../../img/layout/icons/arrow.svg');
 					background-position: center bottom .25rem;
+					background-repeat: no-repeat;
+					background-size: .5rem auto;
+
 				}
 
 				.stack-reveal {
