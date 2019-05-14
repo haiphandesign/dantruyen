@@ -37,6 +37,36 @@ function headerspacing() {
 window.setTimeout(headerspacing, 100);
 
 
+// Global: Hide Navbar
+
+$(document).ready(function () {
+
+	'use strict';
+
+	var c,
+		currentScrollTop = 0,
+		navbar = $('#nav'),
+		gameprogressbar = $('.game--progress');
+
+	$(window).scroll(function () {
+		var a = $(window).scrollTop();
+		var b = navbar.height();
+
+		currentScrollTop = a;
+
+		if (c < currentScrollTop && a > b + b) {
+			navbar.addClass("is-scrolled");
+			gameprogressbar.addClass("is-scrolled");
+		} else if (c > currentScrollTop && !(a <= b)) {
+			navbar.removeClass("is-scrolled");
+			gameprogressbar.removeClass("is-scrolled");
+		}
+		c = currentScrollTop;
+	});
+
+});
+
+
 
 //  ________  ________  _____ ______   _______      
 // |\   ____\|\   __  \|\   _ \  _   \|\  ___ \     

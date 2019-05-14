@@ -947,6 +947,15 @@
 				}
 			}
 		}
+
+		.game-action {
+			.content {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+			}
+		}
 	}
 
 	.game--sidebar {
@@ -957,6 +966,11 @@
 		.ui-widget {
 			&.game {
 				&--progress-tree {
+					display: none;
+
+					@include breakpoint(md) {
+						display: flex;
+					}
 
 					ol {
 						margin: 0;
@@ -1042,14 +1056,36 @@
 				}
 
 				&--rules {
+					display: none;
+
+					@include breakpoint(md) {
+						display: flex;
+					}
+
 					ol {
 						margin: 0;
 						padding: 0;
-						list-style-position: inside;
+						margin-left: 1.5rem;
+						margin-bottom: 1rem;
 
 						li {
+							text-align: justify;
+							hyphens: auto;
+
 							&+li {
 								margin-top: 1rem;
+
+								&:before {
+									content: '';
+									display: block;
+									width: 100%;
+									height: 1px;
+									opacity: .25;
+
+									margin: 1rem 0;
+
+									background-color: $color-text-light;
+								}
 							}
 
 							p {
@@ -1060,6 +1096,12 @@
 				}
 
 				&--members {
+					display: none;
+
+					@include breakpoint(md) {
+						display: flex;
+					}
+
 					ul {
 						margin: 0;
 						padding: 0;
@@ -1123,5 +1165,98 @@
 				}
 			}
 		}
+	}
+}
+
+
+.game--progress {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 4rem;
+
+	padding: .5rem 5vw;
+
+	background-color: white;
+
+	@include ui-border;
+	@include ui-shadow;
+
+	transition: .5s all;
+
+
+
+	>* {
+		display: flex;
+
+		&+* {
+			@include breakpoint(md) {
+				margin-left: 1rem;
+			}
+		}
+	}
+
+	.button {
+
+		@include breakpoint(md) {
+			@include ui-border;
+			@include ui-border-radius;
+		}
+
+		&+.button {
+			margin-left: 1rem;
+		}
+	}
+
+	.game--progress-bar {
+		position: absolute;
+		top: -1rem;
+		left: -5vw;
+		right: -5vw;
+		height: 1rem;
+		width: calc(100% + 0);
+		overflow: hidden;
+
+		@include ui-border;
+
+		@include breakpoint(md) {
+			position: relative;
+			top: 0;
+			left: auto;
+			right: auto;
+			width: 100%;
+			height: 3rem;
+			@include ui-border-radius;
+		}
+
+		.progressed {
+
+			width: 40%;
+			display: block;
+
+			background-color: $color-text-light;
+		}
+	}
+
+	.game--progress-navigation {
+		display: flex;
+
+		.list {
+			order: -1;
+
+			@include breakpoint(md) {
+				order: 99;
+			}
+		}
+
+	}
+
+	&.is-scrolled {
+		bottom: -5rem;
 	}
 }

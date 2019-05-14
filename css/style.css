@@ -1018,6 +1018,7 @@ hr {
 }
 
 #nav .nav--menu-toggle {
+  display: initial;
   width: 3rem;
   height: 3rem;
   margin-left: -5vw;
@@ -1025,6 +1026,12 @@ hr {
   background-size: 1rem auto;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 992px) {
+  #nav .nav--menu-toggle {
+    display: none;
+  }
 }
 
 #nav .nav--title {
@@ -1203,6 +1210,10 @@ hr {
 #nav.is-fixed .nav--user .profile-picture img {
   width: 3rem;
   height: 3rem;
+}
+
+#nav.is-scrolled {
+  top: -4.5rem;
 }
 
 .header-spacer {
@@ -2344,11 +2355,39 @@ hr {
   }
 }
 
+.game--main .game--thread .game-action .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .game--main .game--sidebar {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: b;
   width: 100%;
+}
+
+.game--main .game--sidebar .ui-widget.game--progress-tree {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .game--main .game--sidebar .ui-widget.game--progress-tree {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .game--main .game--sidebar .ui-widget.game--progress-tree ol {
@@ -2423,18 +2462,60 @@ hr {
   font-weight: 600;
 }
 
+.game--main .game--sidebar .ui-widget.game--rules {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .game--main .game--sidebar .ui-widget.game--rules {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .game--main .game--sidebar .ui-widget.game--rules ol {
   margin: 0;
   padding: 0;
-  list-style-position: inside;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.game--main .game--sidebar .ui-widget.game--rules ol li {
+  text-align: justify;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .game--main .game--sidebar .ui-widget.game--rules ol li + li {
   margin-top: 1rem;
 }
 
+.game--main .game--sidebar .ui-widget.game--rules ol li + li:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  opacity: .25;
+  margin: 1rem 0;
+  background-color: #b3b3b3;
+}
+
 .game--main .game--sidebar .ui-widget.game--rules ol li p {
   display: inline;
+}
+
+.game--main .game--sidebar .ui-widget.game--members {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .game--main .game--sidebar .ui-widget.game--members {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .game--main .game--sidebar .ui-widget.game--members ul {
@@ -2504,5 +2585,108 @@ hr {
 
 .game--main .game--sidebar .ui-widget.game--members .members:after {
   content: ')';
+}
+
+.game--progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 4rem;
+  padding: .5rem 5vw;
+  background-color: white;
+  border: 1px solid rgba(179, 179, 179, 0.25);
+  background-color: white;
+  -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+          box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+  -webkit-transition: .5s all;
+  transition: .5s all;
+}
+
+.game--progress > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 992px) {
+  .game--progress > * + * {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .game--progress .button {
+    border: 1px solid rgba(179, 179, 179, 0.25);
+    background-color: white;
+    border-radius: 0.25rem;
+  }
+}
+
+.game--progress .button + .button {
+  margin-left: 1rem;
+}
+
+.game--progress .game--progress-bar {
+  position: absolute;
+  top: -1rem;
+  left: -5vw;
+  right: -5vw;
+  height: 1rem;
+  width: calc(100% + 0);
+  overflow: hidden;
+  border: 1px solid rgba(179, 179, 179, 0.25);
+  background-color: white;
+}
+
+@media (min-width: 992px) {
+  .game--progress .game--progress-bar {
+    position: relative;
+    top: 0;
+    left: auto;
+    right: auto;
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.25rem;
+  }
+}
+
+.game--progress .game--progress-bar .progressed {
+  width: 40%;
+  display: block;
+  background-color: #b3b3b3;
+}
+
+.game--progress .game--progress-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.game--progress .game--progress-navigation .list {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+@media (min-width: 992px) {
+  .game--progress .game--progress-navigation .list {
+    -webkit-box-ordinal-group: 100;
+        -ms-flex-order: 99;
+            order: 99;
+  }
+}
+
+.game--progress.is-scrolled {
+  bottom: -5rem;
 }
 /*# sourceMappingURL=style.css.map */

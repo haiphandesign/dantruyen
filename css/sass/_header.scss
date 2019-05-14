@@ -31,6 +31,7 @@
 	}
 
 	.nav--menu-toggle {
+		display: initial;
 		width: 3rem;
 		height: 3rem;
 
@@ -41,6 +42,10 @@
 			size: 1rem auto;
 			position: center;
 			repeat: no-repeat;
+		}
+
+		@include breakpoint(md) {
+			display: none;
 		}
 	}
 
@@ -215,6 +220,10 @@
 				}
 			}
 		}
+	}
+
+	&.is-scrolled {
+		top: -4.5rem;
 	}
 }
 
