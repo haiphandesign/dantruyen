@@ -308,6 +308,11 @@
 
 		border-top: 1px solid rgba($color-text-light, .25);
 
+		&.is-fixed {
+			position: sticky;
+			top: 50px;
+		}
+
 
 		.game--menu-wrapper {
 			position: absolute;
@@ -1248,9 +1253,78 @@
 
 		.list {
 			order: -1;
+			position: relative;
 
 			@include breakpoint(md) {
 				order: 99;
+			}
+
+			.game--progress-list {
+				position: absolute;
+				bottom: 3rem;
+				right: 0;
+
+				display: none;
+				width: 90vw;
+				max-width: 30rem;
+
+				&.is-active {
+					display: flex;
+				}
+
+				.content {
+					max-height: 30rem;
+					overflow: auto;
+					padding: 0;
+				}
+
+				dl {
+					margin: 0;
+					padding: 0;
+				}
+
+				dt {
+					@include ui-shadow;
+					@include ui-border;
+
+					border-color: rgba($color-text-light, .125);
+					border-top: none;
+					border-left: none;
+					border-right: none;
+
+					background: lighten($color-text-light, 25);
+					margin: 0;
+					padding: 1rem;
+					position: sticky;
+					top: 0;
+
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+
+				dd {
+					margin: 0;
+					padding: 1rem;
+					white-space: nowrap;
+
+					i {
+						margin-right: .5rem;
+					}
+
+					&.is-active {
+						font-weight: bold;
+					}
+
+					&.is-disabled {
+						color: rgba($color-text-light, .5);
+						user-select: none;
+					}
+				}
+
+				dd+dd {
+					border-top: 1px solid rgba($color-text-light, .25);
+				}
+
 			}
 		}
 

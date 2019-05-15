@@ -1684,6 +1684,12 @@ hr {
   border-top: 1px solid rgba(179, 179, 179, 0.25);
 }
 
+.game--header .game--info-bottom.is-fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px;
+}
+
 .game--header .game--info-bottom .game--menu-wrapper {
   position: absolute;
   top: 0;
@@ -2676,6 +2682,7 @@ hr {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
+  position: relative;
 }
 
 @media (min-width: 992px) {
@@ -2684,6 +2691,77 @@ hr {
         -ms-flex-order: 99;
             order: 99;
   }
+}
+
+.game--progress .game--progress-navigation .list .game--progress-list {
+  position: absolute;
+  bottom: 3rem;
+  right: 0;
+  display: none;
+  width: 90vw;
+  max-width: 30rem;
+}
+
+.game--progress .game--progress-navigation .list .game--progress-list.is-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.game--progress .game--progress-navigation .list .game--progress-list .content {
+  max-height: 30rem;
+  overflow: auto;
+  padding: 0;
+}
+
+.game--progress .game--progress-navigation .list .game--progress-list dl {
+  margin: 0;
+  padding: 0;
+}
+
+.game--progress .game--progress-navigation .list .game--progress-list dt {
+  -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+          box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+  border: 1px solid rgba(179, 179, 179, 0.25);
+  background-color: white;
+  border-color: rgba(179, 179, 179, 0.125);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: #f3f3f3;
+  margin: 0;
+  padding: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.game--progress .game--progress-navigation .list .game--progress-list dd {
+  margin: 0;
+  padding: 1rem;
+  white-space: nowrap;
+}
+
+.game--progress .game--progress-navigation .list .game--progress-list dd i {
+  margin-right: .5rem;
+}
+
+.game--progress .game--progress-navigation .list .game--progress-list dd.is-active {
+  font-weight: bold;
+}
+
+.game--progress .game--progress-navigation .list .game--progress-list dd.is-disabled {
+  color: rgba(179, 179, 179, 0.5);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.game--progress .game--progress-navigation .list .game--progress-list dd + dd {
+  border-top: 1px solid rgba(179, 179, 179, 0.25);
 }
 
 .game--progress.is-scrolled {

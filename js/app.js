@@ -19,9 +19,11 @@ $('#footer').load('./inc/footer.html');
 $(window).scroll(function () {
 	if ($(this).scrollTop() > 300) {
 		$("#nav").addClass("is-fixed");
+		$(".game--info-bottom").addClass("is-fixed");
 		// $("#nav .logo img").attr("src", "./img/logo-only.svg");
 	} else {
 		$("#nav").removeClass("is-fixed");
+		$(".game--info-bottom").removeClass("is-fixed");
 		// $("#nav .logo img").attr("src", "./img/logo.svg");
 	}
 });
@@ -188,3 +190,18 @@ setTimeout(function () {
 }, 100);
 
 //// Game: Game Progress Tree
+
+
+// Game: Progress Bar
+
+//// Game: List Button
+
+$('.game--progress .game--progress-navigation .list').click(function () {
+	$('.game--progress-list').toggleClass('is-active');
+})
+
+$(window).scroll(function () {
+	if ($('.game--progress').hasClass('is-scrolled')) {
+		$('.game--progress-list').removeClass('is-active');
+	}
+})
