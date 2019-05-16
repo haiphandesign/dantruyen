@@ -921,8 +921,17 @@ hr {
 }
 
 .button.full {
+  border: 1px solid rgba(179, 179, 179, 0.25);
+  background-color: white;
+  -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+          box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
   background-color: #333333;
   color: white;
+}
+
+.button.full.white {
+  background-color: white;
+  color: #333333;
 }
 
 .button.full:hover {
@@ -2361,7 +2370,7 @@ hr {
   }
 }
 
-.game--main .game--thread .game-action .content {
+.game--main .game--thread .game--navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

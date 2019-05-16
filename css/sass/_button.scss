@@ -39,12 +39,22 @@
 	}
 
 	&.full {
+		@include ui-border;
+		@include ui-shadow;
 
 		background: {
 			color: $color-text-regular;
 		}
 
 		color: white;
+
+		&.white {
+			background: {
+				color: white;
+			}
+
+			color: $color-text-regular;
+		}
 
 		&:hover {
 			background: {

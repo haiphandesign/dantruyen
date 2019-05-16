@@ -177,6 +177,7 @@ $('.title .vote a').click(function () {
 // Game: Sidebar
 
 $('.game--progress-tree').load('./inc/game--progress-tree.html');
+$('.game--location').load('./inc/game--location.html');
 $('.game--rules').load('./inc/game--rules.html');
 $('.game--members').load('./inc/game--members.html');
 
