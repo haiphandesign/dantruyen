@@ -2386,6 +2386,14 @@ hr {
           justify-content: space-between;
 }
 
+.game--main .game--thread .game--navigation .button:first-child i {
+  margin-right: .5rem;
+}
+
+.game--main .game--thread .game--navigation .button:last-child i {
+  margin-left: .5rem;
+}
+
 .game--main .game--sidebar {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
