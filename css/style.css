@@ -2401,6 +2401,18 @@ hr {
   width: 100%;
 }
 
+.game--main .game--sidebar .ui-widget.game--action {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 6rem;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.game--main .game--sidebar .ui-widget.game--action.is-scrolled {
+  top: 2rem;
+}
+
 .game--main .game--sidebar .ui-widget.game--progress-tree {
   display: none;
 }

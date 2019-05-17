@@ -59,9 +59,11 @@ $(document).ready(function () {
 		if (c < currentScrollTop && a > b + b) {
 			navbar.addClass("is-scrolled");
 			gameprogressbar.addClass("is-scrolled");
+			$('.game--action').addClass("is-scrolled");
 		} else if (c > currentScrollTop && !(a <= b)) {
 			navbar.removeClass("is-scrolled");
 			gameprogressbar.removeClass("is-scrolled");
+			$('.game--action').removeClass("is-scrolled");
 		}
 		c = currentScrollTop;
 	});
@@ -130,7 +132,7 @@ function gameInfoMargin() {
 		$('.game--header .game--info').css('margin-top', '-10vh');
 	} else {
 		var gameinfoheight = $('.game--header .game--info').height();
-		$('.game--header .game--info').css('margin-top', - gameinfoheight / 2);
+		$('.game--header .game--info').css('margin-top', -gameinfoheight / 2);
 	}
 }
 

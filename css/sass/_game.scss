@@ -982,6 +982,16 @@
 
 		.ui-widget {
 			&.game {
+				&--action {
+					position: sticky;
+					top: 6rem;
+					transition: all .5s;
+
+					&.is-scrolled {
+						top: 2rem;
+					}
+				}
+
 				&--progress-tree {
 					display: none;
 
