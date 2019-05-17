@@ -39,6 +39,18 @@
 	}
 
 	&.full {
+		width: 100%;
+	}
+
+	&.half {
+		width: calc(50% - .5rem);
+
+		+.half {
+			margin-left: 1rem;
+		}
+	}
+
+	&.solid {
 		@include ui-border;
 		@include ui-shadow;
 

@@ -306,12 +306,7 @@
 
 		overflow: hidden;
 
-		border-top: 1px solid rgba($color-text-light, .25);
-
-		&.is-fixed {
-			position: sticky;
-			top: 50px;
-		}
+		border-top: 1px solid rgba($color-border, .75);
 
 
 		.game--menu-wrapper {
@@ -980,15 +975,27 @@
 
 		width: 100%;
 
+		&-wrapper {
+			position: sticky;
+			top: 6.5rem;
+			transition: all .5s;
+
+			&.is-scrolled {
+				top: 2rem;
+			}
+		}
+
 		.ui-widget {
 			&.game {
 				&--action {
-					position: sticky;
-					top: 6rem;
-					transition: all .5s;
+					@include ui-no-border;
+					@include ui-no-border-radius;
+					@include ui-no-shadow;
 
-					&.is-scrolled {
-						top: 2rem;
+					background: none;
+
+					.content {
+						padding: 0;
 					}
 				}
 

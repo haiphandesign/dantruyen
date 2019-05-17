@@ -19,11 +19,11 @@ $('#footer').load('./inc/footer.html');
 $(window).scroll(function () {
 	if ($(this).scrollTop() > 300) {
 		$("#nav").addClass("is-fixed");
-		$(".game--info-bottom").addClass("is-fixed");
+		// $(".game--info-bottom").addClass("is-fixed");
 		// $("#nav .logo img").attr("src", "./img/logo-only.svg");
 	} else {
 		$("#nav").removeClass("is-fixed");
-		$(".game--info-bottom").removeClass("is-fixed");
+		// $(".game--info-bottom").removeClass("is-fixed");
 		// $("#nav .logo img").attr("src", "./img/logo.svg");
 	}
 });
@@ -59,11 +59,11 @@ $(document).ready(function () {
 		if (c < currentScrollTop && a > b + b) {
 			navbar.addClass("is-scrolled");
 			gameprogressbar.addClass("is-scrolled");
-			$('.game--action').addClass("is-scrolled");
+			$('.game--sidebar-wrapper').addClass("is-scrolled");
 		} else if (c > currentScrollTop && !(a <= b)) {
 			navbar.removeClass("is-scrolled");
 			gameprogressbar.removeClass("is-scrolled");
-			$('.game--action').removeClass("is-scrolled");
+			$('.game--sidebar-wrapper').removeClass("is-scrolled");
 		}
 		c = currentScrollTop;
 	});
@@ -182,6 +182,7 @@ $('.game--progress-tree').load('./inc/game--progress-tree.html');
 $('.game--location').load('./inc/game--location.html');
 $('.game--rules').load('./inc/game--rules.html');
 $('.game--members').load('./inc/game--members.html');
+$('.game--action').load('./inc/game--action.html');
 
 
 //// Game: Sidebar Widget Collapse
@@ -201,10 +202,12 @@ setTimeout(function () {
 
 $('.game--progress .game--progress-navigation .list').click(function () {
 	$('.game--progress-list').toggleClass('is-active');
-})
+});
 
 $(window).scroll(function () {
 	if ($('.game--progress').hasClass('is-scrolled')) {
 		$('.game--progress-list').removeClass('is-active');
 	}
-})
+});
+
+

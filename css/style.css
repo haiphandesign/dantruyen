@@ -427,7 +427,7 @@ html {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #f8f8f8;
   font-family: 'Muli', sans-serif;
   line-height: 1.5;
   color: #333333;
@@ -487,7 +487,7 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: white;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   border-radius: 0.25rem;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
@@ -519,7 +519,7 @@ a {
   border-radius: 0.25rem;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  border-bottom: 1px solid rgba(179, 179, 179, 0.25);
+  border-bottom: 1px solid rgba(228, 228, 228, 0.75);
   padding: .75rem 1rem;
 }
 
@@ -667,7 +667,7 @@ a {
 .ui-widget .discussion {
   font-size: .85rem;
   border-top: 1px solid rgba(179, 179, 179, 0.25);
-  background-color: #fafafa;
+  background-color: #f8f8f8;
 }
 
 .ui-widget .discussion .comment-form {
@@ -678,7 +678,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   border-left: 0;
   border-right: 0;
@@ -690,7 +690,7 @@ a {
 .ui-widget .discussion .comment-form input[type='text'] {
   width: 100%;
   height: 2.5rem;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   border-radius: 0.25rem;
   background-color: white;
@@ -905,7 +905,7 @@ hr {
 }
 
 .button.ghost {
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   border-color: #b3b3b3;
   background-color: transparent;
@@ -921,7 +921,19 @@ hr {
 }
 
 .button.full {
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  width: 100%;
+}
+
+.button.half {
+  width: calc(50% - .5rem);
+}
+
+.button.half + .half {
+  margin-left: 1rem;
+}
+
+.button.solid {
+  border: 1px solid #e4e4e4;
   background-color: white;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
@@ -929,12 +941,12 @@ hr {
   color: white;
 }
 
-.button.full.white {
+.button.solid.white {
   background-color: white;
   color: #333333;
 }
 
-.button.full:hover {
+.button.solid:hover {
   background-color: color(darker);
 }
 
@@ -1000,7 +1012,7 @@ hr {
   height: 4.5rem;
   background-color: white;
   padding: 0 5vw;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
@@ -1317,7 +1329,7 @@ hr {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   border-radius: 0.25rem;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
@@ -1690,13 +1702,7 @@ hr {
   height: 4rem;
   display: block;
   overflow: hidden;
-  border-top: 1px solid rgba(179, 179, 179, 0.25);
-}
-
-.game--header .game--info-bottom.is-fixed {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 50px;
+  border-top: 1px solid rgba(228, 228, 228, 0.75);
 }
 
 .game--header .game--info-bottom .game--menu-wrapper {
@@ -1834,7 +1840,7 @@ hr {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
@@ -1845,7 +1851,7 @@ hr {
   font-weight: bold;
   letter-spacing: .2em;
   padding: 0 1rem;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
 }
 
 @media (min-width: 992px) {
@@ -1907,7 +1913,7 @@ hr {
 
 .game--main .game--thread .stack {
   position: relative;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   border-left: 0;
   border-right: 0;
@@ -1919,12 +1925,12 @@ hr {
   -webkit-box-ordinal-group: 1000;
       -ms-flex-order: 999;
           order: 999;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
 }
 
 @media (min-width: 992px) {
   .game--main .game--thread .stack {
-    border: 1px solid rgba(179, 179, 179, 0.25);
+    border: 1px solid #e4e4e4;
     background-color: white;
     border-radius: 0.25rem;
     -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
@@ -1988,7 +1994,7 @@ hr {
       flex-shrink: 0;
   width: 3rem;
   height: 3rem;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   border-radius: 0.25rem;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
@@ -2023,12 +2029,12 @@ hr {
   margin-bottom: -1rem;
   padding: 1rem 0;
   overflow: hidden;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   border-left: 0;
   border-right: 0;
   border-bottom: 0;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
   background-image: none;
   -webkit-transition: all .5s;
   transition: all .5s;
@@ -2143,7 +2149,7 @@ hr {
   padding: 1rem;
   font-size: .85rem;
   color: black;
-  background-color: #ededed;
+  background-color: #ebebeb;
 }
 
 .game--main .game--thread .post.reply .challenge-result.good {
@@ -2280,7 +2286,7 @@ hr {
   margin-bottom: -1rem;
   margin-right: 1rem;
   padding: 0;
-  background-color: #ededed;
+  background-color: #ebebeb;
 }
 
 @media (min-width: 992px) {
@@ -2401,16 +2407,28 @@ hr {
   width: 100%;
 }
 
-.game--main .game--sidebar .ui-widget.game--action {
+.game--main .game--sidebar-wrapper {
   position: -webkit-sticky;
   position: sticky;
-  top: 6rem;
+  top: 6.5rem;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
-.game--main .game--sidebar .ui-widget.game--action.is-scrolled {
+.game--main .game--sidebar-wrapper.is-scrolled {
   top: 2rem;
+}
+
+.game--main .game--sidebar .ui-widget.game--action {
+  border: none;
+  border-radius: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: none;
+}
+
+.game--main .game--sidebar .ui-widget.game--action .content {
+  padding: 0;
 }
 
 .game--main .game--sidebar .ui-widget.game--progress-tree {
@@ -2597,7 +2615,7 @@ hr {
   height: 4rem;
   -o-object-fit: cover;
      object-fit: cover;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   border-radius: 0.25rem;
   margin-right: 1rem;
@@ -2639,7 +2657,7 @@ hr {
   height: 4rem;
   padding: .5rem 5vw;
   background-color: white;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
@@ -2661,7 +2679,7 @@ hr {
 
 @media (min-width: 992px) {
   .game--progress .button {
-    border: 1px solid rgba(179, 179, 179, 0.25);
+    border: 1px solid #e4e4e4;
     background-color: white;
     border-radius: 0.25rem;
   }
@@ -2679,7 +2697,7 @@ hr {
   height: 1rem;
   width: calc(100% + 0);
   overflow: hidden;
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
 }
 
@@ -2751,7 +2769,7 @@ hr {
 .game--progress .game--progress-navigation .list .game--progress-list dt {
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
-  border: 1px solid rgba(179, 179, 179, 0.25);
+  border: 1px solid #e4e4e4;
   background-color: white;
   border-color: rgba(179, 179, 179, 0.125);
   border-top: none;

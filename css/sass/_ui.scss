@@ -15,7 +15,7 @@
 }
 
 @mixin ui-border {
-	border: 1px solid rgba($color-text-light, .25);
+	border: 1px solid $color-border;
 	background-color: white;
 }
 
@@ -92,7 +92,7 @@
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
 
-		border-bottom: 1px solid rgba($color-text-light, .25);
+		border-bottom: 1px solid rgba($color-border, .75);
 
 		padding: .75rem 1rem;
 
