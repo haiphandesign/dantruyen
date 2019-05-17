@@ -78,7 +78,6 @@
 	@include ui-shadow;
 	@include ui-bottom-spacing;
 
-
 	.title {
 		position: relative;
 
@@ -295,6 +294,18 @@
 					font-weight: bold;
 				}
 			}
+		}
+	}
+
+	&.ui-naked-widget {
+		@include ui-no-border;
+		@include ui-no-border-radius;
+		@include ui-no-shadow;
+
+		background: none;
+
+		.content {
+			padding: 0;
 		}
 	}
 

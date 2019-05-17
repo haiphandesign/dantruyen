@@ -949,22 +949,46 @@
 		}
 
 		.game--navigation {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
+			.content {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+			}
 
 			.button {
+				padding: 0;
+				width: 100%;
+
 				&:first-child {
-					i {
-						margin-right: .5rem;
-					}
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
+				}
+
+				&:nth-child(2) {
+					width: auto;
+					padding: 0 1.5rem;
+					border-radius: 0;
+					border-left: 0;
+					border-right: 0;
 				}
 
 				&:last-child {
-					i {
-						margin-left: .5rem;
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+
+				@include breakpoint(md) {
+					padding: 0 2rem;
+					width: auto;
+
+					&:first-child,
+					&:nth-child(2),
+					&:last-child {
+						@include ui-border;
+						@include ui-border-radius;
 					}
+
 				}
 			}
 		}
@@ -988,14 +1012,33 @@
 		.ui-widget {
 			&.game {
 				&--action {
-					@include ui-no-border;
-					@include ui-no-border-radius;
-					@include ui-no-shadow;
+					.game--action-user {
+						display: flex;
+						align-items: center;
+						justify-content: flex-start;
+					}
 
-					background: none;
+					.profile-picture {
+						width: 4rem;
+						height: 4rem;
+						object-fit: cover;
 
-					.content {
-						padding: 0;
+						@include ui-border;
+						@include ui-border-radius;
+
+						margin-right: 1rem;
+
+						@include breakpoint(md) {
+							width: 3rem;
+							height: 3rem;
+						}
+					}
+
+					.game--action-interaction {
+						display: flex;
+						justify-content: space-between;
+
+						margin-top: 1rem;
 					}
 				}
 

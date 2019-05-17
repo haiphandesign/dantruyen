@@ -16,7 +16,7 @@
   * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
   *  `em` units.
   */
-@import url("./fonts/muli/font.css");
+@import url("https://fonts.googleapis.com/css?family=Muli:400,600,700&display=swap&subset=latin-ext,vietnamese");
 @import url("./addons/jquery.modal.css");
 @import url("./addons/fontawesome/all.css");
 @import url("./addons/bootstrap-grid.css");
@@ -730,6 +730,18 @@ a {
   font-weight: bold;
 }
 
+.ui-widget.ui-naked-widget {
+  border: none;
+  border-radius: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: none;
+}
+
+.ui-widget.ui-naked-widget .content {
+  padding: 0;
+}
+
 .ui-widget:hover .title:after {
   opacity: 1;
 }
@@ -787,7 +799,7 @@ p + p {
 }
 
 hr {
-  border: 0.5px solid rgba(179, 179, 179, 0.25);
+  border: 0.5px solid rgba(228, 228, 228, 0.5);
 }
 
 .container-fluid {
@@ -895,7 +907,21 @@ hr {
   height: 3rem;
   -webkit-transition: .25s all ease;
   transition: .25s all ease;
+  white-space: nowrap;
   border-radius: 0.25rem;
+}
+
+.button i {
+  margin-right: .5rem;
+}
+
+.button i.right {
+  margin-right: 0;
+  margin-left: .5rem;
+}
+
+.button i.single {
+  margin: 0;
 }
 
 .button.small {
@@ -928,10 +954,6 @@ hr {
   width: calc(50% - .5rem);
 }
 
-.button.half + .half {
-  margin-left: 1rem;
-}
-
 .button.solid {
   border: 1px solid #e4e4e4;
   background-color: white;
@@ -958,6 +980,49 @@ hr {
 .button.hollow:hover {
   background-color: color(primary);
   color: white;
+}
+
+.button.submenu {
+  position: relative;
+  background-image: url("../../img/layout/icons/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: center right 1rem;
+  background-size: .5rem auto;
+  padding-right: 3.5rem;
+}
+
+.button.submenu:before {
+  content: '';
+  display: block;
+  background: white;
+  height: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  right: 0;
+  border-radius: 0.25rem;
+}
+
+.button.submenu .submenu-content {
+  display: none;
+  position: absolute;
+  top: 90%;
+  right: -1px;
+  min-width: calc(120% + 2px);
+  max-width: 150%;
+  padding: 1rem;
+  border: 1px solid #e4e4e4;
+  background-color: white;
+}
+
+.button.submenu:hover {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.button.submenu:hover .submenu-content {
+  display: block;
 }
 
 .button:hover {
@@ -2376,7 +2441,7 @@ hr {
   }
 }
 
-.game--main .game--thread .game--navigation {
+.game--main .game--thread .game--navigation .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2392,12 +2457,39 @@ hr {
           justify-content: space-between;
 }
 
-.game--main .game--thread .game--navigation .button:first-child i {
-  margin-right: .5rem;
+.game--main .game--thread .game--navigation .button {
+  padding: 0;
+  width: 100%;
 }
 
-.game--main .game--thread .game--navigation .button:last-child i {
-  margin-left: .5rem;
+.game--main .game--thread .game--navigation .button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.game--main .game--thread .game--navigation .button:nth-child(2) {
+  width: auto;
+  padding: 0 1.5rem;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.game--main .game--thread .game--navigation .button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+@media (min-width: 992px) {
+  .game--main .game--thread .game--navigation .button {
+    padding: 0 2rem;
+    width: auto;
+  }
+  .game--main .game--thread .game--navigation .button:first-child, .game--main .game--thread .game--navigation .button:nth-child(2), .game--main .game--thread .game--navigation .button:last-child {
+    border: 1px solid #e4e4e4;
+    background-color: white;
+    border-radius: 0.25rem;
+  }
 }
 
 .game--main .game--sidebar {
@@ -2419,16 +2511,44 @@ hr {
   top: 2rem;
 }
 
-.game--main .game--sidebar .ui-widget.game--action {
-  border: none;
-  border-radius: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  background: none;
+.game--main .game--sidebar .ui-widget.game--action .game--action-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-.game--main .game--sidebar .ui-widget.game--action .content {
-  padding: 0;
+.game--main .game--sidebar .ui-widget.game--action .profile-picture {
+  width: 4rem;
+  height: 4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid #e4e4e4;
+  background-color: white;
+  border-radius: 0.25rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 992px) {
+  .game--main .game--sidebar .ui-widget.game--action .profile-picture {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.game--main .game--sidebar .ui-widget.game--action .game--action-interaction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .game--main .game--sidebar .ui-widget.game--progress-tree {

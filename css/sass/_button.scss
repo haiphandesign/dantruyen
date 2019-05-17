@@ -15,8 +15,22 @@
 	padding: 0 2rem;
 	height: 3rem;
 	transition: .25s all ease;
+	white-space: nowrap;
 
 	@include ui-border-radius;
+
+	i {
+		margin-right: .5rem;
+
+		&.right {
+			margin-right: 0;
+			margin-left: .5rem;
+		}
+
+		&.single {
+			margin: 0;
+		}
+	}
 
 	&.small {
 		height: 2rem;
@@ -44,10 +58,6 @@
 
 	&.half {
 		width: calc(50% - .5rem);
-
-		+.half {
-			margin-left: 1rem;
-		}
 	}
 
 	&.solid {
@@ -85,6 +95,53 @@
 			}
 
 			color: white;
+		}
+	}
+
+	&.submenu {
+		position: relative;
+
+		background-image: url('../../img/layout/icons/arrow-down.svg');
+		background-repeat: no-repeat;
+		background-position: center right 1rem;
+		background-size: .5rem auto;
+
+		padding-right: 3.5rem;
+
+		&:before {
+			content: '';
+			display: block;
+			background: white;
+			height: 10px;
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			z-index: 2;
+			right: 0;
+
+			@include ui-border-radius;
+		}
+
+		.submenu-content {
+			display: none;
+
+			position: absolute;
+			top: 90%;
+			right: -1px;
+			min-width: calc(120% + 2px);
+			max-width: 150%;
+			padding: 1rem;
+
+			@include ui-border;
+		}
+
+		&:hover {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+
+			.submenu-content {
+				display: block;
+			}
 		}
 	}
 
