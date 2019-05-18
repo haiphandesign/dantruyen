@@ -42,9 +42,7 @@ window.setTimeout(headerspacing, 100);
 // Global: Hide Navbar
 
 $(document).ready(function () {
-
 	'use strict';
-
 	var c,
 		currentScrollTop = 0,
 		navbar = $('#nav'),
@@ -69,6 +67,7 @@ $(document).ready(function () {
 	});
 
 });
+
 
 
 
@@ -209,5 +208,3 @@ $(window).scroll(function () {
 		$('.game--progress-list').removeClass('is-active');
 	}
 });
-
-
