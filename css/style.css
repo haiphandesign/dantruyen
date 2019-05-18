@@ -605,7 +605,7 @@ a {
   }
 }
 
-.ui-widget.post .content img {
+.ui-widget .content img {
   max-width: 100%;
   border-radius: 0.25rem;
 }
@@ -1940,8 +1940,32 @@ hr {
   }
 }
 
+.game--main.section-reply {
+      grid-template-areas: "b" "a";
+}
+
+@media (min-width: 992px) {
+  .game--main.section-reply {
+        grid-template-areas: 'a a b';
+  }
+}
+
+.game--main.section-reply .game--thread {
+  margin-top: 1rem;
+}
+
+@media (min-width: 992px) {
+  .game--main.section-reply .game--thread {
+    margin: 0;
+  }
+}
+
+.game--main.section-reply .game--sidebar {
+  margin: 0;
+}
+
 .game--main .game--thread {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: a;
 }
@@ -2370,10 +2394,6 @@ hr {
   width: 100%;
 }
 
-.game--main .post.edit {
-  margin-bottom: 1rem;
-}
-
 .game--main .post.edit .wysiwyg {
   width: calc(100% + 2rem);
   margin: -1rem;
@@ -2381,28 +2401,41 @@ hr {
   border-radius: none;
 }
 
-.game--main .post.edit.action .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.game--main .post.edit.action .button + .button {
-  margin-left: 1rem;
+.game--main .post.edit.action .button {
+  margin-bottom: .5rem;
 }
 
 .game--main .post.edit.action .button:first-child {
-  margin-right: auto;
+  -webkit-box-ordinal-group: 100;
+      -ms-flex-order: 99;
+          order: 99;
+}
+
+@media (min-width: 992px) {
+  .game--main .post.edit.action .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .game--main .post.edit.action .button + .button {
+    margin-left: 1rem;
+  }
+  .game--main .post.edit.action .button:first-child {
+    margin-right: auto;
+    -webkit-box-ordinal-group: unset;
+        -ms-flex-order: unset;
+            order: unset;
+  }
 }
 
 .game--main .stack hr {
@@ -2557,9 +2590,16 @@ hr {
 }
 
 .game--main .game--sidebar {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: b;
+  margin-top: 1rem;
+}
+
+@media (min-width: 992px) {
+  .game--main .game--sidebar {
+    margin: 0;
+  }
 }
 
 .game--main .game--sidebar-wrapper {
@@ -2809,19 +2849,6 @@ hr {
   margin-top: 1rem;
 }
 
-.game--main .ui-widget.game--members ul li p {
-  margin: 0;
-}
-
-.game--main .ui-widget.game--members ul li p:first-child {
-  font-weight: bold;
-}
-
-.game--main .ui-widget.game--members ul li p:last-child {
-  font-size: .85rem;
-  color: #b3b3b3;
-}
-
 .game--main .ui-widget.game--members .profile-picture {
   width: 4rem;
   height: 4rem;
@@ -2840,16 +2867,54 @@ hr {
   }
 }
 
-.game--main .ui-widget.game--members .members {
+.game--main .ui-widget.game--members .info p {
+  margin: 0;
+}
+
+.game--main .ui-widget.game--members .info p:first-child {
+  font-weight: bold;
+}
+
+.game--main .ui-widget.game--members .info p:last-child {
+  font-size: .85rem;
   color: #b3b3b3;
 }
 
-.game--main .ui-widget.game--members .members:before {
+.game--main .ui-widget.game--members .members-amount {
+  color: #b3b3b3;
+}
+
+.game--main .ui-widget.game--members .members-amount:before {
   content: '(';
 }
 
-.game--main .ui-widget.game--members .members:after {
+.game--main .ui-widget.game--members .members-amount:after {
   content: ')';
+}
+
+.game--main .ui-widget.game--members.mini ul.members-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.game--main .ui-widget.game--members.mini ul.members-list li {
+  margin: 0;
+}
+
+.game--main .ui-widget.game--members.mini .host {
+  margin-right: auto;
+}
+
+.game--main .ui-widget.game--members.mini .member .info {
+  display: none;
+}
+
+.game--main .ui-widget.game--members.mini .member .profile-picture {
+  margin: 0;
 }
 
 .game--main .game--navigation .content {

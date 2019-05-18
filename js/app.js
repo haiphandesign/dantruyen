@@ -186,6 +186,7 @@ $('.game--progress-tree').load('./inc/game--progress-tree.html');
 $('.game--location').load('./inc/game--location.html');
 $('.game--rules').load('./inc/game--rules.html');
 $('.game--members').load('./inc/game--members.html');
+$('.game--members.mini').load('./inc/game--members-mini.html');
 $('.game--action').load('./inc/game--action.html');
 
 

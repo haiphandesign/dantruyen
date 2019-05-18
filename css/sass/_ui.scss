@@ -177,15 +177,11 @@
 				overflow: auto;
 			}
 		}
-	}
 
-	&.post {
-		.content {
-			img {
-				max-width: 100%;
+		img {
+			max-width: 100%;
 
-				@include ui-border-radius;
-			}
+			@include ui-border-radius;
 		}
 	}
 

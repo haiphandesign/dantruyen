@@ -389,6 +389,27 @@
 		}
 	}
 
+	&.section-reply {
+		grid-template-areas: 'b''a';
+
+		@include breakpoint(md) {
+			grid-template-areas: 'a a b';
+		}
+
+		.game--thread {
+			margin-top: 1rem;
+
+			@include breakpoint(md) {
+				margin: 0;
+			}
+		}
+
+		.game--sidebar {
+			margin: 0;
+		}
+
+	}
+
 	.game--thread {
 		grid-area: a;
 	}
@@ -814,7 +835,6 @@
 		}
 
 		&.edit {
-			margin-bottom: 1rem;
 
 			.wysiwyg {
 				width: calc(100% + 2rem);
@@ -825,20 +845,34 @@
 			}
 
 			&.action {
-				.content {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					justify-content: space-between;
-				}
 
 				.button {
-					&+.button {
-						margin-left: 1rem;
-					}
+					margin-bottom: .5rem;
 
 					&:first-child {
-						margin-right: auto;
+						order: 99;
+					}
+				}
+
+
+				@include breakpoint(md) {
+
+					.content {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: space-between;
+					}
+
+					.button {
+						&+.button {
+							margin-left: 1rem;
+						}
+
+						&:first-child {
+							margin-right: auto;
+							order: unset;
+						}
 					}
 				}
 			}
@@ -997,6 +1031,12 @@
 
 	.game--sidebar {
 		grid-area: b;
+
+		margin-top: 1rem;
+
+		@include breakpoint(md) {
+			margin: 0;
+		}
 	}
 
 	.game--sidebar-wrapper {
@@ -1219,18 +1259,6 @@
 							margin-top: 1rem;
 						}
 
-						p {
-							margin: 0;
-
-							&:first-child {
-								font-weight: bold;
-							}
-
-							&:last-child {
-								font-size: .85rem;
-								color: $color-text-light;
-							}
-						}
 					}
 				}
 
@@ -1250,7 +1278,22 @@
 					}
 				}
 
-				.members {
+				.info {
+					p {
+						margin: 0;
+
+						&:first-child {
+							font-weight: bold;
+						}
+
+						&:last-child {
+							font-size: .85rem;
+							color: $color-text-light;
+						}
+					}
+				}
+
+				.members-amount {
 					color: $color-text-light;
 
 					&:before {
@@ -1259,6 +1302,33 @@
 
 					&:after {
 						content: ')';
+					}
+				}
+
+				&.mini {
+					ul.members-list {
+						display: grid;
+						grid-template-columns: repeat(6, 1fr);
+						grid-column-gap: 10px;
+						grid-row-gap: 10px;
+
+						li {
+							margin: 0;
+						}
+					}
+
+					.host {
+						margin-right: auto;
+					}
+
+					.member {
+						.info {
+							display: none;
+						}
+
+						.profile-picture {
+							margin: 0;
+						}
 					}
 				}
 			}
