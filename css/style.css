@@ -502,6 +502,10 @@ a {
   }
 }
 
+.ui-widget:last-child {
+  margin-bottom: 0;
+}
+
 .ui-widget .title {
   position: relative;
   display: -webkit-box;
@@ -1923,6 +1927,16 @@ hr {
         grid-template-rows: 1fr;
         grid-template-areas: 'a a b';
     padding: 0;
+  }
+}
+
+.game--main + .game--main {
+  margin-top: 1rem;
+}
+
+@media (min-width: 992px) {
+  .game--main + .game--main {
+    margin-top: 2rem;
   }
 }
 
