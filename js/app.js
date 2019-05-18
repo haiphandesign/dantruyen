@@ -138,10 +138,15 @@ function gameInfoMargin() {
 
 // Game: Generate Challenge Result
 
-$('.challenge-result').html('<p>Kết quả: <span class="result"><i class="far fa-meh"></i> Không xác định</span>.</p>');
-$('.challenge-result.good').html('<p>Kết quả: <span class="result"><i class="far fa-smile"></i> Mạnh</span>.</p>');
-$('.challenge-result.bad').html('<p>Kết quả: <span class="result"><i class="far fa-frown"></i> Yếu</span>.</p>');
-
+$('.challenge-result').each(function () {
+	if ($(this).hasClass('good')) {
+		$(this).prepend('<p>Kết quả: <span class="result"><i class="far fa-smile"></i> Mạnh</span>.</p>');
+	} else if ($(this).hasClass('bad')) {
+		$(this).prepend('<p>Kết quả: <span class="result"><i class="far fa-frown"></i> Yếu</span>.</p>');
+	} else {
+		$(this).prepend('<p>Kết quả: <span class="result"><i class="far fa-meh"></i> Không xác định</span>.</p>');
+	}
+});
 
 // Game: Interraction
 

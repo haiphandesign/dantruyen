@@ -14,7 +14,7 @@
 	<script src="./js/preload.js"></script>
 </head>
 
-<body class="page-game page-game-waiting-room logged-in">
+<body class="page-game page-game-main logged-in">
 
 	<div id="header"></div>
 
@@ -95,48 +95,44 @@
 					<div class="content">
 						<div class="stack">
 							<h5>Thử thách</h5>
-							<ul>
-								<li class="stack-item">
-									<a href="./modal/card-challenge.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
-										<div class="stack-item-info">Thử thách #1<span class="amount">6</span></div>
-									</a>
-								</li>
-								<li class="stack-item">
-									<a href="./modal/card-challenge.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
-										<div class="stack-item-info">Thử thách #2<span class="amount">2</span></div>
-									</a>
-								</li>
-								<li class="stack-item">
-									<a href="./modal/card-challenge.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
-										<div class="stack-item-info">Thử thách #3<span class="amount"></span></div>
-									</a>
-								</li>
-							</ul>
+							<div class="stack-item">
+								<a href="./modal/card-challenge.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #1<span class="amount">6</span></div>
+								</a>
+							</div>
+							<div class="stack-item">
+								<a href="./modal/card-challenge.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #2<span class="amount">2</span></div>
+								</a>
+							</div>
+							<div class="stack-item">
+								<a href="./modal/card-challenge.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #3<span class="amount"></span></div>
+								</a>
+							</div>
 							<hr>
 							<h5>Thẻ bài</h5>
-							<ul>
-								<li class="stack-item">
-									<a href="./modal/card-card.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
-										<div class="stack-item-info">Thẻ bài #1 <span class="amount">x5</span></div>
-									</a>
-								</li>
-								<li class="stack-item">
-									<a href="./modal/card-card.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
-										<div class="stack-item-info">Thả bài #2 <span class="amount">x8</span></div>
-									</a>
-								</li>
-								<li class="stack-item">
-									<a href="./modal/card-card.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
-										<div class="stack-item-info">Thẻ bài #3</div>
-									</a>
-								</li>
-							</ul>
+							<div class="stack-item">
+								<a href="./modal/card-card.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thẻ bài #1 <span class="amount">x5</span></div>
+								</a>
+							</div>
+							<div class="stack-item">
+								<a href="./modal/card-card.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thả bài #2 <span class="amount">x8</span></div>
+								</a>
+							</div>
+							<div class="stack-item">
+								<a href="./modal/card-card.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thẻ bài #3</div>
+								</a>
+							</div>
 						</div>
 						<p>Justo voluptua sit invidunt ipsum tempor vero sadipscing, labore ipsum at eos ut ipsum lorem
 							labore amet magna, dolor invidunt voluptua ut justo, magna lorem diam amet amet diam, ea
@@ -214,9 +210,7 @@
 							<a class="vote-down" onclick="votedown()"></a>
 						</div>
 						<div class="user-info">
-							<div class="user-info--profile-picture">
-								<img src="./img/content/players/user-02.jpg" alt="">
-							</div>
+							<img class="profile-picture" src="./img/content/players/user-02.jpg" alt="">
 							<div class="user-info--meta">
 								<p class="character">Nàng hầu gái</p>
 								<p class="username">@CuongduongNguyen69</p>
@@ -229,27 +223,24 @@
 							<h5>Thực hiện</h5>
 							<div class="stack-item">
 								<a href="./modal/login.html" rel="modal:open">
-									<div class="stack-item-icon challenge-character"></div>
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 									<div class="stack-item-info">Thử thách #1<span class="amount">1/6</span></div>
 								</a>
-								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
 							</div>
 							<div class="stack-used">
 								<h5>Sử dụng</h5>
-								<ul>
-									<li class="stack-item">
-										<a href="./modal/login.html" rel="modal:open">
-											<div class="stack-item-icon challenge-character"></div>
-											<div class="stack-item-info">Thẻ bài #1</div>
-										</a>
-									</li>
-									<li class="stack-item">
-										<a href="./modal/login.html" rel="modal:open">
-											<div class="stack-item-icon challenge-character"></div>
-											<div class="stack-item-info">Thẻ bài #2</div>
-										</a>
-									</li>
-								</ul>
+								<div class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+										<div class="stack-item-info">Thẻ bài #1</div>
+									</a>
+								</div>
+								<div class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+										<div class="stack-item-info">Thẻ bài #2</div>
+									</a>
+								</div>
 								<div class="stack-reveal"></div>
 							</div>
 						</div>
@@ -307,9 +298,7 @@
 					<div class="title">
 
 						<div class="user-info">
-							<div class="user-info--profile-picture">
-								<img src="./img/content/players/user-05.jpg" alt="">
-							</div>
+							<img class="profile-picture" src="./img/content/players/user-05.jpg" alt="">
 							<div class="user-info--meta">
 								<p class="character">Chàng trai bao</p>
 								<p class="username">@01lifeleft</p>
@@ -322,7 +311,7 @@
 							<h5>Thực hiện</h5>
 							<div class="stack-item">
 								<a href="./modal/login.html" rel="modal:open">
-									<div class="stack-item-icon challenge-character"></div>
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 									<div class="stack-item-info">Thử thách #2<span class="amount">2/6</span></div>
 								</a>
 								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
@@ -332,7 +321,7 @@
 								<ul>
 									<li class="stack-item">
 										<a href="./modal/login.html" rel="modal:open">
-											<div class="stack-item-icon challenge-character"></div>
+											<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 											<div class="stack-item-info">Thẻ bài #1</div>
 										</a>
 									</li>
@@ -401,9 +390,7 @@
 							<a class="vote-down" onclick="votedown()"></a>
 						</div>
 						<div class="user-info">
-							<div class="user-info--profile-picture">
-								<img src="./img/content/players/user-05.jpg" alt="">
-							</div>
+							<img class="profile-picture" src="./img/content/players/user-05.jpg" alt="">
 							<div class="user-info--meta">
 								<p class="character">Chàng trai bao</p>
 								<p class="username">@01lifeleft</p>
@@ -416,7 +403,7 @@
 							<h5>Thực hiện</h5>
 							<div class="stack-item">
 								<a href="./modal/login.html" rel="modal:open">
-									<div class="stack-item-icon challenge-character"></div>
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 									<div class="stack-item-info">Thử thách #2</div>
 								</a>
 								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
@@ -426,7 +413,7 @@
 								<ul>
 									<li class="stack-item">
 										<a href="./modal/login.html" rel="modal:open">
-											<div class="stack-item-icon challenge-character"></div>
+											<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 											<div class="stack-item-info">Thẻ bài #1</div>
 										</a>
 									</li>
@@ -507,19 +494,19 @@
 							<ul>
 								<li class="stack-item">
 									<a href="./modal/login.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 										<div class="stack-item-info">Thử thách #1</div>
 									</a>
 								</li>
 								<li class="stack-item">
 									<a href="./modal/login.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 										<div class="stack-item-info">Thử thách #2</div>
 									</a>
 								</li>
 								<li class="stack-item">
 									<a href="./modal/login.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 										<div class="stack-item-info">Thử thách #3</div>
 									</a>
 								</li>
@@ -529,19 +516,19 @@
 							<ul>
 								<li class="stack-item">
 									<a href="./modal/login.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 										<div class="stack-item-info">Thẻ bài #1 <span class="amount">x5</span></div>
 									</a>
 								</li>
 								<li class="stack-item">
 									<a href="./modal/login.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 										<div class="stack-item-info">Thả bài #2 <span class="amount">x8</span></div>
 									</a>
 								</li>
 								<li class="stack-item">
 									<a href="./modal/login.html" rel="modal:open">
-										<div class="stack-item-icon challenge-character"></div>
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 										<div class="stack-item-info">Thẻ bài #3</div>
 									</a>
 								</li>
@@ -609,9 +596,7 @@
 					<div class="title">
 
 						<div class="user-info">
-							<div class="user-info--profile-picture">
-								<img src="./img/content/players/user-05.jpg" alt="">
-							</div>
+							<img class="profile-picture" src="./img/content/players/user-05.jpg" alt="">
 							<div class="user-info--meta">
 								<p class="character">Chàng trai bao</p>
 								<p class="username">@01lifeleft</p>
@@ -624,7 +609,7 @@
 							<h5>Thực hiện</h5>
 							<div class="stack-item">
 								<a href="./modal/login.html" rel="modal:open">
-									<div class="stack-item-icon challenge-character"></div>
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 									<div class="stack-item-info">Thử thách #2</div>
 								</a>
 								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
@@ -634,7 +619,7 @@
 								<ul>
 									<li class="stack-item">
 										<a href="./modal/login.html" rel="modal:open">
-											<div class="stack-item-icon challenge-character"></div>
+											<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 											<div class="stack-item-info">Thẻ bài #1</div>
 										</a>
 									</li>
@@ -703,9 +688,7 @@
 							<a class="vote-down" onclick="votedown()"></a>
 						</div>
 						<div class="user-info">
-							<div class="user-info--profile-picture">
-								<img src="./img/content/players/user-05.jpg" alt="">
-							</div>
+							<img class="profile-picture" src="./img/content/players/user-05.jpg" alt="">
 							<div class="user-info--meta">
 								<p class="character">Chàng trai bao</p>
 								<p class="username">@01lifeleft</p>
@@ -718,7 +701,7 @@
 							<h5>Thực hiện</h5>
 							<div class="stack-item">
 								<a href="./modal/login.html" rel="modal:open">
-									<div class="stack-item-icon challenge-character"></div>
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 									<div class="stack-item-info">Thử thách #2</div>
 								</a>
 								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
@@ -728,7 +711,7 @@
 								<ul>
 									<li class="stack-item">
 										<a href="./modal/login.html" rel="modal:open">
-											<div class="stack-item-icon challenge-character"></div>
+											<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
 											<div class="stack-item-info">Thẻ bài #1</div>
 										</a>
 									</li>
@@ -860,7 +843,7 @@
 			</div>
 			<div class="game--sidebar">
 				<div class="game--sidebar-wrapper">
-					<div class="ui-widget game--action host"></div>
+					<div class="ui-widget ui-naked-widget game--action"></div>
 					<div class="ui-widget game--members"></div>
 				</div>
 				<!-- <div class="ui-widget game--progress-tree"></div> -->

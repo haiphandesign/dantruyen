@@ -386,194 +386,6 @@
 	}
 
 	.post {
-		&.scene {
-			.vote {
-				position: absolute;
-				top: 1rem;
-
-				@include ui-border-radius;
-				border-top-right-radius: 0;
-				border-bottom-left-radius: 0;
-
-				@include breakpoint(md) {
-					top: 0;
-				}
-			}
-		}
-
-		&.reply {
-
-			@include breakpoint(md) {
-				width: calc(100% - 4rem);
-				left: 4rem;
-			}
-
-			.title {
-				flex-direction: row;
-				align-items: center;
-				justify-content: flex-start;
-				overflow: hidden;
-
-				@include breakpoint(md) {
-					overflow: initial;
-				}
-
-				&:after {
-					opacity: 1;
-					top: .5rem;
-					right: .5rem;
-				}
-			}
-
-			.stack {
-				order: 0;
-
-				margin-top: calc(-1rem - 1px);
-				margin-bottom: 1rem;
-
-				@include breakpoint(md) {
-					margin-top: -3.5rem;
-					margin-bottom: .5rem;
-				}
-			}
-
-			.challenge-result {
-				width: calc(100% + 2rem);
-
-				margin: -1rem;
-				margin-bottom: 1rem;
-				padding: 1rem;
-
-				font-size: .85rem;
-				color: darken($color-text-regular, 50%);
-
-				background-color: $color-background-dark;
-
-				&.good {
-					color: darken($color-result-good, 50%);
-					background-color: $color-result-good;
-				}
-
-				&.bad {
-					color: darken($color-result-bad, 50%);
-					background-color: $color-result-bad;
-				}
-
-				>p {
-					@include breakpoint(md) {
-						width: calc(100% - 21rem);
-					}
-				}
-
-				img {
-					display: inline-block;
-					height: 1rem;
-					width: auto;
-					vertical-align: middle;
-					margin-top: -0.2rem;
-					margin-left: .25rem;
-					margin-right: .25rem;
-					fill: #d50f25;
-				}
-
-				.result {
-					font-weight: bold;
-				}
-
-			}
-
-			.discussion {
-				display: none;
-
-				.comment-form {
-					display: flex;
-				}
-
-				&.is-active {
-					display: initial;
-				}
-			}
-		}
-
-		&.host {
-			@include breakpoint(md) {
-				width: 100%;
-				left: 0;
-			}
-
-			&.reply {
-				.title {
-					padding-top: 1rem;
-					padding-bottom: 1rem;
-
-					.post-date {
-						position: relative;
-						display: block;
-						right: 0;
-						top: 0;
-					}
-				}
-
-				.discussion {
-					display: initial;
-
-					.comment-form {
-						display: none;
-					}
-
-					&.is-active {
-						.comment-form {
-							display: block;
-						}
-					}
-				}
-			}
-
-			.stack {
-				@include breakpoint(md) {
-					margin-top: -3rem;
-				}
-			}
-
-			&.scene {
-				.stack {
-					@include breakpoint(md) {
-						margin-top: -5rem;
-					}
-				}
-			}
-
-			.interaction {
-				.correct {
-					display: none;
-				}
-
-				.report {
-					display: initial;
-				}
-			}
-
-		}
-
-		&.has-featured {
-			.stack {
-				@include breakpoint(md) {
-					position: absolute;
-					right: 1rem;
-				}
-			}
-
-			.post-featured {
-				margin: -1rem;
-				margin-bottom: 1rem;
-
-				img {
-					border-radius: 0;
-					width: 100%;
-				}
-			}
-		}
-
 		.content {
 			text-align: justify;
 			hyphens: auto;
@@ -618,146 +430,6 @@
 				margin-right: auto;
 				margin-top: -5rem;
 				margin-bottom: 1rem;
-			}
-
-			hr {
-				margin: 1rem 0;
-			}
-
-			h5 {
-				padding-left: 1rem;
-			}
-
-			ul {
-				list-style: none;
-				margin: 0;
-				padding: 0;
-
-				li {
-
-					ul {
-						margin-top: .5rem;
-
-						.stack-item-icon {
-							width: 2rem;
-							height: 2rem;
-						}
-
-					}
-				}
-			}
-
-			.stack-item {
-				position: relative;
-				margin-left: 1rem;
-
-				&+.stack-item {
-					margin-top: .5rem;
-				}
-
-				a {
-					display: flex;
-					align-items: center;
-					justify-content: flex-start;
-				}
-
-				&-icon {
-					display: block;
-					flex-shrink: 0;
-
-					width: 3rem;
-					height: 3rem;
-
-					@include ui-border;
-					@include ui-border-radius;
-					@include ui-shadow;
-
-					margin-right: .5rem;
-
-					background: {
-						image: url('../img/layout/icons/obstacle.svg');
-						size: 1.25rem auto;
-						repeat: no-repeat;
-						position: center;
-					}
-
-					&.challenge-character {
-						background: {
-							image: url('../img/layout/icons/character.svg');
-							size: 1rem auto;
-						}
-					}
-				}
-
-				&-info {
-					display: block;
-					width: 100%;
-
-					span {
-						float: right;
-
-						font-size: .75rem;
-						color: $color-text-light;
-
-						margin-right: 1rem;
-					}
-				}
-			}
-
-			.stack-used {
-				position: relative;
-
-				margin-top: 1rem;
-				margin-bottom: -1rem;
-				padding: 1rem 0;
-
-				overflow: hidden;
-
-				@include ui-border;
-				border-left: 0;
-				border-right: 0;
-				border-bottom: 0;
-
-				background-color: $color-background;
-				background-image: none;
-
-				transition: all .5s;
-
-				@include breakpoint(md) {
-					max-height: 0;
-					padding: 0;
-					padding-top: 1rem;
-
-					background-image: url('../../img/layout/icons/arrow-down.svg');
-					background-repeat: no-repeat;
-					background-size: .5rem auto;
-					background-position: center bottom;
-				}
-
-				&.is-active {
-					max-height: 100vh;
-
-					padding: 1rem 0 2rem;
-
-					background-image: url('../../img/layout/icons/arrow.svg');
-					background-position: center bottom .25rem;
-					background-repeat: no-repeat;
-					background-size: .5rem auto;
-
-				}
-
-				.stack-reveal {
-					position: absolute;
-					display: none;
-					background-color: transparent;
-					width: 100%;
-					height: 2rem;
-					bottom: 0;
-
-					@include breakpoint(md) {
-						display: block;
-					}
-				}
 			}
 		}
 
@@ -890,18 +562,16 @@
 			align-items: center;
 			justify-content: center;
 
-			.user-info--profile-picture {
-				img {
-					display: block;
+			.profile-picture {
+				display: block;
 
-					width: 4rem;
-					height: 4rem;
-					object-fit: cover;
+				width: 4rem;
+				height: 4rem;
+				object-fit: cover;
 
-					@include ui-border-radius;
+				@include ui-border-radius;
 
-					margin-right: 1rem;
-				}
+				margin-right: 1rem;
 			}
 
 			.user-info--meta {
@@ -932,6 +602,54 @@
 			}
 		}
 
+		.challenge-result {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			width: calc(100% + 2rem);
+
+			margin: -1rem;
+			margin-bottom: 1rem;
+			padding: 1rem;
+
+			font-size: .85rem;
+			color: darken($color-text-regular, 50%);
+
+			background-color: $color-background-dark;
+
+			&.good {
+				color: darken($color-result-good, 50%);
+				background-color: $color-result-good;
+			}
+
+			&.bad {
+				color: darken($color-result-bad, 50%);
+				background-color: $color-result-bad;
+			}
+
+			>p {
+				display: inline;
+				margin: 0;
+			}
+
+			img {
+				display: inline-block;
+				height: 1rem;
+				width: auto;
+				vertical-align: middle;
+				margin-top: -0.2rem;
+				margin-left: .25rem;
+				margin-right: .25rem;
+				fill: #d50f25;
+			}
+
+			.result {
+				font-weight: bold;
+			}
+
+		}
+
 		.interaction {
 
 			.share,
@@ -940,6 +658,330 @@
 
 				@include breakpoint(md) {
 					display: initial;
+				}
+			}
+		}
+
+		&.scene {
+			.vote {
+				position: absolute;
+				top: 1rem;
+
+				@include ui-border-radius;
+				border-top-right-radius: 0;
+				border-bottom-left-radius: 0;
+
+				@include breakpoint(md) {
+					top: 0;
+				}
+			}
+		}
+
+		&.reply {
+
+			@include breakpoint(md) {
+				width: calc(100% - 4rem);
+				left: 4rem;
+			}
+
+			.title {
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
+				overflow: hidden;
+
+				@include breakpoint(md) {
+					overflow: initial;
+				}
+
+				&:after {
+					opacity: 1;
+					top: .5rem;
+					right: .5rem;
+				}
+			}
+
+			.stack {
+				order: 0;
+
+				margin-top: calc(-1rem - 1px);
+				margin-bottom: 1rem;
+
+				@include breakpoint(md) {
+					margin-top: -3.5rem;
+					margin-bottom: .5rem;
+				}
+			}
+
+			.discussion {
+				display: none;
+
+				.comment-form {
+					display: flex;
+				}
+
+				&.is-active {
+					display: initial;
+				}
+			}
+		}
+
+		&.host {
+			@include breakpoint(md) {
+				width: 100%;
+				left: 0;
+			}
+
+			&.reply {
+				.title {
+					padding-top: 1rem;
+					padding-bottom: 1rem;
+
+					.post-date {
+						position: relative;
+						display: block;
+						right: 0;
+						top: 0;
+					}
+				}
+
+				.discussion {
+					display: initial;
+
+					.comment-form {
+						display: none;
+					}
+
+					&.is-active {
+						.comment-form {
+							display: block;
+						}
+					}
+				}
+			}
+
+			.stack {
+				@include breakpoint(md) {
+					margin-top: -3rem;
+				}
+			}
+
+			&.scene {
+				.stack {
+					@include breakpoint(md) {
+						margin-top: -5rem;
+					}
+				}
+			}
+
+			.interaction {
+				.correct {
+					display: none;
+				}
+
+				.report {
+					display: initial;
+				}
+			}
+
+		}
+
+		&.has-featured {
+			.stack {
+				@include breakpoint(md) {
+					position: absolute;
+					right: 1rem;
+				}
+			}
+
+			.post-featured {
+				margin: -1rem;
+				margin-bottom: 1rem;
+
+				img {
+					border-radius: 0;
+					width: 100%;
+				}
+			}
+		}
+
+		&.edit {
+			margin-bottom: 1rem;
+
+			.wysiwyg {
+				width: calc(100% + 2rem);
+				margin: -1rem;
+
+				@include ui-no-border;
+				@include ui-no-border-radius;
+			}
+
+			&.action {
+				.content {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;
+				}
+
+				.button {
+					&+.button {
+						margin-left: 1rem;
+					}
+
+					&:first-child {
+						margin-right: auto;
+					}
+				}
+			}
+		}
+	}
+
+	.stack {
+		hr {
+			margin: 1rem 0;
+		}
+
+		h5 {
+			padding-left: 1rem;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			margin-top: 1rem;
+			padding: 0 1rem;
+
+			li {
+
+				ul {
+					margin-top: .5rem;
+
+					.stack-item-icon {
+						width: 2rem;
+						height: 2rem;
+					}
+
+				}
+			}
+		}
+
+		.stack-used {
+			position: relative;
+
+			margin-top: 1rem;
+			margin-bottom: -1rem;
+			padding: 1rem 0;
+
+			overflow: hidden;
+
+			@include ui-border;
+			border-left: 0;
+			border-right: 0;
+			border-bottom: 0;
+
+			background-color: $color-background;
+			background-image: none;
+
+			transition: all .5s;
+
+			@include breakpoint(md) {
+				max-height: 0;
+				padding: 0;
+				padding-top: 1rem;
+
+				background-image: url('../../img/layout/icons/arrow-down.svg');
+				background-repeat: no-repeat;
+				background-size: .5rem auto;
+				background-position: center bottom;
+			}
+
+			&.is-active {
+				max-height: 100vh;
+
+				padding: 1rem 0 2rem;
+
+				background-image: url('../../img/layout/icons/arrow.svg');
+				background-position: center bottom .25rem;
+				background-repeat: no-repeat;
+				background-size: .5rem auto;
+
+			}
+
+			.stack-reveal {
+				position: absolute;
+				display: none;
+				background-color: transparent;
+				width: 100%;
+				height: 2rem;
+				bottom: 0;
+
+				@include breakpoint(md) {
+					display: block;
+				}
+			}
+		}
+	}
+
+	.stack-item {
+		position: relative;
+		margin-left: 1rem;
+		margin-right: 1rem;
+
+		&+.stack-item {
+			margin-top: .75rem;
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+		}
+
+		&-icon {
+			display: flex;
+			flex-shrink: 0;
+			align-items: center;
+			justify-content: center;
+
+			width: 3rem;
+			height: 3rem;
+
+			@include ui-border;
+			@include ui-border-radius;
+			@include ui-shadow;
+
+			margin-right: .5rem;
+		}
+
+		&-info {
+			display: block;
+			width: 100%;
+
+			span {
+				float: right;
+
+				font-size: .75rem;
+				color: $color-text-light;
+			}
+		}
+
+		&.add {
+			height: 3rem;
+			margin-top: 1rem;
+
+			.stack-item-icon {
+				border-style: dashed;
+			}
+
+			.stack-item-info {
+				opacity: .5;
+				transition: all .5s;
+			}
+
+			&:hover {
+				.stack-item-info {
+					opacity: 1;
 				}
 			}
 		}
@@ -957,236 +999,258 @@
 		&.is-scrolled {
 			top: 2rem;
 		}
+	}
 
-		.ui-widget {
-			&.game {
-				&--action {
-					.game--action-user {
-						display: flex;
-						align-items: center;
-						justify-content: flex-start;
-					}
+	.ui-widget {
+		&.game {
+			&--cards-new {
+				.content {
+					padding: 1rem 0;
+				}
 
-					.profile-picture {
-						width: 4rem;
-						height: 4rem;
-						object-fit: cover;
+				h5 {
+					margin-left: 1rem;
+				}
+			}
 
-						@include ui-border;
-						@include ui-border-radius;
+			&--cards-action {
+				.content {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;
+				}
 
-						margin-right: 1rem;
+				margin-bottom: 1rem;
+			}
 
-						@include breakpoint(md) {
-							width: 3rem;
-							height: 3rem;
-						}
-					}
+			&--action {
+				.game--action-user {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+				}
 
-					.game--action-interaction {
-						display: flex;
-						justify-content: space-between;
+				.profile-picture {
+					width: 4rem;
+					height: 4rem;
+					object-fit: cover;
 
-						margin-top: 1rem;
+					@include ui-border;
+					@include ui-border-radius;
+
+					margin-right: 1rem;
+
+					@include breakpoint(md) {
+						width: 3rem;
+						height: 3rem;
 					}
 				}
 
-				&--progress-tree {
-					display: none;
+				.game--action-interaction {
+					display: flex;
+					justify-content: space-between;
 
-					@include breakpoint(md) {
-						display: flex;
-					}
+					margin-top: 1rem;
+				}
+			}
+
+			&--progress-tree {
+				display: none;
+
+				@include breakpoint(md) {
+					display: flex;
+				}
+
+				ol {
+					margin: 0;
+					padding-left: 2rem;
+					list-style: none;
+					line-height: 2rem;
 
 					ol {
-						margin: 0;
 						padding-left: 2rem;
-						list-style: none;
-						line-height: 2rem;
-
-						ol {
-							padding-left: 2rem;
-						}
-
-						li {
-							position: relative;
-							cursor: pointer;
-							// >ol {
-							// 	li {
-							// 		font-size: .85rem;
-							// 	}
-							// }
-
-							&:before {
-								position: absolute;
-								left: -2rem;
-								top: 0px;
-								content: '';
-								display: block;
-								border-left: 1px solid #ddd;
-								height: 1rem;
-								border-bottom: 1px solid #ddd;
-								width: 1rem;
-							}
-
-							&:after {
-								position: absolute;
-								left: -2rem;
-								bottom: -0.5rem;
-								content: '';
-								display: block;
-								border-left: 1px solid #ddd;
-								height: 100%;
-							}
-
-							&.game--name {
-								margin: 0 0 .5rem -2rem;
-								font-weight: 600;
-
-								&:before {
-									display: none;
-								}
-
-								&:after {
-									display: none;
-								}
-							}
-
-							&:last-child {
-								&:after {
-									display: none
-								}
-							}
-
-							.game--chapter-number {
-								font-size: .5rem;
-								font-weight: bold;
-								text-transform: uppercase;
-
-								margin-right: .5rem;
-								vertical-align: middle;
-							}
-
-							.game--chapter-name {
-								color: $color-text-light;
-							}
-
-							&.is-active {
-								>.game--chapter-name {
-									color: $color-text-regular;
-									font-weight: 600;
-								}
-							}
-						}
-					}
-				}
-
-				&--rules {
-					display: none;
-
-					@include breakpoint(md) {
-						display: flex;
 					}
 
-					ol {
-						margin: 0;
-						padding: 0;
-						margin-left: 1.5rem;
-						margin-bottom: 1rem;
-
-						li {
-							text-align: justify;
-							hyphens: auto;
-
-							&+li {
-								margin-top: 1rem;
-
-								&:before {
-									content: '';
-									display: block;
-									width: 100%;
-									height: 1px;
-									opacity: .25;
-
-									margin: 1rem 0;
-
-									background-color: $color-text-light;
-								}
-							}
-
-							p {
-								display: inline;
-							}
-						}
-					}
-				}
-
-				&--members {
-					display: none;
-
-					@include breakpoint(md) {
-						display: flex;
-					}
-
-					ul {
-						margin: 0;
-						padding: 0;
-						list-style: none;
-
-						&+h5 {
-							margin-top: 1.5rem;
-						}
-
-						li {
-							display: flex;
-							align-items: center;
-							justify-content: flex-start;
-
-							&+li {
-								margin-top: 1rem;
-							}
-
-							p {
-								margin: 0;
-
-								&:first-child {
-									font-weight: bold;
-								}
-
-								&:last-child {
-									font-size: .85rem;
-									color: $color-text-light;
-								}
-							}
-						}
-					}
-
-					.profile-picture {
-						width: 4rem;
-						height: 4rem;
-						object-fit: cover;
-
-						@include ui-border;
-						@include ui-border-radius;
-
-						margin-right: 1rem;
-
-						@include breakpoint(md) {
-							width: 3rem;
-							height: 3rem;
-						}
-					}
-
-					.members {
-						color: $color-text-light;
+					li {
+						position: relative;
+						cursor: pointer;
+						// >ol {
+						// 	li {
+						// 		font-size: .85rem;
+						// 	}
+						// }
 
 						&:before {
-							content: '(';
+							position: absolute;
+							left: -2rem;
+							top: 0px;
+							content: '';
+							display: block;
+							border-left: 1px solid #ddd;
+							height: 1rem;
+							border-bottom: 1px solid #ddd;
+							width: 1rem;
 						}
 
 						&:after {
-							content: ')';
+							position: absolute;
+							left: -2rem;
+							bottom: -0.5rem;
+							content: '';
+							display: block;
+							border-left: 1px solid #ddd;
+							height: 100%;
 						}
+
+						&.game--name {
+							margin: 0 0 .5rem -2rem;
+							font-weight: 600;
+
+							&:before {
+								display: none;
+							}
+
+							&:after {
+								display: none;
+							}
+						}
+
+						&:last-child {
+							&:after {
+								display: none
+							}
+						}
+
+						.game--chapter-number {
+							font-size: .5rem;
+							font-weight: bold;
+							text-transform: uppercase;
+
+							margin-right: .5rem;
+							vertical-align: middle;
+						}
+
+						.game--chapter-name {
+							color: $color-text-light;
+						}
+
+						&.is-active {
+							>.game--chapter-name {
+								color: $color-text-regular;
+								font-weight: 600;
+							}
+						}
+					}
+				}
+			}
+
+			&--rules {
+				display: none;
+
+				@include breakpoint(md) {
+					display: flex;
+				}
+
+				ol {
+					margin: 0;
+					padding: 0;
+					margin-left: 1.5rem;
+					margin-bottom: 1rem;
+
+					li {
+						text-align: justify;
+						hyphens: auto;
+
+						&+li {
+							margin-top: 1rem;
+
+							&:before {
+								content: '';
+								display: block;
+								width: 100%;
+								height: 1px;
+								opacity: .25;
+
+								margin: 1rem 0;
+
+								background-color: $color-text-light;
+							}
+						}
+
+						p {
+							display: inline;
+						}
+					}
+				}
+			}
+
+			&--members {
+				display: none;
+
+				@include breakpoint(md) {
+					display: flex;
+				}
+
+				ul {
+					margin: 0;
+					margin-top: 1rem;
+					padding: 0;
+					list-style: none;
+
+					&+h5 {
+						margin-top: 1.5rem;
+					}
+
+					li {
+						display: flex;
+						align-items: center;
+						justify-content: flex-start;
+
+						&+li {
+							margin-top: 1rem;
+						}
+
+						p {
+							margin: 0;
+
+							&:first-child {
+								font-weight: bold;
+							}
+
+							&:last-child {
+								font-size: .85rem;
+								color: $color-text-light;
+							}
+						}
+					}
+				}
+
+				.profile-picture {
+					width: 4rem;
+					height: 4rem;
+					object-fit: cover;
+
+					@include ui-border;
+					@include ui-border-radius;
+
+					margin-right: 1rem;
+
+					@include breakpoint(md) {
+						width: 3rem;
+						height: 3rem;
+					}
+				}
+
+				.members {
+					color: $color-text-light;
+
+					&:before {
+						content: '(';
+					}
+
+					&:after {
+						content: ')';
 					}
 				}
 			}
