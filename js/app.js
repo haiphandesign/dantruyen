@@ -187,6 +187,7 @@ $('.game--location').load('./inc/game--location.html');
 $('.game--rules').load('./inc/game--rules.html');
 $('.game--members').load('./inc/game--members.html');
 $('.game--action').load('./inc/game--action.html');
+$('.game--information').load('./inc/game--info.html');
 
 setTimeout(function () {
 	$('.game--members-mini').load('./inc/game--members-mini.html');

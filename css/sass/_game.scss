@@ -1079,6 +1079,39 @@
 				margin-bottom: 1rem;
 			}
 
+			&--information {
+				.game--information-item {
+					display: flex;
+					align-items: flex-start;
+					justify-content: flex-start;
+
+					&+.game--information-item {
+						margin-top: .75rem;
+					}
+
+					.info-name {
+						text-transform: uppercase;
+						font-weight: bold;
+
+						width: 15rem;
+						font-size: .75rem;
+						line-height: 1.5rem;
+						// letter-spacing: .2em;
+
+						padding-right: 1rem;
+
+						white-space: nowrap;
+					}
+
+					.info-value {
+						width: 100%;
+
+						text-align: justify;
+						hyphens: auto;
+					}
+				}
+			}
+
 			&--action {
 				.game--action-user {
 					display: flex;
@@ -1240,9 +1273,11 @@
 					}
 
 					li {
-						display: flex;
-						align-items: center;
-						justify-content: flex-start;
+						a {
+							display: flex;
+							align-items: center;
+							justify-content: flex-start;
+						}
 
 						&+li {
 							margin-top: 1rem;
