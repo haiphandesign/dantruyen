@@ -1101,6 +1101,211 @@ hr {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.modal-content .content {
+  padding: 1rem;
+}
+
+.modal-content .modal-character .character-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  .modal-content .modal-character .character-info {
+    width: 35rem;
+    display: block;
+  }
+}
+
+.modal-content .modal-character .character-info-basic {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 4rem;
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  background-color: white;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0.25rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 1rem;
+  z-index: -1;
+}
+
+.modal-content .modal-character .character-info .profile-picture {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.25rem;
+  margin-right: 1rem;
+}
+
+.modal-content .modal-character .character-info .name-character {
+  font-weight: bold;
+}
+
+.modal-content .modal-character .character-info .name-user {
+  font-size: .85rem;
+  color: #b3b3b3;
+}
+
+.modal-content .modal-character .character-info-box {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 18rem;
+  padding-top: 5rem;
+}
+
+.modal-content .modal-character .character-info-badge {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.modal-content .modal-character .character-info-badge img {
+  display: inline-block;
+}
+
+.modal-content .modal-character .character-info-badge img + img {
+  margin-left: .5rem;
+}
+
+.modal-content .modal-character .character-info-item {
+  margin-bottom: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.modal-content .modal-character .character-info-item:last-child {
+  margin-bottom: 0;
+}
+
+.modal-content .modal-character .character-info-item .info-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 4rem;
+  font-size: .75rem;
+  line-height: 1.5rem;
+}
+
+.modal-content .modal-character .character-info-item .info-value {
+  width: 100%;
+  text-align: justify;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.modal-content .modal-character .character-info-stack {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  float: right;
+  border: 1px solid #e4e4e4;
+  background-color: white;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0.25rem;
+  margin: -1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+@media (min-width: 992px) {
+  .modal-content .modal-character .character-info-stack {
+    width: 15rem;
+    border: 1px solid #e4e4e4;
+    background-color: white;
+    border-radius: 0.25rem;
+    -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+            box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+    margin: 0;
+  }
+}
+
+.modal-content .modal-character .character-info-stack .stack-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.modal-content .modal-character .character-info-stack .stack-item + .stack-item {
+  margin-top: .75rem;
+}
+
+.modal-content .modal-character .character-info-stack .stack-item-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid #e4e4e4;
+  background-color: white;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+          box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+  margin-right: .5rem;
+}
+
+.modal-content .modal-character .character-info-stack .stack-item-info {
+  width: 100%;
+}
+
+.modal-content .modal-character .character-info-stack .stack-item-info .amount {
+  float: right;
+  font-size: .75rem;
+  color: #b3b3b3;
+}
+
+.modal-content .modal-character .character-info-stack .stack-item-info .amount:before {
+  content: 'x';
+}
+
 .modal {
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 10000;
@@ -1443,7 +1648,6 @@ hr {
   margin-left: auto;
   border: 1px solid #e4e4e4;
   background-color: white;
-  border-radius: 0.25rem;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
   margin-bottom: 1rem;
@@ -1477,6 +1681,12 @@ hr {
 @media (min-width: 992px) {
   .game--header .game--info {
     margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .game--header .game--info {
+    border-radius: 0.25rem;
   }
 }
 
@@ -1543,9 +1753,7 @@ hr {
   height: 10rem;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 .25rem white;
-          box-shadow: 0 0 0 .25rem white;
+  border-radius: 0.25rem;
 }
 
 @media (min-width: 992px) {
@@ -2190,15 +2398,6 @@ hr {
 }
 
 .game--main .post .challenge-result {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: calc(100% + 2rem);
   margin: -1rem;
   margin-bottom: 1rem;
@@ -2399,6 +2598,18 @@ hr {
   margin: -1rem;
   border: none;
   border-radius: none;
+}
+
+.game--main .post.edit .challenge-result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .game--main .post.edit.action .button {
@@ -2682,18 +2893,6 @@ hr {
   margin-top: 1rem;
 }
 
-.game--main .ui-widget.game--progress-tree {
-  display: none;
-}
-
-@media (min-width: 992px) {
-  .game--main .ui-widget.game--progress-tree {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
 .game--main .ui-widget.game--progress-tree ol {
   margin: 0;
   padding-left: 2rem;
@@ -2766,18 +2965,6 @@ hr {
   font-weight: 600;
 }
 
-.game--main .ui-widget.game--rules {
-  display: none;
-}
-
-@media (min-width: 992px) {
-  .game--main .ui-widget.game--rules {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
 .game--main .ui-widget.game--rules ol {
   margin: 0;
   padding: 0;
@@ -2808,18 +2995,6 @@ hr {
 
 .game--main .ui-widget.game--rules ol li p {
   display: inline;
-}
-
-.game--main .ui-widget.game--members {
-  display: none;
-}
-
-@media (min-width: 992px) {
-  .game--main .ui-widget.game--members {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 }
 
 .game--main .ui-widget.game--members ul {
@@ -2892,7 +3067,7 @@ hr {
   content: ')';
 }
 
-.game--main .ui-widget.game--members.mini ul.members-list {
+.game--main .ui-widget.game--members-mini ul.members-list {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[6];
@@ -2901,19 +3076,19 @@ hr {
   grid-row-gap: 10px;
 }
 
-.game--main .ui-widget.game--members.mini ul.members-list li {
+.game--main .ui-widget.game--members-mini ul.members-list li {
   margin: 0;
 }
 
-.game--main .ui-widget.game--members.mini .host {
+.game--main .ui-widget.game--members-mini .host {
   margin-right: auto;
 }
 
-.game--main .ui-widget.game--members.mini .member .info {
+.game--main .ui-widget.game--members-mini .member .info {
   display: none;
 }
 
-.game--main .ui-widget.game--members.mini .member .profile-picture {
+.game--main .ui-widget.game--members-mini .member .profile-picture {
   margin: 0;
 }
 

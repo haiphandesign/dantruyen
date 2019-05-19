@@ -28,6 +28,198 @@
 			color: rgba(0, 0, 0, 0);
 		}
 	}
+
+	.content {
+		padding: 1rem;
+	}
+
+	.modal-character {
+		.character-info {
+
+			display: flex;
+			flex-direction: column;
+
+			@include breakpoint(md) {
+				width: 35rem;
+				display: block;
+			}
+
+			&-basic {
+				order: 1;
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+
+				height: 4rem;
+				width: 100%;
+
+				@include ui-border;
+				border-top: 0;
+				border-left: 0;
+				border-right: 0;
+
+				@include ui-border-radius;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+
+				padding: 1rem;
+
+				z-index: -1;
+			}
+
+			.profile-picture {
+				display: block;
+
+				width: 6rem;
+				height: 6rem;
+				object-fit: cover;
+
+				@include ui-border-radius;
+
+				margin-right: 1rem;
+			}
+
+			.name {
+				&-character {
+					font-weight: bold;
+				}
+
+				&-user {
+					font-size: .85rem;
+					color: $color-text-light;
+				}
+			}
+
+			&-box {
+				order: 2;
+
+				width: 18rem;
+
+				padding-top: 5rem;
+			}
+
+			&-badge {
+				display: block;
+
+				margin-bottom: 1rem;
+
+				img {
+					display: inline-block;
+
+					&+img {
+						margin-left: .5rem;
+					}
+				}
+			}
+
+
+			&-item {
+				margin-bottom: .5rem;
+
+				display: flex;
+				align-items: flex-start;
+				justify-content: flex-start;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.info-name {
+					text-transform: uppercase;
+					font-weight: bold;
+
+					width: 4rem;
+					font-size: .75rem;
+					line-height: 1.5rem;
+				}
+
+				.info-value {
+					width: 100%;
+
+					text-align: justify;
+					hyphens: auto;
+				}
+			}
+
+			&-stack {
+				order: 3;
+
+				// position: absolute;
+				// top: 1rem;
+				// right: 1rem;
+
+				float: right;
+
+				@include ui-border;
+				border-bottom: 0;
+				border-left: 0;
+				border-right: 0;
+
+				@include ui-border-radius;
+
+				margin: -1rem;
+				margin-top: 1rem;
+				padding: 1rem;
+
+				@include breakpoint(md) {
+					width: 15rem;
+
+					@include ui-border;
+					@include ui-border-radius;
+					@include ui-shadow;
+
+					margin: 0;
+				}
+
+				.stack-item {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+
+					&+.stack-item {
+						margin-top: .75rem;
+					}
+
+					&-icon {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						flex-shrink: 0;
+
+						width: 3rem;
+						height: 3rem;
+
+						@include ui-border;
+						@include ui-border-radius;
+						@include ui-shadow;
+
+						margin-right: .5rem;
+					}
+
+					&-info {
+						width: 100%;
+
+						.amount {
+							float: right;
+
+							font-size: .75rem;
+							color: $color-text-light;
+
+							&:before {
+								content: 'x';
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 .modal {

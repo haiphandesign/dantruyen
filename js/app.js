@@ -186,8 +186,11 @@ $('.game--progress-tree').load('./inc/game--progress-tree.html');
 $('.game--location').load('./inc/game--location.html');
 $('.game--rules').load('./inc/game--rules.html');
 $('.game--members').load('./inc/game--members.html');
-$('.game--members.mini').load('./inc/game--members-mini.html');
 $('.game--action').load('./inc/game--action.html');
+
+setTimeout(function () {
+	$('.game--members-mini').load('./inc/game--members-mini.html');
+}, 100);
 
 
 //// Game: Sidebar Widget Collapse
@@ -214,3 +217,9 @@ $(window).scroll(function () {
 		$('.game--progress-list').removeClass('is-active');
 	}
 });
+
+$(document).ready(function () {
+	$('#game-character-modal').modal();
+	$($('#game-character-modal').data('modal')).modal();
+	return false;
+})
