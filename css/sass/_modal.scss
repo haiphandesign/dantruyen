@@ -34,6 +34,16 @@
 	}
 
 	.modal-character {
+
+		&.narrator {
+			.character-info {
+				@include breakpoint(md) {
+					width: 20rem;
+					display: block;
+				}
+			}
+		}
+
 		.character-info {
 
 			display: flex;
@@ -42,6 +52,10 @@
 			@include breakpoint(md) {
 				width: 35rem;
 				display: block;
+			}
+
+			&-narrator {
+				padding-top: 5rem;
 			}
 
 			&-basic {
@@ -93,6 +107,19 @@
 				&-user {
 					font-size: .85rem;
 					color: $color-text-light;
+				}
+			}
+
+			&-user {
+				font-size: .85rem;
+				margin-bottom: 1rem;
+
+				.username {
+					font-weight: bold;
+
+					&::before {
+						content: '@';
+					}
 				}
 			}
 

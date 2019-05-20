@@ -58,6 +58,7 @@ $(document).ready(function () {
 			navbar.addClass("is-scrolled");
 			gameprogressbar.addClass("is-scrolled");
 			$('.game--sidebar-wrapper').addClass("is-scrolled");
+			$('.nav--user').removeClass('is-active');
 		} else if (c > currentScrollTop && !(a <= b)) {
 			navbar.removeClass("is-scrolled");
 			gameprogressbar.removeClass("is-scrolled");
@@ -69,6 +70,20 @@ $(document).ready(function () {
 });
 
 
+// Global: Navbar User Menu
+
+
+window.setTimeout(function () {
+	$('.nav--user').click(function () {
+		console.log('open user menu');
+		$(this).toggleClass('is-active');
+	})
+}, 100);
+
+
+window.setTimeout(function () {
+	$('.nav--user').addClass('is-active');
+}, 100);
 
 
 //  ________  ________  _____ ______   _______      
@@ -219,8 +234,7 @@ $(window).scroll(function () {
 	}
 });
 
-$(document).ready(function () {
-	$('#game-character-modal').modal();
-	$($('#game-character-modal').data('modal')).modal();
+setTimeout(function () {
+	$('#game-narrator-modal').modal();
 	return false;
-})
+}, 100);
