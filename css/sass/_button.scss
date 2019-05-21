@@ -12,7 +12,7 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0 2rem;
+	padding: 0 1.5rem;
 	height: 3rem;
 	transition: .25s all ease;
 	white-space: nowrap;
@@ -30,6 +30,12 @@
 		&.single {
 			margin: 0;
 		}
+	}
+
+	&.small-text {
+		font-size: .75rem;
+		text-transform: uppercase;
+		letter-spacing: .2em;
 	}
 
 	&.small {
@@ -61,8 +67,9 @@
 	}
 
 	&.solid {
-		@include ui-border;
 		@include ui-shadow;
+
+		border: 0;
 
 		background: {
 			color: $color-text-regular;

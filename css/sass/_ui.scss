@@ -347,3 +347,51 @@
 		height: 3rem;
 	}
 }
+
+
+textarea,
+input[type]:not([type=search]):not([type=url]):not([type=submit]):not([type=hidden]) {
+	height: 3rem;
+
+	@include ui-border;
+	@include ui-border-radius;
+
+	padding: 1rem;
+
+	transition: all .25s;
+
+	&::placeholder {
+		opacity: .25;
+	}
+
+	&:hover,
+	&:focus {
+		border-color: $color-text-light;
+	}
+
+	&[type="checkbox"] {
+		-webkit-appearance: none;
+		padding: 0;
+
+		width: 1rem;
+		height: 1rem;
+
+		vertical-align: middle;
+
+		&:checked {
+			background-image: url('./../img/layout/icons/check.svg');
+			background-size: 80%;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+}
+
+
+.form-element {
+	width: 100%;
+
+	+.form-element {
+		margin-top: 1rem;
+	}
+}

@@ -249,9 +249,129 @@
 	}
 
 	.modal-login {
-		form {
+		display: flex;
+		flex-direction: column;
+
+		@include breakpoint(md) {
+			flex-direction: row;
+		}
+
+		.login-left {
+			width: 100%;
+			height: 10rem;
+
+			background-color: $color-text-light;
+
+			@include ui-border-radius;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+
+			@include breakpoint(md) {
+				width: 25rem;
+				height: 40rem;
+
+				@include ui-border-radius;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+		}
+
+		.login-right {
 			display: flex;
 			flex-direction: column;
+			justify-content: space-between;
+
+			margin-top: 0rem;
+			padding: 2rem;
+
+			@include breakpoint(md) {
+				padding: 2rem 4rem;
+			}
+		}
+
+		.login-welcome {
+			width: 20rem;
+
+			margin-bottom: 1.5rem;
+
+			p {
+				margin: 0;
+			}
+
+			@include breakpoint(md) {
+				margin-bottom: 2.5rem;
+			}
+		}
+
+		form {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+
+			@include breakpoint(md) {
+				max-width: 20rem;
+			}
+
+			input[type]:not([type=checkbox]):not([type=submit]) {
+				width: 100%;
+
+				@include breakpoint(md) {
+					max-width: 20rem;
+				}
+			}
+		}
+
+		.form-login-submit {
+			input[type=submit] {
+				width: 100%;
+			}
+
+			@include breakpoint(md) {
+				width: auto;
+			}
+		}
+
+		.form-login-remember {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			justify-content: flex-start;
+
+			font-size: .75rem;
+			// color: $color-text-light;
+			transition: all .25s;
+
+			* {
+				+* {
+					margin: 0 .25rem;
+				}
+			}
+
+			@include breakpoint(md) {
+				flex-direction: row;
+				justify-content: flex-end;
+
+				width: auto;
+			}
+
+			// &:hover {
+			// 	color: $color-text-regular;
+			// }
+		}
+
+		.form-login-bottom {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-size: .75rem;
+
+			margin-top: .75rem;
+		}
+
+		.form-login-register {
+			text-decoration: underline;
 		}
 	}
 }
