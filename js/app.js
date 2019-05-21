@@ -238,3 +238,9 @@ setTimeout(function () {
 	$('#game-narrator-modal').modal();
 	return false;
 }, 100);
+
+setTimeout(function () {
+	$('.nav--button-login').modal();
+	FB.XFBML.parse();
+	return false;
+}, 100);

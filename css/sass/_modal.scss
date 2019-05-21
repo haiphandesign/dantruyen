@@ -247,6 +247,13 @@
 			}
 		}
 	}
+
+	.modal-login {
+		form {
+			display: flex;
+			flex-direction: column;
+		}
+	}
 }
 
 .modal {
