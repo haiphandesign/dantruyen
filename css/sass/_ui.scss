@@ -356,6 +356,8 @@ input[type]:not([type=search]):not([type=url]):not([type=submit]):not([type=hidd
 	@include ui-border;
 	@include ui-border-radius;
 
+	-webkit-appearance: none;
+
 	padding: 1rem;
 
 	transition: all .25s;
