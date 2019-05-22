@@ -391,6 +391,10 @@ input[type]:not([type=search]):not([type=url]):not([type=submit]):not([type=hidd
 .form-element {
 	width: 100%;
 
+	display: flex;
+
+	input {}
+
 	+.form-element {
 		margin-top: 1rem;
 	}

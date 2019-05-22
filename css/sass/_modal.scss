@@ -261,6 +261,9 @@
 			height: 10rem;
 
 			background-color: $color-text-light;
+			background-image: url('./../img/layout/background/register.jpg');
+			background-size: cover;
+			background-position: center;
 
 			@include ui-border-radius;
 			border-bottom-right-radius: 0;
@@ -323,6 +326,30 @@
 			}
 		}
 
+		.form-login-social {
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				height: 3rem;
+				width: 100%;
+
+				color: white;
+
+				@include ui-border-radius;
+
+				background-color: #4267b2;
+				background-image: url('./../img/layout/icons/facebook.svg');
+				background-size: 1.5rem;
+				background-repeat: no-repeat;
+				background-position: 1rem;
+
+				padding-left: 2rem;
+
+			}
+		}
+
 		.form-login-submit {
 			input[type=submit] {
 				width: 100%;
@@ -372,6 +399,41 @@
 
 		.form-login-register {
 			text-decoration: underline;
+		}
+
+		.form-register-password {
+			input[type='password'] {
+				width: calc(50% - .5rem) !important;
+
+				&+input {
+					margin-left: 1rem;
+				}
+			}
+		}
+
+		.form-register-login {
+			width: 60%;
+			font-size: .75rem;
+
+			p {
+				width: 100%;
+
+				@include breakpoint(md) {
+					text-align: right;
+				}
+			}
+
+			a {
+				text-decoration: underline;
+			}
+		}
+
+		.form-register-notice {
+			max-width: 20rem;
+
+			margin-top: 1rem;
+
+			font-size: .75rem;
 		}
 	}
 }

@@ -240,7 +240,6 @@ setTimeout(function () {
 }, 100);
 
 setTimeout(function () {
-	$('.nav--button-login').modal();
-	FB.XFBML.parse();
+	$('.nav--button-register').modal();
 	return false;
 }, 100);

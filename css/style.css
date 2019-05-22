@@ -831,6 +831,9 @@ input[type]:not([type=search]):not([type=url]):not([type=submit]):not([type=hidd
 
 .form-element {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .form-element + .form-element {
@@ -1425,6 +1428,9 @@ hr {
   width: 100%;
   height: 10rem;
   background-color: #b3b3b3;
+  background-image: url("./../img/layout/background/register.jpg");
+  background-size: cover;
+  background-position: center;
   border-radius: 0.25rem;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -1510,6 +1516,28 @@ hr {
   }
 }
 
+.modal-content .modal-login .form-login-social a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 3rem;
+  width: 100%;
+  color: white;
+  border-radius: 0.25rem;
+  background-color: #4267b2;
+  background-image: url("./../img/layout/icons/facebook.svg");
+  background-size: 1.5rem;
+  background-repeat: no-repeat;
+  background-position: 1rem;
+  padding-left: 2rem;
+}
+
 .modal-content .modal-login .form-login-submit input[type=submit] {
   width: 100%;
 }
@@ -1572,6 +1600,39 @@ hr {
 
 .modal-content .modal-login .form-login-register {
   text-decoration: underline;
+}
+
+.modal-content .modal-login .form-register-password input[type='password'] {
+  width: calc(50% - .5rem) !important;
+}
+
+.modal-content .modal-login .form-register-password input[type='password'] + input {
+  margin-left: 1rem;
+}
+
+.modal-content .modal-login .form-register-login {
+  width: 60%;
+  font-size: .75rem;
+}
+
+.modal-content .modal-login .form-register-login p {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .modal-content .modal-login .form-register-login p {
+    text-align: right;
+  }
+}
+
+.modal-content .modal-login .form-register-login a {
+  text-decoration: underline;
+}
+
+.modal-content .modal-login .form-register-notice {
+  max-width: 20rem;
+  margin-top: 1rem;
+  font-size: .75rem;
 }
 
 .modal {
