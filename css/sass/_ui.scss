@@ -350,7 +350,8 @@
 
 
 textarea,
-input[type]:not([type=search]):not([type=url]):not([type=submit]):not([type=hidden]) {
+input[type=text],
+input[type=password] {
 	height: 3rem;
 
 	@include ui-border;
@@ -394,8 +395,6 @@ input[type]:not([type=search]):not([type=url]):not([type=submit]):not([type=hidd
 	width: 100%;
 
 	display: flex;
-
-	input {}
 
 	+.form-element {
 		margin-top: 1rem;

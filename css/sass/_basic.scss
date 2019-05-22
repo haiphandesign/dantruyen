@@ -23,6 +23,10 @@ body {
 	line-height: 1.5;
 	color: $color-text-regular;
 
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-stroke-width: 0.2px;
+
 	&.page-home {
 		background-color: white;
 	}

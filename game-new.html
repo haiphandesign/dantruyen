@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dẫn Truyện</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- Preload Javascript -->
+	<script src="./js/preload.js"></script>
+</head>
+
+<body class="page-game page-game-main logged-in">
+
+	<div class='cursor'></div>
+	<div class='cursor'></div>
+
+	<div id="header"></div>
+
+	<div id="main">
+		<section class="game--header">
+			<div class="game--cover">
+				<div class="game--cover-upload">
+					<input type="file" id="gameCoverUpload" />
+					<label class="button ghost white medium" for="gameCoverUpload">Chọn hình cover</label>
+				</div>
+			</div>
+			<div class="game--info">
+				<div class="game--info-top">
+					<div class="game--info-basic">
+						<div class="game--info-picture">
+							<img src="">
+							<div class="game--info-picture-upload">
+								<input type="file" id="gameInfoPictureUpload" />
+								<label for="gameInfoPictureUpload"></label>
+							</div>
+						</div>
+						<div class="game--info-meta">
+							<h3 contenteditable="true">Tiêu Đề</h3>
+							<p>Dẫn truyện bởi <a href="user-profile.html">Hùng Vũ</a></p>
+						</div>
+					</div>
+					<div class="game--info-stats">
+						<div class="game--info-counters">
+							<div class="game-info-counter stages">
+								<span>18</span>
+								<span>Màn chơi</span>
+							</div>
+							<div class="game--info-counter players">
+								<span>34</span>
+								<span>Người chơi</span>
+							</div>
+						</div>
+						<div class="game--info-rating">
+							<!-- <span class="game--info-rating-ranking">#5</span> -->
+							<div class="game--info-rating-stars">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							<!-- <span class="game--info-rating-voted">28</span> -->
+						</div>
+					</div>
+				</div>
+				<div class="game--info-bottom">
+					<div class="game--menu-wrapper">
+						<ul class="game--menu">
+							<li class="game--menu-link"><a href="game.html">Phòng Chờ</a></li>
+							<li class="game--menu-link"><a href="game-main.html">Game chính</a></li>
+							<li class="game--menu-link"><a href="game-characters.html">Nhân vật</a></li>
+							<li class="game--menu-link"><a href="game-cards.html">Thẻ bài</a></li>
+							<li class="game--menu-link"><a href="game-discussion.html">Bình luận</a></li>
+						</ul>
+						<ul class="game--menu">
+							<li class="game--menu-link"><a href="#">Thống kê</a></li>
+							<li class="game--menu-link is-active"><a href="#">Cài đặt</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<div class="game--main">
+		<div class="game--thread">
+			<div class="ui-widget">
+				<div class="title">
+					<h3>Thông tin</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+
+	<!-- Javascript -->
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.ui.js"></script>
+	<script src="./js/jquery.modal.js"></script>
+	<script src="./js/app.js"></script>
+
+</body>
+
+</html>

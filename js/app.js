@@ -81,9 +81,9 @@ window.setTimeout(function () {
 }, 100);
 
 
-window.setTimeout(function () {
-	$('.nav--user').addClass('is-active');
-}, 100);
+// window.setTimeout(function () {
+// 	$('.nav--user').addClass('is-active');
+// }, 100);
 
 
 //  ________  ________  _____ ______   _______      
@@ -234,12 +234,46 @@ $(window).scroll(function () {
 	}
 });
 
-setTimeout(function () {
-	$('#game-narrator-modal').modal();
-	return false;
-}, 100);
 
-setTimeout(function () {
-	$('.nav--button-register').modal();
-	return false;
-}, 100);
+
+document.getElementById('gameCoverUpload').addEventListener('change', function () {
+	var file = document.getElementById("gameCoverUpload").files[0];
+	var reader = new FileReader();
+	reader.onloadend = function () {
+		$('.game--cover').css('background-image', 'url("' + reader.result + '")');
+		$('.game--cover').addClass('has-background');
+	}
+	if (file) {
+		reader.readAsDataURL(file);
+	} else {}
+}, true);
+
+
+document.getElementById('gameInfoPictureUpload').addEventListener('change', function () {
+	var file = document.getElementById('gameInfoPictureUpload').files[0];
+	var reader = new FileReader();
+	reader.onloadend = function () {
+		$('.game--info-picture img').attr('src', reader.result);
+		$('.game--info-picture').addClass('has-image');
+	}
+	if (file) {
+		reader.readAsDataURL(file);
+	} else {}
+}, true);
+
+function gameTitleChecker() {
+	if ($('.game--info-meta h3').text() == 'Tiêu Đề') {
+		$('.game--info-meta h3').text('Hello');
+	}
+}
+
+console.log($('.game--info-meta h3').css('color'));
+
+if ($('.game--info-meta h3').text() == '') {
+	$('.game--info-meta h3').text('Tiêu Đề');
+}
+
+// setTimeout(function () {
+// 	$('.nav--button-register').modal();
+// 	return false;
+// }, 100);

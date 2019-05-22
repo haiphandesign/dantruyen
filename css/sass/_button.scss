@@ -49,6 +49,11 @@
 		border-color: $color-text-light;
 
 		background-color: transparent;
+
+		&.white {
+			border-color: white;
+			color: white;
+		}
 	}
 
 	&.centered {
