@@ -591,9 +591,12 @@
 							<div class="content">
 								<!-- <p class="list-description">Đang hoạt động</p> -->
 								<div class="list-content">
-									<i class="far fa-info-circle"></i> Trò chơi hiện đang ở trong trạng thái hoạt động,
-									trò chơi sẽ được tự động đưa về trạng thái <strong>Chờ</strong> nếu không có hoạt
-									động gì trong 1 tuần.
+									<i class="far fa-info-circle"></i> Trò chơi hiện đang ở trong trạng thái
+									<strong>Chờ</strong>, trò chờ sẽ được chuyển sang trạng thái <strong>Đang hoạt
+										động</strong> sau khi quản trò hoàn thành cài đặt hoặc chuyển về <strong>Lưu
+										trữ</strong> nếu không có hoạt động gì trong 7 ngày.
+									<div class="hint">Tìm hiểu thêm về các trạng thái của trò chơi <a href=#">tại
+											đây</a>.</div>
 								</div>
 								<div class="list-action">
 									<a class="button small solid"><i class="far fa-check"></i> Xác nhận</a>
@@ -653,6 +656,34 @@
 	<script src="./js/jquery.ui.js"></script>
 	<script src="./js/jquery.modal.js"></script>
 	<script src="./js/app.js"></script>
+
+	<script>
+		document.getElementById('gameCoverUpload').addEventListener('change', function () {
+			var file = document.getElementById("gameCoverUpload").files[0];
+			var reader = new FileReader();
+			reader.onloadend = function () {
+				$('.game--cover').css('background-image', 'url("' + reader.result + '")');
+				$('.game--cover').addClass('has-background');
+			}
+			if (file) {
+				reader.readAsDataURL(file);
+			} else {}
+		}, true);
+
+
+		document.getElementById('gameInfoPictureUpload').addEventListener('change', function () {
+			var file = document.getElementById('gameInfoPictureUpload').files[0];
+			var reader = new FileReader();
+			reader.onloadend = function () {
+				$('.game--info-picture img').attr('src', reader.result);
+				$('.game--info-picture').addClass('has-image');
+			}
+			if (file) {
+				reader.readAsDataURL(file);
+			} else {}
+		}, true);
+
+	</script>
 
 </body>
 

@@ -28,7 +28,7 @@
 		&:after {
 			content: '';
 
-			display: block;
+			display: none;
 
 			width: 100%;
 			height: 100%;
@@ -1682,6 +1682,110 @@
 	}
 }
 
+
+.game--characters-created {
+	.content {
+		padding: 0;
+	}
+
+	.character-name {
+		width: 50%;
+
+		@include breakpoint(md) {
+			width: 30%;
+		}
+	}
+
+	.player-name {
+		width: 20%;
+		display: none;
+
+		@include breakpoint(md) {
+			display: table-cell;
+		}
+	}
+
+	.join-date {
+		width: 20%;
+		display: none;
+
+		@include breakpoint(md) {
+			display: table-cell;
+		}
+	}
+
+	.status {
+		width: 25%;
+		text-align: center;
+
+		@include breakpoint(md) {
+			text-align: left;
+		}
+	}
+
+	.action {
+		width: 5%;
+	}
+}
+
+.game--characters-premade {
+	.content {
+		padding: 0;
+	}
+
+	.character-name {
+		width: 50%;
+
+	}
+
+	.created-date {
+		width: 20%;
+		display: none;
+
+		@include breakpoint(md) {
+			display: table-cell;
+		}
+	}
+
+	.status {
+		width: 25%;
+		text-align: center;
+
+		@include breakpoint(md) {
+			text-align: left;
+		}
+	}
+
+	.action {
+		width: 5%;
+	}
+}
+
+.status {
+	.character-status {
+		display: inline-block;
+		text-transform: uppercase;
+		font-weight: 800;
+		font-size: .75rem;
+		color: white;
+		padding: .5rem;
+		background-color: $color-text-light;
+		border-radius: .25rem;
+		cursor: default;
+	}
+
+	.played-by {
+		display: block;
+		font-size: .85rem;
+
+		margin-top: .5rem;
+
+		&:before {
+			content: 'Chơi bởi @'
+		}
+	}
+}
+
 .game--setting-item {
 	position: relative;
 
@@ -1741,16 +1845,7 @@
 			font-size: .75rem;
 			color: $color-text-light;
 
-			margin-top: .25rem;
-		}
-
-		.hint {
-			font-size: .75rem;
-			font-style: italic;
-
-			a {
-				border-bottom: 1px dotted $color-text-regular;
-			}
+			margin-top: .75rem;
 		}
 
 	}
@@ -1950,13 +2045,12 @@
 
 .game--sidebar {
 	.game--setting-item {
-		&.is-editing {
-			>.title {
-				p {
-					display: initial;
-					white-space: nowrap;
-				}
 
+		&.is-editing,
+		&.is-new {
+			>.title {
+
+				p,
 				.edit {
 					display: none;
 				}

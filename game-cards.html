@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dẫn Truyện</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- Preload Javascript -->
+	<script src="./js/preload.js"></script>
+</head>
+
+<body class="page-game page-game-main logged-in">
+
+	<div id="header"></div>
+
+	<div id="main">
+		<section class="game--header">
+			<div class="game--cover" style="background-image: url('./img/content/games/cover.jpg')"></div>
+			<div class="game--info">
+				<div class="game--info-top">
+					<div class="game--info-basic">
+						<div class="game--info-picture">
+							<img src="./img/content/games/mini-04.jpg" alt="Cuộc chiến ở đảo Lộc Tiên">
+						</div>
+						<div class="game--info-meta">
+							<h3>Cuộc chiến ở đảo Lộc Tiên</h3>
+							<p>Dẫn truyện bởi <a href="user-profile.html">Hùng Vũ</a></p>
+						</div>
+					</div>
+					<div class="game--info-stats">
+						<div class="game--info-counters">
+							<div class="game-info-counter stages">
+								<span>18</span>
+								<span>Màn chơi</span>
+							</div>
+							<div class="game--info-counter players">
+								<span>34</span>
+								<span>Người chơi</span>
+							</div>
+						</div>
+						<div class="game--info-rating">
+							<span class="game--info-rating-ranking">#5</span>
+							<div class="game--info-rating-stars">
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-half"></span>
+								<span></span>
+							</div>
+							<span class="game--info-rating-voted">28</span>
+						</div>
+					</div>
+				</div>
+				<div class="game--info-middle">
+					<a class="button small ghost join"><i class="far fa-plus"></i></a>
+					<a class="button small ghost follow"><i class="far fa-plus"></i></a>
+				</div>
+				<div class="game--info-bottom">
+					<div class="game--menu-wrapper">
+						<ul class="game--menu">
+							<li class="game--menu-link"><a href="game.html">Phòng Chờ</a></li>
+							<li class="game--menu-link is-active"><a href="game-main.html">Game chính</a></li>
+							<li class="game--menu-link"><a href="game-characters.html">Nhân vật</a></li>
+							<li class="game--menu-link"><a href="game-cards.html">Thẻ bài</a></li>
+							<li class="game--menu-link"><a href="game-discussion.html">Bình luận</a></li>
+						</ul>
+						<ul class="game--menu">
+							<li class="game--menu-link"><a href="#">Thống kê</a></li>
+							<li class="game--menu-link"><a href="#">Cài đặt</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="game--main">
+			<div class="game--thread">
+				<div class="ui-widget post host scene">
+					<div class="title featured">
+						<div class="vote">
+							<a class="vote-up is-selected" onclick="voteup()"></a>
+							<span class="vote-count">18</span>
+							<a class="vote-down" onclick="votedown()"></a>
+						</div>
+						<h6>Chương 1, Hồi 1</h6>
+						<h3>Lorem Ipsum</h3>
+						<img src="./img/content/games/background/daniele-verzini-07.jpg" alt="">
+						<span class="location">Đảo Lộc Tiên</span>
+					</div>
+					<div class="content">
+						<div class="stack">
+							<h5>Thử thách</h5>
+							<div class="stack-item">
+								<a href="./modal/card-challenge.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #1<span class="amount">6</span></div>
+								</a>
+							</div>
+							<div class="stack-item">
+								<a href="./modal/card-challenge.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #2<span class="amount">2</span></div>
+								</a>
+							</div>
+							<div class="stack-item">
+								<a href="./modal/card-challenge.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #3<span class="amount"></span></div>
+								</a>
+							</div>
+							<hr>
+							<h5>Thẻ bài</h5>
+							<div class="stack-item">
+								<a href="./modal/card-card.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thẻ bài #1 <span class="amount">x5</span></div>
+								</a>
+							</div>
+							<div class="stack-item">
+								<a href="./modal/card-card.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thả bài #2 <span class="amount">x8</span></div>
+								</a>
+							</div>
+							<div class="stack-item">
+								<a href="./modal/card-card.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thẻ bài #3</div>
+								</a>
+							</div>
+						</div>
+						<p>Justo voluptua sit invidunt ipsum tempor vero sadipscing, labore ipsum at eos ut ipsum lorem
+							labore amet magna, dolor invidunt voluptua ut justo, magna lorem diam amet amet diam, ea
+							rebum magna duo sea sit sea ut gubergren sadipscing. Justo nonumy et amet ipsum. Dolor dolor
+							lorem elitr lorem. Labore erat takimata diam ipsum duo et dolores lorem. Et dolor est
+							voluptua erat elitr vero sadipscing gubergren. Diam et aliquyam magna sed sadipscing nonumy
+							lorem, sea ipsum tempor sed eos clita et invidunt kasd justo, dolores eirmod sit dolore erat
+							tempor amet, et dolore invidunt sanctus ut, dolor est dolor eirmod nonumy dolor magna, rebum
+							dolor ipsum eos ea dolor ipsum no et, diam sed invidunt ipsum at dolores, sit et at sed diam
+							voluptua sit dolore. Dolores ut accusam sit sed kasd. Sed consetetur diam labore et magna,
+							kasd et est justo clita aliquyam. Stet aliquyam ea diam et lorem sadipscing magna. Justo
+							kasd duo aliquyam justo vero takimata gubergren amet, lorem dolor sed justo est est ipsum
+							nonumy. Et dolore sanctus kasd stet justo et. Diam sit sed stet labore, dolore ut sit erat
+							ipsum consetetur dolores. Ea labore rebum at dolor voluptua justo dolores ut. Dolore sit
+							accusam sit sit est nonumy. Nonumy labore stet sea et elitr accusam. Diam kasd at est
+							sanctus tempor, duo no sanctus justo erat. Ipsum dolor nonumy no stet dolor, no dolor vero
+							voluptua magna et clita eirmod, erat dolores elitr ipsum dolor ipsum clita amet et
+							consetetur, et eos et.</p>
+						<p>Eos duo eos sit dolor lorem, aliquyam dolor diam diam vero gubergren. Aliquyam erat accusam
+							et no elitr diam est ipsum, no et sadipscing sed clita sea ipsum. Et stet tempor at sed.
+							Sadipscing tempor ut nonumy clita eos est voluptua accusam, amet et dolor amet takimata,
+							kasd tempor ipsum et stet, stet no kasd et et est clita, est magna et aliquyam amet amet
+							voluptua at tempor. Vero et ut ipsum eos ipsum lorem tempor ipsum, dolor ipsum labore lorem
+							dolor est gubergren erat magna kasd, ea amet sanctus invidunt et, et amet sit rebum lorem,
+							ut sadipscing sadipscing.</p>
+						<p>Et consetetur sanctus gubergren clita sit diam duo et. Magna aliquyam clita sed nonumy
+							nonumy. Dolores kasd ipsum et sanctus dolore at no eirmod dolore. Sanctus rebum sit lorem
+							vero et ea. Sadipscing justo et gubergren et sed consetetur lorem ipsum. Lorem kasd lorem
+							sed vero et dolore dolores. Amet diam consetetur ipsum et clita. No et sit aliquyam nonumy
+							at sed no, sed sea magna erat sit, et at sadipscing sadipscing elitr diam eirmod diam
+							accusam dolor, consetetur sea dolores diam lorem sed. Erat takimata dolor magna lorem stet
+							no sea gubergren magna. Lorem sea stet ut kasd sit eirmod gubergren lorem. Sit dolor et
+							aliquyam sit labore. Sed dolores consetetur diam amet tempor elitr et. Dolor sanctus et et
+							kasd rebum voluptua est tempor erat. Eirmod no duo sadipscing takimata sed, vero voluptua
+							accusam gubergren sed aliquyam et duo, sea ea gubergren lorem diam ea accusam sadipscing
+							eirmod est, magna dolore at labore lorem diam et, lorem takimata vero ipsum sea sadipscing
+							nonumy, duo sit eirmod eos invidunt voluptua takimata, sit lorem ut lorem diam amet at
+							diam..</p>
+					</div>
+					<div class="interaction"></div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ui-widget post reply has-featured">
+					<div class="title">
+						<div class="vote">
+							<a class="vote-up is-selected" onclick="voteup()"></a>
+							<span class="vote-count">18</span>
+							<a class="vote-down" onclick="votedown()"></a>
+						</div>
+						<div class="user-info">
+							<img class="profile-picture" src="./img/content/players/user-02.jpg" alt="">
+							<div class="user-info--meta">
+								<p class="character">Nàng hầu gái</p>
+								<p class="username">@CuongduongNguyen69</p>
+							</div>
+						</div>
+						<div class="post-date">18:07 24/04/2019</div>
+					</div>
+					<div class="content">
+						<div class="stack">
+							<h5>Thực hiện</h5>
+							<div class="stack-item">
+								<a href="./modal/login.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #1<span class="amount">1/6</span></div>
+								</a>
+							</div>
+							<div class="stack-used">
+								<h5>Sử dụng</h5>
+								<div class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+										<div class="stack-item-info">Thẻ bài #1</div>
+									</a>
+								</div>
+								<div class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+										<div class="stack-item-info">Thẻ bài #2</div>
+									</a>
+								</div>
+								<div class="stack-reveal"></div>
+							</div>
+						</div>
+						<div class="challenge-result good"></div>
+						<div class="post-featured">
+							<img src="./img/content/games/post-type-featured.jpg" alt="">
+						</div>
+						<p>Sea eos et clita rebum takimata sed eos takimata. Nonumy sea aliquyam amet sed diam. Ut dolor
+							eos tempor voluptua clita kasd dolores invidunt eos.</p>
+						<!-- <p><img src="./img/content/games/art-02.jpg" alt=""></p> -->
+						<p>Ea at diam tempor et eirmod tempor diam
+							et sanctus. Est justo eos rebum ipsum amet takimata, diam ea accusam gubergren amet
+							sadipscing sanctus amet, nonumy et et sit dolor magna amet. Consetetur dolores et magna erat
+							et et. Vero dolor ipsum eos tempor. Ipsum at sed takimata sanctus consetetur et et. Ea duo
+							invidunt stet at sit no ipsum no diam. Lorem no diam ea duo dolor. Amet labore diam est
+							dolore duo et et, dolore justo sea magna erat diam labore, eirmod gubergren ipsum labore
+							dolor, sadipscing diam nonumy diam et diam dolor gubergren kasd, sit dolor invidunt takimata
+							amet ipsum sed, est vero dolor magna at eos aliquyam sed dolore eirmod. Et accusam eos sit
+							consetetur erat vero, lorem duo est takimata.</p>
+						<p>Sed tempor voluptua eirmod et labore at. Ea et sit et amet amet at est eirmod eos, et et sit
+							et invidunt. Amet takimata nonumy amet erat, kasd dolore elitr dolor et takimata dolor, diam
+							elitr eos amet justo. Erat magna vero vero clita dolore et voluptua. Erat ea dolor.</p>
+					</div>
+					<div class="interaction"></div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ui-widget post reply">
+					<div class="title">
+
+						<div class="user-info">
+							<img class="profile-picture" src="./img/content/players/user-05.jpg" alt="">
+							<div class="user-info--meta">
+								<p class="character">Chàng trai bao</p>
+								<p class="username">@01lifeleft</p>
+							</div>
+						</div>
+						<div class="post-date">18:07 24/04/2019</div>
+					</div>
+					<div class="content">
+						<div class="stack">
+							<h5>Thực hiện</h5>
+							<div class="stack-item">
+								<a href="./modal/login.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #2<span class="amount">2/6</span></div>
+								</a>
+								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
+							</div>
+							<div class="stack-used">
+								<h5>Sử dụng</h5>
+								<ul>
+									<li class="stack-item">
+										<a href="./modal/login.html" rel="modal:open">
+											<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+											<div class="stack-item-info">Thẻ bài #1</div>
+										</a>
+									</li>
+								</ul>
+								<div class="stack-reveal"></div>
+							</div>
+						</div>
+						<div class="challenge-result bad"></div>
+						<p>Ipsum at sed takimata sanctus consetetur et et. Ea duo
+							invidunt stet at sit no ipsum no diam. Lorem no diam ea duo dolor. Amet labore diam est
+							dolore duo et et, dolore justo sea magna erat diam labore, eirmod gubergren ipsum labore
+							dolor, sadipscing diam nonumy diam et diam dolor gubergren kasd, sit dolor invidunt takimata
+							amet ipsum sed, est vero dolor magna at eos aliquyam sed dolore eirmod. Et accusam eos sit
+							consetetur erat vero, lorem duo est takimata.</p>
+						<p>Elitr at dolore dolore labore est sit sed sit amet et, magna aliquyam rebum kasd accusam sit
+							sea ut sanctus et. Ipsum sanctus sit ipsum dolore ipsum rebum rebum dolor no, lorem sit amet
+							sit et clita dolor invidunt diam et. Ipsum dolore takimata et justo justo. Rebum dolor stet
+							sit duo no sed, et kasd dolor at sit justo amet no consetetur. Kasd dolor justo lorem dolor.
+							Dolor sed et et consetetur lorem clita dolore dolor. Dolor ea kasd ipsum vero tempor rebum
+							eirmod kasd et. Ipsum et elitr duo stet amet sadipscing dolore, no sit et kasd justo
+							gubergren est aliquyam aliquyam. Kasd diam lorem invidunt labore dolor et magna no magna.
+							Sit sed sit sea erat invidunt invidunt ipsum, lorem lorem no kasd elitr eos amet ea, justo
+							voluptua dolores invidunt diam. Nonumy accusam magna stet sanctus takimata invidunt at clita
+							magna. Stet rebum aliquyam dolores et.</p>
+						<p>Sed sit invidunt takimata sea takimata ipsum sanctus diam rebum diam, tempor lorem aliquyam
+							accusam dolor ut clita diam, lorem sed et ut sanctus invidunt ipsum et. Consetetur amet sit
+							duo lorem eirmod lorem ea duo magna. Ut et lorem no no amet sea invidunt magna. Clita kasd
+							vero kasd lorem duo tempor diam. Et et eos lorem amet accusam diam, clita ut accusam amet
+							tempor et, sed amet stet eos sea no lorem diam.</p>
+					</div>
+					<div class="interaction"></div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ui-widget post reply">
+					<div class="title">
+						<div class="vote">
+							<a class="vote-up is-selected" onclick="voteup()"></a>
+							<span class="vote-count">18</span>
+							<a class="vote-down" onclick="votedown()"></a>
+						</div>
+						<div class="user-info">
+							<img class="profile-picture" src="./img/content/players/user-05.jpg" alt="">
+							<div class="user-info--meta">
+								<p class="character">Chàng trai bao</p>
+								<p class="username">@01lifeleft</p>
+							</div>
+						</div>
+						<div class="post-date">18:07 24/04/2019</div>
+					</div>
+					<div class="content">
+						<div class="stack">
+							<h5>Thực hiện</h5>
+							<div class="stack-item">
+								<a href="./modal/login.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #2</div>
+								</a>
+								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
+							</div>
+							<div class="stack-used">
+								<h5>Sử dụng</h5>
+								<ul>
+									<li class="stack-item">
+										<a href="./modal/login.html" rel="modal:open">
+											<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+											<div class="stack-item-info">Thẻ bài #1</div>
+										</a>
+									</li>
+								</ul>
+								<div class="stack-reveal"></div>
+							</div>
+						</div>
+						<div class="challenge-result"></div>
+						<p>Ipsum at sed takimata sanctus consetetur et et. Ea duo
+							invidunt stet at sit no ipsum no diam. Lorem no diam ea duo dolor. Amet labore diam est
+							dolore duo et et, dolore justo sea magna erat diam labore, eirmod gubergren ipsum labore
+							dolor, sadipscing diam nonumy diam et diam dolor gubergren kasd, sit dolor invidunt takimata
+							amet ipsum sed, est vero dolor magna at eos aliquyam sed dolore eirmod. Et accusam eos sit
+							consetetur erat vero, lorem duo est takimata.</p>
+						<p>Elitr at dolore dolore labore est sit sed sit amet et, magna aliquyam rebum kasd accusam sit
+							sea ut sanctus et. Ipsum sanctus sit ipsum dolore ipsum rebum rebum dolor no, lorem sit amet
+							sit et clita dolor invidunt diam et. Ipsum dolore takimata et justo justo. Rebum dolor stet
+							sit duo no sed, et kasd dolor at sit justo amet no consetetur. Kasd dolor justo lorem dolor.
+							Dolor sed et et consetetur lorem clita dolore dolor. Dolor ea kasd ipsum vero tempor rebum
+							eirmod kasd et. Ipsum et elitr duo stet amet sadipscing dolore, no sit et kasd justo
+							gubergren est aliquyam aliquyam. Kasd diam lorem invidunt labore dolor et magna no magna.
+							Sit sed sit sea erat invidunt invidunt ipsum, lorem lorem no kasd elitr eos amet ea, justo
+							voluptua dolores invidunt diam. Nonumy accusam magna stet sanctus takimata invidunt at clita
+							magna. Stet rebum aliquyam dolores et.</p>
+						<p>Sed sit invidunt takimata sea takimata ipsum sanctus diam rebum diam, tempor lorem aliquyam
+							accusam dolor ut clita diam, lorem sed et ut sanctus invidunt ipsum et. Consetetur amet sit
+							duo lorem eirmod lorem ea duo magna. Ut et lorem no no amet sea invidunt magna. Clita kasd
+							vero kasd lorem duo tempor diam. Et et eos lorem amet accusam diam, clita ut accusam amet
+							tempor et, sed amet stet eos sea no lorem diam.</p>
+					</div>
+					<div class="interaction"></div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ui-widget post host reply">
+					<div class="title">
+						<div class="vote">
+							<a class="vote-up is-selected" onclick="voteup()"></a>
+							<span class="vote-count">18</span>
+							<a class="vote-down" onclick="votedown()"></a>
+						</div>
+						<div class="user-info">
+							<div class="user-info--meta">
+								<p class="character">Người dẫn truyện tiếp tục ...</p>
+								<p class="post-date">18:07 24/04/2019</p>
+							</div>
+						</div>
+					</div>
+					<div class="content">
+						<div class="stack">
+							<h5>Thử thách</h5>
+							<ul>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+										<div class="stack-item-info">Thử thách #1</div>
+									</a>
+								</li>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+										<div class="stack-item-info">Thử thách #2</div>
+									</a>
+								</li>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+										<div class="stack-item-info">Thử thách #3</div>
+									</a>
+								</li>
+							</ul>
+							<hr>
+							<h5>Thẻ bài</h5>
+							<ul>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+										<div class="stack-item-info">Thẻ bài #1 <span class="amount">x5</span></div>
+									</a>
+								</li>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+										<div class="stack-item-info">Thả bài #2 <span class="amount">x8</span></div>
+									</a>
+								</li>
+								<li class="stack-item">
+									<a href="./modal/login.html" rel="modal:open">
+										<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+										<div class="stack-item-info">Thẻ bài #3</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<p>Voluptua takimata et vero lorem consetetur elitr sea. Lorem lorem sit takimata aliquyam
+							accusam clita sit duo, at aliquyam ipsum rebum voluptua erat. Amet kasd eirmod sea ut ea,
+							amet et amet stet sadipscing clita magna sit, lorem et est dolore stet. Ipsum erat nonumy
+							nonumy invidunt sadipscing et, rebum sanctus sed lorem sed takimata aliquyam gubergren
+							voluptua. Et sit dolor ipsum amet no, rebum et labore sit et, aliquyam et stet et takimata
+							eirmod.</p>
+						<p>Ipsum at sed takimata sanctus consetetur et et. Ea duo
+							invidunt stet at sit no ipsum no diam. Lorem no diam ea duo dolor. Amet labore diam est
+							dolore duo et et, dolore justo sea magna erat diam labore, eirmod gubergren ipsum labore
+							dolor, sadipscing diam nonumy diam et diam dolor gubergren kasd, sit dolor invidunt takimata
+							amet ipsum sed, est vero dolor magna at eos aliquyam sed dolore eirmod. Et accusam eos sit
+							consetetur erat vero, lorem duo est takimata.</p>
+						<p>Elitr at dolore dolore labore est sit sed sit amet et, magna aliquyam rebum kasd accusam sit
+							sea ut sanctus et. Ipsum sanctus sit ipsum dolore ipsum rebum rebum dolor no, lorem sit amet
+							sit et clita dolor invidunt diam et. Ipsum dolore takimata et justo justo. Rebum dolor stet
+							sit duo no sed, et kasd dolor at sit justo amet no consetetur. Kasd dolor justo lorem dolor.
+							Dolor sed et et consetetur lorem clita dolore dolor. Dolor ea kasd ipsum vero tempor rebum
+							eirmod kasd et. Ipsum et elitr duo stet amet sadipscing dolore, no sit et kasd justo
+							gubergren est aliquyam aliquyam. Kasd diam lorem invidunt labore dolor et magna no magna.
+							Sit sed sit sea erat invidunt invidunt ipsum, lorem lorem no kasd elitr eos amet ea, justo
+							voluptua dolores invidunt diam. Nonumy accusam magna stet sanctus takimata invidunt at clita
+							magna. Stet rebum aliquyam dolores et.</p>
+						<p>Sed sit invidunt takimata sea takimata ipsum sanctus diam rebum diam, tempor lorem aliquyam
+							accusam dolor ut clita diam, lorem sed et ut sanctus invidunt ipsum et. Consetetur amet sit
+							duo lorem eirmod lorem ea duo magna. Ut et lorem no no amet sea invidunt magna. Clita kasd
+							vero kasd lorem duo tempor diam. Et et eos lorem amet accusam diam, clita ut accusam amet
+							tempor et, sed amet stet eos sea no lorem diam.</p>
+					</div>
+					<div class="interaction"></div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ui-widget post reply">
+					<div class="title">
+
+						<div class="user-info">
+							<img class="profile-picture" src="./img/content/players/user-05.jpg" alt="">
+							<div class="user-info--meta">
+								<p class="character">Chàng trai bao</p>
+								<p class="username">@01lifeleft</p>
+							</div>
+						</div>
+						<div class="post-date">18:07 24/04/2019</div>
+					</div>
+					<div class="content">
+						<div class="stack">
+							<h5>Thực hiện</h5>
+							<div class="stack-item">
+								<a href="./modal/login.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #2</div>
+								</a>
+								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
+							</div>
+							<div class="stack-used">
+								<h5>Sử dụng</h5>
+								<ul>
+									<li class="stack-item">
+										<a href="./modal/login.html" rel="modal:open">
+											<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+											<div class="stack-item-info">Thẻ bài #1</div>
+										</a>
+									</li>
+								</ul>
+								<div class="stack-reveal"></div>
+							</div>
+						</div>
+						<div class="challenge-result bad"></div>
+						<p>Ipsum at sed takimata sanctus consetetur et et. Ea duo
+							invidunt stet at sit no ipsum no diam. Lorem no diam ea duo dolor. Amet labore diam est
+							dolore duo et et, dolore justo sea magna erat diam labore, eirmod gubergren ipsum labore
+							dolor, sadipscing diam nonumy diam et diam dolor gubergren kasd, sit dolor invidunt takimata
+							amet ipsum sed, est vero dolor magna at eos aliquyam sed dolore eirmod. Et accusam eos sit
+							consetetur erat vero, lorem duo est takimata.</p>
+						<p>Elitr at dolore dolore labore est sit sed sit amet et, magna aliquyam rebum kasd accusam sit
+							sea ut sanctus et. Ipsum sanctus sit ipsum dolore ipsum rebum rebum dolor no, lorem sit amet
+							sit et clita dolor invidunt diam et. Ipsum dolore takimata et justo justo. Rebum dolor stet
+							sit duo no sed, et kasd dolor at sit justo amet no consetetur. Kasd dolor justo lorem dolor.
+							Dolor sed et et consetetur lorem clita dolore dolor. Dolor ea kasd ipsum vero tempor rebum
+							eirmod kasd et. Ipsum et elitr duo stet amet sadipscing dolore, no sit et kasd justo
+							gubergren est aliquyam aliquyam. Kasd diam lorem invidunt labore dolor et magna no magna.
+							Sit sed sit sea erat invidunt invidunt ipsum, lorem lorem no kasd elitr eos amet ea, justo
+							voluptua dolores invidunt diam. Nonumy accusam magna stet sanctus takimata invidunt at clita
+							magna. Stet rebum aliquyam dolores et.</p>
+						<p>Sed sit invidunt takimata sea takimata ipsum sanctus diam rebum diam, tempor lorem aliquyam
+							accusam dolor ut clita diam, lorem sed et ut sanctus invidunt ipsum et. Consetetur amet sit
+							duo lorem eirmod lorem ea duo magna. Ut et lorem no no amet sea invidunt magna. Clita kasd
+							vero kasd lorem duo tempor diam. Et et eos lorem amet accusam diam, clita ut accusam amet
+							tempor et, sed amet stet eos sea no lorem diam.</p>
+					</div>
+					<div class="interaction"></div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ui-widget post reply">
+					<div class="title">
+						<div class="vote">
+							<a class="vote-up is-selected" onclick="voteup()"></a>
+							<span class="vote-count">18</span>
+							<a class="vote-down" onclick="votedown()"></a>
+						</div>
+						<div class="user-info">
+							<img class="profile-picture" src="./img/content/players/user-05.jpg" alt="">
+							<div class="user-info--meta">
+								<p class="character">Chàng trai bao</p>
+								<p class="username">@01lifeleft</p>
+							</div>
+						</div>
+						<div class="post-date">18:07 24/04/2019</div>
+					</div>
+					<div class="content">
+						<div class="stack">
+							<h5>Thực hiện</h5>
+							<div class="stack-item">
+								<a href="./modal/login.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #2</div>
+								</a>
+								<!-- <a class="stack-reveal" onclick="stackReveal()"></a> -->
+							</div>
+							<div class="stack-used">
+								<h5>Sử dụng</h5>
+								<ul>
+									<li class="stack-item">
+										<a href="./modal/login.html" rel="modal:open">
+											<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+											<div class="stack-item-info">Thẻ bài #1</div>
+										</a>
+									</li>
+								</ul>
+								<div class="stack-reveal"></div>
+							</div>
+						</div>
+						<div class="challenge-result"></div>
+						<p>Ipsum at sed takimata sanctus consetetur et et. Ea duo
+							invidunt stet at sit no ipsum no diam. Lorem no diam ea duo dolor. Amet labore diam est
+							dolore duo et et, dolore justo sea magna erat diam labore, eirmod gubergren ipsum labore
+							dolor, sadipscing diam nonumy diam et diam dolor gubergren kasd, sit dolor invidunt takimata
+							amet ipsum sed, est vero dolor magna at eos aliquyam sed dolore eirmod. Et accusam eos sit
+							consetetur erat vero, lorem duo est takimata.</p>
+						<p>Elitr at dolore dolore labore est sit sed sit amet et, magna aliquyam rebum kasd accusam sit
+							sea ut sanctus et. Ipsum sanctus sit ipsum dolore ipsum rebum rebum dolor no, lorem sit amet
+							sit et clita dolor invidunt diam et. Ipsum dolore takimata et justo justo. Rebum dolor stet
+							sit duo no sed, et kasd dolor at sit justo amet no consetetur. Kasd dolor justo lorem dolor.
+							Dolor sed et et consetetur lorem clita dolore dolor. Dolor ea kasd ipsum vero tempor rebum
+							eirmod kasd et. Ipsum et elitr duo stet amet sadipscing dolore, no sit et kasd justo
+							gubergren est aliquyam aliquyam. Kasd diam lorem invidunt labore dolor et magna no magna.
+							Sit sed sit sea erat invidunt invidunt ipsum, lorem lorem no kasd elitr eos amet ea, justo
+							voluptua dolores invidunt diam. Nonumy accusam magna stet sanctus takimata invidunt at clita
+							magna. Stet rebum aliquyam dolores et.</p>
+						<p>Sed sit invidunt takimata sea takimata ipsum sanctus diam rebum diam, tempor lorem aliquyam
+							accusam dolor ut clita diam, lorem sed et ut sanctus invidunt ipsum et. Consetetur amet sit
+							duo lorem eirmod lorem ea duo magna. Ut et lorem no no amet sea invidunt magna. Clita kasd
+							vero kasd lorem duo tempor diam. Et et eos lorem amet accusam diam, clita ut accusam amet
+							tempor et, sed amet stet eos sea no lorem diam.</p>
+					</div>
+					<div class="interaction"></div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ui-widget post host reply">
+					<div class="title">
+						<div class="vote">
+							<a class="vote-up is-selected" onclick="voteup()"></a>
+							<span class="vote-count">18</span>
+							<a class="vote-down" onclick="votedown()"></a>
+						</div>
+						<div class="user-info">
+							<div class="user-info--meta">
+								<p class="character">Người dẫn truyện kết thúc cảnh.</p>
+								<p class="post-date">18:07 24/04/2019</p>
+							</div>
+						</div>
+					</div>
+					<div class="content">
+						<p>Elitr at dolore dolore labore est sit sed sit amet et, magna aliquyam rebum kasd accusam sit
+							sea ut sanctus et. Ipsum sanctus sit ipsum dolore ipsum rebum rebum dolor no, lorem sit amet
+							sit et clita dolor invidunt diam et. Ipsum dolore takimata et justo justo. Rebum dolor stet
+							sit duo no sed, et kasd dolor at sit justo amet no consetetur. Kasd dolor justo lorem dolor.
+							Dolor sed et et consetetur lorem clita dolore dolor. Dolor ea kasd ipsum vero tempor rebum
+							eirmod kasd et. Ipsum et elitr duo stet amet sadipscing dolore, no sit et kasd justo
+							gubergren est aliquyam aliquyam. Kasd diam lorem invidunt labore dolor et magna no magna.
+							Sit sed sit sea erat invidunt invidunt ipsum, lorem lorem no kasd elitr eos amet ea, justo
+							voluptua dolores invidunt diam. Nonumy accusam magna stet sanctus takimata invidunt at clita
+							magna. Stet rebum aliquyam dolores et.</p>
+						<p>Sed sit invidunt takimata sea takimata ipsum sanctus diam rebum diam, tempor lorem aliquyam
+							accusam dolor ut clita diam, lorem sed et ut sanctus invidunt ipsum et. Consetetur amet sit
+							duo lorem eirmod lorem ea duo magna. Ut et lorem no no amet sea invidunt magna. Clita kasd
+							vero kasd lorem duo tempor diam. Et et eos lorem amet accusam diam, clita ut accusam amet
+							tempor et, sed amet stet eos sea no lorem diam.</p>
+					</div>
+					<div class="interaction"></div>
+					<div class="discussion">
+						<div class="comment-form">
+							<input type="text" placeholder="Add your reply ...">
+						</div>
+						<ul>
+							<li>
+								<p>Erat stet gubergren kasd accusam sanctus sed gubergren eirmod nonumy vero, lorem sea
+									erat amet sadipscing nonumy takimata accusam ipsum, no rebum consetetur diam
+									gubergren.
+									<span class="reply-author">&mdash; bởi <a href="#">Cường Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Magna dolor diam invidunt dolor ut sit et. Diam invidunt dolor ea et nonumy. Stet
+									accusam sit kasd tempor et rebum at, sed dolore sea nonumy elitr aliquyam, gubergren
+									ea sed ea clita clita sit vero ipsum sadipscing. Consetetur erat vero stet duo
+									sanctus kasd ut sit tempor, eos eirmod.
+									<span class="reply-author">&mdash; bởi <a href="#">Tính Nguyễn</a></span>
+								</p>
+							</li>
+							<li>
+								<p>Est consetetur ipsum vero ea eos at, rebum invidunt dolore.
+									<span class="reply-author">&mdash; bởi <a href="#">Tuấn Nguyễn</a></span>
+								</p>
+							</li>
+							<li class="show-more">Hiển thị thêm bình luận</li>
+						</ul>
+					</div>
+				</div>
+				<!-- <div class="ui-widget ui-naked-widget game--navigation">
+					<div class="content">
+						<div class="button solid white"><i class="far fa-angle-left"></i>Cảnh trước</div>
+						<div class="button solid white"><i class="fas fa-th single"></i></div>
+						<div class="button solid white">Cảnh tiếp theo<i class="far fa-angle-right right"></i></div>
+					</div>
+				</div> -->
+			</div>
+			<div class="game--sidebar">
+				<div class="game--sidebar-wrapper">
+					<div class="game--sidebar-spacer"></div>
+					<div class="ui-widget ui-naked-widget game--action"></div>
+					<div class="ui-widget game--members game--members-mini"></div>
+				</div>
+				<!-- <div class="ui-widget game--progress-tree"></div> -->
+				<!-- <div class="ui-widget game--location"></div> -->
+				<!-- <div class="ui-widget game--rules"></div> -->
+			</div>
+		</div>
+		<div class="game--main section-reply">
+			<div class="game--thread">
+				<div class="ui-widget post edit new">
+					<div class="title">
+						<div class="user-info">
+							<img class="profile-picture" src="./img/content/players/user-02.jpg" alt="">
+							<p><strong>Nàng hầu gái thực hiện một buớc tiến</strong></p>
+						</div>
+					</div>
+					<div class="content">
+						<div class="challenge-result good">
+							<p><a>Xem gợi ý <i class="far fa-info-circle"></i></a></p>
+						</div>
+						<div class="wysiwyg"></div>
+					</div>
+				</div>
+				<div class="ui-widget ui-naked-widget post edit action">
+					<div class="content">
+						<a href="#" class="button solid white"><i class="far fa-times"></i> Hủy</a>
+						<a href="#" class="button solid white"><i class="far fa-paper-plane"></i> Gửi nội dung</a>
+						<a href="#" class="button solid white"><i class="far fa-eye"></i> Xem trước</a>
+					</div>
+				</div>
+			</div>
+			<div class="game--sidebar">
+				<div class="game--sidebar-wrapper">
+					<div class="ui-widget ui-naked-widget game--cards-action">
+						<div class="content">
+							<a href="#" class="button solid white half"><i class="far fa-layer-group"></i> Kho thẻ</a>
+							<a href="#" class="button solid white half"><i class="far fa-layer-plus"></i> Lụm thẻ</a>
+						</div>
+					</div>
+					<div class="ui-widget game--cards-new">
+						<div class="content">
+							<h5>Thử thách</h5>
+							<div class="stack-item">
+								<a href="./modal/card-challenge.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #1<span class="amount">1/6</span></div>
+								</a>
+							</div>
+							<hr>
+							<h5>Thẻ bài</h5>
+							<div class="stack-item">
+								<a href="./modal/card-card.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thẻ bài</div>
+								</a>
+							</div>
+							<div class="stack-item">
+								<a href="./modal/card-card.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thẻ bài</div>
+								</a>
+							</div>
+							<div class="stack-item add">
+								<a href="./modal/card-add.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-plus"></i></div>
+									<div class="stack-item-info">Thêm thẻ bài</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="game--progress">
+			<div class="button first"><i class="far fa-fast-backward"></i></div>
+			<div class="button prev"><i class="far fa-backward"></i></div>
+			<div class="game--progress-bar">
+				<div class="progressed"></div>
+			</div>
+			<div class="button next"><i class="far fa-forward"></i></div>
+			<div class="button last"><i class="far fa-fast-forward"></i></div>
+			<div class="button list"><i class="far fa-list"></i>
+				<div class="ui-widget game--progress-list">
+					<div class="title">
+						<h3>Nội dung</h3>
+					</div>
+					<div class="content">
+						<div>
+							<dl>
+								<dt>Chương 1: Bắt đầu của chuyến phiêu lưu</dt>
+								<dd>Andrew W.K.</dd>
+								<dd class="is-active"><i class="far fa-book-open"></i>Apparat</dd>
+								<dd>Arcade Fire</dd>
+								<dd>At The Drive-In</dd>
+								<dd>Aziz Ansari</dd>
+							</dl>
+							<dl>
+								<dt>Chương 2: Những người đồng đội mới</dt>
+								<dd>Chromeo</dd>
+								<dd>Common</dd>
+								<dd class="is-disabled">Converge</dd>
+								<dd class="is-disabled">Crystal Castles</dd>
+								<dd class="is-disabled">Cursive</dd>
+							</dl>
+							<dl>
+								<dt class="is-disabled">Chương 3: Ngã rẽ bất ngờ</dt>
+								<dd class="is-disabled">Explosions In The Sky</dd>
+							</dl>
+							<dl>
+								<dt>Chương 4: Kẻ thù không thể vượt qua</dt>
+								<dd class="is-disabled">Ted Leo & The Pharmacists</dd>
+								<dd class="is-disabled">T-Pain</dd>
+								<dd class="is-disabled">Thrice</dd>
+								<dd class="is-disabled">TV On The Radio</dd>
+								<dd class="is-disabled">Two Gallants</dd>
+							</dl>
+							<dl>
+								<dt>Chương 5: Kết thúc câu chuyện</dt>
+								<dd class="is-disabled">Ted Leo & The Pharmacists</dd>
+								<dd class="is-disabled">T-Pain</dd>
+								<dd class="is-disabled">Thrice</dd>
+								<dd class="is-disabled">TV On The Radio</dd>
+								<dd class="is-disabled">Two Gallants</dd>
+							</dl>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+
+	<!-- Javascript -->
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.ui.js"></script>
+	<script src="./js/jquery.modal.js"></script>
+	<script src="./js/app.js"></script>
+
+</body>
+
+</html>

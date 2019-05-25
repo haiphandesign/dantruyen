@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dẫn Truyện</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- Preload Javascript -->
+	<script src="./js/preload.js"></script>
+</head>
+
+<body class="page-game page-game-main logged-in">
+
+	<div id="header"></div>
+
+	<div id="main">
+		<section class="game--header">
+			<div class="game--cover" style="background-image: url('./img/content/games/cover.jpg')"></div>
+			<div class="game--info">
+				<div class="game--info-top">
+					<div class="game--info-basic">
+						<div class="game--info-picture">
+							<img src="./img/content/games/mini-04.jpg" alt="Cuộc chiến ở đảo Lộc Tiên">
+						</div>
+						<div class="game--info-meta">
+							<h3>Cuộc chiến ở đảo Lộc Tiên</h3>
+							<p>Dẫn truyện bởi <a href="user-profile.html">Hùng Vũ</a></p>
+						</div>
+					</div>
+					<div class="game--info-stats">
+						<div class="game--info-counters">
+							<div class="game-info-counter stages">
+								<span>18</span>
+								<span>Màn chơi</span>
+							</div>
+							<div class="game--info-counter players">
+								<span>34</span>
+								<span>Người chơi</span>
+							</div>
+						</div>
+						<div class="game--info-rating">
+							<span class="game--info-rating-ranking">#5</span>
+							<div class="game--info-rating-stars">
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-half"></span>
+								<span></span>
+							</div>
+							<span class="game--info-rating-voted">28</span>
+						</div>
+					</div>
+				</div>
+				<div class="game--info-middle">
+					<a class="button small ghost join"><i class="far fa-plus"></i></a>
+					<a class="button small ghost follow"><i class="far fa-plus"></i></a>
+				</div>
+				<div class="game--info-bottom">
+					<div class="game--menu-wrapper">
+						<ul class="game--menu">
+							<li class="game--menu-link"><a href="game.html">Phòng Chờ</a></li>
+							<li class="game--menu-link is-active"><a href="game-main.html">Game chính</a></li>
+							<li class="game--menu-link"><a href="game-characters.html">Nhân vật</a></li>
+							<li class="game--menu-link"><a href="game-cards.html">Thẻ bài</a></li>
+							<li class="game--menu-link"><a href="game-discussion.html">Bình luận</a></li>
+						</ul>
+						<ul class="game--menu">
+							<li class="game--menu-link"><a href="#">Thống kê</a></li>
+							<li class="game--menu-link"><a href="#">Cài đặt</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="game--main">
+			<div class="game--thread"></div>
+			<div class="game--sidebar">
+				<div class="game--sidebar-wrapper">
+					<div class="game--sidebar-spacer"></div>
+					<div class="ui-widget ui-naked-widget game--action"></div>
+					<div class="ui-widget game--members game--members-mini"></div>
+				</div>
+				<!-- <div class="ui-widget game--progress-tree"></div> -->
+				<!-- <div class="ui-widget game--location"></div> -->
+				<!-- <div class="ui-widget game--rules"></div> -->
+			</div>
+		</div>
+		<div class="game--main section-reply">
+			<div class="game--thread">
+				<div class="ui-widget post edit new">
+					<div class="title">
+						<div class="user-info">
+							<img class="profile-picture" src="./img/content/players/user-02.jpg" alt="">
+							<p><strong>Nàng hầu gái thực hiện một buớc tiến</strong></p>
+						</div>
+					</div>
+					<div class="content">
+						<div class="challenge-result good">
+							<p><a>Xem gợi ý <i class="far fa-info-circle"></i></a></p>
+						</div>
+						<div class="wysiwyg"></div>
+					</div>
+				</div>
+				<div class="ui-widget ui-naked-widget post edit action">
+					<div class="content">
+						<a href="#" class="button solid white"><i class="far fa-times"></i> Hủy</a>
+						<a href="#" class="button solid white"><i class="far fa-paper-plane"></i> Gửi nội dung</a>
+						<a href="#" class="button solid white"><i class="far fa-eye"></i> Xem trước</a>
+					</div>
+				</div>
+			</div>
+			<div class="game--sidebar">
+				<div class="game--sidebar-wrapper">
+					<div class="ui-widget ui-naked-widget game--cards-action">
+						<div class="content">
+							<a href="#" class="button solid white half"><i class="far fa-layer-group"></i> Kho thẻ</a>
+							<a href="#" class="button solid white half"><i class="far fa-layer-plus"></i> Lụm thẻ</a>
+						</div>
+					</div>
+					<div class="ui-widget game--cards-new">
+						<div class="content">
+							<h5>Thử thách</h5>
+							<div class="stack-item">
+								<a href="./modal/card-challenge.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thử thách #1<span class="amount">1/6</span></div>
+								</a>
+							</div>
+							<hr>
+							<h5>Thẻ bài</h5>
+							<div class="stack-item">
+								<a href="./modal/card-card.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thẻ bài</div>
+								</a>
+							</div>
+							<div class="stack-item">
+								<a href="./modal/card-card.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
+									<div class="stack-item-info">Thẻ bài</div>
+								</a>
+							</div>
+							<div class="stack-item add">
+								<a href="./modal/card-add.html" rel="modal:open">
+									<div class="stack-item-icon"><i class="far fa-plus"></i></div>
+									<div class="stack-item-info">Thêm thẻ bài</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="game--progress">
+			<div class="button first"><i class="far fa-fast-backward"></i></div>
+			<div class="button prev"><i class="far fa-backward"></i></div>
+			<div class="game--progress-bar">
+				<div class="progressed"></div>
+			</div>
+			<div class="button next"><i class="far fa-forward"></i></div>
+			<div class="button last"><i class="far fa-fast-forward"></i></div>
+			<div class="button list"><i class="far fa-list"></i>
+				<div class="ui-widget game--progress-list">
+					<div class="title">
+						<h3>Nội dung</h3>
+					</div>
+					<div class="content">
+						<div>
+							<dl>
+								<dt>Chương 1: Bắt đầu của chuyến phiêu lưu</dt>
+								<dd>Andrew W.K.</dd>
+								<dd class="is-active"><i class="far fa-book-open"></i>Apparat</dd>
+								<dd>Arcade Fire</dd>
+								<dd>At The Drive-In</dd>
+								<dd>Aziz Ansari</dd>
+							</dl>
+							<dl>
+								<dt>Chương 2: Những người đồng đội mới</dt>
+								<dd>Chromeo</dd>
+								<dd>Common</dd>
+								<dd class="is-disabled">Converge</dd>
+								<dd class="is-disabled">Crystal Castles</dd>
+								<dd class="is-disabled">Cursive</dd>
+							</dl>
+							<dl>
+								<dt class="is-disabled">Chương 3: Ngã rẽ bất ngờ</dt>
+								<dd class="is-disabled">Explosions In The Sky</dd>
+							</dl>
+							<dl>
+								<dt>Chương 4: Kẻ thù không thể vượt qua</dt>
+								<dd class="is-disabled">Ted Leo & The Pharmacists</dd>
+								<dd class="is-disabled">T-Pain</dd>
+								<dd class="is-disabled">Thrice</dd>
+								<dd class="is-disabled">TV On The Radio</dd>
+								<dd class="is-disabled">Two Gallants</dd>
+							</dl>
+							<dl>
+								<dt>Chương 5: Kết thúc câu chuyện</dt>
+								<dd class="is-disabled">Ted Leo & The Pharmacists</dd>
+								<dd class="is-disabled">T-Pain</dd>
+								<dd class="is-disabled">Thrice</dd>
+								<dd class="is-disabled">TV On The Radio</dd>
+								<dd class="is-disabled">Two Gallants</dd>
+							</dl>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+
+	<!-- Javascript -->
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.ui.js"></script>
+	<script src="./js/jquery.modal.js"></script>
+	<script src="./js/app.js"></script>
+
+</body>
+
+</html>

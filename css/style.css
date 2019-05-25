@@ -755,6 +755,12 @@ a {
   opacity: 1;
 }
 
+.profile-picture {
+  width: 3rem;
+  height: 3rem;
+  vertical-align: middle;
+}
+
 .wysiwyg {
   width: 100%;
   height: 30rem;
@@ -929,6 +935,43 @@ select {
 
 .form-element > * + * {
   margin-left: 1rem;
+}
+
+.hint {
+  font-size: .75rem;
+  font-style: italic;
+  margin-top: .75rem;
+}
+
+.hint a {
+  border-bottom: 1px dotted #333333;
+}
+
+table {
+  width: calc(100%);
+}
+
+table thead {
+  border-bottom: 1px solid #e4e4e4;
+  background-color: #f8f8f8;
+}
+
+table thead td {
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: 800;
+}
+
+table tr + tr {
+  border-top: 1px solid rgba(228, 228, 228, 0.5);
+}
+
+table tr:hover {
+  background-color: #f8f8f8;
+}
+
+table td {
+  padding: 1rem;
 }
 
 * + h1,
@@ -2217,7 +2260,7 @@ hr {
 
 .game--header .game--cover:after {
   content: '';
-  display: block;
+  display: none;
   width: 100%;
   height: 100%;
   background: #b3b3b3;
@@ -4036,6 +4079,113 @@ hr {
   bottom: -5rem;
 }
 
+.game--characters-created .content {
+  padding: 0;
+}
+
+.game--characters-created .character-name {
+  width: 50%;
+}
+
+@media (min-width: 992px) {
+  .game--characters-created .character-name {
+    width: 30%;
+  }
+}
+
+.game--characters-created .player-name {
+  width: 20%;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .game--characters-created .player-name {
+    display: table-cell;
+  }
+}
+
+.game--characters-created .join-date {
+  width: 20%;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .game--characters-created .join-date {
+    display: table-cell;
+  }
+}
+
+.game--characters-created .status {
+  width: 25%;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .game--characters-created .status {
+    text-align: left;
+  }
+}
+
+.game--characters-created .action {
+  width: 5%;
+}
+
+.game--characters-premade .content {
+  padding: 0;
+}
+
+.game--characters-premade .character-name {
+  width: 50%;
+}
+
+.game--characters-premade .created-date {
+  width: 20%;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .game--characters-premade .created-date {
+    display: table-cell;
+  }
+}
+
+.game--characters-premade .status {
+  width: 25%;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .game--characters-premade .status {
+    text-align: left;
+  }
+}
+
+.game--characters-premade .action {
+  width: 5%;
+}
+
+.status .character-status {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: .75rem;
+  color: white;
+  padding: .5rem;
+  background-color: #b3b3b3;
+  border-radius: .25rem;
+  cursor: default;
+}
+
+.status .played-by {
+  display: block;
+  font-size: .85rem;
+  margin-top: .5rem;
+}
+
+.status .played-by:before {
+  content: 'Chơi bởi @';
+}
+
 .game--setting-item {
   position: relative;
   display: -webkit-box;
@@ -4088,16 +4238,7 @@ hr {
   float: right;
   font-size: .75rem;
   color: #b3b3b3;
-  margin-top: .25rem;
-}
-
-.game--setting-item > .content .hint {
-  font-size: .75rem;
-  font-style: italic;
-}
-
-.game--setting-item > .content .hint a {
-  border-bottom: 1px dotted #333333;
+  margin-top: .75rem;
 }
 
 .game--setting-item.optional > .title h4:after {
@@ -4280,12 +4421,9 @@ hr {
           justify-content: flex-end;
 }
 
-.game--sidebar .game--setting-item.is-editing > .title p {
-  display: initial;
-  white-space: nowrap;
-}
-
-.game--sidebar .game--setting-item.is-editing > .title .edit {
+.game--sidebar .game--setting-item.is-editing > .title p,
+.game--sidebar .game--setting-item.is-editing > .title .edit, .game--sidebar .game--setting-item.is-new > .title p,
+.game--sidebar .game--setting-item.is-new > .title .edit {
   display: none;
 }
 /*# sourceMappingURL=style.css.map */

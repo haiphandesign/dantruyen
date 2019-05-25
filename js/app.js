@@ -127,6 +127,8 @@ $(window).scroll(function () {
 });
 
 
+
+
 // Game: Info Top Margin
 
 $('.stack-reveal').click(function () {
@@ -187,6 +189,7 @@ $('.game--info-middle a').click(function () {
 })
 
 
+
 // Gme: Toggle Vote
 
 $('.title .vote a').click(function () {
@@ -234,41 +237,6 @@ $(window).scroll(function () {
 	}
 });
 
-
-
-document.getElementById('gameCoverUpload').addEventListener('change', function () {
-	var file = document.getElementById("gameCoverUpload").files[0];
-	var reader = new FileReader();
-	reader.onloadend = function () {
-		$('.game--cover').css('background-image', 'url("' + reader.result + '")');
-		$('.game--cover').addClass('has-background');
-	}
-	if (file) {
-		reader.readAsDataURL(file);
-	} else {}
-}, true);
-
-
-document.getElementById('gameInfoPictureUpload').addEventListener('change', function () {
-	var file = document.getElementById('gameInfoPictureUpload').files[0];
-	var reader = new FileReader();
-	reader.onloadend = function () {
-		$('.game--info-picture img').attr('src', reader.result);
-		$('.game--info-picture').addClass('has-image');
-	}
-	if (file) {
-		reader.readAsDataURL(file);
-	} else {}
-}, true);
-
-function gameTitleChecker() {
-	if ($('.game--info-meta h3').text() == 'Tiêu Đề') {
-		$('.game--info-meta h3').text('Hello');
-	}
-}
-
-console.log($('.game--info-meta h3').css('color'));
-
 if ($('.game--info-meta h3').text() == '') {
 	$('.game--info-meta h3').text('Tiêu Đề');
 }
@@ -289,15 +257,7 @@ $('.game--setting-item.list .edit').click(function () {
 $('.game--setting-item.list .list-action a').click(function () {
 	$(this).parent().parent().parent().removeClass('is-editing');
 
-})
-
-
-// $(document).ready(function () {
-// 	if ($('body').hasClass('page-game-new')) {
-// 		$('.game--setting-item.list').addClass('is-new');
-// 	}
-// })
-
+});
 
 
 // Game: Add Game Sidebar Spacer
@@ -305,17 +265,16 @@ $('.game--setting-item.list .list-action a').click(function () {
 
 $(".game--sidebar-spacer").hide(); // hide the fixed navbar initially
 
-var gameInfoOffsetY = $(".game--info").offset().top; //gets offset of header
-var gameInfoHeight = $(".game--info").outerHeight(); //gets height of header
+// var gameInfoOffsetY = $(".game--info").offset().top; //gets offset of header
+// var gameInfoHeight = $(".game--info").outerHeight(); //gets height of header
 
-$(window).scroll(function () {
-	if ($(window).scrollTop() > (gameInfoOffsetY + gameInfoHeight)) {
-		$(".game--sidebar-spacer").show();
-	} else {
-		$(".game--sidebar-spacer").hide();
-	}
-});
-
+// $(window).scroll(function () {
+// 	if ($(window).scrollTop() > (gameInfoOffsetY + gameInfoHeight)) {
+// 		$(".game--sidebar-spacer").show();
+// 	} else {
+// 		$(".game--sidebar-spacer").hide();
+// 	}
+// });
 
 
 $(document).ready(function () {
@@ -342,3 +301,12 @@ $(function () {
 		}
 	});
 });
+
+
+for (var i = 0; i < 3; i++) {
+	$('.game--characters-created tbody tr').clone().appendTo('.game--characters-created tbody');
+}
+
+for (var i = 0; i < 1; i++) {
+	$('.game--characters-premade tbody tr').clone().appendTo('.game--characters-premade tbody');
+}

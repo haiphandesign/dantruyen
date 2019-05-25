@@ -322,6 +322,12 @@
 	}
 }
 
+.profile-picture {
+	width: 3rem;
+	height: 3rem;
+	vertical-align: middle;
+}
+
 .wysiwyg {
 	width: 100%;
 	height: 30rem;
@@ -454,4 +460,45 @@ select {
 		}
 	}
 
+}
+
+
+.hint {
+	font-size: .75rem;
+	font-style: italic;
+	margin-top: .75rem;
+
+	a {
+		border-bottom: 1px dotted $color-text-regular;
+	}
+}
+
+
+table {
+	width: calc(100%);
+
+	thead {
+		border-bottom: 1px solid $color-border;
+		background-color: $color-background;
+
+		td {
+			text-transform: uppercase;
+			font-size: .75rem;
+			font-weight: 800;
+		}
+	}
+
+	tr {
+		&+tr {
+			border-top: 1px solid rgba($color-border, .5);
+		}
+
+		&:hover {
+			background-color: $color-background;
+		}
+	}
+
+	td {
+		padding: 1rem;
+	}
 }
