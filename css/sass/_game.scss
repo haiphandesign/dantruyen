@@ -1152,11 +1152,23 @@
 
 	.game--sidebar-wrapper {
 		position: sticky;
-		top: 6.5rem;
+		top: 0;
 		transition: all .5s;
 
+		.game--sidebar-spacer {
+			display: block;
+			height: 6.5rem;
+			transition: all .5s;
+		}
+
+		@include breakpoint(md) {
+			max-height: 100vh;
+		}
+
 		&.is-scrolled {
-			top: 2rem;
+			.game--sidebar-spacer {
+				height: 2rem;
+			}
 		}
 	}
 
@@ -1667,5 +1679,288 @@
 
 	&.is-scrolled {
 		bottom: -5rem;
+	}
+}
+
+.game--setting-item {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+
+	margin-left: -1rem;
+	margin-right: -1rem;
+	padding: 1rem;
+
+	&:hover {
+		background-color: rgba($color-background, .5);
+	}
+
+	&:first-child {
+		margin-top: -1rem;
+	}
+
+	&:last-child {
+		margin-bottom: -1rem;
+	}
+
+	&+.game--setting-item {
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+
+			display: block;
+
+			width: 100%;
+			height: 1px;
+
+			background-color: $color-border;
+		}
+	}
+
+	>.title {
+		p {
+			margin-top: 0;
+			color: $color-text-light;
+		}
+	}
+
+	>.content {
+
+		input[type=text],
+		textarea {
+			width: 100%;
+		}
+
+		.input-limit {
+			float: right;
+
+			font-size: .75rem;
+			color: $color-text-light;
+
+			margin-top: .25rem;
+		}
+
+		.hint {
+			font-size: .75rem;
+			font-style: italic;
+
+			a {
+				border-bottom: 1px dotted $color-text-regular;
+			}
+		}
+
+	}
+
+	&.optional {
+		>.title {
+			h4 {
+				&:after {
+					content: ' (không bắt buộc)';
+
+					font-size: 1rem;
+					color: $color-text-light;
+
+					opacity: .5;
+				}
+			}
+		}
+	}
+
+	&.full {
+		>.title {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&.list {
+		>.title {
+			display: flex;
+			align-items: center;
+
+			h4 {
+				width: 30%;
+			}
+
+			p {
+				margin-left: 2rem;
+			}
+
+			.edit {
+				margin: 0;
+				margin-left: auto;
+
+				color: $color-text-light;
+
+				cursor: pointer;
+			}
+		}
+
+		&:hover {
+			>.title {
+				.edit {
+					color: $color-text-regular;
+				}
+			}
+		}
+
+		>.content {
+			display: none;
+
+			.list-description {
+				color: $color-text-light;
+			}
+
+			.list-content {
+				margin-top: 1rem;
+			}
+
+			.list-action {
+				margin-top: 1rem;
+				text-align: center;
+
+				* {
+					&+* {
+						margin-left: .5rem;
+					}
+				}
+			}
+		}
+
+		.game--setting-item-lenght-custom {
+			margin-top: 1rem;
+
+			.col-3 {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+
+				white-space: nowrap;
+			}
+
+			input {
+				width: 4rem;
+				margin-left: 1rem;
+			}
+		}
+
+		.game--setting-item-license-pick {
+			margin-top: 1rem;
+
+			select {
+				margin-top: .5rem;
+			}
+		}
+
+		.game--setting-item-word-limit {
+			margin-top: 1rem;
+
+			.form-element {
+				align-items: center;
+			}
+
+			span {
+				white-space: nowrap;
+			}
+
+			input[type=number] {
+				width: 5rem;
+			}
+		}
+
+		.game--setting-item-card-setting {
+			padding-top: 1rem;
+
+			>div {
+				display: none;
+			}
+
+			&-custom {
+				// margin-top: 1rem;
+
+				.form-element {
+					align-items: center;
+
+					span {
+						width: 100%;
+
+					}
+				}
+			}
+		}
+
+
+		&.is-editing {
+			>.title {
+				h4 {
+					width: 100%;
+				}
+
+				p,
+				.edit {
+					display: none;
+				}
+			}
+
+			>.content {
+				display: initial;
+			}
+		}
+
+		&.is-new {
+			>.title {
+				h4 {
+					width: 100%;
+				}
+
+				p,
+				.edit {
+					display: none;
+				}
+			}
+
+			>.content {
+				display: initial;
+
+				.list-action {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&.switch {
+		flex-direction: row;
+		justify-content: space-between;
+
+		>.title {
+			width: 80%;
+		}
+
+		>.content {
+			width: 20%;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+}
+
+.game--sidebar {
+	.game--setting-item {
+		&.is-editing {
+			>.title {
+				p {
+					display: initial;
+					white-space: nowrap;
+				}
+
+				.edit {
+					display: none;
+				}
+			}
+		}
 	}
 }

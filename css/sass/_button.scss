@@ -17,6 +17,8 @@
 	transition: .25s all ease;
 	white-space: nowrap;
 
+	cursor: pointer;
+
 	@include ui-border-radius;
 
 	i {
@@ -86,6 +88,8 @@
 			background: {
 				color: white;
 			}
+
+			@include ui-border;
 
 			color: $color-text-regular;
 		}
@@ -159,5 +163,59 @@
 
 	&:hover {
 		transition: .5s all ease;
+	}
+}
+
+
+
+
+
+.toggle-switch {
+	position: relative;
+	display: inline-block;
+	width: 2.5rem;
+	height: 1.5rem;
+
+	input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		padding: .25rem;
+
+		background-color: $color-border;
+		border-radius: .75rem;
+
+		transition: all .5s;
+
+		&:before {
+			content: '';
+			position: relative;
+
+			display: block;
+			height: 1rem;
+			width: 1rem;
+
+			background-color: white;
+			border-radius: 50%;
+		}
+	}
+
+	input:checked+.slider {
+		justify-content: flex-end;
+		background-color: $color-text-regular;
 	}
 }

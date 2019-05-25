@@ -84,7 +84,7 @@
 		margin-bottom: 0;
 	}
 
-	.title {
+	>.title {
 		position: relative;
 
 		display: flex;
@@ -168,7 +168,7 @@
 		}
 	}
 
-	.content {
+	>.content {
 		padding: 1rem;
 
 		&.limit-lenght {
@@ -348,16 +348,26 @@
 	}
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
 
 textarea,
 input[type=text],
-input[type=password] {
+input[type=number],
+input[type=email],
+input[type=password],
+select {
+	-webkit-appearance: none;
+
+	display: block;
 	height: 3rem;
 
 	@include ui-border;
 	@include ui-border-radius;
-
-	-webkit-appearance: none;
 
 	padding: 1rem;
 
@@ -390,13 +400,58 @@ input[type=password] {
 	}
 }
 
+textarea {
+	height: unset;
+}
+
+input[type=number] {
+	padding-right: 0.5rem;
+}
+
+input[type=radio],
+input[type=checkbox] {
+	-webkit-appearance: none;
+
+	width: 1.5rem;
+	height: 1.5rem;
+
+	@include ui-border;
+	@include ui-border-radius;
+
+	flex-shrink: 0;
+
+	&:checked {
+		background-image: url('./../img/layout/icons/check.svg');
+		background-size: 1rem;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+
+select {
+	padding: 0 1rem;
+
+	background-image: url('./../img/layout/icons/arrow-down.svg');
+	background-size: .5rem;
+	background-repeat: no-repeat;
+	background-position: center right .5rem;
+}
+
 
 .form-element {
 	width: 100%;
 
 	display: flex;
+	align-items: flex-start;
 
 	+.form-element {
 		margin-top: 1rem;
 	}
+
+	>* {
+		&+* {
+			margin-left: 1rem;
+		}
+	}
+
 }

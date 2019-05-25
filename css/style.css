@@ -509,7 +509,7 @@ a {
   margin-bottom: 0;
 }
 
-.ui-widget .title {
+.ui-widget > .title {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -531,19 +531,19 @@ a {
   padding: .75rem 1rem;
 }
 
-.ui-widget .title h3 {
+.ui-widget > .title h3 {
   margin: 0;
 }
 
-.ui-widget .title p {
+.ui-widget > .title p {
   margin: 0;
 }
 
-.ui-widget .title p.subtext {
+.ui-widget > .title p.subtext {
   color: #b3b3b3;
 }
 
-.ui-widget .title:after {
+.ui-widget > .title:after {
   content: '';
   position: absolute;
   top: .75rem;
@@ -561,26 +561,26 @@ a {
 }
 
 @media (min-width: 992px) {
-  .ui-widget .title:after {
+  .ui-widget > .title:after {
     opacity: 0;
   }
 }
 
-.ui-widget .title.featured {
+.ui-widget > .title.featured {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
   height: 15rem;
 }
 
-.ui-widget .title.featured h3,
-.ui-widget .title.featured h6 {
+.ui-widget > .title.featured h3,
+.ui-widget > .title.featured h6 {
   color: white;
   text-shadow: 0 0 .5rem black;
   margin: 0;
 }
 
-.ui-widget .title.featured img {
+.ui-widget > .title.featured img {
   position: absolute;
   top: 0;
   left: 0;
@@ -597,18 +597,18 @@ a {
   border-bottom-right-radius: 0;
 }
 
-.ui-widget .content {
+.ui-widget > .content {
   padding: 1rem;
 }
 
 @media (min-width: 992px) {
-  .ui-widget .content.limit-lenght {
+  .ui-widget > .content.limit-lenght {
     max-height: 50vh;
     overflow: auto;
   }
 }
 
-.ui-widget .content img {
+.ui-widget > .content img {
   max-width: 100%;
   border-radius: 0.25rem;
 }
@@ -778,14 +778,25 @@ a {
   height: 3rem;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 textarea,
 input[type=text],
-input[type=password] {
+input[type=number],
+input[type=email],
+input[type=password],
+select {
+  -webkit-appearance: none;
+  display: block;
   height: 3rem;
   border: 1px solid #e4e4e4;
   background-color: white;
   border-radius: 0.25rem;
-  -webkit-appearance: none;
   padding: 1rem;
   -webkit-transition: all .25s;
   transition: all .25s;
@@ -793,39 +804,60 @@ input[type=password] {
 
 textarea::-webkit-input-placeholder,
 input[type=text]::-webkit-input-placeholder,
-input[type=password]::-webkit-input-placeholder {
+input[type=number]::-webkit-input-placeholder,
+input[type=email]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
   opacity: .25;
 }
 
 textarea:-ms-input-placeholder,
 input[type=text]:-ms-input-placeholder,
-input[type=password]:-ms-input-placeholder {
+input[type=number]:-ms-input-placeholder,
+input[type=email]:-ms-input-placeholder,
+input[type=password]:-ms-input-placeholder,
+select:-ms-input-placeholder {
   opacity: .25;
 }
 
 textarea::-ms-input-placeholder,
 input[type=text]::-ms-input-placeholder,
-input[type=password]::-ms-input-placeholder {
+input[type=number]::-ms-input-placeholder,
+input[type=email]::-ms-input-placeholder,
+input[type=password]::-ms-input-placeholder,
+select::-ms-input-placeholder {
   opacity: .25;
 }
 
 textarea::placeholder,
 input[type=text]::placeholder,
-input[type=password]::placeholder {
+input[type=number]::placeholder,
+input[type=email]::placeholder,
+input[type=password]::placeholder,
+select::placeholder {
   opacity: .25;
 }
 
 textarea:hover, textarea:focus,
 input[type=text]:hover,
 input[type=text]:focus,
+input[type=number]:hover,
+input[type=number]:focus,
+input[type=email]:hover,
+input[type=email]:focus,
 input[type=password]:hover,
-input[type=password]:focus {
+input[type=password]:focus,
+select:hover,
+select:focus {
   border-color: #b3b3b3;
 }
 
 textarea[type="checkbox"],
 input[type=text][type="checkbox"],
-input[type=password][type="checkbox"] {
+input[type=number][type="checkbox"],
+input[type=email][type="checkbox"],
+input[type=password][type="checkbox"],
+select[type="checkbox"] {
   -webkit-appearance: none;
   padding: 0;
   width: 1rem;
@@ -835,11 +867,50 @@ input[type=password][type="checkbox"] {
 
 textarea[type="checkbox"]:checked,
 input[type=text][type="checkbox"]:checked,
-input[type=password][type="checkbox"]:checked {
+input[type=number][type="checkbox"]:checked,
+input[type=email][type="checkbox"]:checked,
+input[type=password][type="checkbox"]:checked,
+select[type="checkbox"]:checked {
   background-image: url("./../img/layout/icons/check.svg");
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+textarea {
+  height: unset;
+}
+
+input[type=number] {
+  padding-right: 0.5rem;
+}
+
+input[type=radio],
+input[type=checkbox] {
+  -webkit-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #e4e4e4;
+  background-color: white;
+  border-radius: 0.25rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+input[type=radio]:checked,
+input[type=checkbox]:checked {
+  background-image: url("./../img/layout/icons/check.svg");
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+select {
+  padding: 0 1rem;
+  background-image: url("./../img/layout/icons/arrow-down.svg");
+  background-size: .5rem;
+  background-repeat: no-repeat;
+  background-position: center right .5rem;
 }
 
 .form-element {
@@ -847,10 +918,17 @@ input[type=password][type="checkbox"]:checked {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .form-element + .form-element {
   margin-top: 1rem;
+}
+
+.form-element > * + * {
+  margin-left: 1rem;
 }
 
 * + h1,
@@ -1038,6 +1116,7 @@ hr {
   -webkit-transition: .25s all ease;
   transition: .25s all ease;
   white-space: nowrap;
+  cursor: pointer;
   border-radius: 0.25rem;
 }
 
@@ -1105,6 +1184,8 @@ hr {
 
 .button.solid.white {
   background-color: white;
+  border: 1px solid #e4e4e4;
+  background-color: white;
   color: #333333;
 }
 
@@ -1168,6 +1249,59 @@ hr {
 .button:hover {
   -webkit-transition: .5s all ease;
   transition: .5s all ease;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 2.5rem;
+  height: 1.5rem;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: .25rem;
+  background-color: #e4e4e4;
+  border-radius: .75rem;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.toggle-switch .slider:before {
+  content: '';
+  position: relative;
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked + .slider {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background-color: #333333;
 }
 
 .modal-content {
@@ -3345,13 +3479,26 @@ hr {
 .game--main .game--sidebar-wrapper {
   position: -webkit-sticky;
   position: sticky;
-  top: 6.5rem;
+  top: 0;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
-.game--main .game--sidebar-wrapper.is-scrolled {
-  top: 2rem;
+.game--main .game--sidebar-wrapper .game--sidebar-spacer {
+  display: block;
+  height: 6.5rem;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+@media (min-width: 992px) {
+  .game--main .game--sidebar-wrapper {
+    max-height: 100vh;
+  }
+}
+
+.game--main .game--sidebar-wrapper.is-scrolled .game--sidebar-spacer {
+  height: 2rem;
 }
 
 .game--main .ui-widget.game--cards-new .content {
@@ -3887,5 +4034,258 @@ hr {
 
 .game--progress.is-scrolled {
   bottom: -5rem;
+}
+
+.game--setting-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 1rem;
+}
+
+.game--setting-item:hover {
+  background-color: rgba(248, 248, 248, 0.5);
+}
+
+.game--setting-item:first-child {
+  margin-top: -1rem;
+}
+
+.game--setting-item:last-child {
+  margin-bottom: -1rem;
+}
+
+.game--setting-item + .game--setting-item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #e4e4e4;
+}
+
+.game--setting-item > .title p {
+  margin-top: 0;
+  color: #b3b3b3;
+}
+
+.game--setting-item > .content input[type=text],
+.game--setting-item > .content textarea {
+  width: 100%;
+}
+
+.game--setting-item > .content .input-limit {
+  float: right;
+  font-size: .75rem;
+  color: #b3b3b3;
+  margin-top: .25rem;
+}
+
+.game--setting-item > .content .hint {
+  font-size: .75rem;
+  font-style: italic;
+}
+
+.game--setting-item > .content .hint a {
+  border-bottom: 1px dotted #333333;
+}
+
+.game--setting-item.optional > .title h4:after {
+  content: ' (không bắt buộc)';
+  font-size: 1rem;
+  color: #b3b3b3;
+  opacity: .5;
+}
+
+.game--setting-item.full > .title {
+  margin-bottom: 1rem;
+}
+
+.game--setting-item.list > .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game--setting-item.list > .title h4 {
+  width: 30%;
+}
+
+.game--setting-item.list > .title p {
+  margin-left: 2rem;
+}
+
+.game--setting-item.list > .title .edit {
+  margin: 0;
+  margin-left: auto;
+  color: #b3b3b3;
+  cursor: pointer;
+}
+
+.game--setting-item.list:hover > .title .edit {
+  color: #333333;
+}
+
+.game--setting-item.list > .content {
+  display: none;
+}
+
+.game--setting-item.list > .content .list-description {
+  color: #b3b3b3;
+}
+
+.game--setting-item.list > .content .list-content {
+  margin-top: 1rem;
+}
+
+.game--setting-item.list > .content .list-action {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.game--setting-item.list > .content .list-action * + * {
+  margin-left: .5rem;
+}
+
+.game--setting-item.list .game--setting-item-lenght-custom {
+  margin-top: 1rem;
+}
+
+.game--setting-item.list .game--setting-item-lenght-custom .col-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  white-space: nowrap;
+}
+
+.game--setting-item.list .game--setting-item-lenght-custom input {
+  width: 4rem;
+  margin-left: 1rem;
+}
+
+.game--setting-item.list .game--setting-item-license-pick {
+  margin-top: 1rem;
+}
+
+.game--setting-item.list .game--setting-item-license-pick select {
+  margin-top: .5rem;
+}
+
+.game--setting-item.list .game--setting-item-word-limit {
+  margin-top: 1rem;
+}
+
+.game--setting-item.list .game--setting-item-word-limit .form-element {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game--setting-item.list .game--setting-item-word-limit span {
+  white-space: nowrap;
+}
+
+.game--setting-item.list .game--setting-item-word-limit input[type=number] {
+  width: 5rem;
+}
+
+.game--setting-item.list .game--setting-item-card-setting {
+  padding-top: 1rem;
+}
+
+.game--setting-item.list .game--setting-item-card-setting > div {
+  display: none;
+}
+
+.game--setting-item.list .game--setting-item-card-setting-custom .form-element {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game--setting-item.list .game--setting-item-card-setting-custom .form-element span {
+  width: 100%;
+}
+
+.game--setting-item.list.is-editing > .title h4 {
+  width: 100%;
+}
+
+.game--setting-item.list.is-editing > .title p,
+.game--setting-item.list.is-editing > .title .edit {
+  display: none;
+}
+
+.game--setting-item.list.is-editing > .content {
+  display: initial;
+}
+
+.game--setting-item.list.is-new > .title h4 {
+  width: 100%;
+}
+
+.game--setting-item.list.is-new > .title p,
+.game--setting-item.list.is-new > .title .edit {
+  display: none;
+}
+
+.game--setting-item.list.is-new > .content {
+  display: initial;
+}
+
+.game--setting-item.list.is-new > .content .list-action {
+  display: none;
+}
+
+.game--setting-item.switch {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.game--setting-item.switch > .title {
+  width: 80%;
+}
+
+.game--setting-item.switch > .content {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.game--sidebar .game--setting-item.is-editing > .title p {
+  display: initial;
+  white-space: nowrap;
+}
+
+.game--sidebar .game--setting-item.is-editing > .title .edit {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -211,11 +211,11 @@ setTimeout(function () {
 
 //// Game: Sidebar Widget Collapse
 
-setTimeout(function () {
-	$('.game--sidebar .ui-widget .title').click(function () {
-		$(this).siblings('.content').slideToggle('slow');
-	})
-}, 100);
+// setTimeout(function () {
+// 	$('.game--sidebar .ui-widget .title').click(function () {
+// 		$(this).siblings('.content').slideToggle('slow');
+// 	})
+// }, 100);
 
 //// Game: Game Progress Tree
 
@@ -277,3 +277,68 @@ if ($('.game--info-meta h3').text() == '') {
 // 	$('.nav--button-register').modal();
 // 	return false;
 // }, 100);
+
+
+
+$('.game--setting-item.list .edit').click(function () {
+	$('.game--setting-item.list').removeClass('is-editing');
+	$(this).parent().parent().addClass('is-editing');
+})
+
+
+$('.game--setting-item.list .list-action a').click(function () {
+	$(this).parent().parent().parent().removeClass('is-editing');
+
+})
+
+
+// $(document).ready(function () {
+// 	if ($('body').hasClass('page-game-new')) {
+// 		$('.game--setting-item.list').addClass('is-new');
+// 	}
+// })
+
+
+
+// Game: Add Game Sidebar Spacer
+
+
+$(".game--sidebar-spacer").hide(); // hide the fixed navbar initially
+
+var gameInfoOffsetY = $(".game--info").offset().top; //gets offset of header
+var gameInfoHeight = $(".game--info").outerHeight(); //gets height of header
+
+$(window).scroll(function () {
+	if ($(window).scrollTop() > (gameInfoOffsetY + gameInfoHeight)) {
+		$(".game--sidebar-spacer").show();
+	} else {
+		$(".game--sidebar-spacer").hide();
+	}
+});
+
+
+
+$(document).ready(function () {
+	$('.game--setting-item-card-setting').children().css('display', 'none');
+	var cardSettingSelected = $('#thietlapthe').val();
+	if (cardSettingSelected == 'trungbinh') {
+		$('.game--setting-item-card-setting .trungbinh').css('display', 'block');
+	} else if (cardSettingSelected == 'kho') {
+		$('.game--setting-item-card-setting .kho').css('display', 'block');
+	} else {
+		$('.game--setting-item-card-setting .tuychon').css('display', 'block');
+	}
+})
+
+$(function () {
+	$('#thietlapthe').change(function () {
+		$('.game--setting-item-card-setting>div').hide();
+		if ($(this).val() == 'trungbinh') {
+			$('.game--setting-item-card-setting .trungbinh').css('display', 'block');
+		} else if ($(this).val() == 'kho') {
+			$('.game--setting-item-card-setting .kho').css('display', 'block');
+		} else {
+			$('.game--setting-item-card-setting .tuychon').css('display', 'block');
+		}
+	});
+});

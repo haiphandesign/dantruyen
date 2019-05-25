@@ -14,7 +14,7 @@
 	<script src="./js/preload.js"></script>
 </head>
 
-<body class="page-game page-game-main logged-in">
+<body class="page-game page-game-setting page-game-new logged-in">
 
 	<div class='cursor'></div>
 	<div class='cursor'></div>
@@ -68,6 +68,10 @@
 						</div>
 					</div>
 				</div>
+				<div class="game--info-middle">
+					<a class="button small ghost join"><i class="far fa-plus"></i></a>
+					<a class="button small ghost follow"><i class="far fa-plus"></i></a>
+				</div>
 				<div class="game--info-bottom">
 					<div class="game--menu-wrapper">
 						<ul class="game--menu">
@@ -91,8 +95,553 @@
 		<div class="game--thread">
 			<div class="ui-widget">
 				<div class="title">
-					<h3>Thông tin</h3>
+					<h3>Thiết lập cơ bản</h3>
 				</div>
+				<div class="content">
+					<div class="game--setting-item full">
+						<div class="title">
+							<h4>Tiêu đề</h4>
+							<p>Hãy đặt tên cho câu chuyện của bạn.</p>
+						</div>
+						<div class="content">
+							<input type="text" id="gameTitle">
+							<div class="input-limit">Còn lại: <span>15</span> Từ</div>
+							<div class="hint"><a href="#">Gợi ý cách đặt tên</a></div>
+						</div>
+					</div>
+					<div class="game--setting-item full">
+						<div class="title">
+							<h4>Miêu tả</h4>
+							<p>Hãy viết một đoạn văn ngắn để giúp người đọc và người chơi hiểu qua về câu chuyện của
+								bạn.</p>
+						</div>
+						<div class="content">
+							<textarea name="description" id="gameDescription" cols="30" rows="10"></textarea>
+							<div class="input-limit">Còn lại: <span>100</span> Từ</div>
+							<div class="hint"><a href="#">Gợi ý cách viết miêu tả</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ui-widget">
+				<div class="title">
+					<h3>Thiết lập trò chơi</h3>
+				</div>
+				<div class="content">
+					<div class="game--setting-item list">
+						<div class="title">
+							<h4>Mô hình dẫn truyện</h4>
+							<p>Một người</p>
+							<a class="edit"><i class="far fa-edit"></i></a>
+						</div>
+						<div class="content">
+							<p class="list-description">Et sit voluptua et dolor sea. Et aliquyam ut vero clita
+								rebum vero invidunt dolores.</p>
+							<div class="list-content">
+								<div class="form-element">
+									<input type="radio" name="mohinh" value="motnguoi" checked>
+									<div class="label">
+										<strong>Một người: </strong>Ut kasd eirmod stet vero accusam, eirmod no ipsum
+										sed et stet sanctus, takimata at sea vero sed duo consetetur,.
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="mohinh" value="thayphien">
+									<div class="label">
+										<strong>Thay phiên: </strong>Amet tempor elitr sit dolore at. Sed invidunt lorem
+										sit amet duo ipsum no, takimata eirmod consetetur sadipscing eos sit.
+									</div>
+								</div>
+							</div>
+							<div class="list-action">
+								<a class="button small solid"><i class="far fa-check"></i> Xác nhận</a>
+								<a class="button small solid white"><i class="far fa-times"></i> Hủy bỏ</a>
+							</div>
+						</div>
+					</div>
+					<div class="game--setting-item list">
+						<div class="title">
+							<h4>Phong cách chơi</h4>
+							<p>Cân bằng</p>
+							<a class="edit"><i class="far fa-edit"></i></a>
+						</div>
+						<div class="content">
+							<p class="list-description">Duo tempor sadipscing et sea sed sed sed dolor ut. Et gubergren
+								labore duo sit rebum, elitr duo stet lorem.</p>
+							<div class="list-content">
+								<div class="form-element">
+									<input type="radio" name="phongcachchoi" value="taptrunggame">
+									<div class="label">
+										<strong>Tập trung game: </strong>Sanctus tempor clita rebum lorem consetetur. At
+										elitr ut labore et dolores clita, ipsum eirmod no ipsum est clita rebum.
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="phongcachchoi" value="canbang" checked>
+									<div class="label">
+										<strong>Cân bằng: </strong>Diam magna at invidunt et accusam accusam et et
+										tempor dolor, et sit dolore lorem lorem sed dolore sed ipsum.
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="phongcachchoi" value="taptrungviet">
+									<div class="label">
+										<strong>Tập trung viết: </strong>Labore amet consetetur amet sit et voluptua.
+										Invidunt dolores takimata et diam voluptua eirmod amet invidunt dolor. Stet
+										rebum clita.
+									</div>
+								</div>
+							</div>
+							<div class="list-action">
+								<a class="button small solid"><i class="far fa-check"></i> Xác nhận</a>
+								<a class="button small solid white"><i class="far fa-times"></i> Hủy bỏ</a>
+							</div>
+						</div>
+					</div>
+					<div class="game--setting-item list">
+						<div class="title">
+							<h4>Độ dài</h4>
+							<p>Tiểu thuyết</p>
+							<a class="edit"><i class="far fa-edit"></i></a>
+						</div>
+						<div class="content">
+							<p class="list-description">Et sit voluptua et dolor sea. Et aliquyam ut vero clita
+								rebum vero invidunt dolores.</p>
+							<div class="list-content">
+								<div class="form-element">
+									<input type="radio" name="dodai" value="truyenngan">
+									<div class="label">
+										<strong>Truyện ngắn: </strong>Magna dolor sed elitr amet et voluptua, labore sed
+										ut ea dolore. Sed lorem tempor stet consetetur invidunt takimata et.
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="dodai" value="truyenngandai">
+									<div class="label">
+										<strong>Truyện ngắn dài: </strong>Sit et no consetetur dolor tempor rebum elitr
+										gubergren amet kasd. Gubergren sed sanctus clita gubergren sit dolores. Et
+										labore.
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="dodai" value="truyendai" checked>
+									<div class="label">
+										<strong>Tiểu thuyết: </strong>Sanctus justo lorem voluptua tempor eos justo.
+										Diam at rebum ut stet lorem erat amet eirmod lorem, amet tempor et.
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="dodai" value="tuychon">
+									<div class="label">
+										<strong>Tùy chọn: </strong>Magna est accusam sit diam takimata magna, magna sea
+										elitr sadipscing dolores sanctus aliquyam sed sea. Et dolore aliquyam ea.
+										<div class="row game--setting-item-lenght-custom">
+											<div class="col-3">
+												Phần 1: <input type="number" name="dodaituychon" min="1" max="5">
+											</div>
+											<div class="col-3">
+												Phần 2: <input type="number" name="dodaituychon" min="1" max="5">
+											</div>
+											<div class="col-3">
+												Phần 3: <input type="number" name="dodaituychon" min="1" max="5">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="list-action">
+								<a class="button small solid"><i class="far fa-check"></i> Xác nhận</a>
+								<a class="button small solid white"><i class="far fa-times"></i> Hủy bỏ</a>
+							</div>
+						</div>
+					</div>
+					<div class="game--setting-item list">
+						<div class="title">
+							<h4>Tốc độ chơi</h4>
+							<p>Chậm</p>
+							<a class="edit"><i class="far fa-edit"></i></a>
+						</div>
+						<div class="content">
+							<p class="list-description">Et sit voluptua et dolor sea. Et aliquyam ut vero clita
+								rebum vero invidunt dolores.</p>
+							<div class="list-content">
+								<div class="form-element">
+									<input type="radio" name="tocdo" value="casual">
+									<div class="label">
+										<strong>Thoải mái: </strong>Không xác định tốc độ
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="tocdo" value="slow" checked>
+									<div class="label">
+										<strong>Chậm: </strong>Ít nhất 1 hồi/ tuần
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="tocdo" value="normal">
+									<div class="label">
+										<strong>Bình thường: </strong>2-3 hồi/ tuần
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="tocdo" value="daily">
+									<div class="label">
+										<strong>Đều đặn: </strong>1 hồi/ ngày
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="tocdo" value="fast">
+									<div class="label">
+										<strong>Nhanh: </strong>2-3 hồi/ ngày
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="tocdo" value="hardcore">
+									<div class="label">
+										<strong>Nhanh vãi đái: </strong>Tốc độ bàn thờ
+									</div>
+								</div>
+							</div>
+							<div class="list-action">
+								<a class="button small solid"><i class="far fa-check"></i> Xác nhận</a>
+								<a class="button small solid white"><i class="far fa-times"></i> Hủy bỏ</a>
+							</div>
+						</div>
+					</div>
+					<div class="game--setting-item list">
+						<div class="title">
+							<h4>Giới hạn từ</h4>
+							<p>Mặc định</p>
+							<a class="edit"><i class="far fa-edit"></i></a>
+						</div>
+						<div class="content">
+							<p class="list-description">Dolor at lorem rebum dolore sed at, kasd no ipsum lorem tempor
+								gubergren invidunt. At erat consetetur sea no, ut ea dolore ut ut. Sanctus ipsum sed sit
+								eirmod duo,.</p>
+							<div class="list-content">
+								<div class="form-element">
+									<input type="radio" name="gioihantu" value="default" checked>
+									<div class="label">
+										<strong>Mặc định: </strong>400 từ cho người chơi, 3000 từ cho người dẫn truyện
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="gioihantu" value="custom">
+									<div class="label">
+										<strong>Tùy chọn: </strong>
+										<div class="game--setting-item-word-limit">
+											<div class="form-element"><input type="number"> <span>cho người chơi</span>
+											</div>
+											<div class="form-element"><input type="number"> <span>cho người dẫn
+													truyện</span></div>
+
+										</div>
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="gioihantu" value="unlimited">
+									<div class="label">
+										<strong>Không có giới hạn</strong>
+									</div>
+								</div>
+							</div>
+							<div class="list-action">
+								<a class="button small solid"><i class="far fa-check"></i> Xác nhận</a>
+								<a class="button small solid white"><i class="far fa-times"></i> Hủy bỏ</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ui-widget">
+				<div class="title">
+					<h3>Thiết lập nhân vật</h3>
+				</div>
+				<div class="content">
+					<div class="game--setting-item switch">
+						<div class="title">
+							<h4>Số lượng nhân vật</h4>
+							<p>Sed dolores dolor ea diam ut amet sed no ipsum sed.</p>
+						</div>
+						<div class="content">
+							<input type="number" pattern="[0-9]*" novalidate name="soluongnhanvat" value="3"
+								style="width: 5rem; text-align: center">
+						</div>
+					</div>
+					<div class="game--setting-item list">
+						<div class="title">
+							<h4>Quyền tạo nhân vật</h4>
+							<p>Tự do</p>
+							<a class="edit"><i class="far fa-edit"></i></a>
+						</div>
+						<div class="content">
+							<p class="list-description">Et ea accusam at aliquyam et diam ipsum sea, gubergren amet
+								sadipscing diam gubergren vero gubergren ipsum, sanctus et consetetur et eos ipsum kasd,
+								takimata.</p>
+							<div class="list-content">
+								<div class="form-element">
+									<input type="radio" name="quyentaonhanvat" value="dinhsannhanvat">
+									<div class="label">
+										<strong>Chỉ nhân vật định sẵn: </strong>Labore accusam et dolor dolor diam et
+										accusam, magna eirmod stet eirmod elitr nonumy, kasd eos et stet diam et.
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="quyentaonhanvat" value="dinhsanthe">
+									<div class="label">
+										<strong>Chỉ sử dụng thẻ định sẵn: </strong>Justo no ut ut diam dolores et
+										takimata, vero gubergren gubergren accusam et, ut consetetur erat dolor et clita
+										sanctus.
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="quyentaonhanvat" value="tudo" checked>
+									<div class="label">
+										<strong>Tự do: </strong>Et diam eirmod sea amet ipsum et est gubergren est. Erat
+										voluptua dolore sea sed eirmod accusam, sed elitr ipsum.
+									</div>
+								</div>
+								<div class="hint"><br><i class="far fa-exclamation-triangle"></i><strong>Lưu ý:
+									</strong>Stet et ipsum tempor lorem stet, et clita kasd eos ipsum eirmod dolor, sit
+									elitr diam lorem amet justo lorem.
+								</div>
+							</div>
+							<div class="list-action">
+								<a class="button small solid"><i class="far fa-check"></i> Xác nhận</a>
+								<a class="button small solid white"><i class="far fa-times"></i> Hủy bỏ</a>
+							</div>
+						</div>
+					</div>
+					<div class="game--setting-item list">
+						<div class="title">
+							<h4>Thiết lập thẻ</h4>
+							<p>Mặc định</p>
+							<a class="edit"><i class="far fa-edit"></i></a>
+						</div>
+						<div class="content">
+							<!-- <p class="list-description">Et ea accusam at aliquyam et diam ipsum sea, gubergren amet
+								sadipscing diam gubergren vero gubergren ipsum, sanctus et consetetur et eos ipsum kasd,
+								takimata.</p> -->
+							<div class="list-content">
+								<select name="thietlapthe" id="thietlapthe" style="float: right; margin-top: -3rem;">
+									<option value="trungbinh">Trung bình (Mặc định)</option>
+									<option value="kho">Khó</option>
+									<option value="tuychon">Tùy chọn</option>
+								</select>
+								<div class="game--setting-item-card-setting">
+									<div class="trungbinh"><i class="far fa-info-circle"></i> Et gubergren eos clita eos
+										dolor dolor ipsum. Eos ipsum vero clita at elitr sanctus, rebum et nonumy vero
+										et aliquyam diam stet dolores dolores. Amet sanctus duo amet rebum.
+									</div>
+									<div class="kho"><i class="far fa-info-circle"></i> Justo amet et dolore stet
+										clita labore dolor, elitr est sed diam eos, consetetur takimata sit sea sit.
+										Ipsum invidunt voluptua et dolor ea tempor labore sed, tempor sadipscing tempor.
+									</div>
+									<div class="tuychon">
+										<div class="game--setting-item-card-setting-custom">
+											<div class="form-element">
+												<span>Số luợng thẻ mỗi người có thể sử dụng ở mỗi cảnh</span>
+												<input type="number" pattern="[0-9]*" novalidate name="soluongnhanvat"
+													style="width: 5rem; text-align: center">
+											</div>
+											<div class="form-element">
+												<span>Số luợng thẻ <strong>Điểm mạnh</strong> của mỗi người</span>
+												<input type="number" pattern="[0-9]*" novalidate name="soluongnhanvat"
+													style="width: 5rem; text-align: center">
+											</div>
+											<div class="form-element">
+												<span>Số luợng thẻ <strong>Điểm mạnh tùy ý</strong> của mỗi người</span>
+												<input type="number" pattern="[0-9]*" novalidate name="soluongnhanvat"
+													style="width: 5rem; text-align: center">
+											</div>
+											<div class="form-element">
+												<span>Số luợng thẻ <strong>Điểm yếu</strong> của mỗi người</span>
+												<input type="number" pattern="[0-9]*" novalidate name="soluongnhanvat"
+													style="width: 5rem; text-align: center">
+											</div>
+											<div class="form-element">
+												<span>Số luợng thẻ <strong>Điểm yếu tùy ý</strong> của mỗi người</span>
+												<input type="number" pattern="[0-9]*" novalidate name="soluongnhanvat"
+													style="width: 5rem; text-align: center">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="list-action">
+								<a class="button small solid"><i class="far fa-check"></i> Xác nhận</a>
+								<a class="button small solid white"><i class="far fa-times"></i> Hủy bỏ</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ui-widget">
+				<div class="title">
+					<h3>Thiết lập cộng đồng</h3>
+				</div>
+				<div class="content">
+					<div class="game--setting-item list">
+						<div class="title">
+							<h4>Quyền sỡ hữu</h4>
+							<p>Chung</p>
+							<a class="edit"><i class="far fa-edit"></i></a>
+						</div>
+						<div class="content">
+							<p class="list-description">Ut sed et accusam ut voluptua dolores voluptua amet ipsum ut,
+								ipsum lorem dolores eos vero et tempor aliquyam diam.</p>
+							<div class="list-content">
+								<div class="form-element">
+									<input type="radio" name="license" value="casual" checked>
+									<div class="label">
+										<strong>Chung: </strong>Sit eos erat nonumy magna no amet no sit invidunt stet,
+										diam dolor et aliquyam et gubergren invidunt sed vero lorem. Dolor voluptua et
+										voluptua no kasd sed sit tempor.
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="license" value="creativecommons">
+									<div class="label">
+										<strong>Chung + Creative Commons: </strong>Takimata amet duo sit eos sit
+										gubergren, no et elitr eirmod gubergren. Dolor est ipsum et consetetur, amet sea
+										stet eirmod labore gubergren sed magna magna, eirmod elitr sea sit.
+										<br>
+										<div class="game--setting-item-license-pick">
+											Chọn giấy phép Creative Commons:
+											<br>
+											<select>
+												<option value="CC-BY">Attribution</option>
+												<option value="CC-BY-SA">Attribution-ShareAlike </option>
+												<option value="CC-BY-ND">Attribution-NoDerivs</option>
+												<option value="CC-BY-NC" selected="selected">Attribution-NonCommercial
+												</option>
+												<option value="CC-BY-NC-SA">Attribution-NonCommercial-ShareAlike
+												</option>
+												<option value="CC-BY-NC-ND">Attribution-NonCommercial-NoDerivs</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="form-element">
+									<input type="radio" name="license" value="normal">
+									<div class="label">
+										<strong>Người chủ trì: </strong>Sea dolor diam est magna eirmod lorem magna, sit
+										elitr lorem tempor sanctus no labore sit sed, duo voluptua et.
+									</div>
+								</div>
+								<div class="hint">
+									<br>
+									<i class="fas fa-exclamation-triangle"></i> <strong>Lưu ý:
+									</strong>Bạn không thể thay đổi tùy chọn này sau khi trò chơi bắt đầu. Ea sed magna
+									et sea amet at diam gubergren ea. Lorem ipsum no dolore dolor ut labore dolores sit
+									sanctus liên hệ với chúng tôi tại <a
+										href="mailto:hotro@dantruyen.com">hotro@dantruyen.com</a>
+								</div>
+							</div>
+							<div class="list-action">
+								<a class="button small solid"><i class="far fa-check"></i> Xác nhận</a>
+								<a class="button small solid white"><i class="far fa-times"></i> Hủy bỏ</a>
+							</div>
+						</div>
+					</div>
+					<div class="game--setting-item full optional">
+						<div class="title">
+							<h4>Từ khóa</h4>
+							<p>Thêm từ khóa gợi ý để giúp mọi người hiểu thêm về trò chơi và tìm kiếm trò chơi này dễ
+								dàng hơn.</p>
+						</div>
+						<div class="content">
+							<input type="text" placeholder="Bắt đầu thêm từ khoá ...">
+							<div class="input-limit">Còn lại: <span>10</span> Từ</div>
+							<div href="#" class="hint">Tag thông dụng: <a href="#">nàng</a>, <a href="#">hầu</a>, <a
+									href="#">gái</a>, <a href="#">kỳ</a>, <a href="#">lạ</a>, ...
+							</div>
+						</div>
+					</div>
+					<div class="game--setting-item switch">
+						<div class="title">
+							<h4>Nội dung người lớn</h4>
+							<p>Đánh dấu trò chơi có chứa nội dung người lớn (bạo lực, ..) hoặc không phù hợp cho người
+								duới 18 tuổi.</p>
+						</div>
+						<div class="content">
+							<label class="toggle-switch">
+								<input type="checkbox">
+								<span class="slider"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="game--sidebar">
+			<div class="game--sidebar-wrapper">
+				<div class="game--sidebar-spacer"></div>
+				<div class="ui-widget">
+					<div class="title">
+						<h3>Thiết lập trạng thái</h3>
+					</div>
+					<div class="content">
+						<div class="game--setting-item list">
+							<div class="title">
+								<h4>Trạng thái</h4>
+								<p>Đang hoạt động</p>
+								<a class="edit"><i class="far fa-edit"></i></a>
+							</div>
+							<div class="content">
+								<!-- <p class="list-description">Đang hoạt động</p> -->
+								<div class="list-content">
+									<i class="far fa-info-circle"></i> Trò chơi hiện đang ở trong trạng thái hoạt động,
+									trò chơi sẽ được tự động đưa về trạng thái <strong>Chờ</strong> nếu không có hoạt
+									động gì trong 1 tuần.
+								</div>
+								<div class="list-action">
+									<a class="button small solid"><i class="far fa-check"></i> Xác nhận</a>
+									<!-- <a class="button small solid white"><i class="far fa-times"></i> Hủy bỏ</a> -->
+								</div>
+							</div>
+						</div>
+						<div class="game--setting-item list">
+							<div class="title">
+								<h4>Hiển thị</h4>
+								<p>Công cộng</p>
+								<a class="edit"><i class="far fa-edit"></i></a>
+							</div>
+							<div class="content">
+								<!-- <p class="list-description">Et sit voluptua et dolor sea. Et aliquyam ut vero clita
+									rebum vero invidunt dolores.</p> -->
+								<div class="list-content">
+									<div class="form-element">
+										<input type="radio" name="hienthi" value="public">
+										<div class="label">
+											<strong>Công cộng: </strong>Voluptua duo clita magna voluptua stet dolor
+											sanctus invidunt et.
+										</div>
+									</div>
+									<div class="form-element">
+										<input type="radio" name="hienthi" value="private">
+										<div class="label">
+											<strong>Riêng tư: </strong>Ipsum invidunt aliquyam dolor ut diam et sed ut.
+											Vero.
+										</div>
+									</div>
+									<div class="form-element">
+										<input type="radio" name="hienthi" value="closed">
+										<div class="label">
+											<strong>Kín: </strong>Lorem at lorem elitr lorem aliquyam eos diam. Rebum
+											lorem.
+										</div>
+									</div>
+								</div>
+								<div class="list-action">
+									<a class="button small solid"><i class="far fa-check"></i> Xác nhận</a>
+									<a class="button small solid white"><i class="far fa-times"></i> Hủy bỏ</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="" class="button solid full">Lưu Thay Đổi</a>
 			</div>
 		</div>
 	</div>
