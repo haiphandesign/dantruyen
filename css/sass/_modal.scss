@@ -31,6 +31,10 @@
 
 	.content {
 		padding: 1rem;
+
+		@include breakpoint(md) {
+			padding: 2rem;
+		}
 	}
 
 	.modal-character {
@@ -50,7 +54,7 @@
 			flex-direction: column;
 
 			@include breakpoint(md) {
-				width: 35rem;
+				width: 40rem;
 				display: block;
 			}
 
@@ -70,7 +74,7 @@
 				align-items: center;
 				justify-content: flex-start;
 
-				height: 4rem;
+				height: 5rem;
 				width: 100%;
 
 				@include ui-border;
@@ -85,13 +89,17 @@
 				padding: 1rem;
 
 				z-index: -1;
+
+				@include breakpoint(md) {
+					padding: 2rem;
+				}
 			}
 
 			.profile-picture {
 				display: block;
 
-				width: 6rem;
-				height: 6rem;
+				width: 7rem;
+				height: 7rem;
 				object-fit: cover;
 
 				@include ui-border-radius;
@@ -126,7 +134,7 @@
 			&-box {
 				order: 2;
 
-				width: 18rem;
+				width: 22rem;
 
 				padding-top: 5rem;
 			}

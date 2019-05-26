@@ -182,7 +182,7 @@ setTimeout(function () {
 
 $('.game--info-middle a').click(function () {
 	$(this).toggleClass('is-active');
-	$(this).toggleClass('full');
+	$(this).toggleClass('solid');
 	$(this).toggleClass('ghost');
 	$(this).children('i').toggleClass('fa-plus');
 	$(this).children('i').toggleClass('fa-check');
@@ -309,4 +309,18 @@ for (var i = 0; i < 3; i++) {
 
 for (var i = 0; i < 1; i++) {
 	$('.game--characters-premade tbody tr').clone().appendTo('.game--characters-premade tbody');
+}
+
+
+
+
+$(document).ready(function () {
+	if ($('body').hasClass('page-game-new')) {
+		$('.game--setting-item').addClass('is-new');
+	}
+});
+
+
+function characterCreateStep() {
+	$('.character-create').toggle();
 }

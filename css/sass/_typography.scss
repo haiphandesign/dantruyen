@@ -7,7 +7,7 @@
 	&+h5,
 	&+h6,
 	&+p {
-		margin-bottom: 1.5rem;
+		margin-bottom: 1rem;
 	}
 }
 
@@ -27,7 +27,7 @@ p,
 	margin: 0;
 
 	&+* {
-		margin-top: 1.5rem;
+		margin-top: 1rem;
 	}
 }
 
@@ -67,6 +67,18 @@ h6 {
 
 hr {
 	border: .5px solid rgba($color-border, .5);
+}
+
+@mixin small-text {
+	text-transform: uppercase;
+	font-size: $h5-size;
+	font-weight: $h5-weight;
+}
+
+.small-text {
+	text-transform: uppercase;
+	font-size: $h5-size !important;
+	font-weight: $h5-weight;
 }
 
 .container-fluid {

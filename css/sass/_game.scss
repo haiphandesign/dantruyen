@@ -480,12 +480,12 @@
 	grid-column-gap: 2rem;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
-	grid-template-areas: 'a''b';
+	grid-template-areas: 'main''sidebar';
 
 	@include breakpoint(md) {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr;
-		grid-template-areas: 'a a b';
+		grid-template-areas: 'main main sidebar';
 
 		padding: 0;
 	}
@@ -499,10 +499,10 @@
 	}
 
 	&.section-reply {
-		grid-template-areas: 'b''a';
+		grid-template-areas: 'sidebar''main';
 
 		@include breakpoint(md) {
-			grid-template-areas: 'a a b';
+			grid-template-areas: 'main main sidebar';
 		}
 
 		.game--thread {
@@ -520,7 +520,7 @@
 	}
 
 	.game--thread {
-		grid-area: a;
+		grid-area: main;
 	}
 
 	.post {
@@ -1141,7 +1141,7 @@
 	}
 
 	.game--sidebar {
-		grid-area: b;
+		grid-area: sidebar;
 
 		margin-top: 1rem;
 
@@ -1682,10 +1682,146 @@
 	}
 }
 
+.card-gallery {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1rem;
+
+	@include breakpoint(md) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+.card {
+	position: relative;
+
+	@include ui-border;
+	@include ui-border-radius;
+	@include ui-shadow;
+
+	&.card-nature {
+		.card-image {
+			background-image: url('./../img/layout/card/background-nature.svg');
+		}
+	}
+
+	.card-icon {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		z-index: 2;
+
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+
+		height: 2.5rem;
+
+		@include ui-border;
+		@include ui-border-radius;
+		@include ui-shadow;
+
+		padding: 1rem;
+
+		span {
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: .75rem;
+
+			margin-left: .5rem;
+		}
+	}
+
+	.card-amount {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		z-index: 2;
+
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+
+		height: 2.5rem;
+		width: 2.5rem;
+
+		@include ui-border;
+		@include ui-border-radius;
+		@include ui-shadow;
+
+		padding: .75rem;
+
+		color: $color-text-light;
+		font-size: .75rem;
+
+		&:before {
+			content: 'x'
+		}
+	}
+
+	.card-image {
+		position: relative;
+		display: block;
+		width: 100%;
+
+		padding-top: 75%;
+
+		background-color: $color-background;
+		background-size: cover;
+
+		border-bottom: 1px solid $color-border;
+
+		img {
+			position: absolute;
+			top: 0;
+
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+
+	.card-info {
+		display: block;
+		height: 12rem;
+
+		padding: 1rem;
+
+		p {
+			max-height: 100%;
+			overflow-y: auto;
+			margin-top: .5rem;
+			margin-right: -1rem;
+			padding-right: 1rem;
+		}
+	}
+
+	&.card-empty {
+		.card-info {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: space-between;
+		}
+	}
+}
+
 
 .game--characters-created {
 	.content {
 		padding: 0;
+	}
+
+	.profile-picture {
+		width: 3rem;
+		height: 3rem;
+		vertical-align: middle;
 	}
 
 	.character-name {
@@ -1733,6 +1869,12 @@
 		padding: 0;
 	}
 
+	.profile-picture {
+		width: 3rem;
+		height: 3rem;
+		vertical-align: middle;
+	}
+
 	.character-name {
 		width: 50%;
 
@@ -1758,6 +1900,31 @@
 
 	.action {
 		width: 5%;
+	}
+}
+
+.character-avatar-upload {
+	input[type=file] {
+		display: none;
+	}
+
+	label {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		width: 7rem;
+		height: 7rem;
+
+		@include ui-border;
+		@include ui-border-radius;
+
+		transition: all .25s;
+
+		&:hover {
+			border-color: $color-text-light;
+		}
 	}
 }
 
@@ -2030,6 +2197,7 @@
 	&.switch {
 		flex-direction: row;
 		justify-content: space-between;
+		align-items: center;
 
 		>.title {
 			width: 80%;
@@ -2041,6 +2209,47 @@
 			justify-content: flex-end;
 		}
 	}
+}
+
+.progress-bar {
+	position: relative;
+
+	display: block;
+	height: 3rem;
+	width: 100%;
+
+	background-color: $color-background;
+
+	span {
+		position: absolute;
+		top: 0;
+		display: block;
+		width: 100%;
+		line-height: 3rem;
+		text-align: center;
+		font-weight: bold;
+		font-size: .75rem;
+		z-index: 2;
+	}
+
+	.progressed {
+		position: absolute;
+		top: 0;
+		display: block;
+		height: 3rem;
+
+		background-color: $color-text-light;
+
+		&.percent-40 {
+			width: 40%;
+		}
+	}
+}
+
+.character-create-progress {
+	width: calc(100% + 2rem);
+	margin: -1rem -1rem 1rem;
+	border-bottom: 1px solid $color-border;
 }
 
 .game--sidebar {
