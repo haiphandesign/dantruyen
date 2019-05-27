@@ -1688,7 +1688,7 @@
 	grid-gap: 1rem;
 
 	@include breakpoint(md) {
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
 }
 
@@ -2207,6 +2207,29 @@
 			width: 20%;
 			display: flex;
 			justify-content: flex-end;
+		}
+	}
+}
+
+.page-game-new {
+	.game--setting-item {
+		>.title {
+			h4 {
+				width: 100%;
+			}
+
+			p,
+			.edit {
+				display: none;
+			}
+		}
+
+		>.content {
+			display: initial;
+
+			.list-action {
+				display: none;
+			}
 		}
 	}
 }

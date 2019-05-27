@@ -4086,8 +4086,8 @@ hr {
 
 @media (min-width: 992px) {
   .card-gallery {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -4606,6 +4606,23 @@ hr {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+.page-game-new .game--setting-item > .title h4 {
+  width: 100%;
+}
+
+.page-game-new .game--setting-item > .title p,
+.page-game-new .game--setting-item > .title .edit {
+  display: none;
+}
+
+.page-game-new .game--setting-item > .content {
+  display: initial;
+}
+
+.page-game-new .game--setting-item > .content .list-action {
+  display: none;
 }
 
 .progress-bar {
