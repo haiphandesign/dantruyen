@@ -883,6 +883,10 @@ input[type=checkbox]:checked {
   background-position: center;
 }
 
+input[type=radio] {
+  border-radius: 50%;
+}
+
 select {
   padding: 0 1rem;
   background-image: url("./../img/layout/icons/arrow-down.svg");
