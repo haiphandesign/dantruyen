@@ -2745,6 +2745,48 @@ body.homepage span.divider {
   margin-top: .5rem;
 }
 
+#help .homepage-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+#help .homepage-content p {
+  text-align: justify;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+#help .homepage-content img {
+  display: block;
+  width: 100%;
+  max-width: 15rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  #help .homepage-content img {
+    max-width: 20rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #help .homepage-content {
+    direction: rtl;
+    -ms-grid-columns: 4fr 7fr;
+        grid-template-columns: 4fr 7fr;
+    grid-gap: 2.5rem;
+  }
+  #help .homepage-content .help-left {
+    direction: ltr;
+  }
+}
+
 #fund .homepage-content > p {
   max-width: 30rem;
   margin: 0 auto 2.5rem;

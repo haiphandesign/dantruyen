@@ -469,6 +469,43 @@ body.homepage {
 	}
 }
 
+#help {
+	.homepage-content {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 2.5rem;
+
+		margin-bottom: 3rem;
+
+		p {
+			text-align: justify;
+			hyphens: auto;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			max-width: 15rem;
+			height: auto;
+			margin: 0 auto;
+
+			@include breakpoint(md) {
+				max-width: 20rem;
+			}
+		}
+
+		@include breakpoint(sm) {
+			direction: rtl;
+			grid-template-columns: 4fr 7fr;
+			grid-gap: 2.5rem;
+
+			.help-left {
+				direction: ltr;
+			}
+		}
+	}
+}
+
 #fund {
 	.homepage-content {
 		>p {
