@@ -3062,6 +3062,9 @@ body.homepage span.divider {
 
 #share .copied-notice {
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
