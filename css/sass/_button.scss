@@ -48,7 +48,7 @@
 
 	&.ghost {
 		@include ui-border;
-		border-color: $color-text-light;
+		border-color: currentColor;
 
 		background-color: transparent;
 
@@ -82,7 +82,7 @@
 			color: $color-text-regular;
 		}
 
-		color: white;
+		color: white !important;
 
 		&.white {
 			background: {
@@ -91,7 +91,7 @@
 
 			@include ui-border;
 
-			color: $color-text-regular;
+			color: $color-text-regular !important;
 		}
 
 		&:hover {
@@ -111,6 +111,12 @@
 			}
 
 			color: white;
+		}
+	}
+
+	&.small-text {
+		i {
+			font-size: 1rem;
 		}
 	}
 
