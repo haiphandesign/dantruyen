@@ -2824,6 +2824,36 @@ body.homepage span.divider {
 
 #fund {
   position: relative;
+  color: #0a6db6;
+  background-color: rgba(21, 158, 233, 0.075);
+}
+
+#fund:before {
+  content: '';
+  position: absolute;
+  top: -10rem;
+  left: 0;
+  display: block;
+  height: 10rem;
+  width: 100%;
+  background-image: url("./../img/home/fund-top.svg");
+  background-size: cover;
+  background-position: center top;
+  opacity: .075;
+}
+
+#fund:after {
+  content: '';
+  position: absolute;
+  bottom: -15rem;
+  left: 0;
+  display: block;
+  height: 15rem;
+  width: 100%;
+  background-image: url("./../img/home/fund-bottom.svg");
+  background-size: cover;
+  background-position: center bottom;
+  opacity: .075;
 }
 
 #fund .homepage-content > p {
@@ -2947,8 +2977,8 @@ body.homepage span.divider {
 #fund .plan-note {
   margin: 1rem auto 0;
   font-size: .75rem;
-  color: #0b7bce;
   text-align: center;
+  opacity: .5;
 }
 
 @media (min-width: 992px) {
@@ -3454,7 +3484,7 @@ footer .footer-content .footer-social a + a {
   background-size: cover;
   opacity: .075;
   z-index: -1;
-  top: 60%;
+  top: 50%;
   right: 0;
   background-color: transparent;
   background-image: url("./../img/home/blob/help-01.svg");
@@ -3500,8 +3530,6 @@ footer .footer-content .footer-social a + a {
   z-index: -1;
   top: 0;
   right: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   background-color: transparent;
   background-image: url("./../img/home/blob/faq-01.svg");
 }

@@ -534,6 +534,42 @@ body.homepage {
 #fund {
 	position: relative;
 
+	color: darken($color-primary, 5);
+
+	background-color: rgba($color-primary-accent, .075);
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: -10rem;
+		left: 0;
+
+		display: block;
+		height: 10rem;
+		width: 100%;
+
+		background-image: url('./../img/home/fund-top.svg');
+		background-size: cover;
+		background-position: center top;
+		opacity: .075;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: -15rem;
+		left: 0;
+
+		display: block;
+		height: 15rem;
+		width: 100%;
+
+		background-image: url('./../img/home/fund-bottom.svg');
+		background-size: cover;
+		background-position: center bottom;
+		opacity: .075;
+	}
+
 	.homepage-content {
 		>p {
 			max-width: 30rem;
@@ -646,8 +682,8 @@ body.homepage {
 	.plan-note {
 		margin: 1rem auto 0;
 		font-size: .75rem;
-		color: $color-primary;
 		text-align: center;
+		opacity: .5;
 
 		@include breakpoint(md) {
 			margin-bottom: -3.5rem;
@@ -1067,7 +1103,7 @@ footer {
 	&-help {
 		&-01 {
 			@include blob;
-			top: 60%;
+			top: 50%;
 			right: 0;
 
 			background-color: transparent;
@@ -1091,7 +1127,6 @@ footer {
 			@include blob;
 			top: 0;
 			right: 0;
-			transform: translateY(-50%);
 
 			background-color: transparent;
 			background-image: url('./../img/home/blob/faq-01.svg');
