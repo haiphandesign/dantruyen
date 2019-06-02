@@ -91,9 +91,19 @@ body.homepage {
 
 	h2 {
 		text-transform: uppercase;
-		font-family: 'EB Garamond',
-			serif;
-		font-weight: normal;
+		// font-family: 'EB Garamond',
+		// 	serif;
+		font-weight: 700;
+		font-size: 1.75rem;
+		line-height: 1.5 !important;
+
+		@include breakpoint(sm) {
+			font-size: 2rem;
+		}
+
+		&+h2 {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -121,12 +131,14 @@ body.homepage {
 		// background-color: red;
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-position: center;
+		background-position: center top;
 
 		@include breakpoint(md) {
 			top: 2.5rem;
 			left: 5vw;
-			width: 15rem;
+
+			width: 15vw;
+			height: 15vw;
 
 			background-image: url('./../img/home/logo.svg');
 		}
@@ -207,6 +219,11 @@ body.homepage {
 			text-align: left;
 		}
 
+		@include breakpoint(lg) {
+			bottom: unset;
+			top: 50%;
+		}
+
 		span.divider {
 			@include breakpoint(md) {
 				display: none;
@@ -218,16 +235,14 @@ body.homepage {
 			margin: 0 auto;
 
 			text-transform: uppercase;
-			font-family: 'EB Garamond', serif;
+			// font-family: 'EB Garamond', serif;
 			font-size: 2.5rem;
-			font-weight: normal;
+			font-weight: 700;
 			line-height: 1.25;
 
 			@include breakpoint(md) {
 				max-width: unset;
 				margin: unset;
-
-				font-size: 3.75vw;
 			}
 
 			br {
@@ -269,6 +284,8 @@ body.homepage {
 
 
 #intro {
+	position: relative;
+
 	.homepage-content {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -302,6 +319,10 @@ body.homepage {
 
 	.intro-right {
 		margin: 0 auto;
+
+		@include breakpoint(md) {
+			margin: unset;
+		}
 
 		ul {
 			margin: 0;
@@ -338,6 +359,8 @@ body.homepage {
 }
 
 #role {
+	position: relative;
+
 	.homepage-content {
 		margin-top: 0rem;
 
@@ -470,6 +493,8 @@ body.homepage {
 }
 
 #help {
+	position: relative;
+
 	.homepage-content {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -507,6 +532,8 @@ body.homepage {
 }
 
 #fund {
+	position: relative;
+
 	.homepage-content {
 		>p {
 			max-width: 30rem;
@@ -629,6 +656,8 @@ body.homepage {
 }
 
 #faq {
+	position: relative;
+
 	.homepage-content {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -753,6 +782,8 @@ body.homepage {
 }
 
 #share {
+	position: relative;
+
 	.homepage-content {
 		text-align: center;
 	}
@@ -954,6 +985,137 @@ footer {
 					margin-left: .5rem;
 				}
 			}
+		}
+	}
+}
+
+@mixin blob {
+	position: absolute;
+
+	display: block;
+	width: 15rem;
+	height: 15rem;
+
+	background-color: $color-primary-accent;
+	background-size: cover;
+
+	opacity: .075;
+	z-index: -1;
+
+	@include breakpoint(sm) {
+		width: 20rem;
+		height: 20rem;
+	}
+}
+
+.blob {
+	&-hero {
+		&-01 {
+			@include blob;
+			top: 0;
+			left: 0;
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/hero-01.svg');
+		}
+
+		&-02 {
+			@include blob;
+			bottom: 0;
+			right: 0;
+			transform: translateY(65%);
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/hero-02.svg');
+		}
+	}
+
+	&-intro {
+		&-01 {
+			@include blob;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/intro-01.svg');
+		}
+
+		&-02 {
+			@include blob;
+			bottom: 0;
+			right: 0;
+			transform: translateY(100%);
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/intro-02.svg');
+		}
+	}
+
+	&-role {
+		&-01 {
+			@include blob;
+			top: 75%;
+			left: 0;
+			transform: translateY(0%) translateX(50%) scale(2);
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/role-01.svg');
+		}
+	}
+
+	&-help {
+		&-01 {
+			@include blob;
+			top: 60%;
+			right: 0;
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/help-01.svg');
+		}
+	}
+
+	&-fund {
+		&-01 {
+			@include blob;
+			top: 0;
+			left: 0;
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/fund-01.svg');
+		}
+	}
+
+	&-faq {
+		&-01 {
+			@include blob;
+			top: 0;
+			right: 0;
+			transform: translateY(-50%);
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/faq-01.svg');
+		}
+
+		&-02 {
+			@include blob;
+			bottom: 0;
+			left: 0;
+			transform: translateY(50%);
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/faq-02.svg');
+		}
+	}
+
+	&-share {
+		&-01 {
+			@include blob;
+			top: 0;
+			right: 0;
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/share-01.svg');
 		}
 	}
 }
