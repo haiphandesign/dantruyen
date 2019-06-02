@@ -2831,28 +2831,30 @@ body.homepage span.divider {
 #fund:before {
   content: '';
   position: absolute;
-  top: -10rem;
+  top: -100vh;
   left: 0;
   display: block;
-  height: 10rem;
+  height: 100vh;
   width: 100%;
   background-image: url("./../img/home/fund-top.svg");
-  background-size: cover;
-  background-position: center top;
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
   opacity: .075;
 }
 
 #fund:after {
   content: '';
   position: absolute;
-  bottom: -15rem;
+  bottom: -100vh;
   left: 0;
   display: block;
-  height: 15rem;
+  height: 100vh;
   width: 100%;
   background-image: url("./../img/home/fund-bottom.svg");
-  background-size: cover;
-  background-position: center bottom;
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
   opacity: .075;
 }
 
@@ -3484,7 +3486,7 @@ footer .footer-content .footer-social a + a {
   background-size: cover;
   opacity: .075;
   z-index: -1;
-  top: 50%;
+  top: 40%;
   right: 0;
   background-color: transparent;
   background-image: url("./../img/home/blob/help-01.svg");
