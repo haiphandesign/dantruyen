@@ -50,7 +50,7 @@ body.homepage {
 	}
 
 	span.divider {
-		display: block;
+		display: inline-block;
 		height: .325rem;
 		width: 5rem;
 
@@ -553,6 +553,8 @@ body.homepage {
 		background-position: center bottom;
 		background-repeat: no-repeat;
 		opacity: .075;
+
+		pointer-events: none;
 	}
 
 	&:after {
@@ -570,6 +572,8 @@ body.homepage {
 		background-position: center top;
 		background-repeat: no-repeat;
 		opacity: .075;
+
+		pointer-events: none;
 	}
 
 	.homepage-content {
@@ -862,6 +866,83 @@ body.homepage {
 	}
 }
 
+#confirmed {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	min-height: 100vh;
+
+	padding: 5rem 0;
+
+	text-align: center;
+
+	.content {
+		text-align: center;
+	}
+
+	>.container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 1.5rem;
+
+		align-items: center;
+		justify-content: center;
+
+		margin-bottom: 1.5rem;
+
+		@include breakpoint(md) {
+			grid-template-columns: 6fr 5fr;
+		}
+
+		>img {
+			display: block;
+			max-width: 90%;
+			margin: 0 auto;
+		}
+	}
+
+	.homepage-title {
+		@include breakpoint(md) {
+			padding: 0;
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	h2 {
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	.message-content {
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.social-share {
+		margin-top: 2.5rem;
+
+		p {
+			font-size: .75rem;
+			color: $color-primary-accent;
+		}
+
+		.button {
+			width: 100%;
+			margin-bottom: 1rem;
+
+			@include breakpoint(sm) {
+				width: 60%;
+			}
+		}
+	}
+}
+
 footer {
 	position: relative;
 
@@ -1040,6 +1121,8 @@ footer {
 	opacity: .075;
 	z-index: -1;
 
+	animation-duration: 5s;
+
 	@include breakpoint(sm) {
 		width: 20rem;
 		height: 20rem;
@@ -1153,6 +1236,65 @@ footer {
 
 			background-color: transparent;
 			background-image: url('./../img/home/blob/share-01.svg');
+		}
+	}
+
+	&-confirmed {
+		&-01 {
+			@include blob;
+			top: 0;
+			left: 0;
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/confirmed-01.svg');
+
+			width: 10rem;
+			height: 10rem;
+		}
+
+		&-02 {
+			@include blob;
+			bottom: 0;
+			right: 0;
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/confirmed-02.svg');
+
+			width: 30rem;
+			height: 15rem;
+
+			@include breakpoint(sm) {
+				width: 40rem;
+				height: 20rem;
+			}
+		}
+
+		&-03 {
+			@include blob;
+			top: 35%;
+			right: 0;
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/confirmed-03.svg');
+
+			@include breakpoint(sm) {
+				top: 0;
+			}
+		}
+
+		&-04 {
+			@include blob;
+			bottom: 10rem;
+			left: 0;
+
+			background-color: transparent;
+			background-image: url('./../img/home/blob/confirmed-04.svg');
+			background-repeat: no-repeat;
+
+			@include breakpoint(sm) {
+				bottom: 0;
+				background-position: bottom -7.5rem left;
+			}
 		}
 	}
 }

@@ -1,3 +1,10 @@
+var queryDict = {}
+location.search.substr(1).split("&").forEach(function (item) {
+	queryDict[item.split("=")[0]] = item.split("=")[1]
+})
+
+document.getElementById("name").innerHTML = queryDict.name.split('+').join(' ');
+
 $('.role-toggle-host').click(function () {
 	$('.role-toggle a').removeClass('is-active');
 	$(this).addClass('is-active');
