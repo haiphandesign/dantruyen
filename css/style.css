@@ -1388,9 +1388,9 @@ hr {
 }
 
 .modal-content .modal-close {
-  position: absolute;
-  top: -2rem;
-  right: 0;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
   width: 1.5rem;
   height: 1.5rem;
   border: 0;
@@ -2027,6 +2027,97 @@ hr {
 .modal {
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 10000;
+}
+
+.page-modal-lightbox {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.page-modal-lightbox .image-gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  max-width: 720px;
+}
+
+.page-modal-lightbox .image-gallery img {
+  width: 10rem;
+  height: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid #e4e4e4;
+  background-color: white;
+  border-radius: 0.25rem;
+}
+
+.modal-image-gallery {
+  max-width: 80%;
+}
+
+.modal-image-gallery img {
+  display: block;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.modal-image-gallery-navigation {
+  position: fixed;
+  top: 50%;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.modal-image-gallery-navigation.prev {
+  left: 1.5rem;
+}
+
+.modal-image-gallery-navigation.next {
+  right: 1.5rem;
+}
+
+.modal-image-gallery-preview {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal-image-gallery-preview img {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 .25rem;
+  opacity: .25;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.modal-image-gallery-preview img:hover {
+  opacity: 1;
+}
+
+.modal-image-gallery-preview img.is-selected {
+  opacity: 1;
 }
 
 #nav {

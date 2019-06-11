@@ -8,6 +8,8 @@
 
 
 
+
+
 // Global: Load Page Header & Footer
 
 $('#header').load('./inc/header.html');

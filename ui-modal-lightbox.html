@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dẫn Truyện</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- Preload Javascript -->
+	<script src="./js/preload.js"></script>
+</head>
+
+<body class="page-ui page-modal-lightbox logged-out">
+
+	<div class="image-gallery">
+		<img src="./img/content/games/background/daniele-verzini-01.jpg" alt="">
+		<img src="./img/content/games/background/daniele-verzini-02.jpg" alt="">
+		<img src="./img/content/games/background/daniele-verzini-03.jpg" alt="">
+		<img src="./img/content/games/background/daniele-verzini-04.jpg" alt="">
+		<img src="./img/content/games/background/daniele-verzini-05.jpg" alt="">
+		<img src="./img/content/games/background/daniele-verzini-06.jpg" alt="">
+	</div>
+
+	<div class="modal-content">
+		<div class="modal-image-gallery">
+			<img src="./img/content/games/background/daniele-verzini-05.jpg" alt="">
+			<div class="modal-image-gallery-navigation prev">
+				<i class="fal fa-angle-left"></i>
+			</div>
+			<div class="modal-image-gallery-navigation next">
+				<i class="fal fa-angle-right"></i>
+			</div>
+			<div class="modal-image-gallery-preview">
+				<img src="./img/content/games/background/daniele-verzini-01.jpg" alt="">
+				<img src="./img/content/games/background/daniele-verzini-02.jpg" alt="">
+				<img src="./img/content/games/background/daniele-verzini-03.jpg" alt="">
+				<img src="./img/content/games/background/daniele-verzini-04.jpg" alt="">
+				<img class="is-selected" src="./img/content/games/background/daniele-verzini-05.jpg" alt="">
+				<img src="./img/content/games/background/daniele-verzini-06.jpg" alt="">
+			</div>
+		</div>
+	</div>
+
+	<!-- Javascript -->
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.ui.js"></script>
+	<script src="./js/jquery.modal.js"></script>
+	<script src="./js/app.js"></script>
+
+	<script>
+		$('.modal-image-gallery').modal();
+
+		$('.image-gallery>img').click(function () {
+			var imageSrc = $(this).attr('src');
+			var imageIndex = $(this).index();
+			$('.modal-image-gallery').modal();
+			$('.modal-image-gallery>img').attr('src', imageSrc);
+			$('.modal-image-gallery-preview>img').removeClass('is-selected');
+			$('.modal-image-gallery-preview>img').eq(imageIndex).addClass('is-selected');
+		})
+
+		$('.modal-image-gallery-preview>img').click(function () {
+			var imageSrc = $(this).attr('src');
+			var imageIndex = $(this).index();
+			$('.modal-image-gallery>img').attr('src', imageSrc);
+			$('.modal-image-gallery-preview>img').removeClass('is-selected');
+			$('.modal-image-gallery-preview>img').eq(imageIndex).addClass('is-selected');
+		})
+
+	</script>
+
+</body>
+
+</html>
