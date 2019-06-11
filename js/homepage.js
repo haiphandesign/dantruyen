@@ -1,4 +1,4 @@
-$('.button-modal-donate').modal();
+// $('.button-modal-donate').modal();
 
 $('.role-toggle-host').click(function () {
 	$('.role-toggle a').removeClass('is-active');

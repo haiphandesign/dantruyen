@@ -360,6 +360,7 @@ body.homepage {
 
 #role {
 	position: relative;
+	margin-bottom: 2.5rem;
 
 	.homepage-content {
 		margin-top: 0rem;
@@ -488,6 +489,81 @@ body.homepage {
 					margin-top: .5rem;
 				}
 			}
+		}
+	}
+}
+
+#screenshots {
+	margin-top: 2.5rem;
+
+	.homepage-title {
+		margin-top: 2.5rem;
+
+		span {
+			display: block;
+			width: 7.5rem;
+			height: 1px;
+			margin: 0 auto 2.5rem;
+			background-color: rgba(21, 158, 233, 0.25);
+		}
+
+		p {
+			width: 90vw;
+			max-width: 30rem;
+		}
+	}
+
+	.screenshots-gallery {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1.5rem;
+		max-width: 540px;
+		margin: 2.5rem auto 0;
+
+		@include breakpoint(sm) {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			max-width: 720px;
+		}
+
+		.screenshot {
+			position: relative;
+
+			@include ui-border;
+			@include ui-border-radius;
+			@include ui-shadow;
+
+			border-color: rgba($color-primary-accent, .25);
+
+			.screenshot-overlay {
+				position: absolute;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+				background-color: rgba($color-primary-accent, .5);
+				color: white;
+				@include ui-border-radius;
+				opacity: 0;
+				transition: all .25s;
+				pointer-events: none;
+			}
+
+			&:hover {
+				.screenshot-overlay {
+					opacity: 1;
+				}
+			}
+		}
+
+		img {
+			display: block;
+			width: 10rem;
+			height: 10rem;
+			object-fit: cover;
+
+			margin: auto;
+			padding: .25rem;
 		}
 	}
 }
@@ -910,6 +986,17 @@ body.homepage {
 		@include breakpoint(md) {
 			padding: 0;
 			margin-bottom: 2.5rem;
+		}
+	}
+
+	.order-code-wrapper {
+		font-size: .75rem;
+		color: $color-primary-accent;
+
+		.order-code {
+			text-transform: uppercase;
+			display: inline-block;
+			margin-top: .25rem;
 		}
 	}
 
