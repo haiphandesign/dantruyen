@@ -1298,3 +1298,47 @@ footer {
 		}
 	}
 }
+
+
+.modal-home-register {
+	width: 90vw;
+	max-width: 40rem;
+	height: auto;
+	max-height: 80vh;
+
+	overflow: auto;
+	padding: 2rem;
+
+	.hint {
+		color: $color-primary-accent;
+	}
+
+	textarea,
+	input[type=text] {
+		display: block;
+		border-color: rgba($color-primary-accent, .5);
+		color: $color-primary;
+		width: 100%;
+
+		&:hover,
+		&:focus {
+			border-color: rgba($color-primary, .5);
+		}
+	}
+
+	.form-element {
+		flex-direction: column;
+
+		>*+* {
+			margin: 0;
+		}
+
+		.form-label {
+			@extend h4;
+		}
+
+		.form-value {
+			width: 100%;
+		}
+	}
+}

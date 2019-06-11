@@ -4,11 +4,16 @@
 
 
 
-	max-width: 90%;
-	width: auto;
+	max-width: 90vw;
+	width: 100%;
 
 	overflow: initial;
 	padding: 0;
+
+	@include breakpoint(sm) {
+		max-width: 90%;
+		width: auto;
+	}
 
 	.modal-close {
 		position: absolute;
@@ -136,7 +141,11 @@
 
 				width: 22rem;
 
-				padding-top: 5rem;
+				padding-top: 6rem;
+
+				@include breakpoint(sm) {
+					padding-top: 5rem;
+				}
 			}
 
 			&-badge {
@@ -449,6 +458,125 @@
 			margin-top: 1rem;
 
 			font-size: .75rem;
+		}
+	}
+
+	.modal-block-edit {
+		@include breakpoint(sm) {
+			width: 50rem;
+		}
+
+		.wysiwyg {
+			height: 70vh;
+
+			@include breakpoint(sm) {
+				height: 30rem;
+			}
+		}
+
+		.block-edit-title {
+			width: 100%;
+			height: 4rem;
+			border: 0;
+
+			font-size: 1.5rem;
+		}
+
+		.block-edit-buttons {
+			position: absolute;
+			bottom: 1rem;
+			left: 0;
+			right: 0;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@include breakpoint(sm) {
+				right: 1rem;
+				left: unset;
+			}
+
+			>*+* {
+				margin-left: 1rem;
+			}
+		}
+	}
+
+	.modal-card-create {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 1rem;
+
+		@include ui-border-radius;
+
+		width: 100%;
+		max-width: 30rem;
+		padding: 0;
+
+		overflow: hidden;
+
+		@include breakpoint(sm) {
+			grid-template-columns: 1fr;
+			grid-gap: 0;
+			width: 50rem;
+		}
+
+		.card-create-left {
+			position: relative;
+			background-color: $color-border;
+			min-height: 20rem;
+			height: 100%;
+		}
+
+		.card-image-upload {
+			input[type=file] {
+				width: 0;
+				height: 0;
+			}
+
+			label {
+				position: absolute;
+				top: 0;
+
+				background-color: rgba(0, 0, 0, 0.75);
+				width: 100%;
+				height: 100%;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				opacity: 0;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.card-create-right {
+			padding: 1rem;
+		}
+
+		.card-create-buttons {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			margin-top: 1.5rem;
+
+			@include breakpoint(sm) {
+				justify-content: flex-end;
+			}
+
+			>*+* {
+				margin-left: 1rem;
+			}
+		}
+
+		.card-edit-save {
+			width: 100%;
 		}
 	}
 }

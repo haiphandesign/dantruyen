@@ -17,7 +17,7 @@ $('#footer').load('./inc/footer.html');
 // Global: Fixed Header
 
 $(window).scroll(function () {
-	if ($(this).scrollTop() > 300) {
+	if ($(this).scrollTop() > 600) {
 		$("#nav").addClass("is-fixed");
 		// $(".game--info-bottom").addClass("is-fixed");
 		// $("#nav .logo img").attr("src", "./img/logo-only.svg");
@@ -44,24 +44,22 @@ window.setTimeout(headerspacing, 100);
 $(document).ready(function () {
 	'use strict';
 	var c,
-		currentScrollTop = 0,
-		navbar = $('#nav'),
-		gameprogressbar = $('.game--progress');
+		currentScrollTop = 0;
 
 	$(window).scroll(function () {
 		var a = $(window).scrollTop();
-		var b = navbar.height();
+		var b = $('.game--header').height();
 
 		currentScrollTop = a;
 
 		if (c < currentScrollTop && a > b + b) {
-			navbar.addClass("is-scrolled");
-			gameprogressbar.addClass("is-scrolled");
+			$('#nav').addClass("is-scrolled");
+			$('.game--progress').addClass("is-scrolled");
 			$('.game--sidebar-wrapper').addClass("is-scrolled");
 			$('.nav--user').removeClass('is-active');
 		} else if (c > currentScrollTop && !(a <= b)) {
-			navbar.removeClass("is-scrolled");
-			gameprogressbar.removeClass("is-scrolled");
+			$('#nav').removeClass("is-scrolled");
+			$('.game--progress').removeClass("is-scrolled");
 			$('.game--sidebar-wrapper').removeClass("is-scrolled");
 		}
 		c = currentScrollTop;
@@ -321,6 +319,5 @@ $(document).ready(function () {
 });
 
 
-function characterCreateStep() {
-	$('.character-create').toggle();
-}
+
+$('.card-add-modal').modal();

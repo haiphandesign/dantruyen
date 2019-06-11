@@ -514,6 +514,7 @@ a {
 
 .ui-widget > .title {
   position: relative;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -577,8 +578,26 @@ a {
   border-bottom-right-radius: 0;
 }
 
+.ui-widget > .title .title-edit {
+  position: absolute;
+  right: 1rem;
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  -webkit-transition: .25s all ease-in-out;
+  transition: .25s all ease-in-out;
+  z-index: 1;
+  background-image: url("../../img/layout/icons/edit.svg");
+  background-size: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .ui-widget > .content {
+  position: relative;
+  z-index: 1;
   padding: 1rem;
+  background-color: white;
 }
 
 @media (min-width: 992px) {
@@ -737,10 +756,11 @@ a {
 
 .wysiwyg {
   width: 100%;
-  height: 30rem;
+  min-height: 30rem;
   border: 1px solid #e4e4e4;
   background-color: white;
   border-radius: 0.25rem;
+  overflow: hidden;
 }
 
 .wysiwyg:before {
@@ -756,6 +776,12 @@ a {
   border-right: 0;
   border-left: 0;
   height: 3rem;
+}
+
+.wysiwyg textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 input:focus,
@@ -774,6 +800,7 @@ select {
   -webkit-appearance: none;
   display: block;
   height: 3rem;
+  width: 100%;
   border: 1px solid #e4e4e4;
   background-color: white;
   border-radius: 0.25rem;
@@ -959,6 +986,7 @@ table td {
 * + h2,
 * + h3,
 * + h4,
+.modal-home-register .form-element * + .form-label,
 * + h5,
 * + h6,
 * + p {
@@ -969,6 +997,7 @@ h1,
 h2,
 h3,
 h4,
+.modal-home-register .form-element .form-label,
 h5,
 h6,
 p,
@@ -985,6 +1014,7 @@ h1 + *,
 h2 + *,
 h3 + *,
 h4 + *,
+.modal-home-register .form-element .form-label + *,
 h5 + *,
 h6 + *,
 p + *,
@@ -1012,7 +1042,9 @@ h3 {
   font-weight: 600;
 }
 
-h4 {
+
+h4,
+.modal-home-register .form-element .form-label {
   font-size: 1.25rem;
   font-weight: 600;
 }
@@ -1342,10 +1374,17 @@ hr {
   border-radius: 0.25rem;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
-  max-width: 90%;
-  width: auto;
+  max-width: 90vw;
+  width: 100%;
   overflow: initial;
   padding: 0;
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    max-width: 90%;
+    width: auto;
+  }
 }
 
 .modal-content .modal-close {
@@ -1474,7 +1513,13 @@ hr {
       -ms-flex-order: 2;
           order: 2;
   width: 22rem;
-  padding-top: 5rem;
+  padding-top: 6rem;
+}
+
+@media (min-width: 768px) {
+  .modal-content .modal-character .character-info-box {
+    padding-top: 5rem;
+  }
 }
 
 .modal-content .modal-character .character-info-badge {
@@ -1835,6 +1880,145 @@ hr {
   max-width: 20rem;
   margin-top: 1rem;
   font-size: .75rem;
+}
+
+@media (min-width: 768px) {
+  .modal-content .modal-block-edit {
+    width: 50rem;
+  }
+}
+
+.modal-content .modal-block-edit .wysiwyg {
+  height: 70vh;
+}
+
+@media (min-width: 768px) {
+  .modal-content .modal-block-edit .wysiwyg {
+    height: 30rem;
+  }
+}
+
+.modal-content .modal-block-edit .block-edit-title {
+  width: 100%;
+  height: 4rem;
+  border: 0;
+  font-size: 1.5rem;
+}
+
+.modal-content .modal-block-edit .block-edit-buttons {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .modal-content .modal-block-edit .block-edit-buttons {
+    right: 1rem;
+    left: unset;
+  }
+}
+
+.modal-content .modal-block-edit .block-edit-buttons > * + * {
+  margin-left: 1rem;
+}
+
+.modal-content .modal-card-create {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 30rem;
+  padding: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .modal-content .modal-card-create {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 0;
+    width: 50rem;
+  }
+}
+
+.modal-content .modal-card-create .card-create-left {
+  position: relative;
+  background-color: #e4e4e4;
+  min-height: 20rem;
+  height: 100%;
+}
+
+.modal-content .modal-card-create .card-image-upload input[type=file] {
+  width: 0;
+  height: 0;
+}
+
+.modal-content .modal-card-create .card-image-upload label {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+}
+
+.modal-content .modal-card-create .card-image-upload label:hover {
+  opacity: 1;
+}
+
+.modal-content .modal-card-create .card-create-right {
+  padding: 1rem;
+}
+
+.modal-content .modal-card-create .card-create-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .modal-content .modal-card-create .card-create-buttons {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.modal-content .modal-card-create .card-create-buttons > * + * {
+  margin-left: 1rem;
+}
+
+.modal-content .modal-card-create .card-edit-save {
+  width: 100%;
 }
 
 .modal {
@@ -2265,7 +2449,9 @@ body.homepage .container-sm {
 body.homepage h1,
 body.homepage h2,
 body.homepage h3,
-body.homepage h4 {
+body.homepage h4,
+body.homepage .modal-home-register .form-element .form-label,
+.modal-home-register .form-element body.homepage .form-label {
   color: #0b7bce;
   line-height: 1.25;
 }
@@ -3824,6 +4010,53 @@ footer .footer-content .footer-social a + a {
   }
 }
 
+.modal-home-register {
+  width: 90vw;
+  max-width: 40rem;
+  height: auto;
+  max-height: 80vh;
+  overflow: auto;
+  padding: 2rem;
+}
+
+.modal-home-register .hint {
+  color: #159ee9;
+}
+
+.modal-home-register textarea,
+.modal-home-register input[type=text] {
+  display: block;
+  border-color: rgba(21, 158, 233, 0.5);
+  color: #0b7bce;
+  width: 100%;
+}
+
+.modal-home-register textarea:hover, .modal-home-register textarea:focus,
+.modal-home-register input[type=text]:hover,
+.modal-home-register input[type=text]:focus {
+  border-color: rgba(11, 123, 206, 0.5);
+}
+
+.modal-home-register .form-element {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-home-register .form-element > * + * {
+  margin: 0;
+}
+
+.modal-home-register .form-element .form-value {
+  width: 100%;
+}
+
+.game--header {
+  position: relative;
+  z-index: 999;
+}
+
 .game--header .game--cover {
   position: relative;
   width: 100%;
@@ -5097,12 +5330,12 @@ footer .footer-content .footer-social a + a {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: sidebar;
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 @media (min-width: 992px) {
   .game--main .game--sidebar {
-    margin: 0;
+    margin-top: -6rem;
   }
 }
 
@@ -5112,23 +5345,20 @@ footer .footer-content .footer-social a + a {
   top: 0;
   -webkit-transition: all .5s;
   transition: all .5s;
-}
-
-.game--main .game--sidebar-wrapper .game--sidebar-spacer {
-  display: block;
-  height: 6.5rem;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  padding-top: 2rem;
 }
 
 @media (min-width: 992px) {
   .game--main .game--sidebar-wrapper {
     max-height: 100vh;
+    padding-top: 6rem;
   }
 }
 
-.game--main .game--sidebar-wrapper.is-scrolled .game--sidebar-spacer {
-  height: 2rem;
+@media (min-width: 992px) {
+  .game--main .game--sidebar-wrapper.is-scrolled {
+    padding-top: 2rem;
+  }
 }
 
 .game--main .ui-widget.game--cards-new .content {
@@ -5676,8 +5906,8 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 992px) {
   .card-gallery {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -5692,38 +5922,6 @@ footer .footer-content .footer-social a + a {
 
 .card.card-nature .card-image {
   background-image: url("./../img/layout/card/background-nature.svg");
-}
-
-.card .card-icon {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 2.5rem;
-  border: 1px solid #e4e4e4;
-  background-color: white;
-  border-radius: 0.25rem;
-  -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
-          box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
-  padding: 1rem;
-}
-
-.card .card-icon span {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: .75rem;
-  margin-left: .5rem;
 }
 
 .card .card-amount {
@@ -5808,6 +6006,69 @@ footer .footer-content .footer-social a + a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.card-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 2.5rem;
+  border: 1px solid #e4e4e4;
+  background-color: white;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+          box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+  padding: 1rem;
+}
+
+.card-icon span {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: .75rem;
+  margin-left: .5rem;
+}
+
+.card-create-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.card-create-item > .title {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-create-item > .content {
+  padding: 0;
+  width: 100%;
+}
+
+.card-create-item + .card-create-item {
+  margin-top: 1.5rem;
 }
 
 .game--characters-created .content {
@@ -6015,7 +6276,7 @@ footer .footer-content .footer-social a + a {
   margin-top: .75rem;
 }
 
-.game--setting-item.optional > .title h4:after {
+.game--setting-item.optional > .title h4:after, .game--setting-item.optional > .title .modal-home-register .form-element .form-label:after, .modal-home-register .form-element .game--setting-item.optional > .title .form-label:after {
   content: ' (không bắt buộc)';
   font-size: 1rem;
   color: #b3b3b3;
@@ -6035,7 +6296,7 @@ footer .footer-content .footer-social a + a {
           align-items: center;
 }
 
-.game--setting-item.list > .title h4 {
+.game--setting-item.list > .title h4, .game--setting-item.list > .title .modal-home-register .form-element .form-label, .modal-home-register .form-element .game--setting-item.list > .title .form-label {
   width: 30%;
 }
 
@@ -6141,7 +6402,7 @@ footer .footer-content .footer-social a + a {
   width: 100%;
 }
 
-.game--setting-item.list.is-editing > .title h4 {
+.game--setting-item.list.is-editing > .title h4, .game--setting-item.list.is-editing > .title .modal-home-register .form-element .form-label, .modal-home-register .form-element .game--setting-item.list.is-editing > .title .form-label {
   width: 100%;
 }
 
@@ -6154,7 +6415,7 @@ footer .footer-content .footer-social a + a {
   display: initial;
 }
 
-.game--setting-item.list.is-new > .title h4 {
+.game--setting-item.list.is-new > .title h4, .game--setting-item.list.is-new > .title .modal-home-register .form-element .form-label, .modal-home-register .form-element .game--setting-item.list.is-new > .title .form-label {
   width: 100%;
 }
 
@@ -6198,7 +6459,7 @@ footer .footer-content .footer-social a + a {
           justify-content: flex-end;
 }
 
-.page-game-new .game--setting-item > .title h4 {
+.page-game-new .game--setting-item > .title h4, .page-game-new .game--setting-item > .title .modal-home-register .form-element .form-label, .modal-home-register .form-element .page-game-new .game--setting-item > .title .form-label {
   width: 100%;
 }
 

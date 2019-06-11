@@ -1,4 +1,7 @@
 .game--header {
+	position: relative;
+	z-index: 999;
+
 	.game--cover {
 		position: relative;
 
@@ -1143,10 +1146,10 @@
 	.game--sidebar {
 		grid-area: sidebar;
 
-		margin-top: 1rem;
+		margin-top: 0;
 
 		@include breakpoint(md) {
-			margin: 0;
+			margin-top: -6rem;
 		}
 	}
 
@@ -1154,20 +1157,16 @@
 		position: sticky;
 		top: 0;
 		transition: all .5s;
-
-		.game--sidebar-spacer {
-			display: block;
-			height: 6.5rem;
-			transition: all .5s;
-		}
+		padding-top: 2rem;
 
 		@include breakpoint(md) {
 			max-height: 100vh;
+			padding-top: 6rem;
 		}
 
 		&.is-scrolled {
-			.game--sidebar-spacer {
-				height: 2rem;
+			@include breakpoint(md) {
+				padding-top: 2rem;
 			}
 		}
 	}
@@ -1688,7 +1687,7 @@
 	grid-gap: 1rem;
 
 	@include breakpoint(md) {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
 
@@ -1702,34 +1701,6 @@
 	&.card-nature {
 		.card-image {
 			background-image: url('./../img/layout/card/background-nature.svg');
-		}
-	}
-
-	.card-icon {
-		position: absolute;
-		top: 1rem;
-		left: 1rem;
-		z-index: 2;
-
-		display: flex;
-		flex-shrink: 0;
-		align-items: center;
-		justify-content: center;
-
-		height: 2.5rem;
-
-		@include ui-border;
-		@include ui-border-radius;
-		@include ui-shadow;
-
-		padding: 1rem;
-
-		span {
-			text-transform: uppercase;
-			font-weight: bold;
-			font-size: .75rem;
-
-			margin-left: .5rem;
 		}
 	}
 
@@ -1809,6 +1780,59 @@
 			align-items: flex-start;
 			justify-content: space-between;
 		}
+	}
+}
+
+.card-icon {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	z-index: 2;
+
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+
+	height: 2.5rem;
+
+	@include ui-border;
+	@include ui-border-radius;
+	@include ui-shadow;
+
+	padding: 1rem;
+
+	span {
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: .75rem;
+
+		margin-left: .5rem;
+	}
+}
+
+
+.card-create-item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+
+	width: 100%;
+
+	>.title {
+		margin-right: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	>.content {
+		padding: 0;
+
+		width: 100%;
+	}
+
+	&+.card-create-item {
+		margin-top: 1.5rem;
 	}
 }
 

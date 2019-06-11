@@ -55,6 +55,16 @@
 	<script src="./js/app.js"></script>
 	<script src="./js/homepage.js"></script>
 
+	<script>
+		var queryDict = {}
+		location.search.substr(1).split("&").forEach(function (item) {
+			queryDict[item.split("=")[0]] = item.split("=")[1]
+		});
+
+		document.getElementById("name").innerHTML = queryDict.name.split('+').join(' ');
+
+	</script>
+
 
 </body>
 
