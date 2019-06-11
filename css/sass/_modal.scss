@@ -601,10 +601,15 @@
 
 	.image-gallery {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 2rem;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1rem;
 
 		max-width: 720px;
+
+		@include breakpoint(sm) {
+			glyph-orientation-vertical: 1fr 1fr 1fr;
+			grid-gap: 2rem;
+		}
 
 		img {
 			width: 10rem;
@@ -638,6 +643,7 @@
 	&-navigation {
 		position: fixed;
 		top: 50%;
+		transform: translateY(-50%);
 
 		color: white;
 		font-size: 2.5rem;

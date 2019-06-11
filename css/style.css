@@ -2046,10 +2046,17 @@ hr {
 .page-modal-lightbox .image-gallery {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2rem;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
   max-width: 720px;
+}
+
+@media (min-width: 768px) {
+  .page-modal-lightbox .image-gallery {
+    glyph-orientation-vertical: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+  }
 }
 
 .page-modal-lightbox .image-gallery img {
@@ -2083,6 +2090,8 @@ hr {
 .modal-image-gallery-navigation {
   position: fixed;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   color: white;
   font-size: 2.5rem;
 }
