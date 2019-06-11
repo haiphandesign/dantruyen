@@ -627,6 +627,14 @@
 		@include ui-border-radius;
 	}
 
+	&-caption {
+		position: absolute;
+		bottom: -1.5rem;
+		color: white;
+		margin-top: .5rem;
+		font-size: .75rem;
+	}
+
 	&-navigation {
 		position: fixed;
 		top: 50%;

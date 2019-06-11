@@ -2072,6 +2072,14 @@ hr {
   border-radius: 0.25rem;
 }
 
+.modal-image-gallery-caption {
+  position: absolute;
+  bottom: -1.5rem;
+  color: white;
+  margin-top: .5rem;
+  font-size: .75rem;
+}
+
 .modal-image-gallery-navigation {
   position: fixed;
   top: 50%;
