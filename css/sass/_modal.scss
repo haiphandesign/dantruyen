@@ -2,8 +2,6 @@
 	@include ui-border-radius;
 	@include ui-shadow;
 
-
-
 	max-width: 90vw;
 	width: 100%;
 
@@ -500,86 +498,6 @@
 			>*+* {
 				margin-left: 1rem;
 			}
-		}
-	}
-
-	.modal-card-create {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-gap: 1rem;
-
-		@include ui-border-radius;
-
-		width: 100%;
-		max-width: 30rem;
-		padding: 0;
-
-		overflow: hidden;
-
-		@include breakpoint(sm) {
-			grid-template-columns: 1fr;
-			grid-gap: 0;
-			width: 50rem;
-		}
-
-		.card-create-left {
-			position: relative;
-			background-color: $color-border;
-			min-height: 15rem;
-			height: 100%;
-		}
-
-		.card-image-upload {
-			input[type=file] {
-				width: 0;
-				height: 0;
-			}
-
-			label {
-				position: absolute;
-				top: 0;
-
-				background-color: rgba(0, 0, 0, 0.5);
-				width: 100%;
-				height: 100%;
-
-				color: white;
-
-				display: flex;
-				align-items: center;
-				justify-content: center;
-
-				opacity: 0;
-				transition: all .25s;
-
-				&:hover {
-					opacity: 1;
-				}
-			}
-		}
-
-		.card-create-right {
-			padding: 1rem;
-		}
-
-		.card-create-buttons {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			margin-top: 1.5rem;
-
-			@include breakpoint(sm) {
-				justify-content: flex-end;
-			}
-
-			>*+* {
-				margin-left: 1rem;
-			}
-		}
-
-		.card-edit-save {
-			width: 100%;
 		}
 	}
 }

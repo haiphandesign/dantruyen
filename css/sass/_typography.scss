@@ -71,7 +71,7 @@ hr {
 
 @mixin small-text {
 	text-transform: uppercase;
-	font-size: $h5-size;
+	font-size: $h5-size !important;
 	font-weight: $h5-weight;
 }
 

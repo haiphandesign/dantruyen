@@ -1,6 +1,80 @@
 <div class="modal-card-create">
 
-	<div class="card-create-left">
+	<div class="card-create-tabs tabs">
+		<a class="tab">Thẻ bài có sẵn</a>
+		<a class="tab is-active">Thẻ bài mới</a>
+	</div>
+
+	<div class="tab-content" id="card-create-list">
+		<div class="card-list">
+			<ul>
+				<li class="card-list-item">
+					<i class="fas fa-plus-circle"></i>
+					<span>Điểm mạnh</span>
+				</li>
+			</ul>
+			<div class="card-create-buttons">
+				<a href="#" class="button solid small-text card-edit-save">Lưu thẻ</a>
+				<a href="#" class="button ghost small-text card-edit-cancel">Hủy</a>
+			</div>
+		</div>
+		<div class="card-preview card">
+			<div class="card-icon">
+				<i class="fas fa-plus-circle"></i>
+				<span>Điểm mạnh</span>
+			</div>
+			<div class="card-image">
+				<img src="/img/content/games/art-04.jpg" alt="">
+			</div>
+			<div class="card-info">
+				<h4>Kẻ săn quái vật</h4>
+				<p>Sea at et stet clita dolore kasd labore voluptua. Dolor rebum lorem sit
+					sed sanctus et magna, sea amet amet.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="tab-content card card-strong" id="card-create-new">
+		<div class="card-icon">
+			<i class="fas fa-plus-circle"></i>
+			<span>Điểm mạnh</span>
+		</div>
+		<div class="card-image">
+			<div class="card-image-upload">
+				<input type="file" name="cardNewImage">
+				<label for="cardNewImage">
+					<i class="far fa-upload"></i>
+					<span>Upload ảnh</span>
+				</label>
+			</div>
+		</div>
+		<div class="card-info">
+			<div class="form-item">
+				<div class="title">
+					<h4>Tên thẻ bài</h4>
+				</div>
+				<div class="content">
+					<input type="text">
+					<div class="hint">Lorem ipsum dolor sit amet</div>
+				</div>
+			</div>
+			<div class="form-item">
+				<div class="title">
+					<h4>Miêu tả thẻ bài</h4>
+				</div>
+				<div class="content">
+					<textarea rows="3"></textarea>
+					<div class="hint">Lorem ipsum dolor sit amet</div>
+				</div>
+			</div>
+			<div class="card-create-buttons">
+				<a href="#" class="button solid small-text card-edit-save">Lưu thẻ</a>
+				<a href="#" class="button ghost small-text card-edit-cancel">Hủy</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="card-create-left">
 		<div class="card-icon">
 			<i class="fas fa-user-circle"></i>
 			<span>Bản chất</span>
@@ -35,5 +109,5 @@
 			<a href="#" class="button solid small-text card-edit-save">Lưu thẻ</a>
 			<a href="#" class="button ghost small-text card-edit-cancel">Hủy</a>
 		</div>
-	</div>
+	</div> -->
 </div>
