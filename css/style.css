@@ -6629,6 +6629,7 @@ footer .footer-content .footer-social a + a {
   width: 3rem;
   height: 3rem;
   vertical-align: middle;
+  margin-right: .5rem;
 }
 
 .game--characters-created .character-name {
@@ -6686,6 +6687,7 @@ footer .footer-content .footer-social a + a {
   width: 3rem;
   height: 3rem;
   vertical-align: middle;
+  margin-right: .5rem;
 }
 
 .game--characters-premade .character-name {
