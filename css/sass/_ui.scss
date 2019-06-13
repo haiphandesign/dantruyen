@@ -289,7 +289,7 @@
 
 		&.is-active {
 			.comment-form {
-				display: initial;
+				display: block;
 			}
 		}
 
@@ -328,10 +328,11 @@
 		@include ui-no-border-radius;
 		@include ui-no-shadow;
 
-		background: none;
+		background: transparent;
 
 		.content {
 			padding: 0;
+			background: transparent;
 		}
 	}
 
@@ -434,6 +435,7 @@ select {
 
 textarea {
 	height: unset;
+	padding: .5rem 1rem;
 }
 
 input[type=number] {

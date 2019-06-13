@@ -321,6 +321,10 @@ $(document).ready(function () {
 
 // $('.card-add-modal').modal();
 
+
+$('.card-edit').modal();
+
+
 // Character Card Create Tabs 
 
 

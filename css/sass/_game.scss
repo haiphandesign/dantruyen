@@ -1749,6 +1749,16 @@
 		}
 	}
 
+	.card-edit {
+		position: absolute;
+		bottom: .5rem;
+		visibility: hidden;
+		opacity: 0;
+		font-size: .85rem;
+		font-weight: 600;
+		transition: all .25s;
+	}
+
 	.card-image {
 		position: relative;
 		display: block;
@@ -1773,6 +1783,42 @@
 
 			border-bottom-left-radius: 0;
 			border-bottom-right-radius: 0;
+		}
+
+		.card-image-upload {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			input[type=file] {
+				width: 0;
+				height: 0;
+			}
+
+			label {
+				position: absolute;
+				top: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				height: 100%;
+				width: 100%;
+
+				user-select: none;
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				span {
+					@include small-text;
+					margin-top: .5rem;
+				}
+			}
 		}
 	}
 
@@ -1799,6 +1845,13 @@
 			flex-direction: column;
 			align-items: flex-start;
 			justify-content: space-between;
+		}
+	}
+
+	&:hover {
+		.card-edit {
+			visibility: visible;
+			opacity: 1;
 		}
 	}
 }
@@ -1867,6 +1920,42 @@
 
 		.card-info {
 			height: unset;
+		}
+	}
+}
+
+.modal-card-edit {
+	position: relative;
+
+	display: grid;
+	grid-template-columns: 1fr;
+
+	@include breakpoint(sm) {
+		grid-template-columns: 1fr 1fr;
+
+		width: 90vw;
+		max-width: 45rem;
+		height: 30rem;
+	}
+
+	.card {
+		@include ui-no-border;
+		@include ui-no-border-radius;
+		@include ui-no-shadow;
+
+		border-bottom: 1px solid $color-border;
+
+		@include breakpoint(sm) {
+			border-bottom: 0;
+			border-left: 1px solid $color-border;
+		}
+
+		.card-info {
+			p {
+				@include breakpoint(sm) {
+					max-height: calc(100% - 2.5rem) !important;
+				}
+			}
 		}
 	}
 }
@@ -1982,42 +2071,6 @@
 
 	@include breakpoint(sm) {
 		grid-template-columns: 1fr 1fr;
-	}
-
-	.card-image-upload {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-
-		input[type=file] {
-			width: 0;
-			height: 0;
-		}
-
-		label {
-			position: absolute;
-			top: 0;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-
-			height: 100%;
-			width: 100%;
-
-			user-select: none;
-
-			&:hover {
-				cursor: pointer;
-			}
-
-			span {
-				@include small-text;
-				margin-top: .5rem;
-			}
-		}
 	}
 }
 
@@ -2286,6 +2339,10 @@
 
 			.list-content {
 				margin-top: 1rem;
+
+				select {
+					width: auto;
+				}
 			}
 
 			.list-action {
@@ -2433,8 +2490,6 @@
 		}
 
 		>.content {
-			display: initial;
-
 			.list-action {
 				display: none;
 			}
