@@ -7,6 +7,17 @@
 //     \|_______|\|_______|    \|__|      \|__|  \|_______|\|__| \|__|
 
 
+.buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+
+	>*+* {
+		margin-left: 1rem;
+	}
+}
 
 .button {
 	display: inline-flex;
@@ -16,28 +27,21 @@
 	height: 3rem;
 	transition: .25s all ease;
 	white-space: nowrap;
-
+	user-select: none;
 	cursor: pointer;
 
 	@include ui-border-radius;
 
 	i {
-		margin-right: .5rem;
-
-		&.right {
-			margin-right: 0;
-			margin-left: .5rem;
-		}
-
-		&.single {
-			margin: 0;
+		&+span {
+			margin-left: 1rem;
 		}
 	}
 
-	&.small-text {
-		font-size: .75rem;
-		text-transform: uppercase;
-		letter-spacing: .2em;
+	span {
+		&+i {
+			margin-left: 1rem;
+		}
 	}
 
 	&.small {
@@ -99,6 +103,12 @@
 				color: color(darker);
 			}
 		}
+	}
+
+	&.ui {
+		@include ui-border;
+		@include ui-border-radius;
+		@include ui-shadow;
 	}
 
 	&.hollow {

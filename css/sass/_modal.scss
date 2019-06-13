@@ -472,6 +472,10 @@
 			@include breakpoint(sm) {
 				height: 30rem;
 			}
+
+			textarea {
+				padding-bottom: 1rem;
+			}
 		}
 
 		.block-edit-title {
@@ -497,8 +501,81 @@
 				left: unset;
 			}
 
+			.ghost {
+				background-color: white;
+			}
+
 			>*+* {
 				margin-left: 1rem;
+			}
+		}
+	}
+
+	.modal-block-arrange {
+		@include breakpoint(sm) {
+			width: 30rem;
+		}
+
+		.block-list {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			grid-row: 2;
+			padding: 1rem;
+
+			@include breakpoint(sm) {
+				grid-row: 1;
+				padding: 2rem;
+
+			}
+
+			ul {
+				position: relative;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				max-height: 9rem;
+				overflow: auto;
+
+				@include breakpoint(sm) {
+					max-height: 22rem;
+				}
+
+				li {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+
+					padding: 0 1rem;
+
+					@include ui-border;
+					@include ui-border-radius;
+					@include ui-shadow;
+					@include small-text;
+
+					width: 100%;
+					height: 2.5rem;
+
+					cursor: move;
+
+					+li {
+						margin-top: .5rem;
+					}
+
+					i {
+						font-size: 1rem;
+					}
+
+					span {
+						margin-left: .5rem;
+					}
+				}
+			}
+
+			.buttons {
+				margin-top: 2rem;
 			}
 		}
 	}
@@ -508,8 +585,6 @@
 	background-color: rgba(0, 0, 0, 0.75);
 	z-index: 10000;
 }
-
-
 
 .page-modal-lightbox {
 	width: 100%;

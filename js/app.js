@@ -321,7 +321,7 @@ for (var i = 0; i < 1; i++) {
 
 // $('.card-add-modal').modal();
 
-$('.card-edit').modal();
+// $('.game--block-arrange').modal();
 
 
 // Character Card Create Tabs 

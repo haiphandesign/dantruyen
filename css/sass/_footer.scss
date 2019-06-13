@@ -2,7 +2,7 @@
 	padding: 1rem 5vw;
 
 	@include breakpoint(md) {
-		padding: 2rem 5vw;
+		padding: 5rem 5vw 2rem;
 	}
 
 	p {
