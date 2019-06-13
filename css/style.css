@@ -6294,7 +6294,7 @@ footer .footer-content .footer-social a + a {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  z-index: 2;
+  z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6369,15 +6369,28 @@ footer .footer-content .footer-social a + a {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+  grid-auto-flow: dense;
 }
 
 @media (min-width: 768px) {
   .modal-card-edit {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    grid-auto-flow: auto;
     width: 90vw;
     max-width: 45rem;
     height: 30rem;
+  }
+}
+
+.modal-card-edit .card-edit-form {
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+@media (min-width: 768px) {
+  .modal-card-edit .card-edit-form {
+    grid-row: unset;
   }
 }
 
@@ -6393,6 +6406,29 @@ footer .footer-content .footer-social a + a {
   .modal-card-edit .card {
     border-bottom: 0;
     border-left: 1px solid #e4e4e4;
+  }
+}
+
+.modal-card-edit .card .card-image .card-image-upload {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 0;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.modal-card-edit .card .card-image:hover .card-image-upload {
+  opacity: 1;
+}
+
+.modal-card-edit .card .card-info {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .modal-card-edit .card .card-info {
+    display: block;
   }
 }
 
@@ -6464,7 +6500,6 @@ footer .footer-content .footer-social a + a {
   #card-create-list {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-    grid-auto-flow: initial;
   }
 }
 
@@ -6557,6 +6592,31 @@ footer .footer-content .footer-social a + a {
   #card-create-new {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+  }
+}
+
+#card-create-new .card-edit-form {
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+@media (min-width: 768px) {
+  #card-create-new .card-edit-form {
+    grid-row: unset;
+  }
+}
+
+#card-create-new .card {
+  border-bottom: 0;
+}
+
+#card-create-new .card .card-info {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #card-create-new .card .card-info {
+    display: block;
   }
 }
 
