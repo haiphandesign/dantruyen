@@ -6531,6 +6531,7 @@ footer .footer-content .footer-social a + a {
 }
 
 #card-create-list .card-list ul {
+  position: relative;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -6541,7 +6542,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   #card-create-list .card-list ul {
-    max-height: 21rem;
+    max-height: 22rem;
   }
 }
 
@@ -7002,16 +7003,6 @@ footer .footer-content .footer-social a + a {
   width: 80%;
 }
 
-.game--setting-item.switch > .content {
-  width: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
 .page-game-new .game--setting-item > .title h4, .page-game-new .game--setting-item > .title .modal-home-register .form-element .form-label, .modal-home-register .form-element .page-game-new .game--setting-item > .title .form-label {
   width: 100%;
 }
@@ -7019,6 +7010,10 @@ footer .footer-content .footer-social a + a {
 .page-game-new .game--setting-item > .title p,
 .page-game-new .game--setting-item > .title .edit {
   display: none;
+}
+
+.page-game-new .game--setting-item > .content {
+  display: block;
 }
 
 .page-game-new .game--setting-item > .content .list-action {

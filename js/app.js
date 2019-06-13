@@ -312,11 +312,11 @@ for (var i = 0; i < 1; i++) {
 };
 
 
-$(document).ready(function () {
-	if ($('body').hasClass('page-game-new')) {
-		$('.game--setting-item').addClass('is-new');
-	}
-});
+// $(document).ready(function () {
+// 	if ($('body').hasClass('page-game-new')) {
+// 		$('.game--setting-item').addClass('is-new');
+// 	}
+// });
 
 
 // $('.card-add-modal').modal();
