@@ -319,22 +319,24 @@ $(document).ready(function () {
 });
 
 
-$('.card-add-modal').modal();
+// $('.card-add-modal').modal();
 
 // Character Card Create Tabs 
 
 
-window.setTimeout(function () {
-	for (var i = 0; i < 4; i++) {
-		$('.card-list ul li').clone().prependTo('.card-list ul');
-	};
+function cardNewTab() {
+	window.setTimeout(function () {
+		for (var i = 0; i < 4; i++) {
+			$('.card-list ul li').clone().prependTo('.card-list ul');
+		};
 
-	$('.card-create-tabs .tab').click(function () {
-		$(this).siblings().removeClass('is-active');
-		$(this).addClass('is-active');
-		tabIndex = $(this).index();
-		console.log(tabIndex);
-		$(this).parent().siblings().css('display', 'none');
-		$(this).parent().siblings().eq(tabIndex).css('display', 'grid');
-	});
-}, 100);
+		$('.card-create-tabs .tab').click(function () {
+			$(this).siblings().removeClass('is-active');
+			$(this).addClass('is-active');
+			tabIndex = $(this).index();
+			console.log(tabIndex);
+			$(this).parent().siblings().css('display', 'none');
+			$(this).parent().siblings().eq(tabIndex).css('display', 'grid');
+		});
+	}, 100);
+};

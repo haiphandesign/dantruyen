@@ -6134,8 +6134,8 @@ footer .footer-content .footer-social a + a {
 
 .card .card-amount {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  bottom: 0;
+  right: 0;
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6148,14 +6148,18 @@ footer .footer-content .footer-social a + a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 1.5rem;
+  width: 3rem;
   border: 1px solid #e4e4e4;
   background-color: white;
   border-radius: 0.25rem;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
-  padding: .75rem;
+  border-right: 0;
+  border-bottom: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0 .75rem;
   color: #b3b3b3;
   font-size: .75rem;
 }
@@ -6194,11 +6198,14 @@ footer .footer-content .footer-social a + a {
 }
 
 .card .card-info p {
-  max-height: 100%;
+  max-height: calc(100% - 4rem);
   overflow-y: auto;
   margin-top: .5rem;
   margin-right: -1rem;
   padding-right: 1rem;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .card.card-empty .card-info {
@@ -6271,7 +6278,50 @@ footer .footer-content .footer-social a + a {
   }
 }
 
-.modal-card-create .card-create-buttons {
+.modal-card-create .card {
+  border: none;
+  border-radius: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+@media (min-width: 768px) {
+  .modal-card-create .card {
+    border-bottom: 0;
+    border-left: 1px solid #e4e4e4;
+  }
+}
+
+.modal-card-create .card .card-info {
+  height: unset;
+}
+
+.card-edit-form {
+  padding: 1rem;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .card-edit-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 2rem;
+  }
+}
+
+.card-edit-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6285,17 +6335,17 @@ footer .footer-content .footer-social a + a {
   width: 100%;
 }
 
-.modal-card-create .card-create-buttons > * + * {
+.card-edit-buttons > * + * {
   margin-left: 1rem;
 }
 
 @media (min-width: 768px) {
-  .modal-card-create .card-create-buttons {
+  .card-edit-buttons {
     margin-top: auto;
   }
 }
 
-.modal-card-create .card-edit-save {
+.card-edit-buttons .card-edit-save {
   width: 100%;
 }
 
@@ -6330,7 +6380,6 @@ footer .footer-content .footer-social a + a {
   -ms-grid-row: 2;
   grid-row: 2;
   padding: 1rem;
-  border-right: 1px solid #e4e4e4;
 }
 
 @media (min-width: 768px) {
@@ -6391,24 +6440,6 @@ footer .footer-content .footer-social a + a {
   margin-left: .5rem;
 }
 
-#card-create-list .card-preview.card {
-  border: none;
-  border-radius: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border-bottom: 1px solid #e4e4e4;
-}
-
-@media (min-width: 768px) {
-  #card-create-list .card-preview.card {
-    border-bottom: 0;
-  }
-}
-
-#card-create-list .card-preview.card .card-info {
-  height: unset;
-}
-
 #card-create-new {
   position: relative;
   display: -ms-grid;
@@ -6424,19 +6455,7 @@ footer .footer-content .footer-social a + a {
   }
 }
 
-#card-create-new.card .card-image {
-  position: relative;
-}
-
-@media (min-width: 768px) {
-  #card-create-new.card .card-image {
-    border-bottom: 0;
-    border-right: 1px solid #e4e4e4;
-    padding-bottom: unset;
-  }
-}
-
-#card-create-new.card .card-image .card-image-upload {
+#card-create-new .card-image-upload {
   position: absolute;
   top: 0;
   left: 0;
@@ -6444,12 +6463,12 @@ footer .footer-content .footer-social a + a {
   height: 100%;
 }
 
-#card-create-new.card .card-image .card-image-upload input[type=file] {
+#card-create-new .card-image-upload input[type=file] {
   width: 0;
   height: 0;
 }
 
-#card-create-new.card .card-image .card-image-upload label {
+#card-create-new .card-image-upload label {
   position: absolute;
   top: 0;
   display: -webkit-box;
@@ -6473,39 +6492,15 @@ footer .footer-content .footer-social a + a {
           user-select: none;
 }
 
-#card-create-new.card .card-image .card-image-upload label:hover {
+#card-create-new .card-image-upload label:hover {
   cursor: pointer;
 }
 
-#card-create-new.card .card-image .card-image-upload label span {
+#card-create-new .card-image-upload label span {
   text-transform: uppercase;
   font-size: 0.75rem !important;
   font-weight: 800;
   margin-top: .5rem;
-}
-
-#card-create-new.card .card-info {
-  padding: 1rem;
-  height: 100%;
-}
-
-@media (min-width: 768px) {
-  #card-create-new.card .card-info {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    padding: 2rem 1.5rem;
-  }
 }
 
 .game--characters-created .content {

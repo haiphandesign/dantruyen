@@ -1718,8 +1718,8 @@
 
 	.card-amount {
 		position: absolute;
-		top: 1rem;
-		right: 1rem;
+		bottom: 0;
+		right: 0;
 		z-index: 2;
 
 		display: flex;
@@ -1727,14 +1727,19 @@
 		align-items: center;
 		justify-content: center;
 
-		height: 2.5rem;
-		width: 2.5rem;
+		height: 1.5rem;
+		width: 3rem;
 
 		@include ui-border;
 		@include ui-border-radius;
 		@include ui-shadow;
 
-		padding: .75rem;
+		border-right: 0;
+		border-bottom: 0;
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 0;
+
+		padding: 0 .75rem;
 
 		color: $color-text-light;
 		font-size: .75rem;
@@ -1778,11 +1783,13 @@
 		padding: 1rem;
 
 		p {
-			max-height: 100%;
+			max-height: calc(100% - 4rem);
 			overflow-y: auto;
 			margin-top: .5rem;
 			margin-right: -1rem;
 			padding-right: 1rem;
+			// text-align: justify;
+			hyphens: auto;
 		}
 	}
 
@@ -1846,27 +1853,59 @@
 		}
 	}
 
-	.card-create-buttons {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	.card {
+		@include ui-no-border;
+		@include ui-no-border-radius;
+		@include ui-no-shadow;
 
-		margin-top: 1.5rem;
-
-		width: 100%;
-
-		>*+* {
-			margin-left: 1rem;
-		}
+		border-bottom: 1px solid $color-border;
 
 		@include breakpoint(sm) {
-			margin-top: auto;
+			border-bottom: 0;
+			border-left: 1px solid $color-border;
 		}
+
+		.card-info {
+			height: unset;
+		}
+	}
+}
+
+.card-edit-form {
+	padding: 1rem;
+	height: 100%;
+
+	@include breakpoint(sm) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+
+		padding: 2rem;
+	}
+}
+
+.card-edit-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-top: 1.5rem;
+
+	width: 100%;
+
+	>*+* {
+		margin-left: 1rem;
+	}
+
+	@include breakpoint(sm) {
+		margin-top: auto;
 	}
 
 	.card-edit-save {
 		width: 100%;
 	}
+
 }
 
 #card-create-list {
@@ -1885,7 +1924,6 @@
 		justify-content: center;
 		grid-row: 2;
 		padding: 1rem;
-		border-right: 1px solid $color-border;
 
 		@include breakpoint(sm) {
 			grid-row: 1;
@@ -1934,24 +1972,6 @@
 			}
 		}
 	}
-
-	.card-preview {
-		&.card {
-			@include ui-no-border;
-			@include ui-no-border-radius;
-			@include ui-no-shadow;
-
-			border-bottom: 1px solid $color-border;
-
-			@include breakpoint(sm) {
-				border-bottom: 0;
-			}
-
-			.card-info {
-				height: unset;
-			}
-		}
-	}
 }
 
 #card-create-new {
@@ -1964,68 +1984,41 @@
 		grid-template-columns: 1fr 1fr;
 	}
 
-	&.card {
-		.card-image {
-			position: relative;
+	.card-image-upload {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 
-			@include breakpoint(sm) {
-				border-bottom: 0;
-				border-right: 1px solid $color-border;
-				padding-bottom: unset;
-			}
-
-			.card-image-upload {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-
-				input[type=file] {
-					width: 0;
-					height: 0;
-				}
-
-				label {
-					position: absolute;
-					top: 0;
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
-
-					height: 100%;
-					width: 100%;
-
-					user-select: none;
-
-					&:hover {
-						cursor: pointer;
-					}
-
-					span {
-						@include small-text;
-						margin-top: .5rem;
-					}
-				}
-			}
+		input[type=file] {
+			width: 0;
+			height: 0;
 		}
 
-		.card-info {
-			padding: 1rem;
+		label {
+			position: absolute;
+			top: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
 			height: 100%;
+			width: 100%;
 
-			@include breakpoint(sm) {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: flex-start;
+			user-select: none;
 
-				padding: 2rem 1.5rem;
+			&:hover {
+				cursor: pointer;
+			}
+
+			span {
+				@include small-text;
+				margin-top: .5rem;
 			}
 		}
 	}
-
 }
 
 .game--characters-created {
