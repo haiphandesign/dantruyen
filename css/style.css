@@ -1462,6 +1462,7 @@ table td {
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
   max-width: 90vw;
   width: 100%;
+  background-color: white;
   overflow: initial;
   padding: 0;
 }
