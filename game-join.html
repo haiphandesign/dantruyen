@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dẫn Truyện</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- Preload Javascript -->
+	<script src="./js/preload.js"></script>
+</head>
+
+<body class="page-game page-game-waiting-room logged-in">
+
+	<div id="header"></div>
+
+	<div id="main">
+		<section class="game--header">
+			<div class="game--cover" style="background-image: url('./img/content/games/cover.jpg')"></div>
+			<div class="game--info">
+				<div class="game--info-top">
+					<div class="game--info-basic">
+						<div class="game--info-picture">
+							<img src="./img/content/games/mini-04.jpg" alt="Cuộc chiến ở đảo Lộc Tiên">
+						</div>
+						<div class="game--info-meta">
+							<h3>Cuộc chiến ở đảo Lộc Tiên</h3>
+							<p>Dẫn truyện bởi <a href="user-profile.html">Hùng Vũ</a></p>
+						</div>
+					</div>
+					<div class="game--info-stats">
+						<div class="game--info-counters">
+							<div class="game-info-counter stages">
+								<span>18</span>
+								<span>Màn chơi</span>
+							</div>
+							<div class="game--info-counter players">
+								<span>34</span>
+								<span>Người chơi</span>
+							</div>
+						</div>
+						<div class="game--info-rating">
+							<span class="game--info-rating-ranking">#5</span>
+							<div class="game--info-rating-stars">
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-half"></span>
+								<span></span>
+							</div>
+							<span class="game--info-rating-voted">28</span>
+						</div>
+					</div>
+				</div>
+				<div class="game--info-middle">
+					<a class="button small ghost join"><i class="far fa-plus"></i></a>
+					<a class="button small ghost follow"><i class="far fa-plus"></i></a>
+				</div>
+				<div class="game--info-bottom">
+					<div class="game--menu-wrapper">
+						<ul class="game--menu">
+							<li class="game--menu-link is-active"><a href="game.html">Phòng Chờ</a></li>
+							<li class="game--menu-link"><a href="game-main.html">Game chính</a></li>
+							<li class="game--menu-link"><a href="#">Nhân vật</a></li>
+							<li class="game--menu-link"><a href="#">Thẻ bài</a></li>
+							<li class="game--menu-link"><a href="#">Bình luận</a></li>
+						</ul>
+						<ul class="game--menu">
+							<li class="game--menu-link"><a href="#">Thống kê</a></li>
+							<li class="game--menu-link"><a href="#">Cài đặt</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="game--main mobile-reversed">
+			<div class="game--thread">
+				<div class="ui-widget game-rule-list">
+					<div class="title">
+						<h3>Luật lệ trò chơi</h3>
+					</div>
+					<div class="content">
+						<ul>
+							<li><span>Mọi hành vi phạm tội phải được phát hiện kịp thời, xử lý nhanh chóng, công minh
+									theo
+									đúng pháp luật.</span></li>
+							<li><span>Mọi người phạm tội đều bình đẳng trước pháp luật, không phân biệt nam, nữ, dân
+									tộc, tín
+									ngưỡng, tôn giáo, thành phần, địa vị xã hội.</span></li>
+							<li><span>Mọi người phạm tội đều bình đẳng trước pháp luật, không phân biệt nam, nữ, dân
+									tộc,
+									tín ngưỡng, tôn giáo, thành phần, địa vị xã hội.</span></li>
+							<li><span>Đối với người bị phạt tù thì buộc họ phải chấp hành hình phạt trong trại giam,
+									phải lao
+									động, học tập để trở thành người có ích cho xã hội; nếu họ có nhiều tiến bộ thì xét
+									để
+									giảm việc chấp hành hình phạt.</span></li>
+							<li><span>Người đã chấp hành xong hình phạt được tạo điều kiện làm ăn, sinh sống lương
+									thiện, hoà
+									nhập với cộng đồng, khi có đủ điều kiện do luật định thì được xóa án tích.</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<a class="mobile-reversed-button button solid full small-text">Chấp nhận và Tiếp tục</a>
+			</div>
+			<div class="game--sidebar">
+				<div class="ui-widget">
+					<div class="title">
+						<h3>Tham gia trò chơi</h3>
+					</div>
+					<div class="content">
+						<p>Chào mừng đến với {{Game.Name}}, để có thể tham gia trò chơi này, bạn cần phải đồng ý với
+							những luật lệ nội bộ được chủ trò chơi đặt ra.</p>
+					</div>
+				</div>
+				<a class="sidebar-button mobile-reversed-button button solid full small-text">Chấp nhận và Tiếp tục</a>
+			</div>
+		</div>
+		<div class="game--main">
+			<div class="game--thread">
+				<div class="ui-widget">
+					<div class="title">
+						<h3>Buớc 2: Tạo nhân vật</h3>
+					</div>
+					<div class="content">
+						<div class="card-gallery">
+							<div class="card card-character">
+								<div class="card-image">
+									<img src="./img/content/players-big/maid.jpg" alt="">
+								</div>
+								<div class="card-info">
+									<h4>Nàng Hầu Gái</h4>
+									<p class="short-description">Kĩ nữ xuất thân từ Thăng Long Thành.</p>
+								</div>
+							</div>
+							<div class="card card-character">
+								<div class="card-image">
+									<img src="./img/content/players-big/hawk.jpg" alt="">
+								</div>
+								<div class="card-info">
+									<h4>Đại Bàng Xấu Xa</h4>
+									<p class="short-description">Gao Vàng - Chym Chym Cô Đơn. </p>
+								</div>
+							</div>
+							<div class="card card-create">
+								<div class="card-info">
+									<div class="card-create-button">
+										<i class="fal fa-plus"></i><span>Tạo nhân vật mới</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="game--sidebar">
+				<div class="ui-widget">
+					<div class="title">
+						<h3>Tham gia trò chơi</h3>
+					</div>
+					<div class="content">
+						<p>Bạn cần phải hoá thân thành một nhân vật, bạn có thể chọn nhân vật đã được truởng phòng tạo
+							sẵn, hoặc tạo ra cho mình một nhân vật mới phù hợp với bối cảnh trò chơi.</p>
+						<p>Bạn cũng có thể quay lại phòng chờ để tìm hiểu thêm về bối cảnh của câu chuyện cũng như những
+							nhân vật hiện đang tham gia.</p>
+						<p>
+							<a><strong><i class="fas fa-info-circle"></i>
+									<span>Huớng dẫn tạo nhân vật</span></strong></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+
+	<!-- Javascript -->
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.ui.js"></script>
+	<script src="./js/jquery.modal.js"></script>
+	<script src="./js/app.js"></script>
+
+</body>
+
+</html>

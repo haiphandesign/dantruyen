@@ -14,7 +14,7 @@
 	<script src="./js/preload.js"></script>
 </head>
 
-<body class="page-game page-game-main logged-in">
+<body class="page-game page-game-main page-game-main-empty logged-in">
 
 	<div id="header"></div>
 
@@ -79,11 +79,31 @@
 		</section>
 
 		<div class="game--main">
-			<div class="game--thread"></div>
+			<div class="game--thread">
+
+				<div class="ui-widget game--complete-setup">
+					<div class="content">
+						<h3>Hoàn thành thiếp lập trò chơi!</h3>
+						<p>Trò chơi của bạn đã được tạo lập nhưng hiện chưa thể bắt đầu bởi vì bạn chưa hoàn tất một số
+							điều kiện. Hãy hoàn tất những cài đặt của bạn để trò chơi có thể được bắt đầu càng sớm càng
+							tốt nhé!</p>
+						<hr>
+						<p>Trước khi trò chơi có thể bắt đầu, bạn cần phải:</p>
+						<ul class="setup-todo">
+							<li>Lorem Ipsum Dolor</li>
+							<li>Lorem Ipsum Dolor</li>
+							<li>Lorem Ipsum Dolor</li>
+							<li>Lorem Ipsum Dolor</li>
+							<li>Lorem Ipsum Dolor</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
 			<div class="game--sidebar">
 				<div class="game--sidebar-wrapper">
 					<div class="game--sidebar-spacer"></div>
-					<div class="ui-widget ui-naked-widget game--action"></div>
+					<div class="ui-widget ui-naked-widget game--action game--action-host"></div>
 					<div class="ui-widget game--members game--members-mini"></div>
 				</div>
 				<!-- <div class="ui-widget game--progress-tree"></div> -->
@@ -91,130 +111,7 @@
 				<!-- <div class="ui-widget game--rules"></div> -->
 			</div>
 		</div>
-		<div class="game--main section-reply">
-			<div class="game--thread">
-				<div class="ui-widget post edit new">
-					<div class="title">
-						<div class="user-info">
-							<img class="profile-picture" src="./img/content/players/user-02.jpg" alt="">
-							<p><strong>Nàng hầu gái thực hiện một buớc tiến</strong></p>
-						</div>
-					</div>
-					<div class="content">
-						<div class="challenge-result good">
-							<p><a>Xem gợi ý <i class="far fa-info-circle"></i></a></p>
-						</div>
-						<div class="wysiwyg"></div>
-					</div>
-				</div>
-				<div class="ui-widget ui-naked-widget post edit action">
-					<div class="content">
-						<a href="#" class="button solid white"><i class="far fa-times"></i> Hủy</a>
-						<a href="#" class="button solid white"><i class="far fa-paper-plane"></i> Gửi nội dung</a>
-						<a href="#" class="button solid white"><i class="far fa-eye"></i> Xem trước</a>
-					</div>
-				</div>
-			</div>
-			<div class="game--sidebar">
-				<div class="game--sidebar-wrapper">
-					<div class="ui-widget ui-naked-widget game--cards-action">
-						<div class="content">
-							<a href="#" class="button solid white half"><i class="far fa-layer-group"></i> Kho thẻ</a>
-							<a href="#" class="button solid white half"><i class="far fa-layer-plus"></i> Lụm thẻ</a>
-						</div>
-					</div>
-					<div class="ui-widget game--cards-new">
-						<div class="content">
-							<h5>Thử thách</h5>
-							<div class="stack-item">
-								<a href="./modal/card-challenge.html" rel="modal:open">
-									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
-									<div class="stack-item-info">Thử thách #1<span class="amount">1/6</span></div>
-								</a>
-							</div>
-							<hr>
-							<h5>Thẻ bài</h5>
-							<div class="stack-item">
-								<a href="./modal/card-card.html" rel="modal:open">
-									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
-									<div class="stack-item-info">Thẻ bài</div>
-								</a>
-							</div>
-							<div class="stack-item">
-								<a href="./modal/card-card.html" rel="modal:open">
-									<div class="stack-item-icon"><i class="far fa-bullseye"></i></div>
-									<div class="stack-item-info">Thẻ bài</div>
-								</a>
-							</div>
-							<div class="stack-item add">
-								<a href="./modal/card-add.html" rel="modal:open">
-									<div class="stack-item-icon"><i class="far fa-plus"></i></div>
-									<div class="stack-item-info">Thêm thẻ bài</div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 
-		<div class="game--progress">
-			<div class="button first"><i class="far fa-fast-backward"></i></div>
-			<div class="button prev"><i class="far fa-backward"></i></div>
-			<div class="game--progress-bar">
-				<div class="progressed"></div>
-			</div>
-			<div class="button next"><i class="far fa-forward"></i></div>
-			<div class="button last"><i class="far fa-fast-forward"></i></div>
-			<div class="button list"><i class="far fa-list"></i>
-				<div class="ui-widget game--progress-list">
-					<div class="title">
-						<h3>Nội dung</h3>
-					</div>
-					<div class="content">
-						<div>
-							<dl>
-								<dt>Chương 1: Bắt đầu của chuyến phiêu lưu</dt>
-								<dd>Andrew W.K.</dd>
-								<dd class="is-active"><i class="far fa-book-open"></i>Apparat</dd>
-								<dd>Arcade Fire</dd>
-								<dd>At The Drive-In</dd>
-								<dd>Aziz Ansari</dd>
-							</dl>
-							<dl>
-								<dt>Chương 2: Những người đồng đội mới</dt>
-								<dd>Chromeo</dd>
-								<dd>Common</dd>
-								<dd class="is-disabled">Converge</dd>
-								<dd class="is-disabled">Crystal Castles</dd>
-								<dd class="is-disabled">Cursive</dd>
-							</dl>
-							<dl>
-								<dt class="is-disabled">Chương 3: Ngã rẽ bất ngờ</dt>
-								<dd class="is-disabled">Explosions In The Sky</dd>
-							</dl>
-							<dl>
-								<dt>Chương 4: Kẻ thù không thể vượt qua</dt>
-								<dd class="is-disabled">Ted Leo & The Pharmacists</dd>
-								<dd class="is-disabled">T-Pain</dd>
-								<dd class="is-disabled">Thrice</dd>
-								<dd class="is-disabled">TV On The Radio</dd>
-								<dd class="is-disabled">Two Gallants</dd>
-							</dl>
-							<dl>
-								<dt>Chương 5: Kết thúc câu chuyện</dt>
-								<dd class="is-disabled">Ted Leo & The Pharmacists</dd>
-								<dd class="is-disabled">T-Pain</dd>
-								<dd class="is-disabled">Thrice</dd>
-								<dd class="is-disabled">TV On The Radio</dd>
-								<dd class="is-disabled">Two Gallants</dd>
-							</dl>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 
 	<div id="footer"></div>

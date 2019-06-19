@@ -62,3 +62,15 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
+
+i {
+	&+span {
+		margin-left: .5rem;
+	}
+}
+
+span {
+	&+i {
+		margin-left: .5rem;
+	}
+}

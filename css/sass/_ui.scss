@@ -55,6 +55,30 @@
 	}
 }
 
+@mixin ui-container-inner {
+	width: calc(100% - 2rem);
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+
+	@include breakpoint(xs) {
+		max-width: calc(540px - 2rem);
+	}
+
+	@include breakpoint(sm) {
+		max-width: calc(740px - 2rem);
+	}
+
+	@include breakpoint(md) {
+		max-width: calc(960px - 2rem);
+	}
+
+	@include breakpoint(lg) {
+		max-width: calc(1140px - 2rem);
+	}
+}
+
 .ui-widget-shadow {
 	@include ui-shadow;
 }
@@ -80,7 +104,7 @@
 
 	width: 100%;
 
-	&:last-child {
+	&:last-of-type {
 		margin-bottom: 0;
 	}
 
@@ -190,8 +214,6 @@
 		position: relative;
 		z-index: 1;
 		padding: 1rem;
-
-		background-color: white;
 
 		&.limit-lenght {
 			@include breakpoint(md) {

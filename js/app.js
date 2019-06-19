@@ -204,7 +204,8 @@ $('.game--progress-tree').load('./inc/game--progress-tree.html');
 $('.game--location').load('./inc/game--location.html');
 $('.game--rules').load('./inc/game--rules.html');
 $('.game--members').load('./inc/game--members.html');
-$('.game--action').load('./inc/game--action.html');
+$('.game--action-host').load('./inc/game--action-host.html');
+$('.game--action-player').load('./inc/game--action-player.html');
 $('.game--information').load('./inc/game--info.html');
 
 setTimeout(function () {

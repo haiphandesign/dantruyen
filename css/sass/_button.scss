@@ -32,16 +32,10 @@
 
 	@include ui-border-radius;
 
-	i {
-		&+span {
-			margin-left: 1rem;
-		}
-	}
-
-	span {
-		&+i {
-			margin-left: 1rem;
-		}
+	&.is-disabled {
+		opacity: .5;
+		cursor: default;
+		pointer-events: none;
 	}
 
 	&.small {

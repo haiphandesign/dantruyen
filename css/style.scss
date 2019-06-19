@@ -10,13 +10,13 @@
 
 // Mixin
 
-@import "mixin/_normalize"; // Normalize.css
-@import "mixin/_breakpoint"; // Media Queries
+@import "mixin/normalize"; // Normalize.css
+@import "mixin/breakpoint"; // Media Queries
 
 
 // Config
 
-@import "sass/_config"; // Sass Variables Configurations
+@import "sass/config"; // Sass Variables Configurations
 
 
 // Fonts
@@ -34,17 +34,18 @@
 
 // Stylesheets
 
-@import "sass/_basic"; // Core: Basics
+@import "sass/basic"; // Core: Basics
 
-@import "sass/_typography"; // Core: Typography
-@import "sass/_ui"; // Core: UI
-@import "sass/_button"; // Core: UI
+@import "sass/typography"; // Core: Typography
+@import "sass/ui"; // Core: UI
+@import "sass/button"; // Core: UI
 
-@import "sass/_modal"; // Customize: Modal
+@import "sass/modal"; // Customize: Modal
+@import "sass/card"; // Customize: Modal
 
-@import "sass/_header"; // Global: Header
-@import "sass/_footer"; // Global: Footer
+@import "sass/header"; // Global: Header
+@import "sass/footer"; // Global: Footer
 
-@import "sass/_homepage"; // Page: Home
+@import "sass/homepage"; // Page: Home
 
-@import "sass/_game"; // Page: Game
+@import "sass/game"; // Page: Game
