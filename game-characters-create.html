@@ -109,12 +109,10 @@
 								<p>Images must be .png or .jpg format.</p>
 							</div>
 							<div class="content">
-								<div class="character-avatar-upload">
+								<div class="image-upload character-avatar-upload">
+									<img src="">
 									<input type="file" id="characterAvatarUpload">
-									<label for="characterAvatarUpload">
-										<i class="far fa-upload"></i>
-										<!-- <span>Chọn hình ảnh</span> -->
-									</label>
+									<label for="characterAvatarUpload"></label>
 								</div>
 							</div>
 						</div>
@@ -126,12 +124,9 @@
 							</div>
 							<div class="content">
 								<div class="card-gallery">
-									<div class="card card-nature card-multiple">
+									<div class="card card-nature card-multiple card-editable">
 										<div class="card-image">
-											<div class="card-icon">
-												<i class="fas fa-user-circle"></i>
-												<span>Bản chất</span>
-											</div>
+											<div class="card-icon"></div>
 											<div class="card-amount">2</div>
 											<img src="./img/content/card/nature-prayer.jpg" alt="">
 										</div>
@@ -141,16 +136,13 @@
 												sed sanctus et magna, sea amet amet. Sit sed at clita sadipscing
 												consetetur consetetur no dolore eirmod, dolor takimata kasd vero sit
 												invidunt diam et et sadipscing,.</p>
-											<a class="card-edit" href="./modal/game-card-edit.html" rel="modal:open">
-												<i class="fas fa-cog"></i> Chỉnh sửa</a>
+											<a class="card-editable-link" href="./modal/game-card-edit.html"
+												rel="modal:open"></a>
 										</div>
 									</div>
 									<div class="card card-empty card-strong">
 										<div class="card-image">
-											<div class="card-icon">
-												<i class="fas fa-plus-circle"></i>
-												<span>Điểm mạnh</span>
-											</div>
+											<div class="card-icon"></div>
 										</div>
 										<div class="card-info">
 											<div class="hint">
@@ -164,10 +156,7 @@
 									</div>
 									<div class="card card-empty card-weak">
 										<div class="card-image">
-											<div class="card-icon">
-												<i class="fas fa-minus-circle"></i>
-												<span>Điểm yếu</span>
-											</div>
+											<div class="card-icon"></div>
 										</div>
 										<div class="card-info">
 											<div class="hint">
@@ -181,10 +170,7 @@
 									</div>
 									<div class="card card-empty card-subplot">
 										<div class="card-image">
-											<div class="card-icon">
-												<i class="fas fa-dot-circle"></i>
-												<span>Cốt truyện phụ</span>
-											</div>
+											<div class="card-icon"></div>
 										</div>
 										<div class="card-info">
 											<div class="hint">
@@ -219,7 +205,7 @@
 							dolor dolore. Rebum.
 						</div>
 					</div>
-					<a class="button solid full small-text">
+					<a class="sidebar-button button solid full small-text">
 						Tạo nhân vật
 					</a>
 				</div>

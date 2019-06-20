@@ -629,3 +629,71 @@ table {
 		margin-top: 1.5rem;
 	}
 }
+
+
+
+
+// Image Upload 
+
+.image-upload {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 6rem;
+	height: 6rem;
+
+	@include ui-border;
+	@include ui-border-radius;
+
+	background-image: url(../../img/layout/icons/upload.svg);
+	background-size: 1rem;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+
+		object-fit: cover;
+	}
+
+	img[src=''] {
+		display: none;
+	}
+
+	input[type='file'] {
+		display: none;
+	}
+
+	label {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		display: block;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+
+		@include ui-border-radius;
+
+		background-color: rgba(white, .75);
+		background-image: url(../../img/layout/icons/upload.svg);
+		background-size: 1rem;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	&:hover {
+		background-image: none;
+
+		label {
+			opacity: 1;
+		}
+	}
+}

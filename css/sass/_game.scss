@@ -1859,7 +1859,7 @@
 			overflow: auto;
 
 			@include breakpoint(sm) {
-				max-height: 22rem;
+				max-height: 27rem;
 			}
 
 			li {
@@ -2015,29 +2015,34 @@
 	}
 }
 
+// .character-avatar-upload {
+// 	input[type='file'] {
+// 		display: none;
+// 	}
+
+// 	label {
+// 		display: flex;
+// 		flex-direction: column;
+// 		align-items: center;
+// 		justify-content: center;
+
+// 		width: 7rem;
+// 		height: 7rem;
+
+// 		@include ui-border;
+// 		@include ui-border-radius;
+
+// 		transition: all 0.25s;
+
+// 		&:hover {
+// 			border-color: $color-text-light;
+// 		}
+// 	}
+// }
+
 .character-avatar-upload {
-	input[type='file'] {
-		display: none;
-	}
-
-	label {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-
-		width: 7rem;
-		height: 7rem;
-
-		@include ui-border;
-		@include ui-border-radius;
-
-		transition: all 0.25s;
-
-		&:hover {
-			border-color: $color-text-light;
-		}
-	}
+	width: 7rem;
+	height: 7rem;
 }
 
 .status {

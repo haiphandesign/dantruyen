@@ -1256,6 +1256,72 @@ table td {
   margin-top: 1.5rem;
 }
 
+.image-upload {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  border: 1px solid #e4e4e4;
+  background-color: white;
+  border-radius: 0.25rem;
+  background-image: url(../../img/layout/icons/upload.svg);
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.image-upload img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.image-upload img[src=''] {
+  display: none;
+}
+
+.image-upload input[type='file'] {
+  display: none;
+}
+
+.image-upload label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  background-image: url(../../img/layout/icons/upload.svg);
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.image-upload:hover {
+  background-image: none;
+}
+
+.image-upload:hover label {
+  opacity: 1;
+}
+
 .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2335,11 +2401,23 @@ table td {
   padding: 1rem;
 }
 
-.card .card-image .card-icon span {
+.card .card-image .card-icon:before {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .5rem;
+  background-image: url("../../img/layout/icons/card-icon.svg");
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card .card-image .card-icon:after {
+  content: 'Thẻ bài';
   text-transform: uppercase;
-  font-weight: bold;
-  font-size: .75rem;
-  margin-left: .5rem;
+  font-size: 0.75rem !important;
+  font-weight: 800;
 }
 
 .card .card-image .card-image-upload {
@@ -2421,17 +2499,6 @@ table td {
   content: 'x';
 }
 
-.card .card-edit {
-  position: absolute;
-  bottom: .5rem;
-  visibility: hidden;
-  opacity: 0;
-  font-size: .85rem;
-  font-weight: 600;
-  -webkit-transition: all .25s;
-  transition: all .25s;
-}
-
 .card .card-info {
   position: absolute;
   bottom: 0;
@@ -2439,13 +2506,17 @@ table td {
   width: 100%;
   height: 50%;
   padding: 1rem;
+  border-radius: 0.25rem;
   background-color: white;
 }
 
 .card .card-info p {
   display: block;
   margin-top: .25rem;
-  max-height: 6rem;
+  max-height: 7.5rem;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   overflow: auto;
 }
 
@@ -2474,12 +2545,48 @@ table td {
   background-image: url("./../img/layout/card/background-nature.svg");
 }
 
+.card.card-nature .card-icon:before {
+  background-image: url("../../img/layout/icons/card-nature.svg");
+}
+
+.card.card-nature .card-icon:after {
+  content: 'Bản chất';
+}
+
 .card.card-strong .card-image {
   background-image: url("./../img/layout/card/background-strong.svg");
 }
 
+.card.card-strong .card-icon:before {
+  background-image: url("../../img/layout/icons/card-strong.svg");
+}
+
+.card.card-strong .card-icon:after {
+  content: 'Điểm mạnh';
+}
+
 .card.card-weak .card-image {
   background-image: url("./../img/layout/card/background-weak.svg");
+}
+
+.card.card-weak .card-icon:before {
+  background-image: url("../../img/layout/icons/card-weak.svg");
+}
+
+.card.card-weak .card-icon:after {
+  content: 'Điểm yếu';
+}
+
+.card.card-subplot .card-image {
+  background-image: url("./../img/layout/card/background-weak.svg");
+}
+
+.card.card-subplot .card-icon:before {
+  background-image: url("../../img/layout/icons/card-icon.svg");
+}
+
+.card.card-subplot .card-icon:after {
+  content: 'Cốt truyện phụ';
 }
 
 .card.card-multiple:before {
@@ -2560,6 +2667,10 @@ table td {
   background-color: #f8f8f8;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+}
+
+.card.card-editable .card-info p {
+  max-height: 6rem;
 }
 
 .card.card-character .card-image {
@@ -6812,7 +6923,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   #card-create-list .card-list ul {
-    max-height: 22rem;
+    max-height: 27rem;
   }
 }
 
@@ -6990,35 +7101,9 @@ footer .footer-content .footer-social a + a {
   width: 5%;
 }
 
-.character-avatar-upload input[type='file'] {
-  display: none;
-}
-
-.character-avatar-upload label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.character-avatar-upload {
   width: 7rem;
   height: 7rem;
-  border: 1px solid #e4e4e4;
-  background-color: white;
-  border-radius: 0.25rem;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
-}
-
-.character-avatar-upload label:hover {
-  border-color: #b3b3b3;
 }
 
 .status .character-status {
