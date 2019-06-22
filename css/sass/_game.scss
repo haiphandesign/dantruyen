@@ -1155,10 +1155,6 @@
 		@include breakpoint(md) {
 			// margin-top: -6rem;
 		}
-
-		.sidebar-button {
-			margin-top: 1rem;
-		}
 	}
 
 	.game--sidebar-wrapper {
@@ -2555,5 +2551,117 @@
 
 			}
 		}
+	}
+}
+
+.character-single {
+	.character-basic {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.character-avatar {
+		display: block;
+
+		width: 7rem;
+		height: 7rem;
+
+		margin-right: 1rem;
+
+		@include ui-border;
+		@include ui-border-radius;
+		@include ui-shadow;
+
+	}
+
+	.character-name {
+		width: 50%;
+
+		p {
+			margin-top: 0;
+			color: $color-text-light;
+			font-size: .85rem;
+
+			@include breakpoint(sm) {
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.character-info {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+
+		display: block;
+		width: 50%;
+
+		@include ui-border;
+		@include ui-border-radius;
+		@include ui-shadow;
+
+		padding: 1rem;
+
+		text-align: justify;
+		hyphens: auto;
+	}
+
+}
+
+.badge-gallery {
+	>* {
+		margin-right: .5rem;
+	}
+}
+
+.character-history {
+	.content {
+		padding: 0;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		padding: 1rem 1rem;
+
+		+li {
+			border-top: 1px solid rgba($color-border, .75);
+		}
+
+		&:hover {
+			background-color: rgba($color-background, .5);
+		}
+	}
+
+	.date {
+		display: block;
+		flex-shrink: 0;
+		width: 4rem;
+		margin-right: .5rem;
+		@include small-text;
+	}
+}
+
+.mobile-reversed-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;
+
+	>*:nth-child(odd) {
+		margin-right: .5rem;
+	}
+
+	>*:nth-child(even) {
+		margin-left: .5rem;
 	}
 }

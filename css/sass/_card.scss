@@ -20,7 +20,11 @@
 	@include ui-shadow;
 
 	width: 100%;
-	padding-top: 150%;
+	padding-top: 125%;
+
+	@include breakpoint(md) {
+		padding-top: 150%;
+	}
 
 	.card-image {
 		position: absolute;
@@ -29,13 +33,18 @@
 
 		display: block;
 		width: 100%;
-		height: 50%;
+		height: 60%;
 
 		background-color: $color-background;
+		background-image: url('./../img/layout/card/background.svg');
 		background-size: cover;
 		background-position: bottom center;
 
 		border-bottom: 1px solid $color-border;
+
+		@include breakpoint(md) {
+			height: 50%;
+		}
 
 		img {
 			position: absolute;
@@ -77,8 +86,8 @@
 
 				margin-right: .5rem;
 
-				background-image: url('../../img/layout/icons/card-icon.svg');
-				background-size: 1rem;
+				background-image: url('../../img/layout/icons/icon.svg');
+				background-size: contain;
 				background-repeat: no-repeat;
 				background-position: center;
 			}
@@ -167,12 +176,16 @@
 
 		display: block;
 		width: 100%;
-		height: 50%;
+		height: 40%;
 		padding: 1rem;
 
 		@include ui-border-radius;
 
 		background-color: white;
+
+		@include breakpoint(md) {
+			height: 50%;
+		}
 
 		p {
 			display: block;
@@ -206,7 +219,7 @@
 
 		.card-icon {
 			&:before {
-				background-image: url('../../img/layout/icons/card-nature.svg');
+				background-image: url('../../img/layout/card/icon-nature.svg');
 			}
 
 			&:after {
@@ -222,7 +235,7 @@
 
 		.card-icon {
 			&:before {
-				background-image: url('../../img/layout/icons/card-strong.svg');
+				background-image: url('../../img/layout/card/icon-strong.svg');
 			}
 
 			&:after {
@@ -238,7 +251,7 @@
 
 		.card-icon {
 			&:before {
-				background-image: url('../../img/layout/icons/card-weak.svg');
+				background-image: url('../../img/layout/card/icon-weak.svg');
 			}
 
 			&:after {
@@ -247,18 +260,38 @@
 		}
 	}
 
-	&.card-subplot {
-		.card-image {
-			background-image: url('./../img/layout/card/background-weak.svg');
-		}
-
+	&.card-motivation {
 		.card-icon {
 			&:before {
-				background-image: url('../../img/layout/icons/card-icon.svg');
+				background-image: url('../../img/layout/card/icon-motivation.svg');
 			}
 
 			&:after {
-				content: 'Cốt truyện phụ';
+				content: 'Động lực';
+			}
+		}
+	}
+
+	&.card-item {
+		.card-icon {
+			&:before {
+				background-image: url('../../img/layout/card/icon-item.svg');
+			}
+
+			&:after {
+				content: 'Vật phẩm';
+			}
+		}
+	}
+
+	&.card-target {
+		.card-icon {
+			&:before {
+				background-image: url('../../img/layout/card/icon-target.svg');
+			}
+
+			&:after {
+				content: 'Mục tiêu';
 			}
 		}
 	}

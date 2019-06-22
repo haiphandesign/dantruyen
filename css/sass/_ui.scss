@@ -100,17 +100,17 @@
 	@include ui-border;
 	@include ui-border-radius;
 	@include ui-shadow;
-	@include ui-bottom-spacing;
 
 	width: 100%;
 
-	&:last-of-type {
-		margin-bottom: 0;
+	margin-top: 1rem;
+
+	&:first-child {
+		margin-top: 0;
 	}
 
 	>.title {
 		position: relative;
-		z-index: 1;
 
 		display: flex;
 		flex-direction: column;
@@ -212,7 +212,6 @@
 
 	>.content {
 		position: relative;
-		z-index: 1;
 		padding: 1rem;
 
 		&.limit-lenght {

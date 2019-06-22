@@ -66,7 +66,8 @@ h6 {
 }
 
 hr {
-	border: .5px solid rgba($color-border, .5);
+	border: none;
+	border-top: 1px solid $color-border;
 }
 
 @mixin small-text {
