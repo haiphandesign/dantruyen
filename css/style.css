@@ -484,6 +484,7 @@ span + i {
 * + h4,
 .modal-home-register .form-element * + .form-label,
 * + h5,
+.card.card-challenge .challenge-result .result > * + span:after,
 * + h6,
 * + p {
   margin-bottom: 1rem;
@@ -495,6 +496,7 @@ h3,
 h4,
 .modal-home-register .form-element .form-label,
 h5,
+.card.card-challenge .challenge-result .result > span:after,
 h6,
 p,
 .h1,
@@ -512,6 +514,7 @@ h3 + *,
 h4 + *,
 .modal-home-register .form-element .form-label + *,
 h5 + *,
+.card.card-challenge .challenge-result .result > span:after + *,
 h6 + *,
 p + *,
 .h1 + *,
@@ -545,7 +548,9 @@ h4,
   font-weight: 600;
 }
 
-h5 {
+
+h5,
+.card.card-challenge .challenge-result .result > span:after {
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 800;
@@ -644,7 +649,7 @@ hr {
   background-position: center;
 }
 
-.section .section-title h5 {
+.section .section-title h5, .section .section-title .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result .section .section-title .result > span:after {
   margin: 0 0 1.5em 0;
 }
 
@@ -2704,50 +2709,118 @@ table td {
   border-bottom-right-radius: 0;
 }
 
-.card.card-challenge .challenge-progress span {
+.card.card-challenge .challenge-progress > span {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.card.card-challenge .challenge-progress span + span {
+.card.card-challenge .challenge-progress > span + span {
   border-left: 1px solid #e4e4e4;
 }
 
-.card.card-challenge .challenge-progress span.is-completed {
+.card.card-challenge .challenge-progress > span.is-completed {
   background-color: rgba(228, 228, 228, 0.5);
 }
 
 .card.card-challenge .challenge-result {
+  padding-top: .5rem;
   padding-bottom: .5rem;
 }
 
-.card.card-challenge .challenge-result ul {
+.card.card-challenge .challenge-result .result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.card.card-challenge .challenge-result .result strong {
+  margin-right: .5rem;
+}
+
+.card.card-challenge .challenge-result .result > span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card.card-challenge .challenge-result .result > span:before {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../../img/layout/card/result.svg");
+  background-size: contain;
+  background-position: center;
+}
+
+.card.card-challenge .challenge-result .result > span:after {
+  content: 'Chưa xác định';
+  margin-left: .25rem;
+}
+
+.card.card-challenge .challenge-result > ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.card.card-challenge .challenge-result ul li {
+.card.card-challenge .challenge-result > ul li {
   margin-top: .75rem;
   opacity: .25;
   font-size: .85rem;
 }
 
-.card.card-challenge .challenge-result ul li.is-selected {
+.card.card-challenge .challenge-result > ul li.is-selected {
   opacity: 1;
 }
 
-.card.card-challenge .challenge-result ul h5 {
+.card.card-challenge .challenge-result > ul h5, .card.card-challenge .challenge-result > ul .result > span:after {
   display: inline;
 }
 
-.card.card-challenge .challenge-result ul h5:after {
+.card.card-challenge .challenge-result > ul h5:after, .card.card-challenge .challenge-result > ul .result > span:after {
   content: ': ';
 }
 
-.card.card-challenge .challenge-result ul p {
+.card.card-challenge .challenge-result > ul p {
   display: inline;
+}
+
+.card.card-challenge.card-challenge-result-strong .challenge-result > .result > span:before {
+  background-image: url("../../img/layout/card/result-strong.svg");
+}
+
+.card.card-challenge.card-challenge-result-strong .challenge-result > .result > span:after {
+  content: 'Mạnh';
+}
+
+.card.card-challenge.card-challenge-result-strong .challenge-result .result-strong {
+  opacity: 1;
+}
+
+.card.card-challenge.card-challenge-result-weak .challenge-result > .result > span:before {
+  background-image: url("../../img/layout/card/result-weak.svg");
+}
+
+.card.card-challenge.card-challenge-result-weak .challenge-result > .result > span:after {
+  content: 'Yếu';
+}
+
+.card.card-challenge.card-challenge-result-weak .challenge-result .result-weak {
+  opacity: 1;
 }
 
 .card.card-nature .card-image {
@@ -2915,6 +2988,13 @@ table td {
 .modal-card .card-info {
   position: relative;
   height: 100%;
+}
+
+@media (min-width: 768px) {
+  .modal-card .card-info p {
+    height: unset;
+    max-height: unset;
+  }
 }
 
 .modal-card .card-info h3 {
@@ -3213,7 +3293,7 @@ table td {
   margin: .25rem 0;
 }
 
-#nav .nav--user .nav--user-menu ul + h5 {
+#nav .nav--user .nav--user-menu ul + h5, #nav .nav--user .nav--user-menu .card.card-challenge .challenge-result .result > ul + span:after, .card.card-challenge .challenge-result #nav .nav--user .nav--user-menu .result > ul + span:after {
   margin-top: 1rem;
 }
 
@@ -3350,7 +3430,7 @@ body.homepage .modal-home-register .form-element .form-label,
   line-height: 1.25;
 }
 
-body.homepage h5 {
+body.homepage h5, body.homepage .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result body.homepage .result > span:after {
   letter-spacing: .2em;
   color: #159ee9;
 }
@@ -4504,7 +4584,7 @@ footer .footer-content {
   padding: 12.5rem 5vw 2.5rem;
 }
 
-footer .footer-content h5 {
+footer .footer-content h5, footer .footer-content .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result footer .footer-content .result > span:after {
   color: inherit;
 }
 
@@ -6221,7 +6301,7 @@ footer .footer-content .footer-social a + a {
   margin: 1rem 0;
 }
 
-.game--main .stack h5 {
+.game--main .stack h5, .game--main .stack .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result .game--main .stack .result > span:after {
   padding-left: 1rem;
 }
 
@@ -6396,7 +6476,7 @@ footer .footer-content .footer-social a + a {
   padding: 1rem 0;
 }
 
-.game--main .ui-widget.game--cards-new h5 {
+.game--main .ui-widget.game--cards-new h5, .game--main .ui-widget.game--cards-new .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result .game--main .ui-widget.game--cards-new .result > span:after {
   margin-left: 1rem;
 }
 
@@ -6604,7 +6684,7 @@ footer .footer-content .footer-social a + a {
   list-style: none;
 }
 
-.game--main .ui-widget.game--members ul + h5 {
+.game--main .ui-widget.game--members ul + h5, .game--main .ui-widget.game--members .card.card-challenge .challenge-result .result > ul + span:after, .card.card-challenge .challenge-result .game--main .ui-widget.game--members .result > ul + span:after {
   margin-top: 1.5rem;
 }
 
@@ -7693,7 +7773,7 @@ footer .footer-content .footer-social a + a {
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
 }
 
-.game--meta .game--meta-item h5 {
+.game--meta .game--meta-item h5, .game--meta .game--meta-item .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result .game--meta .game--meta-item .result > span:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
