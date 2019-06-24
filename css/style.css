@@ -484,7 +484,6 @@ span + i {
 * + h4,
 .modal-home-register .form-element * + .form-label,
 * + h5,
-.card.card-challenge .challenge-result .result > * + span:after,
 * + h6,
 * + p {
   margin-bottom: 1rem;
@@ -496,7 +495,6 @@ h3,
 h4,
 .modal-home-register .form-element .form-label,
 h5,
-.card.card-challenge .challenge-result .result > span:after,
 h6,
 p,
 .h1,
@@ -514,7 +512,6 @@ h3 + *,
 h4 + *,
 .modal-home-register .form-element .form-label + *,
 h5 + *,
-.card.card-challenge .challenge-result .result > span:after + *,
 h6 + *,
 p + *,
 .h1 + *,
@@ -548,9 +545,7 @@ h4,
   font-weight: 600;
 }
 
-
-h5,
-.card.card-challenge .challenge-result .result > span:after {
+h5 {
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 800;
@@ -649,7 +644,7 @@ hr {
   background-position: center;
 }
 
-.section .section-title h5, .section .section-title .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result .section .section-title .result > span:after {
+.section .section-title h5 {
   margin: 0 0 1.5em 0;
 }
 
@@ -2724,11 +2719,10 @@ table td {
 }
 
 .card.card-challenge .challenge-result {
-  padding-top: .5rem;
   padding-bottom: .5rem;
 }
 
-.card.card-challenge .challenge-result .result {
+.card.card-challenge .challenge-result > .result {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2740,11 +2734,11 @@ table td {
           justify-content: flex-start;
 }
 
-.card.card-challenge .challenge-result .result strong {
+.card.card-challenge .challenge-result > .result strong {
   margin-right: .5rem;
 }
 
-.card.card-challenge .challenge-result .result > span {
+.card.card-challenge .challenge-result > .result > span {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -2756,7 +2750,7 @@ table td {
           justify-content: center;
 }
 
-.card.card-challenge .challenge-result .result > span:before {
+.card.card-challenge .challenge-result > .result > span:before {
   content: '';
   display: inline-block;
   width: 1rem;
@@ -2766,8 +2760,11 @@ table td {
   background-position: center;
 }
 
-.card.card-challenge .challenge-result .result > span:after {
+.card.card-challenge .challenge-result > .result > span:after {
   content: 'Chưa xác định';
+  text-transform: uppercase;
+  font-size: 0.75rem !important;
+  font-weight: 800;
   margin-left: .25rem;
 }
 
@@ -2787,11 +2784,11 @@ table td {
   opacity: 1;
 }
 
-.card.card-challenge .challenge-result > ul h5, .card.card-challenge .challenge-result > ul .result > span:after {
+.card.card-challenge .challenge-result > ul h5 {
   display: inline;
 }
 
-.card.card-challenge .challenge-result > ul h5:after, .card.card-challenge .challenge-result > ul .result > span:after {
+.card.card-challenge .challenge-result > ul h5:after {
   content: ': ';
 }
 
@@ -3293,7 +3290,7 @@ table td {
   margin: .25rem 0;
 }
 
-#nav .nav--user .nav--user-menu ul + h5, #nav .nav--user .nav--user-menu .card.card-challenge .challenge-result .result > ul + span:after, .card.card-challenge .challenge-result #nav .nav--user .nav--user-menu .result > ul + span:after {
+#nav .nav--user .nav--user-menu ul + h5 {
   margin-top: 1rem;
 }
 
@@ -3398,20 +3395,20 @@ table td {
   }
 }
 
-body.homepage {
+.homepage {
   background-color: white;
   color: #063E67;
 }
 
-body.homepage .button {
+.homepage .button {
   color: #0b7bce;
 }
 
-body.homepage .button.solid {
+.homepage .button.solid {
   background-color: #0b7bce;
 }
 
-body.homepage .container-sm {
+.homepage .container-sm {
   width: 100%;
   max-width: 720px;
   padding-right: 1rem;
@@ -3420,36 +3417,36 @@ body.homepage .container-sm {
   margin-left: auto;
 }
 
-body.homepage h1,
-body.homepage h2,
-body.homepage h3,
-body.homepage h4,
-body.homepage .modal-home-register .form-element .form-label,
-.modal-home-register .form-element body.homepage .form-label {
+.homepage h1,
+.homepage h2,
+.homepage h3,
+.homepage h4,
+.homepage .modal-home-register .form-element .form-label,
+.modal-home-register .form-element .homepage .form-label {
   color: #0b7bce;
   line-height: 1.25;
 }
 
-body.homepage h5, body.homepage .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result body.homepage .result > span:after {
+.homepage h5 {
   letter-spacing: .2em;
   color: #159ee9;
 }
 
-body.homepage section {
+.homepage section {
   margin: 5rem auto;
 }
 
 @media (min-width: 992px) {
-  body.homepage section {
+  .homepage section {
     margin: 10rem auto;
   }
 }
 
-body.homepage section#hero {
+.homepage section#hero {
   margin: 0;
 }
 
-body.homepage span.divider {
+.homepage span.divider {
   display: inline-block;
   height: .325rem;
   width: 5rem;
@@ -4584,7 +4581,7 @@ footer .footer-content {
   padding: 12.5rem 5vw 2.5rem;
 }
 
-footer .footer-content h5, footer .footer-content .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result footer .footer-content .result > span:after {
+footer .footer-content h5 {
   color: inherit;
 }
 
@@ -6301,7 +6298,7 @@ footer .footer-content .footer-social a + a {
   margin: 1rem 0;
 }
 
-.game--main .stack h5, .game--main .stack .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result .game--main .stack .result > span:after {
+.game--main .stack h5 {
   padding-left: 1rem;
 }
 
@@ -6476,7 +6473,7 @@ footer .footer-content .footer-social a + a {
   padding: 1rem 0;
 }
 
-.game--main .ui-widget.game--cards-new h5, .game--main .ui-widget.game--cards-new .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result .game--main .ui-widget.game--cards-new .result > span:after {
+.game--main .ui-widget.game--cards-new h5 {
   margin-left: 1rem;
 }
 
@@ -6684,7 +6681,7 @@ footer .footer-content .footer-social a + a {
   list-style: none;
 }
 
-.game--main .ui-widget.game--members ul + h5, .game--main .ui-widget.game--members .card.card-challenge .challenge-result .result > ul + span:after, .card.card-challenge .challenge-result .game--main .ui-widget.game--members .result > ul + span:after {
+.game--main .ui-widget.game--members ul + h5 {
   margin-top: 1.5rem;
 }
 
@@ -7773,7 +7770,7 @@ footer .footer-content .footer-social a + a {
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
 }
 
-.game--meta .game--meta-item h5, .game--meta .game--meta-item .card.card-challenge .challenge-result .result > span:after, .card.card-challenge .challenge-result .game--meta .game--meta-item .result > span:after {
+.game--meta .game--meta-item h5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
