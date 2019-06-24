@@ -16,7 +16,6 @@
 
 @mixin ui-border {
 	border: 1px solid $color-border;
-	background-color: white;
 }
 
 @mixin ui-no-border {

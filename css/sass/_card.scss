@@ -12,6 +12,38 @@
 	}
 }
 
+.page-card {
+	padding: 9rem 0;
+
+	>.container {
+		max-width: 748px;
+		padding: 0 2rem;
+
+		@include breakpoint(sm) {
+			padding: 0;
+		}
+
+		>h3 {
+			margin-top: 6rem;
+			margin-bottom: 1.5rem;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.card-gallery {
+		@include breakpoint(sm) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+
+	.modal {
+		background: white;
+	}
+}
+
 .card {
 	position: relative;
 
@@ -20,20 +52,15 @@
 	@include ui-shadow;
 
 	width: 100%;
-	padding-top: 125%;
 
-	@include breakpoint(md) {
+	@include breakpoint(sm) {
 		padding-top: 150%;
 	}
 
 	.card-image {
-		position: absolute;
-		top: 0;
-		left: 0;
-
 		display: block;
 		width: 100%;
-		height: 60%;
+		height: 60vw;
 
 		background-color: $color-background;
 		background-image: url('./../img/layout/card/background.svg');
@@ -42,7 +69,11 @@
 
 		border-bottom: 1px solid $color-border;
 
-		@include breakpoint(md) {
+		@include breakpoint(sm) {
+			position: absolute;
+			top: 0;
+			left: 0;
+
 			height: 50%;
 		}
 
@@ -57,45 +88,6 @@
 
 			border-bottom-left-radius: 0;
 			border-bottom-right-radius: 0;
-		}
-
-		.card-icon {
-			position: absolute;
-			top: 1rem;
-			left: 1rem;
-			z-index: 3;
-
-			display: flex;
-			flex-shrink: 0;
-			align-items: center;
-			justify-content: center;
-
-			height: 2.5rem;
-
-			@include ui-border;
-			@include ui-border-radius;
-			@include ui-shadow;
-
-			padding: 1rem;
-
-			&:before {
-				content: '';
-				display: block;
-				width: 1rem;
-				height: 1rem;
-
-				margin-right: .5rem;
-
-				background-image: url('../../img/layout/icons/icon.svg');
-				background-size: contain;
-				background-repeat: no-repeat;
-				background-position: center;
-			}
-
-			&:after {
-				content: 'Thẻ bài';
-				@include small-text;
-			}
 		}
 
 		.card-image-upload {
@@ -135,7 +127,44 @@
 		}
 	}
 
+	.card-icon {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		z-index: 2;
 
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+
+		height: 2.5rem;
+
+		@include ui-border;
+		@include ui-border-radius;
+		@include ui-shadow;
+
+		padding: 1rem;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 1rem;
+			height: 1rem;
+
+			margin-right: .5rem;
+
+			background-image: url('../../img/layout/card/icon.svg');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		&:after {
+			content: 'Thẻ bài';
+			@include small-text;
+		}
+	}
 
 	.card-amount {
 		position: absolute;
@@ -171,28 +200,103 @@
 	}
 
 	.card-info {
-		position: absolute;
-		bottom: 0;
-
 		display: block;
 		width: 100%;
-		height: 40%;
 		padding: 1rem;
+		padding-bottom: 1.5rem;
 
 		@include ui-border-radius;
 
 		background-color: white;
 
-		@include breakpoint(md) {
+		@include breakpoint(sm) {
+			position: absolute;
+			bottom: 0;
 			height: 50%;
 		}
 
 		p {
+			position: relative;
+
 			display: block;
 			margin-top: .25rem;
-			max-height: 7.5rem;
 			hyphens: auto;
-			overflow: auto;
+
+			@include breakpoint(sm) {
+				height: 6rem;
+				max-height: 6rem;
+				overflow: hidden;
+			}
+		}
+	}
+
+	.card-action {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+
+		background-color: white;
+
+		width: 100%;
+		height: 100%;
+
+		visibility: hidden;
+		opacity: 0;
+
+		transition: all .25s;
+
+		a {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			width: 100%;
+
+			color: $color-text-light;
+
+			+a {
+				margin-top: 1.5rem;
+			}
+
+			i {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				width: 3rem;
+				height: 3rem;
+
+				@include ui-border;
+				border-radius: 50%;
+
+				transition: all .25s;
+			}
+
+			span {
+				margin-top: .5rem;
+				@include small-text;
+
+				transition: all .25s;
+			}
+
+			&:hover {
+				i {
+					background-color: $color-background;
+					color: $color-text-regular;
+					@include ui-shadow;
+				}
+
+				span {
+					color: $color-text-regular;
+				}
+			}
 		}
 	}
 
@@ -206,9 +310,109 @@
 	}
 
 	&:hover {
-		.card-edit {
+		.card-action {
 			visibility: visible;
 			opacity: 1;
+		}
+	}
+
+
+	// Cards Icon and Background
+
+	&.card-place {
+		.card-image {
+			background-image: url('./../img/layout/card/background-place.svg');
+		}
+
+		.card-icon {
+			&:before {
+				background-image: url('../../img/layout/card/icon-place.svg');
+			}
+
+			&:after {
+				content: 'Nơi chốn';
+			}
+		}
+	}
+
+	&.card-challenge {
+		.card-image {
+			background-image: url('./../img/layout/card/background-challenge.svg');
+		}
+
+		.card-icon {
+			&:before {
+				background-image: url('../../img/layout/card/icon-challenge.svg');
+			}
+
+			&:after {
+				content: 'Thử thách';
+			}
+		}
+
+		.challenge-progress {
+			position: absolute;
+			bottom: -1px;
+			right: 1rem;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			height: 10px;
+			width: calc(100% - 2rem);
+
+			@include ui-border;
+			@include ui-border-radius;
+
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+
+			span {
+				display: block;
+				width: 100%;
+				height: 100%;
+
+				&+span {
+					border-left: 1px solid $color-border;
+				}
+
+				&.is-completed {
+					background-color: rgba($color-border, .5);
+				}
+			}
+		}
+
+		.challenge-result {
+			padding-bottom: .5rem;
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+				li {
+					margin-top: .75rem;
+					opacity: .25;
+					font-size: .85rem;
+
+					&.is-selected {
+						opacity: 1;
+					}
+				}
+
+				h5 {
+					display: inline;
+
+					&:after {
+						content: ': ';
+					}
+				}
+
+				p {
+					display: inline;
+				}
+			}
 		}
 	}
 
@@ -261,6 +465,10 @@
 	}
 
 	&.card-motivation {
+		.card-image {
+			background-image: url('./../img/layout/card/background-motivation.svg');
+		}
+
 		.card-icon {
 			&:before {
 				background-image: url('../../img/layout/card/icon-motivation.svg');
@@ -273,6 +481,10 @@
 	}
 
 	&.card-item {
+		.card-image {
+			background-image: url('./../img/layout/card/background-item.svg');
+		}
+
 		.card-icon {
 			&:before {
 				background-image: url('../../img/layout/card/icon-item.svg');
@@ -285,6 +497,10 @@
 	}
 
 	&.card-target {
+		.card-image {
+			background-image: url('./../img/layout/card/background-target.svg');
+		}
+
 		.card-icon {
 			&:before {
 				background-image: url('../../img/layout/card/icon-target.svg');
@@ -295,6 +511,38 @@
 			}
 		}
 	}
+
+	&.card-character {
+		.card-image {
+			background-image: url('./../img/layout/card/background-character.svg');
+			padding-top: 100%;
+		}
+
+		.card-icon {
+			&:before {
+				background-image: url('../../img/layout/card/icon-character.svg');
+			}
+
+			&:after {
+				content: 'Nhân vật';
+			}
+		}
+
+		.card-info {
+			height: calc(100% / 3);
+
+			.short-description {
+				color: $color-text-light;
+			}
+
+			p {
+				max-height: calc(100% - 2.5rem);
+			}
+		}
+	}
+
+
+	// Card Multiple
 
 	&.card-multiple {
 		&:before {
@@ -320,117 +568,59 @@
 
 	&.card-create {
 		border-style: dashed;
+		background-color: transparent;
 
-		.card-info {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
+		.card-action {
+			background-color: transparent;
 
-			height: 100%;
+			visibility: visible;
+			opacity: 1;
 		}
+	}
 
-		.card-create-button {
+	&.card-disabled {
+		opacity: .5;
+		pointer-events: none;
+	}
+}
+
+.modal-card {
+	display: grid !important;
+	grid-template-columns: 1fr;
+
+	width: 90vw;
+	max-width: 45rem;
+
+	padding-top: unset;
+
+	@include breakpoint(sm) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.card-image {
+		position: relative;
+		height: 75%;
+		padding-top: 75%;
+		border-bottom: 1px solid $color-border;
+
+		@include breakpoint(sm) {
 			position: relative;
-
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			width: 5rem;
-			height: 5rem;
-
-			@include ui-border;
-			border-radius: 50%;
-
-			color: $color-text-light;
-
-			transition: all .25s;
-
-			i {
-				font-size: 2rem;
-			}
-
-			span {
-				position: absolute;
-				bottom: -2.25rem;
-
-				display: block;
-				width: 10rem;
-
-				margin: 0;
-
-				@include small-text;
-				text-align: center;
-			}
-		}
-
-		&:hover {
-			.card-create-button {
-				background-color: $color-background;
-				@include ui-shadow;
-			}
-		}
-	}
-
-	&.card-editable {
-		.card-info {
-			p {
-				max-height: 6rem;
-			}
-		}
-
-		// .card-editable-link {
-		// 	position: absolute;
-		// 	bottom: 0;
-		// 	left: 0;
-
-		// 	display: flex;
-		// 	align-items: center;
-		// 	justify-content: center;
-
-		// 	width: 100%;
-		// 	height: 2rem;
-
-		// 	border-top: 1px solid $color-border;
-
-		// 	&:before {
-		// 		content: '';
-		// 		display: block;
-		// 		width: 1rem;
-		// 		height: 1rem;
-
-		// 		margin-right: .5rem;
-
-		// 		background-image: url('../../img/layout/icons/edit.svg');
-		// 		background-size: 1rem;
-		// 		background-repeat: no-repeat;
-		// 		background-position: center;
-		// 	}
-
-		// 	&:after {
-		// 		content: 'Chỉnh sửa';
-		// 		display: block;
-		// 		@include small-text;
-		// 	}
-		// }
-	}
-
-	&.card-character {
-		.card-image {
+			height: 100%;
 			padding-top: 100%;
+
+			border-bottom: 0;
+			border-right: 1px solid $color-border;
 		}
+	}
 
-		.card-info {
-			height: calc(100% / 3);
+	.card-info {
+		position: relative;
+		height: 100%;
 
-			.short-description {
-				color: $color-text-light;
-			}
-
-			p {
-				max-height: calc(100% - 2.5rem);
-			}
+		h3 {
+			border-bottom: 1px solid $color-border;
+			margin-bottom: .5rem;
+			padding-bottom: .25rem;
 		}
 	}
 }

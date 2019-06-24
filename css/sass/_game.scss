@@ -97,6 +97,8 @@
 
 		padding: 0;
 
+		background-color: white;
+
 		@include breakpoint(md) {
 			@include ui-border-radius;
 			@include ui-container;
@@ -587,6 +589,8 @@
 				margin-right: auto;
 				margin-top: -5rem;
 				margin-bottom: 1rem;
+
+				background-color: white;
 			}
 		}
 
