@@ -2386,7 +2386,7 @@ table td {
 }
 
 .card .card-image img {
-  position: absolute;
+  position: relative;
   top: 0;
   display: block;
   width: 100%;
@@ -2466,6 +2466,7 @@ table td {
   border-radius: 0.25rem;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+  background-color: white;
   padding: 1rem;
 }
 
@@ -2894,7 +2895,12 @@ table td {
 
 .card.card-character .card-image {
   background-image: url("./../img/layout/card/background-character.svg");
-  padding-top: 100%;
+}
+
+@media (min-width: 768px) {
+  .card.card-character .card-image {
+    padding-top: 100%;
+  }
 }
 
 .card.card-character .card-icon:before {
@@ -2905,8 +2911,10 @@ table td {
   content: 'Nhân vật';
 }
 
-.card.card-character .card-info {
-  height: calc(100% / 3);
+@media (min-width: 768px) {
+  .card.card-character .card-info {
+    height: calc(100% / 3);
+  }
 }
 
 .card.card-character .card-info .short-description {
@@ -2980,6 +2988,10 @@ table td {
     border-bottom: 0;
     border-right: 1px solid #e4e4e4;
   }
+}
+
+.modal-card .card-image img {
+  position: absolute;
 }
 
 .modal-card .card-info {
