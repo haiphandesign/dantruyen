@@ -594,8 +594,7 @@
 			background-image: url('./../img/layout/card/background-character.svg');
 
 			@include breakpoint(sm) {
-				padding-top: 100%;
-
+				height: calc(100% / 3 * 2);
 			}
 		}
 

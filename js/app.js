@@ -15,6 +15,9 @@
 $('#header').load('./inc/header.html');
 $('#footer').load('./inc/footer.html');
 
+$('section.game--header').load('./inc/game-header.html');
+
+
 
 // Global: Fixed Header
 
@@ -38,7 +41,8 @@ function headerspacing() {
 	// alert(headerspacer);
 	$('.header-spacer').css('height', headerspacer);
 };
-window.setTimeout(headerspacing, 100);
+
+setTimeout(headerspacing(), 100);
 
 
 // Global: Hide Navbar

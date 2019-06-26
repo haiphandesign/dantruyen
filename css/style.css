@@ -2899,7 +2899,7 @@ table td {
 
 @media (min-width: 768px) {
   .card.card-character .card-image {
-    padding-top: 100%;
+    height: calc(100% / 3 * 2);
   }
 }
 
@@ -3288,6 +3288,7 @@ table td {
   border-top-right-radius: 0;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+  background-color: white;
   padding: 1rem;
 }
 
@@ -7948,6 +7949,7 @@ footer .footer-content .footer-social a + a {
     border-radius: 0.25rem;
     -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
             box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+    background-color: white;
     padding: 1rem;
   }
 }
