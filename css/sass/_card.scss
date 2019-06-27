@@ -47,6 +47,9 @@
 .card {
 	position: relative;
 
+	display: grid;
+	grid-template-columns: 1fr;
+
 	@include ui-border;
 	@include ui-border-radius;
 	@include ui-shadow;
@@ -67,7 +70,8 @@
 		background-size: cover;
 		background-position: bottom center;
 
-		border-bottom: 1px solid $color-border;
+		@include ui-border;
+		border-width: 0 0 1px 0;
 
 		@include breakpoint(sm) {
 			position: absolute;
@@ -188,6 +192,8 @@
 		@include ui-border-radius;
 		@include ui-shadow;
 
+		background-color: white;
+
 		// border-right: 0;
 		// border-top: 0;
 		// border-bottom-right-radius: 0;
@@ -285,6 +291,7 @@
 
 			span {
 				margin-top: .5rem;
+				margin-left: 0;
 				@include small-text;
 
 				transition: all .25s;
@@ -299,6 +306,34 @@
 
 				span {
 					color: $color-text-regular;
+				}
+			}
+		}
+	}
+
+	&.card-horizontal {
+		@include breakpoint(sm) {
+			padding-top: 37.5%;
+
+			.card-image {
+				height: 100%;
+				width: 50%;
+
+				border-width: 0 1px 0 0;
+			}
+
+			.card-info {
+				right: 0;
+
+				height: 100%;
+				width: 50%;
+			}
+
+			.card-action {
+				flex-direction: row;
+
+				a+a {
+					margin-top: 0;
 				}
 			}
 		}
@@ -716,5 +751,49 @@
 			margin-bottom: .5rem;
 			padding-bottom: .25rem;
 		}
+	}
+}
+
+.card-list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: .5rem;
+
+	overflow: auto;
+
+	.card {
+		padding-top: unset;
+
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		height: 3rem;
+
+		&:hover,
+		&.is-selected {
+			background-color: rgba($color-border, .25);
+		}
+
+		.card-icon {
+			position: relative;
+			top: unset;
+			left: unset;
+
+			border: none;
+			border-radius: none;
+			box-shadow: none;
+			background: transparent;
+
+			&:before {
+				margin: 0;
+			}
+
+			&:after {
+				display: none;
+			}
+		}
+
+
 	}
 }

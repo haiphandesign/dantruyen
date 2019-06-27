@@ -1,0 +1,138 @@
+.content-wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1rem;
+
+	@include breakpoint(sm) {
+		grid-template-columns: 2fr 1fr;
+
+		padding: 0;
+	}
+
+	+.content-wrapper {
+		margin-top: 1rem;
+	}
+
+	&.full {
+		@include breakpoint(sm) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+
+// CONTENT BLOCK
+
+.content-block {
+	position: relative;
+
+	display: block;
+
+	@include ui-border;
+	@include ui-border-radius;
+	@include ui-shadow;
+
+	background-color: white;
+
+	.title {
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+
+		padding: 1rem;
+
+		@include ui-border;
+		border-width: 0 0 1px 0;
+
+		>* {
+			position: relative;
+		}
+
+		.dropdown {
+			position: absolute;
+			top: .5rem;
+			right: .5rem;
+
+			margin: 0;
+		}
+	}
+
+	.content {
+		padding: 1rem;
+	}
+}
+
+.dropdown {
+	position: relative;
+
+	user-select: none;
+
+	.dropdown-button {
+		display: block;
+
+		width: 2rem;
+		height: 2rem;
+
+		// background-color: red;
+		background-image: url('../../img/layout/icons/menu.svg');
+		background-size: 1rem;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		cursor: pointer;
+	}
+
+	.dropdown-menu {
+		position: absolute;
+		right: 0;
+
+		display: none;
+
+		min-width: 10rem;
+
+		@include ui-border;
+		@include ui-border-radius;
+		@include ui-shadow;
+
+		background-color: white;
+
+		transition: all .25s;
+
+		ul {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+
+			width: 100%;
+
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: block;
+				width: 100%;
+				padding: 1rem;
+
+				@include small-text;
+
+				i {
+					width: 1rem;
+					text-align: center;
+				}
+
+				&:hover {
+					background-color: rgba($color-border, .5);
+					box-shadow: 0 0 1px 1px $color-border;
+				}
+			}
+		}
+	}
+
+	&.is-active {
+		.dropdown-menu {
+			display: flex;
+		}
+	}
+}

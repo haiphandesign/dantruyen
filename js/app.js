@@ -147,6 +147,8 @@ $(document).ready(function () {
 	gameInfoMargin();
 });
 
+setTimeout(gameInfoMargin, 100);
+
 function gameInfoMargin() {
 	if ($(window).width() < 992) {
 		$('.game--header .game--info').css('margin-top', '-10vh');
@@ -347,3 +349,19 @@ function cardNewTab() {
 		});
 	}, 100);
 };
+
+
+
+$('.tab-content').hide();
+$('.tab-content').eq(0).show();
+$('.tabs > *').removeClass('is-active');
+$('.tabs > *').eq(0).addClass('is-active');
+
+$('.tabs > *').click(function () {
+	var tabPosition = $(this).index();
+	console.log(tabPosition);
+	$('.tab-content').hide();
+	$('.tab-content').eq(tabPosition).show();
+	$('.tabs > *').removeClass('is-active');
+	$('.tabs > *').eq(tabPosition).addClass('is-active');
+});

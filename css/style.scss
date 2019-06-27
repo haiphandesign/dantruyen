@@ -38,7 +38,10 @@
 
 @import "sass/typography"; // Core: Typography
 @import "sass/ui"; // Core: UI
+@import "sass/layout"; // Core: UI
 @import "sass/button"; // Core: UI
+
+@import "sass/form"; // Core: UI
 
 @import "sass/modal"; // Customize: Modal
 @import "sass/card"; // Customize: Modal
@@ -47,5 +50,7 @@
 @import "sass/footer"; // Global: Footer
 
 @import "sass/homepage"; // Page: Home
+
+@import "sass/gameroom"; // Page: Game
 
 @import "sass/game"; // Page: Game
