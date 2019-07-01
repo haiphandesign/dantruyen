@@ -139,6 +139,18 @@ $('.stack-reveal').click(function () {
 	$(this).parent().toggleClass('is-active');
 })
 
+function gameInfoMargin() {
+	setTimeout(function () {
+		if ($(window).width() < 992) {
+			$('.game--header .game--info').css('margin-top', '-10vh');
+		} else {
+			var gameInfoHeight = $('.game--header .game--info').height();
+			$('.game--header .game--info').css('margin-top', -gameInfoHeight / 2);
+		}
+		console.log(gameInfoHeight);
+	}, 200);
+}
+
 $(window).resize(function () {
 	gameInfoMargin();
 });
@@ -147,16 +159,6 @@ $(document).ready(function () {
 	gameInfoMargin();
 });
 
-setTimeout(gameInfoMargin, 100);
-
-function gameInfoMargin() {
-	if ($(window).width() < 992) {
-		$('.game--header .game--info').css('margin-top', '-10vh');
-	} else {
-		var gameinfoheight = $('.game--header .game--info').height();
-		$('.game--header .game--info').css('margin-top', -gameinfoheight / 2);
-	}
-}
 
 
 // Game: Generate Challenge Result

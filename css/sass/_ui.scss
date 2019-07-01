@@ -395,6 +395,11 @@
 		height: 3rem;
 	}
 
+	&:hover,
+	&:focus {
+		border-color: $color-text-light;
+	}
+
 	textarea {
 		width: 100%;
 		height: calc(100% - 3rem);

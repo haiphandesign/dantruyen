@@ -2,5 +2,5 @@
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "workbench.colorTheme": "Material Theme Darker High Contrast"
+    "workbench.colorTheme": "Monokai Dimmed"
 }

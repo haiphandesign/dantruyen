@@ -103,7 +103,7 @@
 			width: 100%;
 			height: 100%;
 
-			input[type=file] {
+			input[type='file'] {
 				width: 0;
 				height: 0;
 			}
@@ -205,7 +205,7 @@
 		font-size: .75rem;
 
 		&:before {
-			content: 'x'
+			content: 'x';
 		}
 	}
 
@@ -339,22 +339,12 @@
 		}
 	}
 
-	&.card-empty {
-		.card-info {
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			justify-content: space-between;
-		}
-	}
-
 	&:hover {
 		.card-action {
 			visibility: visible;
 			opacity: 1;
 		}
 	}
-
 
 	// Cards Icon and Background
 
@@ -374,14 +364,14 @@
 		}
 	}
 
-	&.card-challenge {
+	&.card-obstacle {
 		.card-image {
-			background-image: url('./../img/layout/card/background-challenge.svg');
+			background-image: url('./../img/layout/card/background-obstacle.svg');
 		}
 
 		.card-icon {
 			&:before {
-				background-image: url('../../img/layout/card/icon-challenge.svg');
+				background-image: url('../../img/layout/card/icon-obstacle.svg');
 			}
 
 			&:after {
@@ -389,9 +379,9 @@
 			}
 		}
 
-		.challenge-progress {
+		.obstacle-progress {
 			position: absolute;
-			bottom: -1px;
+			bottom: 0;
 			right: 1rem;
 
 			display: flex;
@@ -404,6 +394,7 @@
 			@include ui-border;
 			@include ui-border-radius;
 
+			border-bottom: 0;
 			border-bottom-left-radius: 0;
 			border-bottom-right-radius: 0;
 
@@ -422,8 +413,14 @@
 			}
 		}
 
-		.challenge-result {
+		.obstacle-result {
 			padding-bottom: .5rem;
+
+			>.title {
+				p {
+					font-size: .75rem;
+				}
+			}
 
 			>.result {
 				display: flex;
@@ -487,8 +484,8 @@
 			}
 		}
 
-		&.card-challenge-result-strong {
-			.challenge-result {
+		&.card-obstacle-result-strong {
+			.obstacle-result {
 				>.result {
 					>span {
 						&:before {
@@ -507,8 +504,8 @@
 			}
 		}
 
-		&.card-challenge-result-weak {
-			.challenge-result {
+		&.card-obstacle-result-weak {
+			.obstacle-result {
 				>.result {
 					>span {
 						&:before {
@@ -576,14 +573,14 @@
 		}
 	}
 
-	&.card-motivation {
+	&.card-subplot {
 		.card-image {
-			background-image: url('./../img/layout/card/background-motivation.svg');
+			background-image: url('./../img/layout/card/background-subplot.svg');
 		}
 
 		.card-icon {
 			&:before {
-				background-image: url('../../img/layout/card/icon-motivation.svg');
+				background-image: url('../../img/layout/card/icon-subplot.svg');
 			}
 
 			&:after {
@@ -592,14 +589,14 @@
 		}
 	}
 
-	&.card-item {
+	&.card-asset {
 		.card-image {
-			background-image: url('./../img/layout/card/background-item.svg');
+			background-image: url('./../img/layout/card/background-asset.svg');
 		}
 
 		.card-icon {
 			&:before {
-				background-image: url('../../img/layout/card/icon-item.svg');
+				background-image: url('../../img/layout/card/icon-asset.svg');
 			}
 
 			&:after {
@@ -608,14 +605,14 @@
 		}
 	}
 
-	&.card-target {
+	&.card-goal {
 		.card-image {
-			background-image: url('./../img/layout/card/background-target.svg');
+			background-image: url('./../img/layout/card/background-goal.svg');
 		}
 
 		.card-icon {
 			&:before {
-				background-image: url('../../img/layout/card/icon-target.svg');
+				background-image: url('../../img/layout/card/icon-goal.svg');
 			}
 
 			&:after {
@@ -644,7 +641,6 @@
 		}
 
 		.card-info {
-
 			@include breakpoint(sm) {
 				height: calc(100% / 3);
 			}
@@ -658,7 +654,6 @@
 			}
 		}
 	}
-
 
 	// Card Multiple
 
@@ -687,6 +682,18 @@
 	&.card-create {
 		border-style: dashed;
 		background-color: transparent;
+
+		.card-icon {
+			display: none;
+
+			&:before {
+				background-image: url('../../img/layout/card/icon-create.svg');
+			}
+
+			&:after {
+				content: 'Tạo thẻ';
+			}
+		}
 
 		.card-action {
 			background-color: transparent;
@@ -756,8 +763,8 @@
 
 .card-list {
 	display: grid;
-	grid-template-columns: 1fr;
 	grid-gap: .5rem;
+	grid-auto-rows: minmax(min-content, max-content);
 
 	overflow: auto;
 
@@ -770,9 +777,12 @@
 
 		height: 3rem;
 
-		&:hover,
-		&.is-selected {
+		&:hover {
 			background-color: rgba($color-border, .25);
+		}
+
+		&.is-selected {
+			background-color: rgba($color-border, .5);
 		}
 
 		.card-icon {
@@ -793,7 +803,310 @@
 				display: none;
 			}
 		}
+	}
+}
 
+.card-stack {
+	display: grid;
+	grid-gap: .5rem;
+	grid-auto-rows: minmax(min-content, max-content);
 
+	.card {
+		padding-top: unset;
+
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		height: 3rem;
+
+		border: none;
+		border-radius: none;
+		box-shadow: none;
+		background: transparent;
+
+		cursor: pointer;
+
+		.card-icon {
+			position: relative;
+			top: unset;
+			left: unset;
+
+			height: 3rem;
+			width: 3rem;
+
+			margin-right: .5rem;
+
+			&:before {
+				margin: 0;
+			}
+
+			&:after {
+				display: none;
+			}
+		}
+
+		.card-amount {
+			top: unset;
+			right: .5rem;
+
+			border: none;
+			border-radius: none;
+			box-shadow: none;
+			background: transparent;
+		}
+
+		&:hover {
+			.card-icon {
+				background-color: rgba($color-border, .25);
+			}
+		}
+
+		&.card-create {
+			.card-icon {
+				display: block;
+				border-style: dashed;
+			}
+
+			.card-name {
+				color: $color-text-light;
+			}
+		}
+	}
+}
+
+.modal-card-action {
+	display: grid !important;
+	grid-template-columns: 1fr;
+
+	width: 90vw;
+	max-width: 45rem;
+
+	padding-top: unset;
+
+	@include breakpoint(sm) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.modal-panel-options {
+		display: flex;
+		flex-direction: column;
+
+		padding: 1rem;
+
+		@include breakpoint(sm) {
+			padding: 1rem 2rem;
+		}
+
+		>.title {
+			h3 {
+				border-bottom: 1px solid $color-border;
+				margin-bottom: .5rem;
+				padding-bottom: .25rem;
+			}
+
+			p {
+				color: $color-text-light;
+				margin-top: 0;
+				margin-bottom: 1rem;
+			}
+
+			+.content {
+				margin-top: .5rem;
+			}
+		}
+
+		>.content {
+			display: grid;
+			grid-gap: 1rem;
+			grid-auto-rows: minmax(min-content, max-content);
+
+			padding: 0;
+
+			.title {
+				h4 {
+					font-size: 1rem;
+				}
+
+				p {
+					font-size: .85rem;
+					color: $color-text-light;
+
+					margin-top: .25rem;
+				}
+
+				+.content {
+					margin-top: 1rem;
+				}
+			}
+
+			.content {
+				padding: 0;
+			}
+		}
+
+		>a {
+			margin-top: auto;
+		}
+	}
+
+	.modal-panel-preview {
+		display: none;
+
+		@include breakpoint(sm) {
+			display: initial;
+		}
+
+		.card {
+			border-width: 0 0 0 1px;
+			border-radius: 0;
+
+			.card-info {
+				p {
+					height: unset;
+					max-height: 10.5em;
+					overflow: auto;
+				}
+			}
+		}
+	}
+
+	.counter {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		.title {
+			h4 {
+				font-size: 1rem;
+			}
+
+			p {
+				font-size: .85rem;
+				color: $color-text-light;
+
+				margin-top: .25rem;
+			}
+		}
+
+		.content {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			padding: 0;
+			margin-left: 1rem;
+		}
+
+		&-plus,
+		&-minus {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			width: 2rem;
+			height: 2rem;
+
+			@include ui-border;
+			@include ui-border-radius;
+			@include ui-shadow;
+			@include small-text;
+
+			cursor: pointer;
+
+			&:hover {
+				background-color: $color-border;
+			}
+		}
+
+		&-value {
+			display: block;
+
+			width: 2.5rem;
+
+			text-align: center;
+		}
+	}
+
+	.obstacle-result {
+		display: grid;
+		grid-gap: 1rem;
+		grid-auto-rows: minmax(min-content, max-content);
+
+		margin-top: 0;
+
+		div[class*="result-"] {
+			display: grid;
+			grid-gap: .5rem;
+			grid-auto-rows: minmax(min-content, max-content);
+		}
+	}
+
+	.asset-recipient-results {
+		display: none;
+
+		@include ui-border;
+		@include ui-border-radius;
+
+		border-color: $color-text-light;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+
+		background-color: white;
+
+		margin-top: -0.25rem;
+
+		max-height: 6rem;
+		overflow: auto;
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+
+			height: 3rem;
+			padding: 0 .5rem;
+
+			*+* {
+				margin-left: .5rem;
+			}
+		}
+
+		.character-image {
+			img {
+				display: block;
+				width: 2rem;
+				height: 2rem;
+				object-fit: cover;
+				@include ui-border;
+				@include ui-border-radius;
+			}
+		}
+
+		.character-name {
+			font-weight: 600;
+		}
+
+		.character-user {
+			margin-left: auto;
+			font-size: .85rem;
+			color: $color-text-light;
+		}
+	}
+
+	.dev {
+		.asset-recipient-search {
+			&:focus {
+				~.asset-recipient-results {
+					display: block;
+				}
+			}
+		}
 	}
 }

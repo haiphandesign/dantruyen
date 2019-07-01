@@ -28,6 +28,25 @@
 	}
 }
 
+.post-actions {
+	display: flex;
+	order: -1;
+
+	@include breakpoint(md) {
+		order: unset;
+	}
+
+	>* {
+		&:first-child {
+			margin-right: auto;
+		}
+
+		+* {
+			margin-left: .5rem;
+		}
+	}
+}
+
 .card-panel {
 	>.content {
 		padding: 0;
@@ -51,10 +70,11 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-gap: 1rem;
+		grid-template-areas: 'info''list''preview';
 
 		@include breakpoint(sm) {
 			grid-template-columns: 1fr 1fr 1fr;
-			grid-template-areas: "info info info""list preview preview";
+			grid-template-areas: 'info info info''list preview preview';
 
 		}
 	}
@@ -71,12 +91,37 @@
 
 	.card-panel-list {
 		display: grid;
-		grid-template-columns: 1fr;
-		grid-gap: .5rem;
+		grid-gap: 1rem;
+		grid-auto-rows: minmax(min-content, max-content);
 		grid-area: list;
 
 		.card-list {
-			max-height: 10rem;
+			max-height: 21rem;
+
+			@include breakpoint(sm) {
+				max-height: 10rem;
+			}
+		}
+
+		.no-card {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			width: 100%;
+			height: calc(100% - 4rem);
+			min-height: 8rem;
+
+			@include ui-border;
+			@include ui-border-radius;
+
+			border-style: dashed;
+
+			&:before {
+				content: 'Chưa có thẻ bài nào';
+				@include small-text;
+				color: $color-text-light;
+			}
 		}
 	}
 
@@ -84,63 +129,352 @@
 		grid-area: preview;
 
 		.card {
-			margin-bottom: 3rem;
 
-			.card-action {
-				visibility: visible;
-				opacity: 1;
+			&.card-empty {
+				margin-bottom: 0;
+				display: none;
 
-				position: absolute;
-				top: 100%;
+				@include breakpoint(sm) {
+					display: block;
+				}
 
-				align-items: flex-end;
-				justify-content: flex-end;
+				+.card-action {
+					display: none;
+				}
+			}
+		}
 
-				height: 3rem;
+		.card-action {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-end;
+			justify-content: flex-end;
 
-				background-color: transparent;
+			width: 100%;
 
-				a {
-					flex-direction: row;
-					align-items: center;
-					justify-content: center;
+			margin-top: 1rem;
 
-					width: auto;
-					height: 2rem;
 
-					padding: 0 1rem;
+			>*+* {
+				margin-left: .5rem;
+			}
 
-					@include ui-border;
-					@include ui-border-radius;
-					@include ui-shadow;
+			a {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
 
-					@include small-text;
-					color: $color-text-regular;
+				width: auto;
+				min-width: 3rem;
+				height: 2rem;
 
-					+a {
-						margin-left: .5rem;
+				padding: 0 1rem;
+
+				@include ui-border;
+				@include ui-border-radius;
+				@include ui-shadow;
+
+				@include small-text;
+				color: $color-text-regular;
+
+				span {
+					margin-left: .5rem;
+					display: none;
+
+					@include breakpoint(sm) {
+						display: initial;
 					}
+				}
 
-					&:first-child {
-						margin-right: auto;
-					}
-
-					i {
-						width: unset;
-						height: unset;
-
-						font-size: inherit;
-
-						border: unset;
-						border-radius: unset;
-					}
+				&:first-child {
+					margin-right: auto;
 
 					span {
-						margin-top: 0;
-						margin-left: .5rem;
+						display: initial;
 					}
 				}
 			}
+
+			.dropdown {
+				.dropdown-menu {
+					top: unset;
+					bottom: calc(100% + .5rem);
+				}
+			}
+		}
+	}
+}
+
+#tabNarratorCardsAssets {
+	.card-panel-preview {
+		.card-action {
+			a {
+				&:first-child {
+					margin-right: unset;
+				}
+
+				&:nth-child(2) {
+					margin-right: auto;
+
+					span {
+						display: initial;
+					}
+				}
+			}
+		}
+	}
+}
+
+.setting-item {
+	position: relative;
+
+	display: grid;
+
+	margin-left: -1rem;
+	margin-right: -1rem;
+	padding: 1rem;
+
+	&:hover {
+		background-color: rgba($color-background, 0.5);
+	}
+
+	&:first-child {
+		margin-top: -1rem;
+	}
+
+	&:last-child {
+		margin-bottom: -1rem;
+	}
+
+	&+.game--setting-item {
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+
+			display: block;
+
+			width: 100%;
+			height: 1px;
+
+			background-color: $color-border;
+		}
+	}
+
+	>.title {
+		p {
+			margin-top: 0;
+			color: $color-text-light;
+		}
+	}
+
+	>.content {
+
+		input[type='text'],
+		textarea {
+			width: 100%;
+		}
+
+		.input-limit {
+			float: right;
+
+			font-size: 0.75rem;
+			color: $color-text-light;
+
+			margin-top: 0.75rem;
+		}
+	}
+
+	&.optional {
+		>.title {
+			h4 {
+				&:after {
+					content: ' (không bắt buộc)';
+
+					font-size: 1rem;
+					color: $color-text-light;
+
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+
+	&.full {
+		>.title {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&.list {
+		>.title {
+			display: flex;
+			align-items: center;
+
+			h4 {
+				width: 30%;
+			}
+
+			p {
+				margin-left: 2rem;
+			}
+
+			.edit {
+				margin: 0;
+				margin-left: auto;
+
+				color: $color-text-light;
+
+				cursor: pointer;
+			}
+		}
+
+		&:hover {
+			>.title {
+				.edit {
+					color: $color-text-regular;
+				}
+			}
+		}
+
+		>.content {
+			display: none;
+
+			.list-description {
+				color: $color-text-light;
+			}
+
+			.list-content {
+				margin-top: 1rem;
+
+				select {
+					width: auto;
+				}
+			}
+
+			.list-action {
+				margin-top: 1rem;
+				text-align: center;
+
+				* {
+					&+* {
+						margin-left: 0.5rem;
+					}
+				}
+			}
+		}
+
+		.game--setting-item-lenght-custom {
+			margin-top: 1rem;
+
+			.col-3 {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+
+				white-space: nowrap;
+			}
+
+			input {
+				width: 4rem;
+				margin-left: 1rem;
+			}
+		}
+
+		.game--setting-item-license-pick {
+			margin-top: 1rem;
+
+			select {
+				margin-top: 0.5rem;
+			}
+		}
+
+		.game--setting-item-word-limit {
+			margin-top: 1rem;
+
+			.form-element {
+				align-items: center;
+			}
+
+			span {
+				white-space: nowrap;
+			}
+
+			input[type='number'] {
+				width: 5rem;
+			}
+		}
+
+		.game--setting-item-card-setting {
+			padding-top: 1rem;
+
+			>div {
+				display: none;
+			}
+
+			&-custom {
+				// margin-top: 1rem;
+
+				.form-element {
+					align-items: center;
+
+					span {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		&.is-editing {
+			>.title {
+				h4 {
+					width: 100%;
+				}
+
+				p,
+				.edit {
+					display: none;
+				}
+			}
+
+			>.content {
+				display: initial;
+			}
+		}
+
+		&.is-new {
+			>.title {
+				h4 {
+					width: 100%;
+				}
+
+				p,
+				.edit {
+					display: none;
+				}
+			}
+
+			>.content {
+				display: initial;
+
+				.list-action {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&.switch {
+		grid-template-columns: 8fr 2fr;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		>.content {
+			text-align: right;
+			padding-top: .5rem;
 		}
 	}
 }

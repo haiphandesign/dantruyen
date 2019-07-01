@@ -3,7 +3,7 @@
 	grid-template-columns: 1fr;
 	grid-gap: 1rem;
 
-	@include breakpoint(sm) {
+	@include breakpoint(md) {
 		grid-template-columns: 2fr 1fr;
 
 		padding: 0;
@@ -16,6 +16,28 @@
 	&.full {
 		@include breakpoint(sm) {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	.sidebar {
+		display: grid;
+		grid-gap: 1rem;
+		grid-auto-rows: minmax(min-content, max-content);
+
+		&.is-sticky {
+			position: sticky;
+			top: 0;
+
+			.sidebar-inner {
+				position: sticky;
+				top: 0;
+
+				display: grid;
+				grid-gap: 1rem;
+				grid-auto-rows: minmax(min-content, max-content);
+
+				transition-duration: .5s;
+			}
 		}
 	}
 }
@@ -33,7 +55,7 @@
 
 	background-color: white;
 
-	.title {
+	>.title {
 		position: relative;
 
 		display: flex;
@@ -41,10 +63,13 @@
 		align-items: flex-start;
 		justify-content: center;
 
-		padding: 1rem;
+		padding: .75rem 1rem;
 
 		@include ui-border;
 		border-width: 0 0 1px 0;
+
+		cursor: default;
+		user-select: none;
 
 		>* {
 			position: relative;
@@ -59,8 +84,23 @@
 		}
 	}
 
-	.content {
+	>.content {
+		max-height: max-content;
 		padding: 1rem;
+		transition: padding .25s, max-height .25s ease-in-out;
+
+		hr {
+			margin: 1.5rem -1rem 1rem;
+		}
+	}
+
+	&.content-toggle {
+		>.content {
+			max-height: 0;
+			padding: 0 1rem;
+			overflow: hidden;
+			transition: padding .5s, max-height 0.25s cubic-bezier(0, 1, 0, 1);
+		}
 	}
 }
 
@@ -86,7 +126,9 @@
 
 	.dropdown-menu {
 		position: absolute;
+		top: calc(100% + .5rem);
 		right: 0;
+		z-index: 1;
 
 		display: none;
 
