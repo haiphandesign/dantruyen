@@ -103,6 +103,8 @@
 		@include ui-border;
 		@include ui-border-radius;
 		@include ui-shadow;
+
+		background-color: white;
 	}
 
 	&.hollow {
