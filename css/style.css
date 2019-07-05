@@ -2825,7 +2825,13 @@ table td {
 }
 
 .card .card-info {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   padding: 1rem;
   padding-bottom: 1.5rem;
@@ -4654,7 +4660,7 @@ table td {
   margin-top: 2.5rem;
 }
 
-#screenshots .homepage-title span {
+#screenshots .homepage-title span:not(.divider) {
   display: block;
   width: 7.5rem;
   height: 1px;

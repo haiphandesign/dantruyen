@@ -499,7 +499,7 @@ $color-text-homepage: #063E67;
 	.homepage-title {
 		margin-top: 2.5rem;
 
-		span {
+		span:not(.divider) {
 			display: block;
 			width: 7.5rem;
 			height: 1px;

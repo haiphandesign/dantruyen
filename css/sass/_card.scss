@@ -210,7 +210,8 @@
 	}
 
 	.card-info {
-		display: block;
+		display: flex;
+		flex-direction: column;
 		width: 100%;
 		padding: 1rem;
 		padding-bottom: 1.5rem;
