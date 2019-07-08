@@ -710,6 +710,38 @@
 	}
 }
 
+span.card-icon {
+	display: inline-block;
+	width: 1.25rem;
+	height: 1.25rem;
+	line-height: 1;
+	vertical-align: text-bottom;
+
+	background-size: 1rem;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	&.card-place {
+		background-image: url('./../img/layout/card/icon-place.svg');
+	}
+
+	&.card-obstacle {
+		background-image: url('./../img/layout/card/icon-obstacle.svg');
+	}
+
+	&.card-character {
+		background-image: url('./../img/layout/card/icon-character.svg');
+	}
+
+	&.card-asset {
+		background-image: url('./../img/layout/card/icon-asset.svg');
+	}
+
+	&.card-goal {
+		background-image: url('./../img/layout/card/icon-goal.svg');
+	}
+}
+
 .modal-card {
 	display: grid !important;
 	grid-template-columns: 1fr;

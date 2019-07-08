@@ -39,6 +39,14 @@
 				transition-duration: .5s;
 			}
 		}
+
+		.content-block {
+			&.no-padding {
+				>.content {
+					padding: 0;
+				}
+			}
+		}
 	}
 }
 
@@ -126,7 +134,7 @@
 
 	.dropdown-menu {
 		position: absolute;
-		top: calc(100% + .5rem);
+		top: 100%;
 		right: 0;
 		z-index: 1;
 
