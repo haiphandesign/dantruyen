@@ -1372,6 +1372,14 @@ table td {
   }
 }
 
+.content-wrapper .main {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
+  grid-auto-rows: minmax(min-content, max-content);
+}
+
 .content-wrapper .sidebar {
   display: -ms-grid;
   display: grid;
@@ -3010,146 +3018,23 @@ table td {
   content: 'Thử thách';
 }
 
-.card.card-obstacle .obstacle-progress {
+.card.card-obstacle.card-obstacle-character .card-icon:before {
+  background-image: url("../../img/layout/card/icon-character.svg");
+}
+
+.card.card-obstacle.card-obstacle-character .card-icon:after {
+  content: 'Nhân vật';
+}
+
+.card.card-obstacle .challenge-progress {
   position: absolute;
   bottom: 0;
   right: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   height: 10px;
   width: calc(100% - 2rem);
-  border: 1px solid #e4e4e4;
-  border-radius: 0.25rem;
   border-bottom: 0;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-}
-
-.card.card-obstacle .obstacle-progress > span {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.card.card-obstacle .obstacle-progress > span + span {
-  border-left: 1px solid #e4e4e4;
-}
-
-.card.card-obstacle .obstacle-progress > span.is-completed {
-  background-color: rgba(228, 228, 228, 0.5);
-}
-
-.card.card-obstacle .obstacle-result {
-  padding-bottom: .5rem;
-}
-
-.card.card-obstacle .obstacle-result > .title p {
-  font-size: .75rem;
-}
-
-.card.card-obstacle .obstacle-result > .result {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.card.card-obstacle .obstacle-result > .result strong {
-  margin-right: .5rem;
-}
-
-.card.card-obstacle .obstacle-result > .result > span {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.card.card-obstacle .obstacle-result > .result > span:before {
-  content: '';
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  background-image: url("../../img/layout/card/result.svg");
-  background-size: contain;
-  background-position: center;
-}
-
-.card.card-obstacle .obstacle-result > .result > span:after {
-  content: 'Chưa xác định';
-  text-transform: uppercase;
-  font-size: 0.75rem !important;
-  font-weight: 800;
-  margin-left: .25rem;
-}
-
-.card.card-obstacle .obstacle-result > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.card.card-obstacle .obstacle-result > ul li {
-  margin-top: .75rem;
-  opacity: .25;
-  font-size: .85rem;
-}
-
-.card.card-obstacle .obstacle-result > ul li.is-selected {
-  opacity: 1;
-}
-
-.card.card-obstacle .obstacle-result > ul h5 {
-  display: inline;
-}
-
-.card.card-obstacle .obstacle-result > ul h5:after {
-  content: ': ';
-}
-
-.card.card-obstacle .obstacle-result > ul p {
-  display: inline;
-}
-
-.card.card-obstacle.card-obstacle-result-strong .obstacle-result > .result > span:before {
-  background-image: url("../../img/layout/card/result-strong.svg");
-}
-
-.card.card-obstacle.card-obstacle-result-strong .obstacle-result > .result > span:after {
-  content: 'Mạnh';
-}
-
-.card.card-obstacle.card-obstacle-result-strong .obstacle-result .result-strong {
-  opacity: 1;
-}
-
-.card.card-obstacle.card-obstacle-result-weak .obstacle-result > .result > span:before {
-  background-image: url("../../img/layout/card/result-weak.svg");
-}
-
-.card.card-obstacle.card-obstacle-result-weak .obstacle-result > .result > span:after {
-  content: 'Yếu';
-}
-
-.card.card-obstacle.card-obstacle-result-weak .obstacle-result .result-weak {
-  opacity: 1;
 }
 
 .card.card-nature .card-image {
@@ -3750,6 +3635,138 @@ span.card-icon.card-goal {
 
 .modal-card-action .dev .asset-recipient-search:focus ~ .asset-recipient-results {
   display: block;
+}
+
+.challenge-progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 11px;
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  border-radius: 0.25rem;
+}
+
+.challenge-progress > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.challenge-progress > span + span {
+  border-left: 1px solid #e4e4e4;
+}
+
+.challenge-progress > span.is-completed {
+  background-color: rgba(228, 228, 228, 0.5);
+}
+
+.challenge-result > .title p {
+  font-size: .75rem;
+}
+
+.challenge-result > .result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.challenge-result > .result strong {
+  margin-right: .5rem;
+}
+
+.challenge-result > .result > span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.challenge-result > .result > span:before {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../../img/layout/card/result.svg");
+  background-size: contain;
+  background-position: center;
+}
+
+.challenge-result > .result > span:after {
+  content: 'Chưa xác định';
+  text-transform: uppercase;
+  font-size: 0.75rem !important;
+  font-weight: 800;
+  margin-left: .25rem;
+}
+
+.challenge-result > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.challenge-result > ul li {
+  margin-top: .75rem;
+  opacity: 1;
+  font-size: .85rem;
+}
+
+.challenge-result > ul li.is-selected {
+  opacity: 1;
+}
+
+.challenge-result > ul h5 {
+  display: inline;
+}
+
+.challenge-result > ul h5:after {
+  content: ': ';
+}
+
+.challenge-result > ul p {
+  display: inline;
+}
+
+.challenge-result.is-strong > .result > span:before {
+  background-image: url("../../img/layout/card/result-strong.svg");
+}
+
+.challenge-result.is-strong > .result > span:after {
+  content: 'Mạnh';
+}
+
+.challenge-result.is-strong .result-weak {
+  opacity: .25;
+}
+
+.challenge-result.is-weak > .result > span:before {
+  background-image: url("../../img/layout/card/result-weak.svg");
+}
+
+.challenge-result.is-weak > .result > span:after {
+  content: 'Yếu';
+}
+
+.challenge-result.is-weak .result-strong {
+  opacity: .25;
 }
 
 #nav {
@@ -5872,7 +5889,35 @@ footer .footer-content .footer-social a + a {
   width: 100%;
 }
 
-.post-first .chapter-cover {
+.post .title {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post .character-avatar {
+  margin: .25rem 1rem .25rem 0;
+}
+
+.post .character-avatar img {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+          box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+}
+
+.post-editor .chapter-cover {
   position: relative;
   display: block;
   width: calc(100% + 2rem);
@@ -5883,7 +5928,7 @@ footer .footer-content .footer-social a + a {
   background-color: rgba(228, 228, 228, 0.5);
 }
 
-.post-first .chapter-cover img {
+.post-editor .chapter-cover img {
   position: absolute;
   top: 0;
   left: 0;
@@ -5892,6 +5937,14 @@ footer .footer-content .footer-social a + a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.post-editor .card-stacks .card-play {
+  display: none;
+}
+
+.post-editor .card-stacks .card-challenge.is-selected ~ .card-play {
+  display: initial;
 }
 
 .post-actions {
@@ -6035,6 +6088,23 @@ footer .footer-content .footer-social a + a {
 }
 
 .card-panel .card-panel-preview .card-action {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
+  grid-auto-rows: minmax(min-content, max-content);
+  margin-top: 1rem;
+}
+
+.card-panel .card-panel-preview .card-action .card-action-info {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
+  grid-auto-rows: minmax(min-content, max-content);
+}
+
+.card-panel .card-panel-preview .card-action .card-action-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6048,15 +6118,17 @@ footer .footer-content .footer-social a + a {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  margin: 0;
+  padding: 0;
   width: 100%;
-  margin-top: 1rem;
 }
 
-.card-panel .card-panel-preview .card-action > * + * {
+.card-panel .card-panel-preview .card-action .card-action-buttons > * + * {
   margin-left: .5rem;
+  padding: 0;
 }
 
-.card-panel .card-panel-preview .card-action a {
+.card-panel .card-panel-preview .card-action .card-action-buttons a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6084,26 +6156,26 @@ footer .footer-content .footer-social a + a {
   color: #333333;
 }
 
-.card-panel .card-panel-preview .card-action a span {
+.card-panel .card-panel-preview .card-action .card-action-buttons a span {
   margin-left: .5rem;
   display: none;
 }
 
 @media (min-width: 768px) {
-  .card-panel .card-panel-preview .card-action a span {
+  .card-panel .card-panel-preview .card-action .card-action-buttons a span {
     display: initial;
   }
 }
 
-.card-panel .card-panel-preview .card-action a:first-child {
+.card-panel .card-panel-preview .card-action .card-action-buttons a:first-child {
   margin-right: auto;
 }
 
-.card-panel .card-panel-preview .card-action a:first-child span {
+.card-panel .card-panel-preview .card-action .card-action-buttons a:first-child span {
   display: initial;
 }
 
-.card-panel .card-panel-preview .card-action .dropdown .dropdown-menu {
+.card-panel .card-panel-preview .card-action .card-action-buttons .dropdown .dropdown-menu {
   top: unset;
   bottom: calc(100% + .5rem);
 }
@@ -6160,6 +6232,16 @@ footer .footer-content .footer-social a + a {
 
 .card-history .card-history-item:hover .dropdown {
   opacity: 1;
+}
+
+.card-stacks .card-challenge + .card-play:before,
+.card-stacks .card-challenge + .card-available:before {
+  content: '';
+  display: block;
+  width: calc(100% + 2rem);
+  height: 1px;
+  margin: 1rem -1rem;
+  background-color: #e4e4e4;
 }
 
 .setting-item {
@@ -6386,6 +6468,26 @@ footer .footer-content .footer-social a + a {
 .setting-item.switch > .content {
   text-align: right;
   padding-top: .5rem;
+}
+
+.modal-card-panel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 1rem;
+      grid-template-areas: "info" "list" "preview";
+  width: 90vw;
+  max-width: 45rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .modal-card-panel {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "info info info" "list preview preview";
+  }
 }
 
 .game--header {

@@ -23,7 +23,9 @@
 
 		<div class="container content-wrapper">
 			<div class="main">
-				<div class="content-block post-narrator post-first">
+
+				<!-- WIDGET : POST EDITOR -->
+				<div class="content-block post post-editor post-narrator post-first">
 					<div class="content">
 						<div class="chapter-cover image-upload">
 							<img src="" alt="">
@@ -103,11 +105,12 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
 			<div class="sidebar is-sticky">
 
 				<!-- WIDGET : NARRATOR'S CARD STACK -->
-				<div class="content-block game-post-card-stack">
+				<div class="content-block card-stacks">
 					<div class="title">
 						<h3>Thiết lập thẻ bài</h3>
 						<div class="dropdown">
@@ -121,37 +124,40 @@
 						</div>
 					</div>
 					<div class="content">
-						<h5>Thử thách</h5>
-						<div class="card-stack">
-							<div class="card card-obstacle">
-								<div class="card-icon"></div>
-								<div class="card-name">Bắt Pokémon đầu tiên</div>
-							</div>
-							<div class="card card-character">
-								<div class="card-icon"></div>
-								<div class="card-name">Giáo sư Oak</div>
-							</div>
-							<div class="card card-create">
-								<div class="card-icon"></div>
-								<div class="card-name">Thêm thẻ bài</div>
+						<div class="card-challenge">
+							<h5>Thử thách</h5>
+							<div class="card-stack">
+								<a class="card card-obstacle">
+									<div class="card-icon"></div>
+									<div class="card-name">Bắt Pokémon đầu tiên</div>
+								</a>
+								<a class="card card-character">
+									<div class="card-icon"></div>
+									<div class="card-name">Giáo sư Oak</div>
+								</a>
+								<a class="card card-create">
+									<div class="card-icon"></div>
+									<div class="card-name">Thêm thẻ bài</div>
+								</a>
 							</div>
 						</div>
-						<hr>
-						<h5>Khả dụng</h5>
-						<div class="card-stack">
-							<div class="card card-asset">
-								<div class="card-icon"></div>
-								<div class="card-name">Pokéball</div>
-								<div class="card-amount">5</div>
-							</div>
-							<div class="card card-asset">
-								<div class="card-icon"></div>
-								<div class="card-name">Xe đạp Silph Co.</div>
-								<div class="card-amount">3</div>
-							</div>
-							<div class="card card-create">
-								<div class="card-icon"></div>
-								<div class="card-name">Thêm thẻ bài</div>
+						<div class="card-available">
+							<h5>Khả dụng</h5>
+							<div class="card-stack">
+								<a class="card card-asset">
+									<div class="card-icon"></div>
+									<div class="card-name">Pokéball</div>
+									<div class="card-amount">5</div>
+								</a>
+								<a class="card card-asset">
+									<div class="card-icon"></div>
+									<div class="card-name">Xe đạp Silph Co.</div>
+									<div class="card-amount">3</div>
+								</a>
+								<a class="card card-create">
+									<div class="card-icon"></div>
+									<div class="card-name">Thêm thẻ bài</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -198,6 +204,8 @@
 
 		<div class="container content-wrapper">
 			<div class="main">
+
+				<!-- WIDGET : NARRATOR'S CARD MANAGER -->
 				<div class="content-block card-panel">
 					<div class="title">
 						<h3>Quản lý thẻ bài</h3>
@@ -289,22 +297,24 @@
 									</div>
 								</div>
 								<div class="card-action">
-									<a class="card-state">
-										<i class="far fa-check"></i>
-										<span>Đang sử dụng</span>
-									</a>
-									<a href="./modal/card-place.html" rel="modal:open">
-										<i class="far fa-eye"></i>
-										<span>Chi tiết</span>
-									</a>
-									<div class="dropdown">
-										<a class="dropdown-button"></a>
-										<div class="dropdown-menu">
-											<ul>
-												<li><i class="far fa-edit"></i><span>Chỉnh sửa</span></li>
-												<li><i class="far fa-copy"></i><span>Sao chép</span></li>
-												<li><i class="far fa-trash"></i><span>Xóa thẻ</span></li>
-											</ul>
+									<div class="card-action-buttons">
+										<a class="card-state">
+											<i class="far fa-check"></i>
+											<span>Đang sử dụng</span>
+										</a>
+										<a href="./modal/card-place.html" rel="modal:open">
+											<i class="far fa-eye"></i>
+											<span>Chi tiết</span>
+										</a>
+										<div class="dropdown">
+											<a class="dropdown-button"></a>
+											<div class="dropdown-menu">
+												<ul>
+													<li><i class="far fa-edit"></i><span>Chỉnh sửa</span></li>
+													<li><i class="far fa-copy"></i><span>Sao chép</span></li>
+													<li><i class="far fa-trash"></i><span>Xóa thẻ</span></li>
+												</ul>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -350,22 +360,24 @@
 									</div>
 								</div>
 								<div class="card-action">
-									<a href="./modal/card-obstacle-play.html" rel="modal:open"
-										class="open-modal-obstacle-play">
-										<i class="far fa-plus"></i><span>Đặt thẻ</span>
-									</a>
-									<a href="./modal/card-obstacle.html" rel="modal:open">
-										<i class="far fa-eye"></i>
-										<span>Chi tiết</span>
-									</a>
-									<div class="dropdown">
-										<a class="dropdown-button"></a>
-										<div class="dropdown-menu">
-											<ul>
-												<li><i class="far fa-edit"></i><span>Chỉnh sửa</span></li>
-												<li><i class="far fa-copy"></i><span>Sao chép</span></li>
-												<li><i class="far fa-trash"></i><span>Xóa thẻ</span></li>
-											</ul>
+									<div class="card-action-buttons">
+										<a href="./modal/card-obstacle-play.html" rel="modal:open"
+											class="open-modal-obstacle-play">
+											<i class="far fa-plus"></i><span>Đặt thẻ</span>
+										</a>
+										<a href="./modal/card-obstacle.html" rel="modal:open">
+											<i class="far fa-eye"></i>
+											<span>Chi tiết</span>
+										</a>
+										<div class="dropdown">
+											<a class="dropdown-button"></a>
+											<div class="dropdown-menu">
+												<ul>
+													<li><i class="far fa-edit"></i><span>Chỉnh sửa</span></li>
+													<li><i class="far fa-copy"></i><span>Sao chép</span></li>
+													<li><i class="far fa-trash"></i><span>Xóa thẻ</span></li>
+												</ul>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -411,58 +423,61 @@
 									</div>
 								</div>
 								<div class="card-action">
-									<a href="./modal/card-asset-play.html" rel="modal:open"
-										class="open-modal-asset-play">
-										<i class="far fa-plus"></i><span>Đặt thẻ</span>
-									</a>
-									<a href="./modal/card-asset-give.html" rel="modal:open"
-										class="open-modal-asset-give">
-										<i class="far fa-plus"></i><span>Chỉ định</span>
-									</a>
-									<a href="./modal/card-place.html" rel="modal:open">
-										<i class="far fa-eye"></i>
-										<span>Chi tiết</span>
-									</a>
-									<div class="dropdown">
-										<a class="dropdown-button"></a>
-										<div class="dropdown-menu">
-											<ul>
-												<li><i class="far fa-edit"></i><span>Chỉnh sửa</span></li>
-												<li><i class="far fa-copy"></i><span>Sao chép</span></li>
-												<li><i class="far fa-trash"></i><span>Xóa thẻ</span></li>
+									<ul class="card-action-buttons">
+										<a href="./modal/card-asset-play.html" rel="modal:open"
+											class="open-modal-asset-play">
+											<i class="far fa-plus"></i><span>Đặt thẻ</span>
+										</a>
+										<a href="./modal/card-asset-give.html" rel="modal:open"
+											class="open-modal-asset-give">
+											<i class="far fa-plus"></i><span>Chỉ định</span>
+										</a>
+										<a href="./modal/card-place.html" rel="modal:open">
+											<i class="far fa-eye"></i>
+											<span>Chi tiết</span>
+										</a>
+										<ul class="dropdown">
+											<a class="dropdown-button"></a>
+											<ul class="dropdown-menu">
+												<ul>
+													<li><i class="far fa-edit"></i><span>Chỉnh sửa</span></li>
+													<li><i class="far fa-copy"></i><span>Sao chép</span></li>
+													<li><i class="far fa-trash"></i><span>Xóa thẻ</span></li>
+												</ul>
 											</ul>
-										</div>
-									</div>
+										</ul>
 								</div>
 							</div>
 						</div>
-						<div class="tab-content" id="tabNarratorCardsGoals">
-							<div class="card-panel-info">
-								<h3>Mục tiêu</h3>
-								<p><strong>Mục tiêu</strong> thể hiện một mục tiêu, một nhiệm vụ nào đó mà nhân vật mong
-									muốn thực hiện.</p>
-							</div>
-							<div class="card-panel-list">
-								<a href="" class="button solid full small-text">
-									<i class="far fa-plus"></i>
-									<span>Tạo thẻ bài mới</span>
-								</a>
-								<div class="no-card"></div>
-							</div>
-							<div class="card-panel-preview">
-								<div class="card card-goal card-horizontal card-empty">
-									<div class="card-image">
-										<div class="card-icon"></div>
-										<img src="">
-									</div>
-									<div class="card-info">
-										<div class="hint">
-											<i class="far fa-info-circle"></i>
-											Chọn một thẻ bài từ danh sách
-										</div>
+					</div>
+					<div class="tab-content" id="tabNarratorCardsGoals">
+						<div class="card-panel-info">
+							<h3>Mục tiêu</h3>
+							<p><strong>Mục tiêu</strong> thể hiện một mục tiêu, một nhiệm vụ nào đó mà nhân vật mong
+								muốn thực hiện.</p>
+						</div>
+						<div class="card-panel-list">
+							<a href="" class="button solid full small-text">
+								<i class="far fa-plus"></i>
+								<span>Tạo thẻ bài mới</span>
+							</a>
+							<div class="no-card"></div>
+						</div>
+						<div class="card-panel-preview">
+							<div class="card card-goal card-horizontal card-empty">
+								<div class="card-image">
+									<div class="card-icon"></div>
+									<img src="">
+								</div>
+								<div class="card-info">
+									<div class="hint">
+										<i class="far fa-info-circle"></i>
+										Chọn một thẻ bài từ danh sách
 									</div>
 								</div>
-								<div class="card-action">
+							</div>
+							<div class="card-action">
+								<div class="card-action-buttons">
 									<a>
 										<i class="far fa-plus"></i>
 										<span>Đặt</span>
@@ -492,21 +507,22 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<div id="footer"></div>
+	<div id="footer"></div>
 
-		<!-- Javascript -->
-		<script src="./js/jquery.js"></script>
-		<script src="./js/jquery.ui.js"></script>
-		<script src="./js/jquery.modal.js"></script>
-		<script src="./js/app.js"></script>
-		<script src="./js/layout.js"></script>
-		<script src="./js/gameroom.js"></script>
+	<!-- Javascript -->
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.ui.js"></script>
+	<script src="./js/jquery.modal.js"></script>
+	<script src="./js/app.js"></script>
+	<script src="./js/layout.js"></script>
+	<script src="./js/gameroom.js"></script>
 
-		<script>
-			// $('.open-modal-asset-give').modal();
+	<script>
+		// $('.open-modal-asset-give').modal();
 
-		</script>
+	</script>
 
 </body>
 

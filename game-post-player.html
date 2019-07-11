@@ -14,43 +14,38 @@
 	<script src="./js/preload.js"></script>
 </head>
 
-<body class="page-game page-post page-post-narrator logged-in dev">
+<body class="page-game page-post page-post-player logged-in dev">
 
 	<div id="header"></div>
 
 	<div id="main">
 		<section class="game--header"></section>
 
-		<div class="container content-wrapper">
+		<div class="container content-wrapper post post-editor post-player">
 			<div class="main">
-				<div class="content-block post-narrator post-first">
+
+				<!-- WIDGET : POST EDITOR -->
+				<div class="content-block">
+					<div class="title">
+						<div class="character-avatar">
+							<img src="./img/content/players-big/maid.jpg">
+						</div>
+						<h4>Nàng hầu gái tiếp tục cảnh ...</h4>
+					</div>
 					<div class="content">
 						<div class="chapter-cover image-upload">
 							<img src="" alt="">
 							<input type="file">
 							<label>
-								<span>Chọn ảnh nền cho chương</span>
+								<span>Chọn ảnh nền</span>
 							</label>
-						</div>
-						<div class="form-item">
-							<div class="form-label">
-								<h4>Chương 1, Cảnh 1</h4>
-							</div>
-							<div class="form-value">
-								<input type="text" id="chapterTitle" placeholder="Tiêu đề chương">
-								<div class="input-limit">Còn lại: <span>15</span> Từ</div>
-								<div class="hint">
-									<i class="far fa-info-circle"></i>
-									<a href="https://docs.dantruyen.com/">Gợi ý cách đặt tiêu đề chương</a>
-								</div>
-							</div>
 						</div>
 						<div class="form-item">
 							<div class="form-value">
 								<div class="wysiwyg">
 									<textarea rows="20"></textarea>
 								</div>
-								<div class="input-limit">Còn lại: <span>3000</span> Từ</div>
+								<div class="input-limit">Còn lại: <span>2000</span> Từ</div>
 								<div class="hint">
 									<i class="far fa-info-circle"></i>
 									<a href="https://docs.dantruyen.com/">Hướng dẫn sử dụng công cụ viết bài</a>
@@ -59,85 +54,30 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
 			<div class="sidebar is-sticky">
 
-				<!-- WIDGET : NARRATOR'S CARD STACK -->
-				<div class="content-block">
-					<div class="title">
-						<h3>Thiết lập thẻ bài</h3>
-						<div class="dropdown">
-							<a class="dropdown-button"></a>
-							<div class="dropdown-menu">
-								<ul>
-									<li><i class="fas fa-edit"></i><span>Edit</span></li>
-									<li><i class="fas fa-times"></i><span>Delete</span></li>
-								</ul>
-							</div>
-						</div>
-					</div>
+				<!-- WIDGET : PLAYER'S CARD STACK -->
+				<div class="content-block card-stacks">
 					<div class="content">
-						<h5>Thử thách</h5>
-						<div class="card-stack">
-							<div class="card card-obstacle">
-								<div class="card-icon"></div>
-								<div class="card-name">Bắt Pokémon đầu tiên</div>
-							</div>
-							<div class="card card-character">
-								<div class="card-icon"></div>
-								<div class="card-name">Giáo sư Oak</div>
-							</div>
-							<div class="card card-create">
-								<div class="card-icon"></div>
-								<div class="card-name">Thêm thẻ bài</div>
+						<div class="card-challenge">
+							<h5>Thử thách</h5>
+							<div class="card-stack">
+								<a class="card card-create" href="modal/card-challenge-select.html" rel="modal:open">
+									<div class="card-icon"></div>
+									<div class="card-name">Chọn thử thách</div>
+								</a>
 							</div>
 						</div>
-						<hr>
-						<h5>Khả dụng</h5>
-						<div class="card-stack">
-							<div class="card card-asset">
-								<div class="card-icon"></div>
-								<div class="card-name">Pokéball</div>
-								<div class="card-amount">5</div>
-							</div>
-							<div class="card card-asset">
-								<div class="card-icon"></div>
-								<div class="card-name">Xe đạp Silph Co.</div>
-								<div class="card-amount">3</div>
-							</div>
-							<div class="card card-create">
-								<div class="card-icon"></div>
-								<div class="card-name">Thêm thẻ bài</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- WIDGET : SCENE'S SETTINGS -->
-				<div class="content-block">
-					<div class="title">
-						<h3>Thiết lập cảnh</h3>
-						<div class="dropdown">
-							<a class="dropdown-button"></a>
-							<div class="dropdown-menu">
-								<ul>
-									<li><i class="fas fa-edit"></i><span>Edit</span></li>
-									<li><i class="fas fa-times"></i><span>Delete</span></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="content">
-						<div class="setting-item switch">
-							<div class="title">
-								<h4>Kết thúc sớm</h4>
-								<p>Chương 1 được bắt đầu và kết thúc bằng cảnh này.</p>
-							</div>
-							<div class="content">
-								<label class="toggle-switch">
-									<input type="checkbox">
-									<span class="slider"></span>
-								</label>
+						<div class="card-play">
+							<h5>Sử dụng</h5>
+							<div class="card-stack">
+								<a class="card card-create open-modal-card-select" href="modal/card-asset-select.html"
+									rel="modal:open">
+									<div class="card-icon"></div>
+									<div class="card-name">Thêm thẻ bài</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -149,10 +89,11 @@
 					<a class="button solid small-text"><span>Huỷ</span></a>
 				</div>
 
+
 			</div>
 		</div>
 
-		<div class="container content-wrapper">
+		<!-- <div class="container content-wrapper">
 			<div class="main">
 				<div class="content-block card-panel">
 					<div class="title">
@@ -309,7 +250,7 @@
 									<a href="./modal/card-obstacle-play.html" rel="modal:open"
 										class="open-modal-obstacle-play">
 										<i class="far fa-plus"></i><span>Đặt thẻ</span>
-									</a>
+									</div>
 									<a href="./modal/card-obstacle.html" rel="modal:open">
 										<i class="far fa-eye"></i>
 										<span>Chi tiết</span>
@@ -447,7 +388,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 	</div>
 
@@ -462,7 +403,14 @@
 	<script src="./js/gameroom.js"></script>
 
 	<script>
-		// $('.open-modal-asset-give').modal();
+		$('.open-modal-card-select').modal();
+
+		function postAddChallenge() {
+			$('.card-challenge .card-stack .card').removeClass('card-create');
+			$('.card-challenge .card-stack .card').addClass('card-obstacle');
+			$('.card-challenge .card-stack .card .card-name').text('Tên thử thách');
+			$('.card-challenge').addClass('is-selected');
+		}
 
 	</script>
 

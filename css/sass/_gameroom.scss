@@ -1,4 +1,28 @@
-.post-first {
+.post {
+	.title {
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.character-avatar {
+		margin: .25rem 1rem .25rem 0;
+
+		img {
+			display: block;
+
+			width: 4rem;
+			height: 4rem;
+
+			object-fit: cover;
+
+			@include ui-border-radius;
+			@include ui-shadow;
+		}
+	}
+}
+
+.post-editor {
 	.chapter-cover {
 		position: relative;
 
@@ -24,6 +48,20 @@
 			height: 100%;
 
 			object-fit: cover;
+		}
+	}
+
+	.card-stacks {
+		.card-play {
+			display: none;
+		}
+
+		.card-challenge {
+			&.is-selected {
+				~.card-play {
+					display: initial;
+				}
+			}
 		}
 	}
 }
@@ -145,63 +183,79 @@
 		}
 
 		.card-action {
-			display: flex;
-			flex-direction: row;
-			align-items: flex-end;
-			justify-content: flex-end;
-
-			width: 100%;
+			display: grid;
+			grid-gap: 1rem;
+			grid-auto-rows: minmax(min-content, max-content);
 
 			margin-top: 1rem;
 
-
-			>*+* {
-				margin-left: .5rem;
+			.card-action-info {
+				display: grid;
+				grid-gap: 1rem;
+				grid-auto-rows: minmax(min-content, max-content);
 			}
 
-			a {
+			.card-action-buttons {
 				display: flex;
 				flex-direction: row;
-				align-items: center;
-				justify-content: center;
+				align-items: flex-end;
+				justify-content: flex-end;
 
-				width: auto;
-				min-width: 3rem;
-				height: 2rem;
+				margin: 0;
+				padding: 0;
 
-				padding: 0 1rem;
+				width: 100%;
 
-				@include ui-border;
-				@include ui-border-radius;
-				@include ui-shadow;
-
-				@include small-text;
-				color: $color-text-regular;
-
-				span {
+				>*+* {
 					margin-left: .5rem;
-					display: none;
-
-					@include breakpoint(sm) {
-						display: initial;
-					}
+					padding: 0;
 				}
 
-				&:first-child {
-					margin-right: auto;
+				a {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+
+					width: auto;
+					min-width: 3rem;
+					height: 2rem;
+
+					padding: 0 1rem;
+
+					@include ui-border;
+					@include ui-border-radius;
+					@include ui-shadow;
+
+					@include small-text;
+					color: $color-text-regular;
 
 					span {
-						display: initial;
+						margin-left: .5rem;
+						display: none;
+
+						@include breakpoint(sm) {
+							display: initial;
+						}
+					}
+
+					&:first-child {
+						margin-right: auto;
+
+						span {
+							display: initial;
+						}
+					}
+				}
+
+				.dropdown {
+					.dropdown-menu {
+						top: unset;
+						bottom: calc(100% + .5rem);
 					}
 				}
 			}
 
-			.dropdown {
-				.dropdown-menu {
-					top: unset;
-					bottom: calc(100% + .5rem);
-				}
-			}
 		}
 	}
 }
@@ -263,6 +317,23 @@
 
 			.dropdown {
 				opacity: 1;
+			}
+		}
+	}
+}
+
+.card-stacks {
+	.card-challenge {
+
+		+.card-play,
+		+.card-available {
+			&:before {
+				content: '';
+				display: block;
+				width: calc(100% + 2rem);
+				height: 1px;
+				margin: 1rem -1rem;
+				background-color: $color-border;
 			}
 		}
 	}
@@ -518,5 +589,22 @@
 			text-align: right;
 			padding-top: .5rem;
 		}
+	}
+}
+
+.modal-card-panel {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1rem;
+	grid-template-areas: 'info''list''preview';
+
+	width: 90vw;
+	max-width: 45rem;
+
+	padding: 1rem;
+
+	@include breakpoint(sm) {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: 'info info info''list preview preview';
 	}
 }

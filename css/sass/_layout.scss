@@ -19,6 +19,12 @@
 		}
 	}
 
+	.main {
+		display: grid;
+		grid-gap: 1rem;
+		grid-auto-rows: minmax(min-content, max-content);
+	}
+
 	.sidebar {
 		display: grid;
 		grid-gap: 1rem;

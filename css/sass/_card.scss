@@ -380,149 +380,29 @@
 			}
 		}
 
-		.obstacle-progress {
+		&.card-obstacle-character {
+			.card-icon {
+				&:before {
+					background-image: url('../../img/layout/card/icon-character.svg');
+				}
+
+				&:after {
+					content: 'Nhân vật';
+				}
+			}
+		}
+
+		.challenge-progress {
 			position: absolute;
 			bottom: 0;
 			right: 1rem;
 
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
 			height: 10px;
 			width: calc(100% - 2rem);
-
-			@include ui-border;
-			@include ui-border-radius;
 
 			border-bottom: 0;
 			border-bottom-left-radius: 0;
 			border-bottom-right-radius: 0;
-
-			>span {
-				display: block;
-				width: 100%;
-				height: 100%;
-
-				&+span {
-					border-left: 1px solid $color-border;
-				}
-
-				&.is-completed {
-					background-color: rgba($color-border, .5);
-				}
-			}
-		}
-
-		.obstacle-result {
-			padding-bottom: .5rem;
-
-			>.title {
-				p {
-					font-size: .75rem;
-				}
-			}
-
-			>.result {
-				display: flex;
-				align-items: center;
-				justify-content: flex-start;
-
-				strong {
-					margin-right: .5rem;
-				}
-
-				>span {
-					display: inline-flex;
-					align-items: center;
-					justify-content: center;
-
-					&:before {
-						content: '';
-						display: inline-block;
-						width: 1rem;
-						height: 1rem;
-
-						background-image: url('../../img/layout/card/result.svg');
-						background-size: contain;
-						background-position: center;
-					}
-
-					&:after {
-						content: 'Chưa xác định';
-						@include small-text;
-						margin-left: .25rem;
-					}
-				}
-			}
-
-			>ul {
-				list-style: none;
-				margin: 0;
-				padding: 0;
-
-				li {
-					margin-top: .75rem;
-					opacity: .25;
-					font-size: .85rem;
-
-					&.is-selected {
-						opacity: 1;
-					}
-				}
-
-				h5 {
-					display: inline;
-
-					&:after {
-						content: ': ';
-					}
-				}
-
-				p {
-					display: inline;
-				}
-			}
-		}
-
-		&.card-obstacle-result-strong {
-			.obstacle-result {
-				>.result {
-					>span {
-						&:before {
-							background-image: url('../../img/layout/card/result-strong.svg');
-						}
-
-						&:after {
-							content: 'Mạnh';
-						}
-					}
-				}
-
-				.result-strong {
-					opacity: 1;
-				}
-			}
-		}
-
-		&.card-obstacle-result-weak {
-			.obstacle-result {
-				>.result {
-					>span {
-						&:before {
-							background-image: url('../../img/layout/card/result-weak.svg');
-						}
-
-						&:after {
-							content: 'Yếu';
-						}
-					}
-				}
-
-				.result-weak {
-					opacity: 1;
-				}
-			}
 		}
 	}
 
@@ -1140,6 +1020,138 @@ span.card-icon {
 					display: block;
 				}
 			}
+		}
+	}
+}
+
+.challenge-progress {
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 11px;
+	width: 100%;
+
+	@include ui-border;
+	@include ui-border-radius;
+
+	>span {
+		display: block;
+		width: 100%;
+		height: 100%;
+
+		&+span {
+			border-left: 1px solid $color-border;
+		}
+
+		&.is-completed {
+			background-color: rgba($color-border, .5);
+		}
+	}
+}
+
+.challenge-result {
+	>.title {
+		p {
+			font-size: .75rem;
+		}
+	}
+
+	>.result {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		strong {
+			margin-right: .5rem;
+		}
+
+		>span {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+
+			&:before {
+				content: '';
+				display: inline-block;
+				width: 1rem;
+				height: 1rem;
+
+				background-image: url('../../img/layout/card/result.svg');
+				background-size: contain;
+				background-position: center;
+			}
+
+			&:after {
+				content: 'Chưa xác định';
+				@include small-text;
+				margin-left: .25rem;
+			}
+		}
+	}
+
+	>ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin-top: .75rem;
+			opacity: 1;
+			font-size: .85rem;
+
+			&.is-selected {
+				opacity: 1;
+			}
+		}
+
+		h5 {
+			display: inline;
+
+			&:after {
+				content: ': ';
+			}
+		}
+
+		p {
+			display: inline;
+		}
+	}
+
+	&.is-strong {
+		>.result {
+			>span {
+				&:before {
+					background-image: url('../../img/layout/card/result-strong.svg');
+				}
+
+				&:after {
+					content: 'Mạnh';
+				}
+			}
+		}
+
+		.result-weak {
+			opacity: .25;
+		}
+	}
+
+	&.is-weak {
+		>.result {
+			>span {
+				&:before {
+					background-image: url('../../img/layout/card/result-weak.svg');
+				}
+
+				&:after {
+					content: 'Yếu';
+				}
+			}
+		}
+
+		.result-strong {
+			opacity: .25;
 		}
 	}
 }
