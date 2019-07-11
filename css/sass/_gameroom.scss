@@ -608,3 +608,16 @@
 		grid-template-areas: 'info info info''list preview preview';
 	}
 }
+
+.no-post {
+	border-style: dashed;
+	background: transparent;
+
+	>.content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		height: 25rem;
+	}
+}
