@@ -30,10 +30,10 @@
 						<div class="character-avatar">
 							<img src="./img/content/players-big/maid.jpg">
 						</div>
-						<h4>Nàng hầu gái tiếp tục cảnh ...</h4>
+						<h4>Nàng hầu gái hành động ...</h4>
 					</div>
 					<div class="content">
-						<div class="chapter-cover image-upload">
+						<div class="cover image-upload">
 							<img src="" alt="">
 							<input type="file">
 							<label>
@@ -49,6 +49,19 @@
 								<div class="hint">
 									<i class="far fa-info-circle"></i>
 									<a href="https://docs.dantruyen.com/">Hướng dẫn sử dụng công cụ viết bài</a>
+								</div>
+							</div>
+						</div>
+						<div class="form-item card-history">
+							<div class="form-value">
+								<div class="card-history-item">Nàng hầu gái nhặt được 5 thẻ bài
+									<span class="card-icon card-asset"></span> <strong>PokéDex</strong>.
+								</div>
+								<div class="card-history-item card-pick-up">
+									<a class="small-text">
+										<i class="far fa-plus"></i>
+										<span>Nhặt thêm thẻ (4 khả dụng)</span>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -76,7 +89,7 @@
 								<a class="card card-create open-modal-card-select" href="modal/card-asset-select.html"
 									rel="modal:open">
 									<div class="card-icon"></div>
-									<div class="card-name">Thêm thẻ bài</div>
+									<div class="card-name">Chọn thẻ bài</div>
 								</a>
 							</div>
 						</div>
@@ -403,8 +416,6 @@
 	<script src="./js/gameroom.js"></script>
 
 	<script>
-		$('.open-modal-card-select').modal();
-
 		function postAddChallenge() {
 			$('.card-challenge .card-stack .card').removeClass('card-create');
 			$('.card-challenge .card-stack .card').addClass('card-obstacle');

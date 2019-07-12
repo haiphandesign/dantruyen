@@ -34,19 +34,19 @@
 
 	+.form-item {
 		margin-top: 1rem;
+	}
 
-		&:before {
-			content: '';
-			display: block;
+	&:before {
+		content: '';
+		display: block;
 
-			height: 1px;
-			width: calc(100% + 2rem);
+		height: 1px;
+		width: calc(100% + 2rem);
 
-			margin-left: -1rem;
-			margin-bottom: 1rem;
+		margin-left: -1rem;
+		margin-bottom: 1rem;
 
-			background-color: $color-border;
-		}
+		background-color: $color-border;
 	}
 
 	input[type=text],

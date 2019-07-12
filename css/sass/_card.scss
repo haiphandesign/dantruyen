@@ -849,7 +849,7 @@ span.card-icon {
 				}
 
 				+.content {
-					margin-top: 1rem;
+					margin-top: .5rem;
 				}
 			}
 
@@ -860,6 +860,18 @@ span.card-icon {
 
 		>a {
 			margin-top: auto;
+		}
+
+		.challenge-results {
+			.content {
+				>*+* {
+					margin-top: .5rem;
+				}
+			}
+
+			textarea {
+				margin-top: .5rem;
+			}
 		}
 	}
 
