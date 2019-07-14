@@ -24,11 +24,11 @@ document.addEventListener('click', function (e) {
 
 // CONTENT BLOCK -- COLLAPSIBLE
 
-document.addEventListener('click', function (e) {
-	if (e.target.classList.contains('title') && e.target.parentNode.classList.contains('content-block')) {
-		e.target.parentNode.classList.toggle('content-toggle');
-	}
-}, false);
+// document.addEventListener('click', function (e) {
+// 	if (e.target.classList.contains('title') && e.target.parentNode.classList.contains('content-block')) {
+// 		e.target.parentNode.classList.toggle('content-toggle');
+// 	}
+// }, false);
 
 
 // SIDEBAR: STICKY
