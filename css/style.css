@@ -9676,22 +9676,6 @@ footer .footer-content .footer-social a + a {
           hyphens: auto;
 }
 
-@media (min-width: 992px) {
-  .character-single .character-info {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    display: block;
-    width: 50%;
-    border: 1px solid #e4e4e4;
-    border-radius: 0.25rem;
-    -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
-            box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
-    background-color: white;
-    padding: 1rem;
-  }
-}
-
 .character-single .character-info:after {
   content: '';
   display: block;
@@ -9701,12 +9685,6 @@ footer .footer-content .footer-social a + a {
   margin-bottom: 1rem;
   margin-left: -1rem;
   background-color: #e4e4e4;
-}
-
-@media (min-width: 992px) {
-  .character-single .character-info:after {
-    display: none;
-  }
 }
 
 .badge-gallery > * {

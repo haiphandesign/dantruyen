@@ -2597,22 +2597,22 @@
 		text-align: justify;
 		hyphens: auto;
 
-		@include breakpoint(md) {
-			position: absolute;
-			top: 1rem;
-			right: 1rem;
+		// @include breakpoint(md) {
+		// 	position: absolute;
+		// 	top: 1rem;
+		// 	right: 1rem;
 
-			display: block;
-			width: 50%;
+		// 	display: block;
+		// 	width: 50%;
 
-			@include ui-border;
-			@include ui-border-radius;
-			@include ui-shadow;
+		// 	@include ui-border;
+		// 	@include ui-border-radius;
+		// 	@include ui-shadow;
 
-			background-color: white;
+		// 	background-color: white;
 
-			padding: 1rem;
-		}
+		// 	padding: 1rem;
+		// }
 
 		&:after {
 			content: '';
@@ -2624,9 +2624,9 @@
 			margin-left: -1rem;
 			background-color: $color-border;
 
-			@include breakpoint(md) {
-				display: none;
-			}
+			// @include breakpoint(md) {
+			// 	display: none;
+			// }
 		}
 	}
 
