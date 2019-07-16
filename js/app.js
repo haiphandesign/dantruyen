@@ -18,6 +18,19 @@ $('#footer').load('./inc/footer.html');
 $('section.game--header').load('./inc/game-header.html');
 
 
+window.setTimeout(function () {
+	$('.nav--menu-toggle').click(function () {
+		$(this).addClass('is-active');
+	});
+}, 100);
+
+
+window.setTimeout(function () {
+	$('.nav--menu-wrapper').click(function () {
+		$('.nav--menu-toggle').removeClass('is-active');
+	});
+}, 100);
+
 
 // Global: Fixed Header
 
@@ -137,7 +150,7 @@ $(window).scroll(function () {
 
 $('.stack-reveal').click(function () {
 	$(this).parent().toggleClass('is-active');
-})
+});
 
 function gameInfoMargin() {
 	setTimeout(function () {
