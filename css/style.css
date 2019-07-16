@@ -1832,7 +1832,7 @@ table td {
   margin-top: 1rem;
 }
 
-.form-item:before {
+.form-item + .form-item:before {
   content: '';
   display: block;
   height: 1px;
@@ -2665,10 +2665,6 @@ table td {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
   }
-}
-
-.page-card .modal {
-  background: white;
 }
 
 .card {
