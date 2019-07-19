@@ -1647,17 +1647,7 @@ table td {
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
   border: 0;
   background-color: #333333;
-  color: white !important;
-}
-
-.button.solid.white {
-  background-color: white;
-  border: 1px solid #e4e4e4;
-  color: #333333 !important;
-}
-
-.button.solid:hover {
-  background-color: color(darker);
+  color: white;
 }
 
 .button.ui {
@@ -9619,6 +9609,7 @@ footer .footer-content .footer-social a + a {
   border-radius: 0.25rem;
   -webkit-box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
           box-shadow: 0 1px 4px rgba(179, 179, 179, 0.125);
+  background-color: white;
 }
 
 .game--meta .game--meta-item h5 {

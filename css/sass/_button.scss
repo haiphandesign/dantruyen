@@ -80,23 +80,7 @@
 			color: $color-text-regular;
 		}
 
-		color: white !important;
-
-		&.white {
-			background: {
-				color: white;
-			}
-
-			@include ui-border;
-
-			color: $color-text-regular !important;
-		}
-
-		&:hover {
-			background: {
-				color: color(darker);
-			}
-		}
+		color: white;
 	}
 
 	&.ui {
