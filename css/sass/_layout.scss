@@ -127,18 +127,27 @@
 	user-select: none;
 
 	.dropdown-button {
-		display: block;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		width: 2rem;
 		height: 2rem;
 
-		// background-color: red;
-		background-image: url('../../img/layout/icons/menu.svg');
-		background-size: 1rem;
-		background-repeat: no-repeat;
-		background-position: center;
-
 		cursor: pointer;
+
+		&:empty {
+			// background-color: red;
+			background-image: url('../../img/layout/icons/menu.svg');
+			background-size: 1rem;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		i {
+			user-select: none;
+			pointer-events: none;
+		}
 	}
 
 	.dropdown-menu {

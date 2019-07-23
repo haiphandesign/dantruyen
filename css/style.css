@@ -1496,14 +1496,33 @@ table td {
 }
 
 .dropdown .dropdown-button {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 2rem;
   height: 2rem;
+  cursor: pointer;
+}
+
+.dropdown .dropdown-button:empty {
   background-image: url("../../img/layout/icons/menu.svg");
   background-size: 1rem;
   background-repeat: no-repeat;
   background-position: center;
-  cursor: pointer;
+}
+
+.dropdown .dropdown-button i {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 .dropdown .dropdown-menu {
@@ -2626,6 +2645,13 @@ table td {
   }
 }
 
+@media (min-width: 992px) {
+  .card-gallery.is-column-4 {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
 .page-card {
   padding: 9rem 0;
 }
@@ -2957,6 +2983,38 @@ table td {
 
 .card .card-action a:hover span {
   color: #333333;
+}
+
+.card.is-selected {
+  -webkit-box-shadow: 0 0 0 2px #0b7bce;
+          box-shadow: 0 0 0 2px #0b7bce;
+}
+
+.card.is-selected:before {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 400;
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #0b7bce;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid #0b7bce;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 @media (min-width: 768px) {

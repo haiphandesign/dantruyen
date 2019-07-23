@@ -10,6 +10,12 @@
 	@include breakpoint(md) {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
+
+	&.is-column-4 {
+		@include breakpoint(md) {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+	}
 }
 
 .page-card {
@@ -309,6 +315,37 @@
 					color: $color-text-regular;
 				}
 			}
+		}
+	}
+
+	&.is-selected {
+		box-shadow: 0 0 0 2px rgba($color-primary, 1);
+
+		&:before {
+			content: '\f00c';
+			font-family: 'Font Awesome 5 Pro';
+			font-weight: 400;
+
+			position: absolute;
+			bottom: -1rem;
+			left: 50%;
+			z-index: 2;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			color: $color-primary;
+
+			width: 2rem;
+			height: 2rem;
+
+			border-radius: 50%;
+
+			background-color: white;
+			border: 3px solid $color-primary;
+
+			transform: translateX(-50%);
 		}
 	}
 
