@@ -139,11 +139,22 @@
 		}
 	}
 
+	.dropdown.card-dropdown {
+
+		.dropdown-menu {
+			z-index: 6;
+			top: 4rem;
+			right: unset;
+			left: 1rem;
+		}
+	}
+
 	.card-icon {
 		position: absolute;
 		top: 1rem;
 		left: 1rem;
-		z-index: 2;
+		z-index: 5;
+
 
 		display: flex;
 		flex-shrink: 0;
@@ -398,6 +409,22 @@
 
 			&:after {
 				content: 'Nơi chốn';
+			}
+		}
+	}
+
+	&.card-selectable {
+		.card-image {
+			background-image: url('./../img/layout/card/background.svg');
+		}
+
+		.card-icon {
+			&:before {
+				background-image: url('../../img/layout/card/icon.svg');
+			}
+
+			&:after {
+				content: 'Chọn loại thẻ bài';
 			}
 		}
 	}

@@ -1525,6 +1525,10 @@ table td {
   pointer-events: none;
 }
 
+.dropdown .dropdown-button.button ~ .dropdown-menu {
+  top: calc(100% + .5rem);
+}
+
 .dropdown .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -1576,6 +1580,12 @@ table td {
 }
 
 .dropdown.is-active .dropdown-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dropdown.is-hoverable:hover .dropdown-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2783,11 +2793,18 @@ table td {
   margin-top: .5rem;
 }
 
+.card .dropdown.card-dropdown .dropdown-menu {
+  z-index: 6;
+  top: 4rem;
+  right: unset;
+  left: 1rem;
+}
+
 .card .card-icon {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  z-index: 2;
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3057,6 +3074,18 @@ table td {
 
 .card.card-place .card-icon:after {
   content: 'Nơi chốn';
+}
+
+.card.card-selectable .card-image {
+  background-image: url("./../img/layout/card/background.svg");
+}
+
+.card.card-selectable .card-icon:before {
+  background-image: url("../../img/layout/card/icon.svg");
+}
+
+.card.card-selectable .card-icon:after {
+  content: 'Chọn loại thẻ bài';
 }
 
 .card.card-obstacle .card-image {

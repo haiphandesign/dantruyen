@@ -148,6 +148,12 @@
 			user-select: none;
 			pointer-events: none;
 		}
+
+		&.button {
+			~.dropdown-menu {
+				top: calc(100% + .5rem);
+			}
+		}
 	}
 
 	.dropdown-menu {
@@ -201,6 +207,14 @@
 	&.is-active {
 		.dropdown-menu {
 			display: flex;
+		}
+	}
+
+	&.is-hoverable {
+		&:hover {
+			.dropdown-menu {
+				display: flex;
+			}
 		}
 	}
 }
