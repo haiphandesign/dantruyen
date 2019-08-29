@@ -166,6 +166,8 @@
 			align-items: flex-start;
 			height: 15rem;
 
+			background-color: $color-text-light;
+
 			h3,
 			h6 {
 				position: relative;
@@ -173,6 +175,7 @@
 				color: white;
 				text-shadow: 0 0 .5rem black;
 				margin: 0;
+				max-width: 29rem;
 			}
 
 			img {
