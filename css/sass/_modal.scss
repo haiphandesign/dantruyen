@@ -247,7 +247,19 @@
 					}
 
 					&-info {
+						display: flex;
+						align-items: center;
+						justify-content: flex-start;
 						width: 100%;
+
+						.name {
+							display: block;
+							height: 1.5rem;
+							width: calc(100% - 5rem);
+							white-space: nowrap;
+							overflow: hidden;
+							text-overflow: ellipsis;
+						}
 
 						.amount {
 							float: right;

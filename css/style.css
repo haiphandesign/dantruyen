@@ -2130,7 +2130,25 @@ table td {
 }
 
 .modal-content .modal-character .character-info-stack .stack-item-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 100%;
+}
+
+.modal-content .modal-character .character-info-stack .stack-item-info .name {
+  display: block;
+  height: 1.5rem;
+  width: calc(100% - 5rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .modal-content .modal-character .character-info-stack .stack-item-info .amount {
@@ -8339,14 +8357,34 @@ footer .footer-content .footer-social a + a {
 }
 
 .game--main .stack-item-info {
-  display: block;
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 4rem);
 }
 
-.game--main .stack-item-info span {
-  float: right;
+.game--main .stack-item-info .name {
+  display: block;
+  height: 1.5rem;
+  width: calc(100% - 1.5rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.game--main .stack-item-info .amount {
   font-size: 0.75rem;
   color: #b3b3b3;
+}
+
+.game--main .stack-item-info .amount:before {
+  content: 'x';
 }
 
 .game--main .stack-item.add {
