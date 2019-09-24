@@ -60,9 +60,16 @@
 									<span class="card-icon card-asset"></span> <strong>PokéDex</strong>.
 								</div>
 								<div class="card-history-item card-pick-up">
-									<a class="small-text">
+									<a class="small-text" href="modal/card-asset-give.html" rel="modal:open">
 										<i class="far fa-plus"></i>
 										<span>Nhặt thêm thẻ (4 khả dụng)</span>
+									</a>
+								</div>
+								<div class="card-history-item card-gifting">
+									<a class="small-text" href="modal/card-asset-gift.html" rel="modal:open"
+										id="card-asset-gift">
+										<i class="far fa-plus"></i>
+										<span>Tặng thẻ</span>
 									</a>
 								</div>
 							</div>
@@ -424,6 +431,8 @@
 			$('.card-challenge .card-stack .card .card-name').text('Tên thử thách');
 			$('.card-challenge').addClass('is-selected');
 		}
+
+		$('#card-asset-gift').modal()
 
 	</script>
 

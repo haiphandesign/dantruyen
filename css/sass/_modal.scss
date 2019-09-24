@@ -691,3 +691,69 @@
 		}
 	}
 }
+
+
+
+
+.asset-gift-recipient {
+	margin-top: 1rem;
+
+	h5 {
+		margin: 0;
+		font-size: 1rem;
+		font-weight: 600;
+		text-transform: none;
+	}
+
+	p {
+		font-size: .85rem;
+		color: #b3b3b3;
+		margin-top: .25rem;
+	}
+
+	input {
+		margin-top: .5rem;
+	}
+
+	.asset-gift-recipient-results {
+		max-height: 7rem;
+		overflow: auto;
+
+		ul {
+			list-style: none;
+			padding: 0;
+
+			display: grid;
+			grid-gap: .75rem;
+
+			li {
+				display: flex;
+				align-items: center;
+
+				.character-image {
+					margin-right: .5rem;
+
+					img {
+						display: block;
+						width: 2rem;
+						height: 2rem;
+						-o-object-fit: cover;
+						object-fit: cover;
+						border: 1px solid #e4e4e4;
+						border-radius: 0.25rem;
+					}
+				}
+
+				.character-name {
+					font-weight: 600;
+				}
+
+				.character-user {
+					margin-left: auto;
+					font-size: .85rem;
+					color: #b3b3b3;
+				}
+			}
+		}
+	}
+}
