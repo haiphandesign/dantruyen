@@ -1693,12 +1693,12 @@
 }
 
 .dt-old .button.hollow {
-  border: 0.1em solid color(primary);
-  color: color(primary);
+  border: 0.1em solid #0b7bce;
+  color: #0b7bce;
 }
 
 .dt-old .button.hollow:hover {
-  background-color: color(primary);
+  background-color: #0b7bce;
   color: white;
 }
 
@@ -1869,6 +1869,47 @@
 .dt-old .form-item input[type=text],
 .dt-old .form-item textarea {
   width: 100%;
+}
+
+.dt-old .options-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: .5rem;
+  min-width: 0;
+}
+
+.dt-old .options-list .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.dt-old .options-list .item .content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  grid-gap: .5rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.dt-old .options-list .item .content + .actions {
+  margin-left: .75rem;
+}
+
+.dt-old .options-list .item .actions .buttons {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0;
+}
+
+.dt-old .options-list .item .actions .buttons > * + * {
+  margin-left: .5rem;
 }
 
 .dt-old .modal-content {

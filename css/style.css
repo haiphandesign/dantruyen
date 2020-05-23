@@ -1690,12 +1690,12 @@ table td {
 }
 
 .button.hollow {
-  border: 0.1em solid color(primary);
-  color: color(primary);
+  border: 0.1em solid #0b7bce;
+  color: #0b7bce;
 }
 
 .button.hollow:hover {
-  background-color: color(primary);
+  background-color: #0b7bce;
   color: white;
 }
 
@@ -1866,6 +1866,47 @@ table td {
 .form-item input[type=text],
 .form-item textarea {
   width: 100%;
+}
+
+.options-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: .5rem;
+  min-width: 0;
+}
+
+.options-list .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.options-list .item .content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  grid-gap: .5rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.options-list .item .content + .actions {
+  margin-left: .75rem;
+}
+
+.options-list .item .actions .buttons {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0;
+}
+
+.options-list .item .actions .buttons > * + * {
+  margin-left: .5rem;
 }
 
 .modal-content {

@@ -92,12 +92,12 @@
 	}
 
 	&.hollow {
-		border: .1em solid color(primary);
-		color: color(primary);
+		border: .1em solid $color-primary;
+		color: $color-primary;
 
 		&:hover {
 			background: {
-				color: color(primary);
+				color: $color-primary;
 			}
 
 			color: white;
