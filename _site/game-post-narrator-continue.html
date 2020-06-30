@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dẫn Truyện</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- Preload Javascript -->
+	<script src="./js/preload.js"></script>
+</head>
+
+<body class="page-game page-post page-post-narrator logged-in dev">
+
+	<div id="header"></div>
+
+	<div id="main">
+		<section class="game--header"></section>
+
+		<div class="container content-wrapper">
+			<div class="main">
+				<div class="content-block post post-editor post-narrator">
+					<div class="title">
+						<h4>Người dẫn truyện tiếp tục cảnh ...</h4>
+					</div>
+					<div class="content">
+						<div class="cover image-upload">
+							<img src="" alt="">
+							<input type="file">
+							<label>
+								<span>Chọn ảnh nền</span>
+							</label>
+						</div>
+						<div class="form-item">
+							<div class="form-value">
+								<div class="wysiwyg">
+									<textarea rows="20"></textarea>
+								</div>
+								<div class="input-limit">Còn lại: <span>3000</span> Từ</div>
+								<div class="hint">
+									<i class="far fa-info-circle"></i>
+									<a href="https://docs.dantruyen.com/">Hướng dẫn sử dụng công cụ viết bài</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar is-sticky">
+
+				<!-- WIDGET : NARRATOR'S CARD STACK -->
+				<div class="content-block card-stacks">
+					<div class="title">
+						<h3>Thiết lập thẻ bài</h3>
+						<div class="dropdown">
+							<a class="dropdown-button"></a>
+							<div class="dropdown-menu">
+								<ul>
+									<li><i class="fas fa-edit"></i><span>Edit</span></li>
+									<li><i class="fas fa-times"></i><span>Delete</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="content">
+						<div class="card-challenge">
+							<h5>Thử thách</h5>
+							<div class="card-stack">
+								<div class="card card-obstacle">
+									<div class="card-icon"></div>
+									<div class="card-name">Bắt Pokémon đầu tiên</div>
+								</div>
+								<div class="card card-character">
+									<div class="card-icon"></div>
+									<div class="card-name">Giáo sư Oak</div>
+								</div>
+								<div class="card card-create">
+									<div class="card-icon"></div>
+									<div class="card-name">Thêm thẻ bài</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-available">
+							<h5>Khả dụng</h5>
+							<div class="card-stack">
+								<div class="card card-asset">
+									<div class="card-icon"></div>
+									<div class="card-name">Pokéball</div>
+									<div class="card-amount">5</div>
+								</div>
+								<div class="card card-asset">
+									<div class="card-icon"></div>
+									<div class="card-name">Xe đạp Silph Co.</div>
+									<div class="card-amount">3</div>
+								</div>
+								<div class="card card-create">
+									<div class="card-icon"></div>
+									<div class="card-name">Thêm thẻ bài</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- WIDGET : SCENE'S SETTINGS -->
+				<div class="content-block">
+					<div class="title">
+						<h3>Thiết lập cảnh</h3>
+						<div class="dropdown">
+							<a class="dropdown-button"></a>
+							<div class="dropdown-menu">
+								<ul>
+									<li><i class="fas fa-edit"></i><span>Edit</span></li>
+									<li><i class="fas fa-times"></i><span>Delete</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="content">
+						<div class="setting-item switch">
+							<div class="title">
+								<h4>Kết thúc cảnh</h4>
+								<p>Đây là kết thúc của phân cảnh hiện tại.</p>
+							</div>
+							<div class="content">
+								<label class="toggle-switch">
+									<input type="checkbox">
+									<span class="slider"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- WIDGET : POST ACTIONS -->
+				<div class="post-publish">
+					<a class="button solid small-text"><i class="fal fa-paper-plane"></i><span>Đăng tải</span></a>
+					<a class="button solid small-text"><span>Huỷ</span></a>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container content-wrapper">
+			<div class="main">
+
+				<!-- WIDGET : NARRATOR'S CARD MANAGER -->
+				<div class="content-block card-panel">
+					<div class="title">
+						<h3>Quản lý thẻ bài</h3>
+					</div>
+					<div class="content">
+						<div class="card-panel-tabs tabs">
+							<a class="tab is-active">
+								<img src="./img/layout/card/icon-place.svg" />
+								<span>Nơi chốn</span>
+							</a>
+							<a class="tab">
+								<img src="./img/layout/card/icon-obstacle.svg" />
+								<span>Thử thách</span>
+							</a>
+							<a class="tab">
+								<img src="./img/layout/card/icon-asset.svg" />
+								<span>Vật phẩm</span>
+							</a>
+							<a class="tab">
+								<img src="./img/layout/card/icon-goal.svg" />
+								<span>Mục đích</span>
+							</a>
+						</div>
+						<div class="tab-content" id="tabNarratorCardsPlaces">
+							<div class="card-panel-info">
+								<h3>Nơi chốn</h3>
+								<p><strong>Nơi chốn</strong> là loại thẻ bài thể hiện địa điểm nơi diễn ra phân cảnh
+									hiện tại trong câu chuyện.</p>
+							</div>
+							<div class="card-panel-list">
+								<a href="" class="button solid full small-text">
+									<i class="far fa-plus"></i>
+									<span>Tạo thẻ bài mới</span>
+								</a>
+								<div class="card-list">
+									<div class="card card-place">
+										<div class="card-icon"></div>
+										<div class="card-name">Pallet Town</div>
+									</div>
+									<div class="card card-place">
+										<div class="card-icon"></div>
+										<div class="card-name">Viridian City</div>
+									</div>
+									<div class="card card-place">
+										<div class="card-icon"></div>
+										<div class="card-name">Pewter City</div>
+									</div>
+									<div class="card card-place">
+										<div class="card-icon"></div>
+										<div class="card-name">Cerulean City</div>
+									</div>
+									<div class="card card-place">
+										<div class="card-icon"></div>
+										<div class="card-name">Vermillion City</div>
+									</div>
+									<div class="card card-place">
+										<div class="card-icon"></div>
+										<div class="card-name">Lavender Town</div>
+									</div>
+									<div class="card card-place">
+										<div class="card-icon"></div>
+										<div class="card-name">Celadon City</div>
+									</div>
+									<div class="card card-place">
+										<div class="card-icon"></div>
+										<div class="card-name">Fuchsia City</div>
+									</div>
+									<div class="card card-place">
+										<div class="card-icon"></div>
+										<div class="card-name">Saffron City</div>
+									</div>
+									<div class="card card-place">
+										<div class="card-icon"></div>
+										<div class="card-name">Cinnabar Island</div>
+									</div>
+								</div>
+							</div>
+							<div class="card-panel-preview">
+								<div class="card card-place card-horizontal card-empty">
+									<div class="card-image">
+										<div class="card-icon"></div>
+										<img src="">
+									</div>
+									<div class="card-info">
+										<div class="hint">
+											<i class="far fa-info-circle"></i>
+											Chọn một thẻ bài từ danh sách
+										</div>
+									</div>
+								</div>
+								<div class="card-action">
+									<div class="card-action-buttons">
+										<a class="card-state">
+											<i class="far fa-check"></i>
+											<span>Đang sử dụng</span>
+										</a>
+										<a href="./modal/card-place.html" rel="modal:open">
+											<i class="far fa-eye"></i>
+											<span>Chi tiết</span>
+										</a>
+										<div class="dropdown">
+											<a class="dropdown-button"></a>
+											<div class="dropdown-menu">
+												<ul>
+													<li><i class="far fa-edit"></i><span>Chỉnh sửa</span></li>
+													<li><i class="far fa-copy"></i><span>Sao chép</span></li>
+													<li><i class="far fa-trash"></i><span>Xóa thẻ</span></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-content" id="tabNarratorCardsObstacles">
+							<div class="card-panel-info">
+								<h3>Thử thách</h3>
+								<p><strong>Thử thách</strong> được sử dụng để đưa ra những thử thách cho các người chơi
+									vượt qua.</p>
+							</div>
+							<div class="card-panel-list">
+								<a href="" class="button solid full small-text">
+									<i class="far fa-plus"></i>
+									<span>Tạo thẻ bài mới</span>
+								</a>
+								<div class="card-list">
+									<div class="card card-obstacle">
+										<div class="card-icon"></div>
+										<div class="card-name">Gặp Giáo sư Oak</div>
+									</div>
+									<div class="card card-obstacle">
+										<div class="card-icon"></div>
+										<div class="card-name">Pokémon đầu tiên</div>
+									</div>
+									<div class="card card-obstacle">
+										<div class="card-icon"></div>
+										<div class="card-name">Rời khỏi Pallet Town</div>
+									</div>
+								</div>
+							</div>
+							<div class="card-panel-preview">
+								<div class="card card-obstacle card-horizontal card-empty">
+									<div class="card-image">
+										<div class="card-icon"></div>
+										<img src="">
+									</div>
+									<div class="card-info">
+										<div class="hint">
+											<i class="far fa-info-circle"></i>
+											Chọn một thẻ bài từ danh sách
+										</div>
+									</div>
+								</div>
+								<div class="card-action">
+									<div class="card-action-buttons">
+										<a href="./modal/card-obstacle-play.html" rel="modal:open"
+											class="open-modal-obstacle-play">
+											<i class="far fa-plus"></i><span>Đặt thẻ</span>
+										</a>
+										<a href="./modal/card-obstacle.html" rel="modal:open">
+											<i class="far fa-eye"></i>
+											<span>Chi tiết</span>
+										</a>
+										<div class="dropdown">
+											<a class="dropdown-button"></a>
+											<div class="dropdown-menu">
+												<ul>
+													<li><i class="far fa-edit"></i><span>Chỉnh sửa</span></li>
+													<li><i class="far fa-copy"></i><span>Sao chép</span></li>
+													<li><i class="far fa-trash"></i><span>Xóa thẻ</span></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-content" id="tabNarratorCardsAssets">
+							<div class="card-panel-info">
+								<h3>Vật phẩm</h3>
+								<p><strong>Vật phẩm</strong> là những thẻ bài mà người chơi có thể nhặt được và sử dụng
+									để vượt qua các thử thách.</p>
+							</div>
+							<div class="card-panel-list">
+								<a href="" class="button solid full small-text">
+									<i class="far fa-plus"></i>
+									<span>Tạo thẻ bài mới</span>
+								</a>
+								<div class="card-list">
+									<div class="card card-asset">
+										<div class="card-icon"></div>
+										<div class="card-name">PokéBall</div>
+									</div>
+									<div class="card card-asset">
+										<div class="card-icon"></div>
+										<div class="card-name">PokéDex</div>
+									</div>
+									<div class="card card-asset">
+										<div class="card-icon"></div>
+										<div class="card-name">Xe Đạp Silph Co.</div>
+									</div>
+								</div>
+							</div>
+							<div class="card-panel-preview">
+								<div class="card card-asset card-horizontal">
+									<div class="card-image">
+										<div class="card-icon"></div>
+										<img src="">
+									</div>
+									<div class="card-info">
+										<div class="hint">
+											<i class="far fa-info-circle"></i>
+											Chọn một thẻ bài từ danh sách
+										</div>
+									</div>
+								</div>
+								<div class="card-action">
+									<ul class="card-action-buttons">
+										<a href="./modal/card-asset-play.html" rel="modal:open"
+											class="open-modal-asset-play">
+											<i class="far fa-plus"></i><span>Đặt thẻ</span>
+										</a>
+										<a href="./modal/card-asset-give.html" rel="modal:open"
+											class="open-modal-asset-give">
+											<i class="far fa-plus"></i><span>Chỉ định</span>
+										</a>
+										<a href="./modal/card-place.html" rel="modal:open">
+											<i class="far fa-eye"></i>
+											<span>Chi tiết</span>
+										</a>
+										<ul class="dropdown">
+											<a class="dropdown-button"></a>
+											<ul class="dropdown-menu">
+												<ul>
+													<li><i class="far fa-edit"></i><span>Chỉnh sửa</span></li>
+													<li><i class="far fa-copy"></i><span>Sao chép</span></li>
+													<li><i class="far fa-trash"></i><span>Xóa thẻ</span></li>
+												</ul>
+											</ul>
+										</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-content" id="tabNarratorCardsGoals">
+						<div class="card-panel-info">
+							<h3>Mục tiêu</h3>
+							<p><strong>Mục tiêu</strong> thể hiện một mục tiêu, một nhiệm vụ nào đó mà nhân vật mong
+								muốn thực hiện.</p>
+						</div>
+						<div class="card-panel-list">
+							<a href="" class="button solid full small-text">
+								<i class="far fa-plus"></i>
+								<span>Tạo thẻ bài mới</span>
+							</a>
+							<div class="no-card"></div>
+						</div>
+						<div class="card-panel-preview">
+							<div class="card card-goal card-horizontal card-empty">
+								<div class="card-image">
+									<div class="card-icon"></div>
+									<img src="">
+								</div>
+								<div class="card-info">
+									<div class="hint">
+										<i class="far fa-info-circle"></i>
+										Chọn một thẻ bài từ danh sách
+									</div>
+								</div>
+							</div>
+							<div class="card-action">
+								<div class="card-action-buttons">
+									<a>
+										<i class="far fa-plus"></i>
+										<span>Đặt</span>
+									</a>
+									<a>
+										<i class="far fa-plus"></i>
+										<span>Chỉ định</span>
+									</a>
+									<a href="./modal/card-place.html" rel="modal:open">
+										<i class="far fa-eye"></i>
+										<span>Chi tiết</span>
+									</a>
+									<div class="dropdown">
+										<a class="dropdown-button"></a>
+										<div class="dropdown-menu">
+											<ul>
+												<li><i class="far fa-edit"></i><span>Chỉnh sửa</span></li>
+												<li><i class="far fa-copy"></i><span>Sao chép</span></li>
+												<li><i class="far fa-trash"></i><span>Xóa thẻ</span></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="footer"></div>
+
+	<!-- Javascript -->
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.ui.js"></script>
+	<script src="./js/jquery.modal.js"></script>
+	<script src="./js/app.js"></script>
+	<script src="./js/layout.js"></script>
+	<script src="./js/gameroom.js"></script>
+
+	<script>
+		// $('.open-modal-asset-give').modal();
+
+	</script>
+
+</body>
+
+</html>

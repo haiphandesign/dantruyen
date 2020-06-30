@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dẫn Truyện</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- Preload Javascript -->
+	<script src="./js/preload.js"></script>
+</head>
+
+<body class="page-game page-game-character-create logged-in">
+
+	<div id="header"></div>
+
+	<div id="main">
+		<section class="game--header">
+			<div class="game--cover" style="background-image: url('./img/content/games/cover.jpg')"></div>
+			<div class="game--info">
+				<div class="game--info-top">
+					<div class="game--info-basic">
+						<div class="game--info-picture">
+							<img src="./img/content/games/mini-04.jpg" alt="Cuộc chiến ở đảo Lộc Tiên">
+						</div>
+						<div class="game--info-meta">
+							<h3>Cuộc chiến ở đảo Lộc Tiên</h3>
+							<p>Dẫn truyện bởi <a href="user-profile.html">Hùng Vũ</a></p>
+						</div>
+					</div>
+					<div class="game--info-stats">
+						<div class="game--info-counters">
+							<div class="game-info-counter stages">
+								<span>18</span>
+								<span>Màn chơi</span>
+							</div>
+							<div class="game--info-counter players">
+								<span>34</span>
+								<span>Người chơi</span>
+							</div>
+						</div>
+						<div class="game--info-rating">
+							<span class="game--info-rating-ranking">#5</span>
+							<div class="game--info-rating-stars">
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-half"></span>
+								<span></span>
+							</div>
+							<span class="game--info-rating-voted">28</span>
+						</div>
+					</div>
+				</div>
+				<div class="game--info-middle">
+					<a class="button small ghost join"><i class="far fa-plus"></i></a>
+					<a class="button small ghost follow"><i class="far fa-plus"></i></a>
+				</div>
+				<div class="game--info-bottom">
+					<div class="game--menu-wrapper">
+						<ul class="game--menu">
+							<li class="game--menu-link"><a href="game.html">Phòng Chờ</a></li>
+							<li class="game--menu-link"><a href="game-main.html">Game chính</a></li>
+							<li class="game--menu-link is-active"><a href="game-characters.html">Nhân vật</a></li>
+							<li class="game--menu-link"><a href="game-cards.html">Thẻ bài</a></li>
+							<li class="game--menu-link"><a href="game-discussion.html">Bình luận</a></li>
+						</ul>
+						<ul class="game--menu">
+							<li class="game--menu-link"><a href="#">Thống kê</a></li>
+							<li class="game--menu-link"><a href="#">Cài đặt</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="game--main">
+			<div class="game--thread">
+				<div class="ui-widget character-create step-one">
+					<div class="content">
+						<div class="game--setting-item full">
+							<div class="title">
+								<h4>Tên nhân vật</h4>
+								<p>Give your character a distinctive name that makes sense for the game’s setting.</p>
+							</div>
+							<div class="content">
+								<input type="text">
+								<div class="input-limit">Còn lại: <span>15</span> Từ</div>
+								<div class="hint"><a href="#">Gợi ý cách đặt tên</a></div>
+							</div>
+						</div>
+						<div class="game--setting-item full">
+							<div class="title">
+								<h4>Miêu tả nhân vật</h4>
+								<p>Write a few short sentences describing your character.</p>
+							</div>
+							<div class="content">
+								<textarea name="" id="" cols="30" rows="10"></textarea>
+								<div class="input-limit">Còn lại: <span>100</span> Từ</div>
+								<div class="hint"><a href="#">Gợi ý cách viết miêu tả</a></div>
+							</div>
+						</div>
+						<div class="game--setting-item switch">
+							<div class="title">
+								<h4>Hình ảnh đại diện</h4>
+								<p>Images must be .png or .jpg format.</p>
+							</div>
+							<div class="content">
+								<div class="image-upload character-avatar-upload">
+									<img src="">
+									<input type="file" id="characterAvatarUpload">
+									<label for="characterAvatarUpload"></label>
+								</div>
+							</div>
+						</div>
+						<div class="game--setting-item full">
+							<div class="title">
+								<h4>Thẻ bài</h4>
+								<p>Et eirmod rebum eirmod kasd stet sea, et lorem diam gubergren invidunt. Sed gubergren
+									amet sed magna. Amet stet diam.</p>
+							</div>
+							<div class="content">
+								<div class="card-gallery">
+									<div class="card card-nature card-multiple card-editable">
+										<div class="card-image">
+											<div class="card-icon"></div>
+											<div class="card-amount">2</div>
+											<img src="./img/content/card/nature-prayer.jpg" alt="">
+										</div>
+										<div class="card-info">
+											<h4>Sùng đạo</h4>
+											<p>Sea at et stet clita dolore kasd labore voluptua. Dolor rebum lorem sit
+												sed sanctus et magna, sea amet amet. Sit sed at clita sadipscing
+												consetetur consetetur no dolore eirmod, dolor takimata kasd vero sit
+												invidunt diam et et sadipscing,.</p>
+											<a class="card-editable-link" href="./modal/game-card-edit.html"
+												rel="modal:open"></a>
+										</div>
+									</div>
+									<div class="card card-empty card-strong">
+										<div class="card-image">
+											<div class="card-icon"></div>
+										</div>
+										<div class="card-info">
+											<div class="hint">
+												<i class="fas fa-question-circle"></i> Đây là những gì nhân vật của bạn
+												làm - công việc, lý tưởng hoặc mục đích của họ.
+											</div>
+											<a href="./modal/game-card-create.html" rel="modal:open"
+												class="button small full solid small-text card-add card-add-modal"
+												onclick="cardNewTab()">Tạo thẻ</a>
+										</div>
+									</div>
+									<div class="card card-empty card-weak">
+										<div class="card-image">
+											<div class="card-icon"></div>
+										</div>
+										<div class="card-info">
+											<div class="hint">
+												<i class="fas fa-question-circle"></i> Đây là những gì nhân vật của bạn
+												làm - công việc, lý tưởng hoặc mục đích của họ.
+											</div>
+											<a href="./modal/game-card-create.html" rel="modal:open"
+												class="button small full solid small-text card-add card-add-modal"
+												onclick="cardNewTab()">Tạo thẻ</a>
+										</div>
+									</div>
+									<div class="card card-empty card-subplot">
+										<div class="card-image">
+											<div class="card-icon"></div>
+										</div>
+										<div class="card-info">
+											<div class="hint">
+												<i class="fas fa-question-circle"></i> Đây là những gì nhân vật của bạn
+												làm - công việc, lý tưởng hoặc mục đích của họ.
+											</div>
+											<a href="./modal/game-card-create.html" rel="modal:open"
+												class="button small full solid small-text card-add card-add-modal"
+												onclick="cardNewTab()">Tạo thẻ</a>
+										</div>
+									</div>
+								</div>
+								<div class="hint"><a href="#">Tìm hiểu thêm về thẻ bài và chức năng của chúng.</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="game--sidebar">
+				<div class="game--sidebar-wrapper">
+					<div class="game--sidebar-spacer"></div>
+					<div class="ui-widget">
+						<div class="title">
+							<h3>Tạo nhân vật</h3>
+						</div>
+						<div class="content">
+							<div class="progress-bar character-create-progress">
+								<span>40%</span>
+								<div class="progressed percent-40"></div>
+							</div>
+							Ea sit sit accusam amet rebum elitr sed eos. Kasd amet aliquyam sed amet et gubergren ipsum
+							dolor dolore. Rebum.
+						</div>
+					</div>
+					<a class="sidebar-button button solid full small-text">
+						Tạo nhân vật
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+	</div>
+
+	<!-- Javascript -->
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.ui.js"></script>
+	<script src="./js/jquery.modal.js"></script>
+	<script src="./js/css-element-queries/ResizeSensor.js"></script>
+	<script src="./js/css-element-queries/ElementQueries.js"></script>
+	<script src="./js/app.js"></script>
+
+</body>
+
+</html>

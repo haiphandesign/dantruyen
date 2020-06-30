@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dẫn Truyện</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- Preload Javascript -->
+	<script src="./js/preload.js"></script>
+</head>
+
+<body class="page-game page-game-waiting-room-empty logged-in">
+
+	<div id="header"></div>
+
+	<div id="main">
+		<section class="game--header">
+			<div class="game--cover" style="background-image: url('./img/content/games/cover.jpg')"></div>
+			<div class="game--info">
+				<div class="game--info-top">
+					<div class="game--info-basic">
+						<div class="game--info-picture">
+							<img src="./img/content/games/mini-04.jpg" alt="Cuộc chiến ở đảo Lộc Tiên">
+						</div>
+						<div class="game--info-meta">
+							<h3>Cuộc chiến ở đảo Lộc Tiên</h3>
+							<p>Dẫn truyện bởi <a href="user-profile.html">Hùng Vũ</a></p>
+						</div>
+					</div>
+					<div class="game--info-stats">
+						<div class="game--info-counters">
+							<div class="game-info-counter stages">
+								<span>18</span>
+								<span>Màn chơi</span>
+							</div>
+							<div class="game--info-counter players">
+								<span>34</span>
+								<span>Người chơi</span>
+							</div>
+						</div>
+						<div class="game--info-rating">
+							<span class="game--info-rating-ranking">#5</span>
+							<div class="game--info-rating-stars">
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-full"></span>
+								<span class="is-half"></span>
+								<span></span>
+							</div>
+							<span class="game--info-rating-voted">28</span>
+						</div>
+					</div>
+				</div>
+				<div class="game--info-middle">
+					<a class="button small ghost join"><i class="far fa-plus"></i></a>
+					<a class="button small ghost follow"><i class="far fa-plus"></i></a>
+				</div>
+				<div class="game--info-bottom">
+					<div class="game--menu-wrapper">
+						<ul class="game--menu">
+							<li class="game--menu-link is-active"><a href="game.html">Phòng Chờ</a></li>
+							<li class="game--menu-link"><a href="game-main.html">Game chính</a></li>
+							<li class="game--menu-link"><a href="#">Nhân vật</a></li>
+							<li class="game--menu-link"><a href="#">Thẻ bài</a></li>
+							<li class="game--menu-link"><a href="#">Bình luận</a></li>
+						</ul>
+						<ul class="game--menu">
+							<li class="game--menu-link"><a href="#">Thống kê</a></li>
+							<li class="game--menu-link"><a href="#">Cài đặt</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="game--main">
+			<div class="game--thread">
+
+				<div class="ui-widget game--description">
+					<div class="title">
+						<h3>Miêu tả</h3>
+					</div>
+					<div class="content">
+						<p>Ipsum amet rebum sanctus eirmod amet est. Aliquyam sea ipsum aliquyam sea, ipsum no dolor
+							sadipscing et ipsum consetetur at. Stet diam sea ipsum amet amet elitr, sed vero ut invidunt
+							kasd dolores aliquyam consetetur elitr, sadipscing sit eirmod et.</p>
+						<p>Lorem dolor ipsum ut voluptua eos dolor dolor et sadipscing. Sanctus no et kasd justo dolores
+							voluptua. Duo invidunt aliquyam dolores et, amet sanctus erat ea consetetur. At ea sea duo
+							erat gubergren diam aliquyam eos. Eirmod gubergren ea ipsum et ipsum lorem rebum ea nonumy,
+							et et sadipscing duo.</p>
+					</div>
+				</div>
+
+				<div class="ui-widget ui-naked-widget game--meta">
+					<div class="game--meta-item">
+						<h5>Kiểu dẫn</h5>
+						<div class="content">
+							<p><i class="far fa-user"></i><span>Một người</span></p>
+						</div>
+					</div>
+					<div class="game--meta-item">
+						<h5>Phong cách</h5>
+						<div class="content">
+							<p><i class="far fa-balance-scale"></i><span>Cân bằng</span></p>
+						</div>
+					</div>
+					<div class="game--meta-item">
+						<h5>Độ dài</h5>
+						<div class="content">
+							<p><i class="far fa-book"></i><span>Tiểu thuyết</span></p>
+						</div>
+					</div>
+					<div class="game--meta-item">
+						<h5>Tốc độ</h5>
+						<div class="content">
+							<p><i class="far  fa-turtle"></i><span>Chậm</span></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="ui-widget ui-naked-widget game--content-empty">
+					Chưa có block nội dung nào.
+				</div>
+
+				<div class="game--content-interaction">
+					<a href="./modal/home-block-edit.html" rel="modal:open"
+						class="button ui small-text game--block-add">
+						<i class="fas fa-plus"></i><span>Thêm block</span>
+					</a>
+					<a href="./modal/game-block-arrange.html" rel="modal:open"
+						class="button ui small-text game--block-arrange">
+						<i class="fas fa-list"></i><span>Sắp xếp</span>
+					</a>
+				</div>
+			</div>
+			<div class="game--sidebar">
+				<div class="game--sidebar-wrapper">
+					<div class="ui-widget game--members"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+
+	<!-- Javascript -->
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.ui.js"></script>
+	<script src="./js/jquery.modal.js"></script>
+	<script src="./js/app.js"></script>
+
+</body>
+
+</html>
