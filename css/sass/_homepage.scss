@@ -1429,3 +1429,119 @@ footer {
 		}
 	}
 }
+
+
+
+
+.landing-carousel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin-left: -.5rem;
+	margin-right: -.5rem;
+
+	.landing-carousel--item {
+		width: calc(100% / 4);
+		padding: 0 .5rem;
+
+		.game {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			width: 100%;
+			border-width: 1px;
+			border-style: solid;
+			border-color: rgba($color-primary-accent, .25);
+			border-radius: 5px;
+			background-color: white;
+
+			&:hover {
+				border-color: rgba($color-primary-accent, .5);
+			}
+
+			.game-cover {
+				position: relative;
+				display: block;
+				width: 100%;
+				padding-top: 75%;
+				background-color: #f1f7fb;
+				mask-image: linear-gradient(to bottom, #000 40%, transparent 95%);
+
+				img {
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.game-meta {
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+				padding: 1rem;
+				margin-top: -3rem;
+
+				.game-meta-image {
+					position: relative;
+					display: block;
+					width: 4rem;
+					height: 4rem;
+					background-color: #f1f7fb;
+					border-width: 1px;
+					border-style: solid;
+					border-color: rgba($color-primary-accent, .25);
+					border-radius: 5px;
+
+					img {
+						display: block;
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						width: 100%;
+						height: 100%;
+						border-radius: 5px;
+					}
+				}
+
+				.game-meta-basic {
+					width: calc(100% - 4rem);
+					padding-left: 1rem;
+
+					.game-meta-name {
+						display: block;
+						color: #0b7bce;
+						font-weight: bold;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+
+					.game-meta-act {
+						display: block;
+						font-size: .875rem;
+						color: #159ee9;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+				}
+
+				.game-meta-description {
+					padding-top: .5rem;
+					display: -webkit-box;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+}

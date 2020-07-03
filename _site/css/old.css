@@ -6214,6 +6214,29 @@
   width: 100%;
 }
 
+.dt-old .landing-carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dt-old .landing-carousel .landing-carousel--item {
+  width: calc(100% / 4);
+}
+
+.dt-old .landing-carousel .landing-carousel--item .game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(21, 158, 233, 0.25);
+  border-radius: 5px;
+  background-color: white;
+}
+
 .dt-old .post > .title {
   min-height: 4.5rem;
 }
