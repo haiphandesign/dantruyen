@@ -6212,6 +6212,11 @@ footer .footer-content .footer-social a + a {
 }
 
 .landing-carousel {
+  position: relative;
+}
+
+.landing-carousel .landing-carousel--wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6222,8 +6227,6 @@ footer .footer-content .footer-social a + a {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  margin-left: -.5rem;
-  margin-right: -.5rem;
 }
 
 .landing-carousel .landing-carousel--item {
@@ -6341,6 +6344,118 @@ footer .footer-content .footer-social a + a {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.landing-carousel .landing-carousel--navigation-arrow {
+  position: absolute;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: rgba(21, 158, 233, 0.25);
+  color: rgba(21, 158, 233, 0.75);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.landing-carousel .landing-carousel--navigation-arrow:before {
+  -webkit-transform: translateY(-5%);
+          transform: translateY(-5%);
+}
+
+.landing-carousel .landing-carousel--navigation-arrow:hover {
+  background-color: #159ee9;
+  color: white;
+}
+
+.landing-carousel .landing-carousel--navigation-arrow.left {
+  left: -2.5rem;
+}
+
+.landing-carousel .landing-carousel--navigation-arrow.left:before {
+  content: '‹';
+}
+
+.landing-carousel .landing-carousel--navigation-arrow.right {
+  right: -2.5rem;
+}
+
+.landing-carousel .landing-carousel--navigation-arrow.right:before {
+  content: '›';
+}
+
+.landing-carousel .landing-carousel--navigation-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: .75rem;
+}
+
+.landing-carousel .landing-carousel--navigation-dots ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: .325rem .75rem;
+  border-radius: 9999px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.landing-carousel .landing-carousel--navigation-dots ul li {
+  display: block;
+  height: .5rem;
+  width: .5rem;
+  border-radius: 50%;
+  background-color: rgba(21, 158, 233, 0.125);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.landing-carousel .landing-carousel--navigation-dots ul li:not(:first-child) {
+  margin-left: .325rem;
+}
+
+.landing-carousel .landing-carousel--navigation-dots ul li.is-active {
+  background-color: rgba(21, 158, 233, 0.5);
+}
+
+.landing-carousel .landing-carousel--navigation-dots ul:hover {
+  background-color: rgba(21, 158, 233, 0.125);
+}
+
+.landing-carousel .landing-carousel--navigation-dots ul:hover li {
+  background-color: rgba(21, 158, 233, 0.25);
+}
+
+.landing-carousel .landing-carousel--navigation-dots ul:hover li:hover {
+  background-color: rgba(21, 158, 233, 0.75);
+}
+
+.landing-carousel .landing-carousel--navigation-dots ul:hover li.is-active {
+  background-color: #159ee9;
 }
 
 .post > .title {
