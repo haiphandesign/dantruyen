@@ -5030,12 +5030,8 @@
   margin-top: .5rem;
 }
 
-.dt-old #screenshots {
-  margin-top: 2.5rem;
-}
-
 .dt-old #screenshots .homepage-title {
-  margin-top: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .dt-old #screenshots .homepage-title span:not(.divider) {
@@ -5058,7 +5054,7 @@
       grid-template-columns: 1fr 1fr;
   grid-gap: 1.5rem;
   max-width: 540px;
-  margin: 2.5rem auto 0;
+  margin: 1.5rem auto 0;
 }
 
 @media (min-width: 768px) {
@@ -6229,12 +6225,27 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
+  width: 100vw;
+  overflow: scroll;
+  margin: 0 -1rem;
+}
+
+@media (min-width: 992px) {
+  .dt-old .landing-carousel .landing-carousel--wrapper {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .dt-old .landing-carousel .landing-carousel--item {
-  width: calc(100% / 4);
+  width: calc(100% / 1);
   padding: 0 .5rem;
+}
+
+@media (min-width: 992px) {
+  .dt-old .landing-carousel .landing-carousel--item {
+    width: calc(100% / 4);
+  }
 }
 
 .dt-old .landing-carousel .landing-carousel--item .game {
@@ -6252,6 +6263,8 @@
   border-color: rgba(21, 158, 233, 0.25);
   border-radius: 5px;
   background-color: white;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .dt-old .landing-carousel .landing-carousel--item .game:hover {
@@ -6292,6 +6305,7 @@
       flex-wrap: wrap;
   padding: 1rem;
   margin-top: -3rem;
+  z-index: 2;
 }
 
 .dt-old .landing-carousel .landing-carousel--item .game .game-meta .game-meta-image {
@@ -6352,9 +6366,7 @@
 .dt-old .landing-carousel .landing-carousel--navigation-arrow {
   position: absolute;
   top: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -6365,9 +6377,17 @@
   height: 2.5rem;
   border-radius: 50%;
   background-color: rgba(21, 158, 233, 0.25);
-  color: rgba(21, 158, 233, 0.75);
+  color: #0b7bce;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+@media (min-width: 992px) {
+  .dt-old .landing-carousel .landing-carousel--navigation-arrow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .dt-old .landing-carousel .landing-carousel--navigation-arrow:before {

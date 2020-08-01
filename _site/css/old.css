@@ -6215,19 +6215,36 @@
 }
 
 .dt-old .landing-carousel {
+  position: relative;
+}
+
+.dt-old .landing-carousel .landing-carousel--wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
 }
 
 .dt-old .landing-carousel .landing-carousel--item {
   width: calc(100% / 4);
+  padding: 0 .5rem;
 }
 
 .dt-old .landing-carousel .landing-carousel--item .game {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
   width: 100%;
   border-width: 1px;
@@ -6235,6 +6252,214 @@
   border-color: rgba(21, 158, 233, 0.25);
   border-radius: 5px;
   background-color: white;
+}
+
+.dt-old .landing-carousel .landing-carousel--item .game:hover {
+  border-color: rgba(21, 158, 233, 0.5);
+}
+
+.dt-old .landing-carousel .landing-carousel--item .game .game-cover {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 75%;
+  background-color: #f1f7fb;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #000), color-stop(95%, transparent));
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent 95%);
+          mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #000), color-stop(95%, transparent));
+          mask-image: linear-gradient(to bottom, #000 40%, transparent 95%);
+}
+
+.dt-old .landing-carousel .landing-carousel--item .game .game-cover img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dt-old .landing-carousel .landing-carousel--item .game .game-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1rem;
+  margin-top: -3rem;
+  z-index: 2;
+}
+
+.dt-old .landing-carousel .landing-carousel--item .game .game-meta .game-meta-image {
+  position: relative;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  background-color: #f1f7fb;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(21, 158, 233, 0.25);
+  border-radius: 5px;
+}
+
+.dt-old .landing-carousel .landing-carousel--item .game .game-meta .game-meta-image img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.dt-old .landing-carousel .landing-carousel--item .game .game-meta .game-meta-basic {
+  width: calc(100% - 4rem);
+  padding-left: 1rem;
+}
+
+.dt-old .landing-carousel .landing-carousel--item .game .game-meta .game-meta-basic .game-meta-name {
+  display: block;
+  color: #0b7bce;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dt-old .landing-carousel .landing-carousel--item .game .game-meta .game-meta-basic .game-meta-act {
+  display: block;
+  font-size: .875rem;
+  color: #159ee9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dt-old .landing-carousel .landing-carousel--item .game .game-meta .game-meta-description {
+  padding-top: .5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-arrow {
+  position: absolute;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: rgba(21, 158, 233, 0.25);
+  color: #0b7bce;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-arrow:before {
+  -webkit-transform: translateY(-5%);
+          transform: translateY(-5%);
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-arrow:hover {
+  background-color: #159ee9;
+  color: white;
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-arrow.left {
+  left: -2.5rem;
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-arrow.left:before {
+  content: '‹';
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-arrow.right {
+  right: -2.5rem;
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-arrow.right:before {
+  content: '›';
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: .75rem;
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-dots ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: .325rem .75rem;
+  border-radius: 9999px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-dots ul li {
+  display: block;
+  height: .5rem;
+  width: .5rem;
+  border-radius: 50%;
+  background-color: rgba(21, 158, 233, 0.125);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-dots ul li:not(:first-child) {
+  margin-left: .325rem;
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-dots ul li.is-active {
+  background-color: rgba(21, 158, 233, 0.5);
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-dots ul:hover {
+  background-color: rgba(21, 158, 233, 0.125);
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-dots ul:hover li {
+  background-color: rgba(21, 158, 233, 0.25);
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-dots ul:hover li:hover {
+  background-color: rgba(21, 158, 233, 0.75);
+}
+
+.dt-old .landing-carousel .landing-carousel--navigation-dots ul:hover li.is-active {
+  background-color: #159ee9;
 }
 
 .dt-old .post > .title {

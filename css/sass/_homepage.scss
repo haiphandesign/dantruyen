@@ -494,10 +494,11 @@ $color-text-homepage: #063E67;
 }
 
 #screenshots {
-	margin-top: 2.5rem;
+	// margin-top: 2.5rem;
 
 	.homepage-title {
-		margin-top: 2.5rem;
+		// margin-top: 2.5rem;
+		margin-bottom: 3.5rem;
 
 		span:not(.divider) {
 			display: block;
@@ -518,7 +519,7 @@ $color-text-homepage: #063E67;
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 1.5rem;
 		max-width: 540px;
-		margin: 2.5rem auto 0;
+		margin: 1.5rem auto 0;
 
 		@include breakpoint(sm) {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -1441,12 +1442,23 @@ footer {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 100%;
+		width: 100vw;
+		overflow: scroll;
+		margin: 0 -1rem;
+
+		@include breakpoint(md) {
+			width: 100%;
+			margin: 0;
+		}
 	}
 
 	.landing-carousel--item {
-		width: calc(100% / 4);
+		width: calc(100% / 1);
 		padding: 0 .5rem;
+
+		@include breakpoint(md) {
+			width: calc(100% / 4);
+		}
 
 		.game {
 			display: flex;
@@ -1458,6 +1470,7 @@ footer {
 			border-color: rgba($color-primary-accent, .25);
 			border-radius: 5px;
 			background-color: white;
+			flex-shrink: 0;
 
 			&:hover {
 				border-color: rgba($color-primary-accent, .5);
@@ -1489,6 +1502,7 @@ footer {
 				flex-wrap: wrap;
 				padding: 1rem;
 				margin-top: -3rem;
+				z-index: 2;
 
 				.game-meta-image {
 					position: relative;
@@ -1552,15 +1566,19 @@ footer {
 		&-arrow {
 			position: absolute;
 			top: 50%;
-			display: flex;
+			display: none;
 			align-items: center;
 			justify-content: center;
 			width: 2.5rem;
 			height: 2.5rem;
 			border-radius: 50%;
 			background-color: rgba($color-primary-accent, .25);
-			color: rgba($color-primary-accent, .75);
+			color: #0b7bce;
 			transform: translateY(-50%);
+
+			@include breakpoint(md) {
+				display: flex;
+			}
 
 			&:before {
 				transform: translateY(-5%);
