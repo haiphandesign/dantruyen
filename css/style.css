@@ -6231,6 +6231,7 @@ footer .footer-content .footer-social a + a {
   .landing-carousel .landing-carousel--wrapper {
     width: 100%;
     margin: 0;
+    overflow: auto;
   }
 }
 

@@ -1449,6 +1449,7 @@ footer {
 		@include breakpoint(md) {
 			width: 100%;
 			margin: 0;
+			overflow: auto;
 		}
 	}
 
