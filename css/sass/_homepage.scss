@@ -98,7 +98,7 @@ $color-text-homepage: #063e67;
 			font-size: 2rem;
 		}
 
-		& + h2 {
+		&+h2 {
 			margin-top: 0;
 		}
 	}
@@ -264,14 +264,14 @@ $color-text-homepage: #063e67;
 			width: 80%;
 			max-width: 15rem;
 
-			& + a {
+			&+a {
 				margin-top: 1rem;
 			}
 
 			@include breakpoint(sm) {
 				width: auto;
 
-				& + a {
+				&+a {
 					margin-left: 1rem;
 				}
 			}
@@ -331,7 +331,7 @@ $color-text-homepage: #063e67;
 				align-items: flex-start;
 				justify-content: flex-start;
 
-				& + li {
+				&+li {
 					margin-top: 0.75rem;
 				}
 
@@ -481,7 +481,7 @@ $color-text-homepage: #063e67;
 			li {
 				text-align: center;
 
-				& + li {
+				&+li {
 					// margin-top: 0.5rem;
 
 					&:before {
@@ -660,7 +660,7 @@ $color-text-homepage: #063e67;
 	}
 
 	.homepage-content {
-		> p {
+		>p {
 			max-width: 30rem;
 			margin: 0 auto 2.5rem;
 
@@ -731,7 +731,7 @@ $color-text-homepage: #063e67;
 					font-size: 0.85rem;
 				}
 
-				& + li {
+				&+li {
 					&:before {
 						content: "";
 						display: block;
@@ -894,7 +894,7 @@ $color-text-homepage: #063e67;
 				max-width: unset;
 			}
 
-			& + a {
+			&+a {
 				margin-top: 1rem;
 
 				@include breakpoint(sm) {
@@ -968,7 +968,7 @@ $color-text-homepage: #063e67;
 		text-align: center;
 	}
 
-	> .container {
+	>.container {
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-gap: 1.5rem;
@@ -982,7 +982,7 @@ $color-text-homepage: #063e67;
 			grid-template-columns: 6fr 5fr;
 		}
 
-		> img {
+		>img {
 			display: block;
 			max-width: 90%;
 			margin: 0 auto;
@@ -1194,7 +1194,7 @@ footer {
 			text-shadow: 0 0 5px $color-primary;
 
 			a {
-				& + a {
+				&+a {
 					margin-left: 0.5rem;
 				}
 			}
@@ -1422,7 +1422,7 @@ footer {
 	.form-element {
 		flex-direction: column;
 
-		> * + * {
+		>*+* {
 			margin: 0;
 		}
 
@@ -1485,11 +1485,9 @@ footer {
 				width: 100%;
 				padding-top: 75%;
 				background-color: #f1f7fb;
-				mask-image: linear-gradient(
-					to bottom,
-					#000 40%,
-					transparent 95%
-				);
+				mask-image: linear-gradient(to bottom,
+						#000 40%,
+						transparent 95%);
 
 				img {
 					display: block;
@@ -1532,6 +1530,7 @@ footer {
 						width: 100%;
 						height: 100%;
 						border-radius: 5px;
+						object-fit: cover;
 					}
 				}
 
@@ -1564,6 +1563,8 @@ footer {
 					-webkit-line-clamp: 3;
 					-webkit-box-orient: vertical;
 					overflow: hidden;
+					min-height: 5em;
+					max-height: 5em;
 				}
 			}
 		}
