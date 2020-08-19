@@ -1206,7 +1206,7 @@ footer {
 	position: absolute;
 
 	display: block;
-	width: 15rem;
+	max-width: 15rem;
 	height: 15rem;
 
 	background-color: $color-primary-accent;
@@ -1218,7 +1218,7 @@ footer {
 	animation-duration: 5s;
 
 	@include breakpoint(sm) {
-		width: 20rem;
+		max-width: 20rem;
 		height: 20rem;
 	}
 }

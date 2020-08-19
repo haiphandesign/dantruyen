@@ -5803,7 +5803,7 @@ footer .footer-content .footer-social a + a {
 .blob-hero-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5819,7 +5819,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-hero-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5827,7 +5827,7 @@ footer .footer-content .footer-social a + a {
 .blob-hero-02 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5845,7 +5845,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-hero-02 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5853,7 +5853,7 @@ footer .footer-content .footer-social a + a {
 .blob-intro-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5871,7 +5871,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-intro-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5879,7 +5879,7 @@ footer .footer-content .footer-social a + a {
 .blob-intro-02 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5897,7 +5897,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-intro-02 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5905,7 +5905,7 @@ footer .footer-content .footer-social a + a {
 .blob-role-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5923,7 +5923,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-role-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5931,7 +5931,7 @@ footer .footer-content .footer-social a + a {
 .blob-help-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5947,7 +5947,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-help-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5955,7 +5955,7 @@ footer .footer-content .footer-social a + a {
 .blob-fund-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5971,7 +5971,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-fund-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5979,7 +5979,7 @@ footer .footer-content .footer-social a + a {
 .blob-faq-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5995,7 +5995,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-faq-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6003,7 +6003,7 @@ footer .footer-content .footer-social a + a {
 .blob-faq-02 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6021,7 +6021,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-faq-02 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6029,7 +6029,7 @@ footer .footer-content .footer-social a + a {
 .blob-share-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6045,7 +6045,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-share-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6053,7 +6053,7 @@ footer .footer-content .footer-social a + a {
 .blob-confirmed-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6071,7 +6071,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-confirmed-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6079,7 +6079,7 @@ footer .footer-content .footer-social a + a {
 .blob-confirmed-02 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6097,7 +6097,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-confirmed-02 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6112,7 +6112,7 @@ footer .footer-content .footer-social a + a {
 .blob-confirmed-03 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6128,7 +6128,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-confirmed-03 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6142,7 +6142,7 @@ footer .footer-content .footer-social a + a {
 .blob-confirmed-04 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6159,7 +6159,7 @@ footer .footer-content .footer-social a + a {
 
 @media (min-width: 768px) {
   .blob-confirmed-04 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }

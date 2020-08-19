@@ -5806,7 +5806,7 @@
 .dt-old .blob-hero-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5822,7 +5822,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-hero-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5830,7 +5830,7 @@
 .dt-old .blob-hero-02 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5848,7 +5848,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-hero-02 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5856,7 +5856,7 @@
 .dt-old .blob-intro-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5874,7 +5874,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-intro-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5882,7 +5882,7 @@
 .dt-old .blob-intro-02 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5900,7 +5900,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-intro-02 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5908,7 +5908,7 @@
 .dt-old .blob-role-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5926,7 +5926,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-role-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5934,7 +5934,7 @@
 .dt-old .blob-help-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5950,7 +5950,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-help-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5958,7 +5958,7 @@
 .dt-old .blob-fund-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5974,7 +5974,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-fund-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -5982,7 +5982,7 @@
 .dt-old .blob-faq-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -5998,7 +5998,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-faq-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6006,7 +6006,7 @@
 .dt-old .blob-faq-02 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6024,7 +6024,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-faq-02 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6032,7 +6032,7 @@
 .dt-old .blob-share-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6048,7 +6048,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-share-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6056,7 +6056,7 @@
 .dt-old .blob-confirmed-01 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6074,7 +6074,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-confirmed-01 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6082,7 +6082,7 @@
 .dt-old .blob-confirmed-02 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6100,7 +6100,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-confirmed-02 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6115,7 +6115,7 @@
 .dt-old .blob-confirmed-03 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6131,7 +6131,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-confirmed-03 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
@@ -6145,7 +6145,7 @@
 .dt-old .blob-confirmed-04 {
   position: absolute;
   display: block;
-  width: 15rem;
+  max-width: 15rem;
   height: 15rem;
   background-color: #159ee9;
   background-size: cover;
@@ -6162,7 +6162,7 @@
 
 @media (min-width: 768px) {
   .dt-old .blob-confirmed-04 {
-    width: 20rem;
+    max-width: 20rem;
     height: 20rem;
   }
 }
